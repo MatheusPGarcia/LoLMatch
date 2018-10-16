@@ -7,7 +7,7 @@ target 'LoLMatch' do
 
   # Pods for LoLMatch
 
-  pod 'SwiftLint'
+  pod 'Moya', '~> 11.0'
 
   target 'LoLMatchTests' do
     inherit! :search_paths
