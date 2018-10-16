@@ -139,13 +139,8 @@
 		AE4359362175FE3D008A94FC /* LoLMatch */ = {
 			isa = PBXGroup;
 			children = (
-				AE4359372175FE3D008A94FC /* AppDelegate.swift */,
-				AE4359392175FE3D008A94FC /* ViewController.swift */,
-				AE43593B2175FE3D008A94FC /* Main.storyboard */,
-				AE4359412175FE40008A94FC /* Assets.xcassets */,
-				AE4359432175FE40008A94FC /* LaunchScreen.storyboard */,
-				AE4359462175FE40008A94FC /* Info.plist */,
-				AE43593E2175FE3D008A94FC /* LoLMatch.xcdatamodeld */,
+				AE43597121760124008A94FC /* Sources */,
+				AE43597221760134008A94FC /* Resources */,
 			);
 			path = LoLMatch;
 			sourceTree = "<group>";
@@ -166,6 +161,75 @@
 				AE43595C2175FE41008A94FC /* Info.plist */,
 			);
 			path = LoLMatchUITests;
+			sourceTree = "<group>";
+		};
+		AE43596B217600B8008A94FC /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				AE4359372175FE3D008A94FC /* AppDelegate.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		AE43596C217600CF008A94FC /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		AE43596D217600D9008A94FC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		AE43596E217600E4008A94FC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AE4359392175FE3D008A94FC /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AE43596F217600EF008A94FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AE43593B2175FE3D008A94FC /* Main.storyboard */,
+				AE4359432175FE40008A94FC /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AE435970217600FF008A94FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AE43597121760124008A94FC /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AE43596B217600B8008A94FC /* Infrastructure */,
+				AE43596C217600CF008A94FC /* Util */,
+				AE43596D217600D9008A94FC /* Service */,
+				AE43596E217600E4008A94FC /* Controller */,
+				AE43596F217600EF008A94FC /* View */,
+				AE435970217600FF008A94FC /* Model */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		AE43597221760134008A94FC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AE4359412175FE40008A94FC /* Assets.xcassets */,
+				AE43593E2175FE3D008A94FC /* LoLMatch.xcdatamodeld */,
+				AE4359462175FE40008A94FC /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
