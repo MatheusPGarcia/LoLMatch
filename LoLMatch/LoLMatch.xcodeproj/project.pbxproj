@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0F83B009A98F85C88ECEBBCB /* Pods_LoLMatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F9CCFAEF068D5403E5E655A /* Pods_LoLMatchTests.framework */; };
+		186E7C5E2177B0FB00DB521A /* DoubleImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186E7C5D2177B0FB00DB521A /* DoubleImageView.xib */; };
+		186E7C602177B21700DB521A /* DoubleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E7C5F2177B21700DB521A /* DoubleImageView.swift */; };
 		188228DE2176288400CAEB8A /* Match.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188228DD2176288400CAEB8A /* Match.storyboard */; };
 		188228E0217628EF00CAEB8A /* LikesReceived.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188228DF217628EF00CAEB8A /* LikesReceived.storyboard */; };
 		188228E2217628F800CAEB8A /* Communication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188228E1217628F800CAEB8A /* Communication.storyboard */; };
@@ -47,6 +49,8 @@
 
 /* Begin PBXFileReference section */
 		10E8184FF929D7A69396EE73 /* Pods-LoLMatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoLMatchUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoLMatchUITests/Pods-LoLMatchUITests.release.xcconfig"; sourceTree = "<group>"; };
+		186E7C5D2177B0FB00DB521A /* DoubleImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoubleImageView.xib; sourceTree = "<group>"; };
+		186E7C5F2177B21700DB521A /* DoubleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleImageView.swift; sourceTree = "<group>"; };
 		188228DD2176288400CAEB8A /* Match.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Match.storyboard; sourceTree = "<group>"; };
 		188228DF217628EF00CAEB8A /* LikesReceived.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikesReceived.storyboard; sourceTree = "<group>"; };
 		188228E1217628F800CAEB8A /* Communication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Communication.storyboard; sourceTree = "<group>"; };
@@ -107,6 +111,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		186E7C5C2177AC1700DB521A /* DoubleImageView */ = {
+			isa = PBXGroup;
+			children = (
+				186E7C5D2177B0FB00DB521A /* DoubleImageView.xib */,
+				186E7C5F2177B21700DB521A /* DoubleImageView.swift */,
+			);
+			path = DoubleImageView;
+			sourceTree = "<group>";
+		};
 		188228E521762F4E00CAEB8A /* MatchCard */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +235,7 @@
 		AE43596F217600EF008A94FC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				186E7C5C2177AC1700DB521A /* DoubleImageView */,
 				188228E521762F4E00CAEB8A /* MatchCard */,
 				AE43593B2175FE3D008A94FC /* Main.storyboard */,
 				188228DD2176288400CAEB8A /* Match.storyboard */,
@@ -373,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				188228DE2176288400CAEB8A /* Match.storyboard in Resources */,
+				186E7C5E2177B0FB00DB521A /* DoubleImageView.xib in Resources */,
 				AE4359452175FE40008A94FC /* LaunchScreen.storyboard in Resources */,
 				188228E0217628EF00CAEB8A /* LikesReceived.storyboard in Resources */,
 				AE4359422175FE40008A94FC /* Assets.xcassets in Resources */,
@@ -486,6 +501,7 @@
 				AE43593A2175FE3D008A94FC /* ViewController.swift in Sources */,
 				188228EB21764F7600CAEB8A /* RoundedImageView.swift in Sources */,
 				AE4359382175FE3D008A94FC /* AppDelegate.swift in Sources */,
+				186E7C602177B21700DB521A /* DoubleImageView.swift in Sources */,
 				188228E9217634BD00CAEB8A /* UIViewExtension.swift in Sources */,
 				AE4359402175FE3D008A94FC /* LoLMatch.xcdatamodeld in Sources */,
 				188228ED2176506000CAEB8A /* MatchCard.swift in Sources */,
