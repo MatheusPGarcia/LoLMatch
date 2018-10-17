@@ -54,41 +54,30 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Y59-Az-3fH">
                                     <rect key="frame" x="0.0" y="0.0" width="73.5" height="107"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1DX-2B-xWN">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1DX-2B-xWN" customClass="DoubleImageView" customModule="LoLMatch" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="73.5" height="74"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Orianna" translatesAutoresizingMaskIntoConstraints="NO" id="W7B-4w-w5k" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="66" height="66.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="W7B-4w-w5k" secondAttribute="height" id="LJE-w6-0hI"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="midLane" translatesAutoresizingMaskIntoConstraints="NO" id="AFV-bC-gJd" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
-                                                    <rect key="frame" x="36.5" y="37" width="37" height="37"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="AFV-bC-gJd" secondAttribute="height" multiplier="1:1" id="dDU-CP-2I3"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                            <real key="value" value="2"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                            <color key="value" red="0.75686274509803919" green="0.58431372549019611" blue="0.25882352941176473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </imageView>
-                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="W7B-4w-w5k" firstAttribute="top" secondItem="1DX-2B-xWN" secondAttribute="top" id="1jH-rf-gRp"/>
-                                                <constraint firstAttribute="bottom" secondItem="AFV-bC-gJd" secondAttribute="bottom" id="B2h-Ep-6pG"/>
-                                                <constraint firstAttribute="trailing" secondItem="AFV-bC-gJd" secondAttribute="trailing" id="N3A-Gh-H58"/>
                                                 <constraint firstAttribute="width" secondItem="1DX-2B-xWN" secondAttribute="height" multiplier="1:1" id="YjB-Gf-bsZ"/>
-                                                <constraint firstItem="W7B-4w-w5k" firstAttribute="leading" secondItem="1DX-2B-xWN" secondAttribute="leading" id="sR8-HY-MTB"/>
-                                                <constraint firstItem="W7B-4w-w5k" firstAttribute="width" secondItem="1DX-2B-xWN" secondAttribute="width" multiplier="0.9" id="w65-Hm-kzN"/>
-                                                <constraint firstItem="AFV-bC-gJd" firstAttribute="width" secondItem="1DX-2B-xWN" secondAttribute="width" multiplier="0.5" id="wBD-iA-67l"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="secondaryBorderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="primaryBorderColor">
+                                                    <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="secondaryBorderColor">
+                                                    <color key="value" red="0.75686274509999996" green="0.58431372550000005" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="primaryBorderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="primaryImage" value="goldIII"/>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="midLane"/>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondaryViewRounded" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Foc-VY-NRy">
                                             <rect key="frame" x="0.0" y="76" width="73.5" height="14.5"/>
@@ -107,41 +96,30 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="WSu-pU-TVq">
                                     <rect key="frame" x="93.5" y="0.0" width="74" height="107"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaJ-0p-Ac4">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaJ-0p-Ac4" customClass="DoubleImageView" customModule="LoLMatch" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Orianna" translatesAutoresizingMaskIntoConstraints="NO" id="pwt-I4-WqE" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="66.5" height="66.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="pwt-I4-WqE" secondAttribute="height" id="k22-74-QDm"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="midLane" translatesAutoresizingMaskIntoConstraints="NO" id="wgH-kG-oVs" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
-                                                    <rect key="frame" x="37" y="37" width="37" height="37"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="wgH-kG-oVs" secondAttribute="height" multiplier="1:1" id="Ges-HS-3bH"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                            <color key="value" red="0.75686274509999996" green="0.58431372550000005" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                            <real key="value" value="2"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </imageView>
-                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="wgH-kG-oVs" firstAttribute="width" secondItem="eaJ-0p-Ac4" secondAttribute="width" multiplier="0.5" id="6rj-6W-nCK"/>
-                                                <constraint firstItem="pwt-I4-WqE" firstAttribute="width" secondItem="eaJ-0p-Ac4" secondAttribute="width" multiplier="0.9" id="7Wf-1I-87q"/>
-                                                <constraint firstAttribute="trailing" secondItem="wgH-kG-oVs" secondAttribute="trailing" id="8Kx-4z-SLG"/>
-                                                <constraint firstAttribute="bottom" secondItem="wgH-kG-oVs" secondAttribute="bottom" id="OBA-HQ-MgO"/>
-                                                <constraint firstItem="pwt-I4-WqE" firstAttribute="top" secondItem="eaJ-0p-Ac4" secondAttribute="top" id="fFC-hP-HeX"/>
                                                 <constraint firstAttribute="width" secondItem="eaJ-0p-Ac4" secondAttribute="height" multiplier="1:1" id="oen-Rd-bLn"/>
-                                                <constraint firstItem="pwt-I4-WqE" firstAttribute="leading" secondItem="eaJ-0p-Ac4" secondAttribute="leading" id="ymC-MA-hJb"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="primaryBorderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="primaryBorderColor">
+                                                    <color key="value" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="secondaryBorderColor">
+                                                    <color key="value" red="0.75686274509999996" green="0.58431372550000005" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="secondaryBorderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="primaryImage" value="Orianna"/>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="midLane"/>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="NO"/>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondaryViewRounded" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzB-ZG-VeK">
                                             <rect key="frame" x="0.0" y="76" width="74" height="14.5"/>
@@ -160,41 +138,30 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="hzz-3N-iDo">
                                     <rect key="frame" x="187.5" y="0.0" width="73.5" height="107"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tc0-fJ-MEc">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tc0-fJ-MEc" customClass="DoubleImageView" customModule="LoLMatch" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="73.5" height="74"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Orianna" translatesAutoresizingMaskIntoConstraints="NO" id="3Rp-jd-1vx" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="66.5" height="66.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="3Rp-jd-1vx" secondAttribute="height" id="0Fs-8z-eWI"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="midLane" translatesAutoresizingMaskIntoConstraints="NO" id="TeG-Ae-a3t" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
-                                                    <rect key="frame" x="37" y="37" width="36.5" height="37"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="TeG-Ae-a3t" secondAttribute="height" multiplier="1:1" id="Zop-iu-sjh"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                            <real key="value" value="2"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                            <color key="value" red="0.75686274509999996" green="0.58431372550000005" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </imageView>
-                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="TeG-Ae-a3t" secondAttribute="trailing" id="7DT-HE-VrM"/>
-                                                <constraint firstItem="3Rp-jd-1vx" firstAttribute="top" secondItem="tc0-fJ-MEc" secondAttribute="top" id="I7N-Mk-Pwm"/>
-                                                <constraint firstItem="TeG-Ae-a3t" firstAttribute="width" secondItem="tc0-fJ-MEc" secondAttribute="width" multiplier="0.5" id="Pbj-pq-nLh"/>
                                                 <constraint firstAttribute="width" secondItem="tc0-fJ-MEc" secondAttribute="height" multiplier="1:1" id="Ytp-oS-4lA"/>
-                                                <constraint firstItem="3Rp-jd-1vx" firstAttribute="leading" secondItem="tc0-fJ-MEc" secondAttribute="leading" id="liX-fT-u9x"/>
-                                                <constraint firstAttribute="bottom" secondItem="TeG-Ae-a3t" secondAttribute="bottom" id="tmC-i0-7h0"/>
-                                                <constraint firstItem="3Rp-jd-1vx" firstAttribute="width" secondItem="tc0-fJ-MEc" secondAttribute="width" multiplier="0.9" id="wiy-xf-kWK"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="primaryBorderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="primaryBorderColor">
+                                                    <color key="value" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="secondaryBorderColor">
+                                                    <color key="value" red="0.75686274509999996" green="0.58431372550000005" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="primaryImage" value="Orianna"/>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="midLane"/>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondaryViewRounded" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="NO"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="secondaryBorderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tm-mu-tWL">
                                             <rect key="frame" x="0.0" y="76" width="73.5" height="14.5"/>
@@ -212,49 +179,27 @@
                                 </stackView>
                             </subviews>
                         </stackView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zrp-mH-bx7">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zrp-mH-bx7" customClass="DoubleImageView" customModule="LoLMatch" customModuleProvider="target">
                             <rect key="frame" x="92.5" y="-87.5" width="184.5" height="184.5"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="midLane" translatesAutoresizingMaskIntoConstraints="NO" id="fYV-K7-QJT" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="166" height="166"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="fYV-K7-QJT" secondAttribute="height" id="7PY-NV-ci4"/>
-                                    </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="2"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" red="0.75686274509999996" green="0.58431372550000005" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </imageView>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="supLane" translatesAutoresizingMaskIntoConstraints="NO" id="VXC-o5-hN6" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
-                                    <rect key="frame" x="110.5" y="110.5" width="74" height="74"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="VXC-o5-hN6" secondAttribute="height" multiplier="1:1" id="cT0-b1-f3w"/>
-                                    </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="2"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" red="0.75686274509803919" green="0.58431372549019611" blue="0.25882352941176473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </imageView>
-                            </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstItem="fYV-K7-QJT" firstAttribute="top" secondItem="Zrp-mH-bx7" secondAttribute="top" id="4Q5-wR-cHc"/>
-                                <constraint firstAttribute="bottom" secondItem="VXC-o5-hN6" secondAttribute="bottom" id="HMy-Wi-6a9"/>
-                                <constraint firstAttribute="trailing" secondItem="VXC-o5-hN6" secondAttribute="trailing" id="IvI-0i-VmW"/>
-                                <constraint firstItem="fYV-K7-QJT" firstAttribute="leading" secondItem="Zrp-mH-bx7" secondAttribute="leading" id="dmu-Ps-mtR"/>
-                                <constraint firstItem="VXC-o5-hN6" firstAttribute="width" secondItem="Zrp-mH-bx7" secondAttribute="width" multiplier="0.4" id="pEr-Dx-XYL"/>
-                                <constraint firstItem="fYV-K7-QJT" firstAttribute="width" secondItem="Zrp-mH-bx7" secondAttribute="width" multiplier="0.9" id="uRy-lE-tSq"/>
-                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="primaryBorderWidth">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="primaryBorderColor">
+                                    <color key="value" red="0.75686274509999996" green="0.58431372550000005" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="secondaryBorderColor">
+                                    <color key="value" red="0.75686274509999996" green="0.58431372550000005" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="secondaryBorderWidth">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="image" keyPath="primaryImage" value="midLane"/>
+                                <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="supLane"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondaryViewRounded" value="YES"/>
+                            </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>

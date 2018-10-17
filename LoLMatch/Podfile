@@ -8,6 +8,8 @@ target 'LoLMatch' do
   # Pods for LoLMatch
 
   pod 'Moya', '~> 11.0'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
 
   target 'LoLMatchTests' do
     inherit! :search_paths

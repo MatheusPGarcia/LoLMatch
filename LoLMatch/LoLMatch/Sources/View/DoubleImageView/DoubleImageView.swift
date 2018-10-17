@@ -89,11 +89,12 @@ extension DoubleImageView {
     /// Inspectable property to set the corner radius state of Primary View in the Storyboard
     @IBInspectable var isPrimaryViewRounded: Bool {
         get {
-            return true
+            return false
         }
         set {
-            self.primaryView.layer.cornerRadius = isPrimaryViewRounded ? self.primaryView.frame.width / 4 : 0
+            self.primaryView.layer.cornerRadius = newValue ? self.primaryView.frame.width / 2 : 0
             self.primaryView.layer.masksToBounds = true
+            self.layoutIfNeeded()
         }
     }
     
@@ -103,8 +104,9 @@ extension DoubleImageView {
             return false
         }
         set {
-            self.secondaryView.layer.cornerRadius = isSecondaryViewRounded ? self.secondaryView.frame.width / 4 : 0
+            self.secondaryView.layer.cornerRadius = newValue ? self.secondaryView.frame.width / 2 : 0
             self.secondaryView.layer.masksToBounds = true
+            self.layoutIfNeeded()
         }
     }
     

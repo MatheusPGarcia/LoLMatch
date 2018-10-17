@@ -10,6 +10,14 @@
 		0F83B009A98F85C88ECEBBCB /* Pods_LoLMatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F9CCFAEF068D5403E5E655A /* Pods_LoLMatchTests.framework */; };
 		186E7C5E2177B0FB00DB521A /* DoubleImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186E7C5D2177B0FB00DB521A /* DoubleImageView.xib */; };
 		186E7C602177B21700DB521A /* DoubleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E7C5F2177B21700DB521A /* DoubleImageView.swift */; };
+		186E7C622177CF2700DB521A /* LikesReceivedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E7C612177CF2700DB521A /* LikesReceivedViewController.swift */; };
+		186E7C672177CFD900DB521A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E7C662177CFD900DB521A /* User.swift */; };
+		186E7C692177D0A200DB521A /* LikesReceivedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E7C682177D0A200DB521A /* LikesReceivedCell.swift */; };
+		186E7C6B2177D2E800DB521A /* Lane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E7C6A2177D2E800DB521A /* Lane.swift */; };
+		186E7C6D2177D51000DB521A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E7C6C2177D51000DB521A /* FirebaseManager.swift */; };
+		187AB9142177D7BD00D36C36 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 187AB9132177D7BD00D36C36 /* GoogleService-Info.plist */; };
+		187AB9162177D81500D36C36 /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187AB9152177D81500D36C36 /* UserServices.swift */; };
+		187AB9182177D8D700D36C36 /* FirebaseResponsePaser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187AB9172177D8D700D36C36 /* FirebaseResponsePaser.swift */; };
 		188228DE2176288400CAEB8A /* Match.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188228DD2176288400CAEB8A /* Match.storyboard */; };
 		188228E0217628EF00CAEB8A /* LikesReceived.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188228DF217628EF00CAEB8A /* LikesReceived.storyboard */; };
 		188228E2217628F800CAEB8A /* Communication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188228E1217628F800CAEB8A /* Communication.storyboard */; };
@@ -19,7 +27,6 @@
 		188228EB21764F7600CAEB8A /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188228EA21764F7600CAEB8A /* RoundedImageView.swift */; };
 		188228ED2176506000CAEB8A /* MatchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188228EC2176506000CAEB8A /* MatchCard.swift */; };
 		AE4359382175FE3D008A94FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4359372175FE3D008A94FC /* AppDelegate.swift */; };
-		AE43593A2175FE3D008A94FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4359392175FE3D008A94FC /* ViewController.swift */; };
 		AE43593D2175FE3D008A94FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE43593B2175FE3D008A94FC /* Main.storyboard */; };
 		AE4359402175FE3D008A94FC /* LoLMatch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE43593E2175FE3D008A94FC /* LoLMatch.xcdatamodeld */; };
 		AE4359422175FE40008A94FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE4359412175FE40008A94FC /* Assets.xcassets */; };
@@ -51,13 +58,21 @@
 		10E8184FF929D7A69396EE73 /* Pods-LoLMatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoLMatchUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoLMatchUITests/Pods-LoLMatchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		186E7C5D2177B0FB00DB521A /* DoubleImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoubleImageView.xib; sourceTree = "<group>"; };
 		186E7C5F2177B21700DB521A /* DoubleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleImageView.swift; sourceTree = "<group>"; };
+		186E7C612177CF2700DB521A /* LikesReceivedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesReceivedViewController.swift; sourceTree = "<group>"; };
+		186E7C662177CFD900DB521A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		186E7C682177D0A200DB521A /* LikesReceivedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesReceivedCell.swift; sourceTree = "<group>"; };
+		186E7C6A2177D2E800DB521A /* Lane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lane.swift; sourceTree = "<group>"; };
+		186E7C6C2177D51000DB521A /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		187AB9132177D7BD00D36C36 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		187AB9152177D81500D36C36 /* UserServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
+		187AB9172177D8D700D36C36 /* FirebaseResponsePaser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseResponsePaser.swift; sourceTree = "<group>"; };
 		188228DD2176288400CAEB8A /* Match.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Match.storyboard; sourceTree = "<group>"; };
 		188228DF217628EF00CAEB8A /* LikesReceived.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikesReceived.storyboard; sourceTree = "<group>"; };
 		188228E1217628F800CAEB8A /* Communication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Communication.storyboard; sourceTree = "<group>"; };
 		188228E3217628FE00CAEB8A /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		188228E621762F6C00CAEB8A /* MatchCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchCard.xib; sourceTree = "<group>"; };
-		188228E8217634BD00CAEB8A /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = LoLMatch/Sources/View/MatchCard/UIViewExtension.swift; sourceTree = SOURCE_ROOT; };
-		188228EA21764F7600CAEB8A /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RoundedImageView.swift; path = LoLMatch/Sources/View/MatchCard/RoundedImageView.swift; sourceTree = SOURCE_ROOT; };
+		188228E8217634BD00CAEB8A /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = LoLMatch/Sources/Util/UIViewExtension.swift; sourceTree = SOURCE_ROOT; };
+		188228EA21764F7600CAEB8A /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RoundedImageView.swift; path = LoLMatch/Sources/Model/RoundedImageView.swift; sourceTree = SOURCE_ROOT; };
 		188228EC2176506000CAEB8A /* MatchCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCard.swift; sourceTree = "<group>"; };
 		1E41226AD7B2FA72A55B55B8 /* Pods-LoLMatchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoLMatchUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoLMatchUITests/Pods-LoLMatchUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		22840CB7734EEE095E5BE0EB /* Pods_LoLMatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoLMatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,7 +82,6 @@
 		9F9CCFAEF068D5403E5E655A /* Pods_LoLMatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoLMatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4359342175FE3D008A94FC /* LoLMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoLMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4359372175FE3D008A94FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AE4359392175FE3D008A94FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AE43593C2175FE3D008A94FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE43593F2175FE3D008A94FC /* LoLMatch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoLMatch.xcdatamodel; sourceTree = "<group>"; };
 		AE4359412175FE40008A94FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -118,6 +132,33 @@
 				186E7C5F2177B21700DB521A /* DoubleImageView.swift */,
 			);
 			path = DoubleImageView;
+			sourceTree = "<group>";
+		};
+		186E7C632177CFA800DB521A /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				188228E8217634BD00CAEB8A /* UIViewExtension.swift */,
+				187AB9172177D8D700D36C36 /* FirebaseResponsePaser.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		186E7C642177CFB600DB521A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				187AB9152177D81500D36C36 /* UserServices.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		186E7C652177CFBF00DB521A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				188228EA21764F7600CAEB8A /* RoundedImageView.swift */,
+				186E7C662177CFD900DB521A /* User.swift */,
+				186E7C6A2177D2E800DB521A /* Lane.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		188228E521762F4E00CAEB8A /* MatchCard */ = {
@@ -205,29 +246,15 @@
 			isa = PBXGroup;
 			children = (
 				AE4359372175FE3D008A94FC /* AppDelegate.swift */,
+				186E7C6C2177D51000DB521A /* FirebaseManager.swift */,
 			);
 			path = Infrastructure;
-			sourceTree = "<group>";
-		};
-		AE43596C217600CF008A94FC /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				188228E8217634BD00CAEB8A /* UIViewExtension.swift */,
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
-		AE43596D217600D9008A94FC /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		AE43596E217600E4008A94FC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AE4359392175FE3D008A94FC /* ViewController.swift */,
+				186E7C612177CF2700DB521A /* LikesReceivedViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -243,27 +270,20 @@
 				188228E1217628F800CAEB8A /* Communication.storyboard */,
 				188228E3217628FE00CAEB8A /* Profile.storyboard */,
 				AE4359432175FE40008A94FC /* LaunchScreen.storyboard */,
+				186E7C682177D0A200DB521A /* LikesReceivedCell.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		AE435970217600FF008A94FC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				188228EA21764F7600CAEB8A /* RoundedImageView.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		AE43597121760124008A94FC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				AE43596B217600B8008A94FC /* Infrastructure */,
-				AE43596C217600CF008A94FC /* Util */,
-				AE43596D217600D9008A94FC /* Service */,
+				186E7C632177CFA800DB521A /* Util */,
+				186E7C642177CFB600DB521A /* Service */,
 				AE43596E217600E4008A94FC /* Controller */,
 				AE43596F217600EF008A94FC /* View */,
-				AE435970217600FF008A94FC /* Model */,
+				186E7C652177CFBF00DB521A /* Model */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -274,6 +294,7 @@
 				AE4359412175FE40008A94FC /* Assets.xcassets */,
 				AE43593E2175FE3D008A94FC /* LoLMatch.xcdatamodeld */,
 				AE4359462175FE40008A94FC /* Info.plist */,
+				187AB9132177D7BD00D36C36 /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -393,6 +414,7 @@
 				AE4359422175FE40008A94FC /* Assets.xcassets in Resources */,
 				AE43593D2175FE3D008A94FC /* Main.storyboard in Resources */,
 				188228E721762F6C00CAEB8A /* MatchCard.xib in Resources */,
+				187AB9142177D7BD00D36C36 /* GoogleService-Info.plist in Resources */,
 				188228E4217628FE00CAEB8A /* Profile.storyboard in Resources */,
 				188228E2217628F800CAEB8A /* Communication.storyboard in Resources */,
 			);
@@ -477,14 +499,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LoLMatch/Pods-LoLMatch-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -498,10 +526,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE43593A2175FE3D008A94FC /* ViewController.swift in Sources */,
 				188228EB21764F7600CAEB8A /* RoundedImageView.swift in Sources */,
 				AE4359382175FE3D008A94FC /* AppDelegate.swift in Sources */,
 				186E7C602177B21700DB521A /* DoubleImageView.swift in Sources */,
+				186E7C622177CF2700DB521A /* LikesReceivedViewController.swift in Sources */,
+				187AB9162177D81500D36C36 /* UserServices.swift in Sources */,
+				186E7C6D2177D51000DB521A /* FirebaseManager.swift in Sources */,
+				186E7C672177CFD900DB521A /* User.swift in Sources */,
+				187AB9182177D8D700D36C36 /* FirebaseResponsePaser.swift in Sources */,
+				186E7C6B2177D2E800DB521A /* Lane.swift in Sources */,
+				186E7C692177D0A200DB521A /* LikesReceivedCell.swift in Sources */,
 				188228E9217634BD00CAEB8A /* UIViewExtension.swift in Sources */,
 				AE4359402175FE3D008A94FC /* LoLMatch.xcdatamodeld in Sources */,
 				188228ED2176506000CAEB8A /* MatchCard.swift in Sources */,
