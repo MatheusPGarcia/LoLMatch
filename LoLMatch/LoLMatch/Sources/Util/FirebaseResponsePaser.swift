@@ -10,7 +10,11 @@ import Foundation
 
 class FirebaseResponsePaser {
     
-    static func parseUsers(from dict: [String : Any]) -> [User]? {
+    /// Functions responsible to parse all Users from Firebase
+    ///
+    /// - Parameter dict: JSON received from Firebase
+    /// - Returns: Array of Users parsed from Firebase
+    static func parseUsers(from dict: [String : Any]) -> [User] {
         
         var users = [User]()
         
@@ -31,5 +35,4 @@ class FirebaseResponsePaser {
         
         return users
     }
-
 }

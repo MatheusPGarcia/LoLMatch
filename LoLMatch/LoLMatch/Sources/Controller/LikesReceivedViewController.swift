@@ -45,9 +45,30 @@ extension LikesReceivedViewController {
     
     private func loadUsers() {
         
-        UserServices.getAllUsers { users in
+        self.users.removeAll()
+        
+        UserServices.getAllUsers { [unowned self] users in
             if let validUsers = users {
                 self.users = validUsers
+                self.loadReceivedLikes()
+            }
+        }
+    }
+    
+    private func loadReceivedLikes() {
+
+        UserServices.getAllReceivedLikes() { [unowned self] receivedLikes in
+            if let validLikes = receivedLikes {
+                
+                var usersLiked = [User]()
+                
+                for validLike in validLikes {
+                    for user in self.users where user.summonerId == validLike {
+                        usersLiked.append(user)
+                    }
+                }
+                self.users = usersLiked
+                
                 self.tableView.reloadData()
             }
         }
@@ -66,6 +87,8 @@ extension LikesReceivedViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LikesReceivedCell") as! LikesReceivedCell
         cell.setup(user: self.users[indexPath.row])
+        cell.layoutSubviews()
+        cell.layoutIfNeeded()
         return cell
     }
     
@@ -74,11 +97,11 @@ extension LikesReceivedViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 388
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 388
+        return 365
     }
     
 }
