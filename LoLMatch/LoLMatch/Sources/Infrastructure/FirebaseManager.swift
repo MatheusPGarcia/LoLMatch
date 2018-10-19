@@ -11,6 +11,7 @@ import FirebaseDatabase
 
 class FirebaseManager {
     
+    /// Referente of the Firebase Database
     private static var ref: DatabaseReference! = Database.database().reference()
     
     static func getAllUsers(completion: @escaping (([String : Any]?) -> Void)) {
@@ -25,6 +26,11 @@ class FirebaseManager {
         }
     }
     
+    /// Method responsble to get all the receivedLikes from a specific summonerId
+    ///
+    /// - Parameters:
+    ///   - summonerId: Od of the summoner to get the likes
+    ///   - completion: Array of summonerIds
     static func getAllReceivedLikes(from summonerId: String, completion: @escaping (([Int]?) -> Void)) {
         
         self.ref.child("Users").child(summonerId).child("receivedLikes").observeSingleEvent(of: .value) { snapshot in
@@ -38,6 +44,12 @@ class FirebaseManager {
         }
     }
     
+    /// Method responsible to perform a Like from a User to another one
+    ///
+    /// - Parameters:
+    ///   - currentSummonerId: Id of the user who will like other user
+    ///   - summonerId: Id of the user who will be liked
+    ///   - completion: Success boolean value
     static func likeUser(currentSummonerId: Int, summonerId: String, completion: @escaping ((Bool) -> Void)) {
         
         self.ref.child("Users").child(summonerId).child("receivedLikes").observeSingleEvent(of: .value) { snapshot in
