@@ -12,7 +12,7 @@
         <!--Match-->
         <scene sceneID="uBb-Nv-fts">
             <objects>
-                <viewController title="Match" id="lKb-jD-dYo" sceneMemberID="viewController">
+                <viewController title="Match" id="lKb-jD-dYo" customClass="MatchViewController" customModule="LoLMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hfI-op-I2Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,6 +20,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dMV-36-3Wz" customClass="MatchCard" customModule="LoLMatch" customModuleProvider="target">
                                 <rect key="frame" x="20" y="74" width="335" height="529"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="xTl-jo-M4B" appends="YES" id="pI8-ZM-Ory"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -34,8 +38,16 @@
                     <navigationItem key="navigationItem" title="Match" id="CNF-hi-Mw2"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cardView" destination="dMV-36-3Wz" id="mmh-mW-fyw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t2T-Of-Hkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="xTl-jo-M4B">
+                    <connections>
+                        <action selector="matchCardPressed:" destination="lKb-jD-dYo" id="REG-4e-Tqy"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-108" y="114"/>
         </scene>
