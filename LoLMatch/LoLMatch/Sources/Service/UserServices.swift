@@ -64,5 +64,20 @@ class UserServices {
         }
         
     }
+    
+    /// Method responsible to perform a Match from a User to another one
+    ///
+    /// - Parameters:
+    ///   - summonerId: Id of the user who will be matched
+    ///   - completion: Success boolean value
+    static func matchUser(summonerId: Int, completion: @escaping ((Bool) -> Void)) {
+        
+         let currentSummonerId = UserServices.getCurrentUser().summonerId
+        
+        FirebaseManager.matchUser(currentSummonerId: currentSummonerId, summonerId: summonerId) { success in
+            completion(success)
+        }
+        
+    }
         
 }

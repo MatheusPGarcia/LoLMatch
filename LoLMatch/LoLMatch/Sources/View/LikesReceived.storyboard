@@ -236,6 +236,9 @@
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlR-op-mZ8">
                                                                             <rect key="frame" x="0.0" y="0.0" width="167" height="44"/>
                                                                             <state key="normal" title="DISLIKE"/>
+                                                                            <connections>
+                                                                                <action selector="dislikeUser:" destination="snr-an-0nm" eventType="touchUpInside" id="wjf-oO-po9"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -259,6 +262,9 @@
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJ3-bn-3Ew">
                                                                             <rect key="frame" x="0.0" y="0.0" width="167" height="44"/>
                                                                             <state key="normal" title="LIKE"/>
+                                                                            <connections>
+                                                                                <action selector="likeUser:" destination="snr-an-0nm" eventType="touchUpInside" id="RzV-im-UmD"/>
+                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

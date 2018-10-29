@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol LikeUserDelegate: class {
+    func likeUser(summonerId: Int)
+    func dislikeUser(summonerId: Int)
+}
+
 class LikesReceivedCell: UITableViewCell {
     
     // MARK: - Outlets
@@ -27,7 +32,29 @@ class LikesReceivedCell: UITableViewCell {
     @IBOutlet var kdaLabels: [UILabel]!
     
     
-    func setup(user: User) {
+    // MARK: - Properties
+    private var summonoerId: Int = -1
+    weak var delegate: LikeUserDelegate?
+    
+    
+    // MARK: - Actions
+    @IBAction func likeUser(_ sender: UIButton) {
+        if let delegate = self.delegate {
+            delegate.likeUser(summonerId: self.summonoerId)
+        }
+    }
+    
+    @IBAction func dislikeUser(_ sender: UIButton) {
+        if let delegate = self.delegate {
+            delegate.dislikeUser(summonerId: self.summonoerId)
+        }
+    }
+    
+    
+    // MARK: - Methods
+    func setup(user: User, delegate: LikeUserDelegate) {
+        self.summonoerId = user.summonerId
+        self.delegate = delegate
         self.primaryLaneLabel.text = user.lane1.description()
         self.secondaryLaneLabel.text = user.lane2.description()
         self.lanesView.primaryImageView.image = user.lane1.image()

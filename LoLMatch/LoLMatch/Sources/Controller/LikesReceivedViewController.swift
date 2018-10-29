@@ -86,7 +86,7 @@ extension LikesReceivedViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LikesReceivedCell") as! LikesReceivedCell
-        cell.setup(user: self.users[indexPath.row])
+        cell.setup(user: self.users[indexPath.row], delegate: self)
         cell.layoutSubviews()
         cell.layoutIfNeeded()
         return cell
@@ -104,4 +104,26 @@ extension LikesReceivedViewController: UITableViewDelegate, UITableViewDataSourc
         return 365
     }
     
+}
+
+
+// MARK: - Like User Delegate
+extension LikesReceivedViewController: LikeUserDelegate {
+    
+    func likeUser(summonerId: Int) {
+        UserServices.matchUser(summonerId: summonerId) { success in
+            if success {
+                // TODO: Go to the Match View (?)
+                self.createAlert(title: "Match Efetuado", message: "Nicely done, Invocador")
+                
+                self.loadReceivedLikes()
+            } else {
+                self.createAlert(title: "Oops...", message: "Houve algum problema. Tente novamente.")
+            }
+        }
+    }
+    
+    func dislikeUser(summonerId: Int) {
+        print("Implement")
+    }
 }
