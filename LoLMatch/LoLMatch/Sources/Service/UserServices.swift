@@ -50,6 +50,23 @@ class UserServices {
         }
     }
     
+    /// Method responsible to retrieve all summonerIds from the current User (summonerId)
+    ///
+    /// - Parameters:
+    ///   - completion: Array of Ids from people who like the current User
+    static func getAllMatches(completion: @escaping ([Int]?) -> Void) {
+        
+        let currentSummonerId = UserServices.getCurrentUser().summonerId
+        
+        FirebaseManager.getAllMatches(from: "\(currentSummonerId)") { matches in
+            if let validMatches = matches {
+                completion(validMatches)
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
     /// Method responsible to perform a Like from the current User to another one
     ///
     /// - Parameters:

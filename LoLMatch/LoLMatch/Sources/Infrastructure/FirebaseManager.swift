@@ -45,6 +45,25 @@ class FirebaseManager {
         }
     }
     
+    /// Method responsble to get all the matches from a specific summonerId
+    ///
+    /// - Parameters:
+    ///   - summonerId: Id of the summoner to get the matches
+    ///   - completion: Array of summonerIds
+    static func getAllMatches(from summonerId: String, completion: @escaping (([Int]?) -> Void)) {
+        
+        self.ref.child("Users").child(summonerId).child("matches").observeSingleEvent(of: .value) { snapshot in
+            // Used as Int Optional because if a value in the middle of array is deleted,
+            // Firebase returns an array with null in the previous deleted indexes
+            if let response = snapshot.value as? [Int?] {
+                // Remove the nil values
+                completion(response.compactMap({ $0 }))
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
     /// Method responsible to perform a Like from a User to another one
     ///
     /// - Parameters:
