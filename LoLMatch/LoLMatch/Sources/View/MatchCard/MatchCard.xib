@@ -155,7 +155,7 @@
                                                     <color key="value" red="0.75686274509999996" green="0.58431372550000005" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="primaryImage" value="Orianna"/>
-                                                <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="midLane"/>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="goldIII"/>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondaryViewRounded" value="YES"/>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="NO"/>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="secondaryBorderWidth">

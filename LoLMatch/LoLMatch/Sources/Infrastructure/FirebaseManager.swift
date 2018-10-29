@@ -9,14 +9,23 @@
 import Foundation
 import FirebaseDatabase
 
+enum ChildNames: String {
+    case users = "Users"
+    case receivedLikes = "receivedLikes"
+    case matches = "matches"
+}
+
 class FirebaseManager {
     
     /// Referente of the Firebase Database
     private static var ref: DatabaseReference! = Database.database().reference()
     
+    /// Method responsible to access Firebase Database to get all the Users
+    ///
+    /// - Parameter completion: Dictionary with all the Users in batabase
     static func getAllUsers(completion: @escaping (([String : Any]?) -> Void)) {
         
-        self.ref.child("Users").observeSingleEvent(of: .value) { snapshot in
+        self.ref.child(ChildNames.users.rawValue).observeSingleEvent(of: .value) { snapshot in
             
             if let response = snapshot.value as? [String : Any] {
                 completion(response)
@@ -26,38 +35,34 @@ class FirebaseManager {
         }
     }
     
-    /// Method responsble to get all the receivedLikes from a specific summonerId
+    /// Method responsible to get all the receivedLikes from a specific summonerId from Firebase
     ///
     /// - Parameters:
-    ///   - summonerId: Id of the summoner to get the likes
-    ///   - completion: Array of summonerIds
-    static func getAllReceivedLikes(from summonerId: String, completion: @escaping (([Int]?) -> Void)) {
+    ///   - summonerId: Id of a summoner to get the likes of
+    ///   - completion: Dictionary of summonerIds
+    static func getAllReceivedLikes(from summonerId: Int, completion: @escaping (([String : Any]?) -> Void)) {
         
-        self.ref.child("Users").child(summonerId).child("receivedLikes").observeSingleEvent(of: .value) { snapshot in
-            // Used as Int Optional because if a value in the middle of array is deleted,
-            // Firebase returns an array with null in the previous deleted indexes
-            if let response = snapshot.value as? [Int?] {
-                // Remove the nil values
-                completion(response.compactMap({ $0 }))
+        self.ref.child(ChildNames.users.rawValue).child("\(summonerId)").child(ChildNames.receivedLikes.rawValue).observeSingleEvent(of: .value) { snapshot in
+            
+            if let response = snapshot.value as? [String : Any] {
+                completion(response)
             } else {
                 completion(nil)
             }
         }
     }
     
-    /// Method responsble to get all the matches from a specific summonerId
+    /// Method responsible to get all the matches from a specific summonerId from Firebase
     ///
     /// - Parameters:
-    ///   - summonerId: Id of the summoner to get the matches
+    ///   - summonerId: Id of the summoner to get the matches of
     ///   - completion: Array of summonerIds
-    static func getAllMatches(from summonerId: String, completion: @escaping (([Int]?) -> Void)) {
+    static func getAllMatches(from summonerId: Int, completion: @escaping (([String : Any]?) -> Void)) {
         
-        self.ref.child("Users").child(summonerId).child("matches").observeSingleEvent(of: .value) { snapshot in
-            // Used as Int Optional because if a value in the middle of array is deleted,
-            // Firebase returns an array with null in the previous deleted indexes
-            if let response = snapshot.value as? [Int?] {
-                // Remove the nil values
-                completion(response.compactMap({ $0 }))
+        self.ref.child(ChildNames.users.rawValue).child("\(summonerId)").child(ChildNames.matches.rawValue).observeSingleEvent(of: .value) { snapshot in
+            
+            if let response = snapshot.value as? [String : Any] {
+                completion(response)
             } else {
                 completion(nil)
             }
@@ -67,93 +72,34 @@ class FirebaseManager {
     /// Method responsible to perform a Like from a User to another one
     ///
     /// - Parameters:
-    ///   - currentSummonerId: Id of the user who will like other user
+    ///   - currentSummonerId: Id of the current user
     ///   - summonerId: Id of the user who will be liked
     ///   - completion: Success boolean value
-    static func likeUser(currentSummonerId: Int, summonerId: String, completion: @escaping ((Bool) -> Void)) {
+    static func likeUser(currentSummonerId: Int, summonerId: Int, completion: @escaping ((Bool) -> Void)) {
         
-        self.ref.child("Users").child(summonerId).child("receivedLikes").observeSingleEvent(of: .value) { snapshot in
-            // Used as Int Optional because if a value in the middle of array is deleted,
-            // Firebase returns an array with null in the previous deleted indexes
-            if let response = snapshot.value as? [Int?] {
-                
-                // Remove the nil values
-                var usersId = response.compactMap({ $0 })
-                usersId.append(currentSummonerId)
-                self.ref.child("Users").child(summonerId).child("receivedLikes").setValue(usersId)
-                
-            } else {
-                self.ref.child("Users").child(summonerId).child("receivedLikes").setValue([currentSummonerId])
-            }
-            completion(true)
-        }
+        let date = Date().parseToString(format: "MM/dd/yyyy HH:mm")
+        
+        self.ref.child(ChildNames.users.rawValue).child("\(summonerId)").child(ChildNames.receivedLikes.rawValue).child("\(currentSummonerId)").setValue(["date" : date])
+        
+        completion(true)
     }
     
     /// Method responsible to perform a Match from a User to another one
     ///
     /// - Parameters:
-    ///   - currentSummonerId: Id of the user who will match with other user
+    ///   - currentSummonerId: Id of the current user
     ///   - summonerId: Id of the user who will be matched
     ///   - completion: Success boolean value
     static func matchUser(currentSummonerId: Int, summonerId: Int, completion: @escaping ((Bool) -> Void)) {
         
-        self.ref.child("Users").child("\(currentSummonerId)").child("receivedLikes").observeSingleEvent(of: .value) { snapshot in
-            // Used as Int Optional because if a value in the middle of array is deleted,
-            // Firebase returns an array with null in the previous deleted indexes
-            guard let response = snapshot.value as? [Int?] else {
-                completion(false)
-                return
-            }
-            // Remove the nil values
-            var usersId = response.compactMap({ $0 })
-            if let summonerIndex = usersId.index(where: { $0 == summonerId }) {
-                
-                // Remove the User from my Received Likes
-                usersId.remove(at: summonerIndex)
-                
-                // Update the Received Likes Node of the Current User in Firebase
-                self.ref.child("Users").child("\(currentSummonerId)").child("receivedLikes").setValue(usersId)
-                self.setMatch(currentSummonerId: currentSummonerId, summonerId: summonerId, completion: { _ in completion(true) })
-                
-            } else {
-                completion(false)
-            }
-        }
-    }
-    
-    private static func setMatch(currentSummonerId: Int, summonerId: Int, completion: @escaping ((Bool) -> Void)) {
+        self.ref.child(ChildNames.users.rawValue).child("\(currentSummonerId)").child(ChildNames.receivedLikes.rawValue).child("\(summonerId)").removeValue()
         
-        // Set the match for the first User
-        self.ref.child("Users").child("\(currentSummonerId)").child("matches").observeSingleEvent(of: .value) { snapshot in
-            // Used as Int Optional because if a value in the middle of array is deleted,
-            // Firebase returns an array with null in the previous deleted indexes
-            if let response = snapshot.value as? [Int?] {
-
-                // Remove the nil values
-                var usersId = response.compactMap({ $0 })
-                usersId.append(currentSummonerId)
-                self.ref.child("Users").child("\(summonerId)").child("matches").setValue(usersId)
-
-            } else {
-                self.ref.child("Users").child("\(summonerId)").child("matches").setValue([currentSummonerId])
-            }
+        let date = Date().parseToString(format: "MM/dd/yyyy HH:mm")
         
-            // Set the match for the second User
-            self.ref.child("Users").child("\(summonerId)").child("matches").observeSingleEvent(of: .value) { snapshot in
-                // Used as Int Optional because if a value in the middle of array is deleted,
-                // Firebase returns an array with null in the previous deleted indexes
-                if let response = snapshot.value as? [Int?] {
-
-                    // Remove the nil values
-                    var usersId = response.compactMap({ $0 })
-                    usersId.append(summonerId)
-                    self.ref.child("Users").child("\(currentSummonerId)").child("matches").setValue(usersId)
-
-                } else {
-                    self.ref.child("Users").child("\(currentSummonerId)").child("matches").setValue([summonerId])
-                }
-                completion(true)
-            }
-        }
+        self.ref.child(ChildNames.users.rawValue).child("\(currentSummonerId)").child(ChildNames.matches.rawValue).child("\(summonerId)").setValue(["date" : date])
+        
+        self.ref.child(ChildNames.users.rawValue).child("\(summonerId)").child(ChildNames.matches.rawValue).child("\(currentSummonerId)").setValue(["date" : date])
+        
+        completion(true)
     }
 }

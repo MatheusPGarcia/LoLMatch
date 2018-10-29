@@ -92,9 +92,10 @@ extension DoubleImageView {
             return false
         }
         set {
+            self.layoutIfNeeded()
+            self.layoutSubviews()
             self.primaryView.layer.cornerRadius = newValue ? self.primaryView.frame.width / 2 : 0
             self.primaryView.layer.masksToBounds = true
-            self.layoutIfNeeded()
         }
     }
     
@@ -104,9 +105,10 @@ extension DoubleImageView {
             return false
         }
         set {
+            self.layoutIfNeeded()
+            self.layoutSubviews()
             self.secondaryView.layer.cornerRadius = newValue ? self.secondaryView.frame.width / 2 : 0
             self.secondaryView.layer.masksToBounds = true
-            self.layoutIfNeeded()
         }
     }
     

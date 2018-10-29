@@ -41,9 +41,17 @@ class UserServices {
         
         let currentSummonerId = UserServices.getCurrentUser().summonerId
         
-        FirebaseManager.getAllReceivedLikes(from: "\(currentSummonerId)") { receivedLikes in
+        FirebaseManager.getAllReceivedLikes(from: currentSummonerId) { receivedLikes in
             if let validLikes = receivedLikes {
-                completion(validLikes)
+                
+                var summonerIdList = [Int]()
+                
+                for key in validLikes.keys {
+                    if let summonerId = Int(key) {
+                        summonerIdList.append(summonerId)
+                    }
+                }
+                completion(summonerIdList)
             } else {
                 completion(nil)
             }
@@ -58,9 +66,17 @@ class UserServices {
         
         let currentSummonerId = UserServices.getCurrentUser().summonerId
         
-        FirebaseManager.getAllMatches(from: "\(currentSummonerId)") { matches in
+        FirebaseManager.getAllMatches(from: currentSummonerId) { matches in
             if let validMatches = matches {
-                completion(validMatches)
+                
+                var summonerIdList = [Int]()
+                
+                for key in validMatches.keys {
+                    if let summonerId = Int(key) {
+                        summonerIdList.append(summonerId)
+                    }
+                }
+                completion(summonerIdList)
             } else {
                 completion(nil)
             }
@@ -76,10 +92,27 @@ class UserServices {
         
         let currentSummonerId = UserServices.getCurrentUser().summonerId
         
-        FirebaseManager.likeUser(currentSummonerId: currentSummonerId, summonerId: "\(summonerId)") { success in
-            completion(success)
+        FirebaseManager.getAllReceivedLikes(from: summonerId) { receivedLikes in
+            
+            if let validLikes = receivedLikes {
+                
+                // If the current User already was liked by the user in the moment, perform a Match
+                if let _ = validLikes.first(where: { $0.key == "\(currentSummonerId)" }) {
+                    FirebaseManager.matchUser(currentSummonerId: currentSummonerId, summonerId: summonerId, completion: { success in
+                        completion(success)
+                    })
+                    
+                // Otherwise, just like it
+                } else {
+                    FirebaseManager.likeUser(currentSummonerId: currentSummonerId, summonerId: summonerId) { success in
+                        completion(success)
+                    }
+                }
+                
+            } else {
+                completion(false)
+            }
         }
-        
     }
     
     /// Method responsible to perform a Match from a User to another one
