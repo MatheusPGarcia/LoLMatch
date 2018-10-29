@@ -92,12 +92,12 @@ class UserServices {
         
         let currentSummonerId = UserServices.getCurrentUser().summonerId
         
-        FirebaseManager.getAllReceivedLikes(from: summonerId) { receivedLikes in
+        FirebaseManager.getAllReceivedLikes(from: currentSummonerId) { receivedLikes in
             
             if let validLikes = receivedLikes {
                 
                 // If the current User already was liked by the user in the moment, perform a Match
-                if let _ = validLikes.first(where: { $0.key == "\(currentSummonerId)" }) {
+                if let _ = validLikes.first(where: { $0.key == "\(summonerId)" }) {
                     FirebaseManager.matchUser(currentSummonerId: currentSummonerId, summonerId: summonerId, completion: { success in
                         completion(success)
                     })
@@ -110,7 +110,9 @@ class UserServices {
                 }
                 
             } else {
-                completion(false)
+                FirebaseManager.likeUser(currentSummonerId: currentSummonerId, summonerId: summonerId) { success in
+                    completion(success)
+                }
             }
         }
     }
