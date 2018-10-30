@@ -9,14 +9,12 @@
 import Foundation
 import Moya
 
-class BaseServiceProvider {
+class BaseServiceProvider: BaseService {
 
-    static func getSummonerId(byName summonerName: String) {
+    static func getSummonerId(byName summonerName: String, completion: @escaping (UserIdProfile?, Error?) -> Void) {
 
-        riotProvider.request(.getUserId(summonerName: summonerName)) { (response) in
+        let target = RiotService.getUserId(summonerName: summonerName)
 
-            response.map(<#T##transform: (Response) -> U##(Response) -> U#>)
-
-        }
+        request(provider: riotProvider, target: target, type: UserIdProfile.self, completion: completion)
     }
 }
