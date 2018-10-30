@@ -19,7 +19,7 @@
 		AE4359502175FE41008A94FC /* LoLMatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE43594F2175FE41008A94FC /* LoLMatchTests.swift */; };
 		AE43595B2175FE41008A94FC /* LoLMatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE43595A2175FE41008A94FC /* LoLMatchUITests.swift */; };
 		AE4359742176091B008A94FC /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4359732176091B008A94FC /* ServiceManager.swift */; };
-		AEB9F7FF21760B570040AB10 /* RiotService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9F7FE21760B570040AB10 /* RiotService.swift */; };
+		AEB9F7FF21760B570040AB10 /* RiotProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9F7FE21760B570040AB10 /* RiotProvider.swift */; };
 		AEB9F80521760D8A0040AB10 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9F80421760D8A0040AB10 /* Credentials.swift */; };
 		AFABDC8C908B5F3781BA749A /* Pods_LoLMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22840CB7734EEE095E5BE0EB /* Pods_LoLMatch.framework */; };
 		C4ECEC49E60120DC4EC7186C /* Pods_LoLMatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 913E005653ED98D17EDB9ECD /* Pods_LoLMatchUITests.framework */; };
@@ -67,7 +67,7 @@
 		AE43595A2175FE41008A94FC /* LoLMatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoLMatchUITests.swift; sourceTree = "<group>"; };
 		AE43595C2175FE41008A94FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE4359732176091B008A94FC /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
-		AEB9F7FE21760B570040AB10 /* RiotService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiotService.swift; sourceTree = "<group>"; };
+		AEB9F7FE21760B570040AB10 /* RiotProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiotProvider.swift; sourceTree = "<group>"; };
 		AEB9F80421760D8A0040AB10 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		B37F7BFD86A4C16FAFD75F90 /* Pods-LoLMatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoLMatchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoLMatchTests/Pods-LoLMatchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D8F4933E0B65422D6DA20395 /* Pods-LoLMatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoLMatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoLMatch/Pods-LoLMatch.release.xcconfig"; sourceTree = "<group>"; };
@@ -240,7 +240,7 @@
 		AEB9F7FD21760ABE0040AB10 /* Riot */ = {
 			isa = PBXGroup;
 			children = (
-				AEB9F7FE21760B570040AB10 /* RiotService.swift */,
+				AEB9F7FE21760B570040AB10 /* RiotProvider.swift */,
 			);
 			path = Riot;
 			sourceTree = "<group>";
@@ -484,7 +484,7 @@
 				AE43593A2175FE3D008A94FC /* ViewController.swift in Sources */,
 				AE4359382175FE3D008A94FC /* AppDelegate.swift in Sources */,
 				AE4359402175FE3D008A94FC /* LoLMatch.xcdatamodeld in Sources */,
-				AEB9F7FF21760B570040AB10 /* RiotService.swift in Sources */,
+				AEB9F7FF21760B570040AB10 /* RiotProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

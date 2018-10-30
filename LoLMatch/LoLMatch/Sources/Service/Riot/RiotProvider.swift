@@ -1,5 +1,5 @@
 //
-//  RiotService.swift
+//  RiotProvider.swift
 //  LoLMatch
 //
 //  Created by Matheus Garcia on 16/10/18.
@@ -8,13 +8,13 @@
 
 import Moya
 
-let riotProvider = MoyaProvider<RiotService>()
+let riotProvider = MoyaProvider<RiotProvider>()
 
-enum RiotService {
+enum RiotProvider {
     case getUserId(summonerName: String)
 }
 
-extension RiotService: TargetType {
+extension RiotProvider: TargetType {
     var baseURL: URL {
         guard let url = URL(string: "https://br1.api.riotgames.com/lol/") else { fatalError("Failed to get base url") }
         return url

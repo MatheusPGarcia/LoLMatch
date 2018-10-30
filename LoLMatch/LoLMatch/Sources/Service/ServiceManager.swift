@@ -13,7 +13,7 @@ class BaseServiceProvider: BaseService {
 
     static func getSummonerId(byName summonerName: String, completion: @escaping (UserIdProfile?, Error?) -> Void) {
 
-        let target = RiotService.getUserId(summonerName: summonerName)
+        let target = RiotProvider.getUserId(summonerName: summonerName)
 
         request(provider: riotProvider, target: target, type: UserIdProfile.self, completion: completion)
     }
