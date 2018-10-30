@@ -68,8 +68,9 @@ extension LikesReceivedViewController {
                         usersLiked.append(user)
                     }
                 }
-                self.users = usersLiked
             }
+            
+            self.users = usersLiked
             
             self.tableView.reloadData()
         }
