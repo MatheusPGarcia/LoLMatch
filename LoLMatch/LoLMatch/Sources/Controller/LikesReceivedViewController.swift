@@ -58,9 +58,10 @@ extension LikesReceivedViewController {
     private func loadReceivedLikes() {
 
         UserServices.getAllReceivedLikes() { [unowned self] receivedLikes in
+            
+            var usersLiked = [User]()
+            
             if let validLikes = receivedLikes {
-                
-                var usersLiked = [User]()
                 
                 for validLike in validLikes {
                     for user in self.users where user.summonerId == validLike {
