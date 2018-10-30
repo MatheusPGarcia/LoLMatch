@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0F83B009A98F85C88ECEBBCB /* Pods_LoLMatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F9CCFAEF068D5403E5E655A /* Pods_LoLMatchTests.framework */; };
+		AE2F88F421888B1E0092B2F9 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2F88F321888B1E0092B2F9 /* BaseService.swift */; };
+		AE2F88FB2188914F0092B2F9 /* UserIdProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2F88FA2188914F0092B2F9 /* UserIdProfile.swift */; };
 		AE4359382175FE3D008A94FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4359372175FE3D008A94FC /* AppDelegate.swift */; };
 		AE43593A2175FE3D008A94FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4359392175FE3D008A94FC /* ViewController.swift */; };
 		AE43593D2175FE3D008A94FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE43593B2175FE3D008A94FC /* Main.storyboard */; };
@@ -16,6 +18,9 @@
 		AE4359452175FE40008A94FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE4359432175FE40008A94FC /* LaunchScreen.storyboard */; };
 		AE4359502175FE41008A94FC /* LoLMatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE43594F2175FE41008A94FC /* LoLMatchTests.swift */; };
 		AE43595B2175FE41008A94FC /* LoLMatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE43595A2175FE41008A94FC /* LoLMatchUITests.swift */; };
+		AE4359742176091B008A94FC /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4359732176091B008A94FC /* ServiceManager.swift */; };
+		AEB9F7FF21760B570040AB10 /* RiotProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9F7FE21760B570040AB10 /* RiotProvider.swift */; };
+		AEB9F80521760D8A0040AB10 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9F80421760D8A0040AB10 /* Credentials.swift */; };
 		AFABDC8C908B5F3781BA749A /* Pods_LoLMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22840CB7734EEE095E5BE0EB /* Pods_LoLMatch.framework */; };
 		C4ECEC49E60120DC4EC7186C /* Pods_LoLMatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 913E005653ED98D17EDB9ECD /* Pods_LoLMatchUITests.framework */; };
 /* End PBXBuildFile section */
@@ -45,6 +50,8 @@
 		7D56F5FB5C22EA01312E2A61 /* Pods-LoLMatchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoLMatchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoLMatchTests/Pods-LoLMatchTests.release.xcconfig"; sourceTree = "<group>"; };
 		913E005653ED98D17EDB9ECD /* Pods_LoLMatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoLMatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9CCFAEF068D5403E5E655A /* Pods_LoLMatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoLMatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE2F88F321888B1E0092B2F9 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		AE2F88FA2188914F0092B2F9 /* UserIdProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIdProfile.swift; sourceTree = "<group>"; };
 		AE4359342175FE3D008A94FC /* LoLMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoLMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4359372175FE3D008A94FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE4359392175FE3D008A94FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +66,9 @@
 		AE4359562175FE41008A94FC /* LoLMatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoLMatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE43595A2175FE41008A94FC /* LoLMatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoLMatchUITests.swift; sourceTree = "<group>"; };
 		AE43595C2175FE41008A94FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE4359732176091B008A94FC /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		AEB9F7FE21760B570040AB10 /* RiotProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiotProvider.swift; sourceTree = "<group>"; };
+		AEB9F80421760D8A0040AB10 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		B37F7BFD86A4C16FAFD75F90 /* Pods-LoLMatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoLMatchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoLMatchTests/Pods-LoLMatchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D8F4933E0B65422D6DA20395 /* Pods-LoLMatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoLMatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoLMatch/Pods-LoLMatch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,6 +124,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AE2F88F721888FB10092B2F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AE2F88FA2188914F0092B2F9 /* UserIdProfile.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AE43592B2175FE3D008A94FC = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				AE43597121760124008A94FC /* Sources */,
-				AE43597221760134008A94FC /* Resources */,
+				AEB9F80B217611610040AB10 /* Resources */,
 			);
 			path = LoLMatch;
 			sourceTree = "<group>";
@@ -174,6 +192,7 @@
 		AE43596C217600CF008A94FC /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				AEB9F80321760D7A0040AB10 /* Credentials */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -181,6 +200,9 @@
 		AE43596D217600D9008A94FC /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				AEB9F7FD21760ABE0040AB10 /* Riot */,
+				AE2F88F321888B1E0092B2F9 /* BaseService.swift */,
+				AE4359732176091B008A94FC /* ServiceManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -202,13 +224,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		AE435970217600FF008A94FC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		AE43597121760124008A94FC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,12 +232,28 @@
 				AE43596D217600D9008A94FC /* Service */,
 				AE43596E217600E4008A94FC /* Controller */,
 				AE43596F217600EF008A94FC /* View */,
-				AE435970217600FF008A94FC /* Model */,
+				AE2F88F721888FB10092B2F9 /* Model */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		AE43597221760134008A94FC /* Resources */ = {
+		AEB9F7FD21760ABE0040AB10 /* Riot */ = {
+			isa = PBXGroup;
+			children = (
+				AEB9F7FE21760B570040AB10 /* RiotProvider.swift */,
+			);
+			path = Riot;
+			sourceTree = "<group>";
+		};
+		AEB9F80321760D7A0040AB10 /* Credentials */ = {
+			isa = PBXGroup;
+			children = (
+				AEB9F80421760D8A0040AB10 /* Credentials.swift */,
+			);
+			path = Credentials;
+			sourceTree = "<group>";
+		};
+		AEB9F80B217611610040AB10 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				AE4359412175FE40008A94FC /* Assets.xcassets */,
@@ -446,9 +477,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE2F88F421888B1E0092B2F9 /* BaseService.swift in Sources */,
+				AEB9F80521760D8A0040AB10 /* Credentials.swift in Sources */,
+				AE4359742176091B008A94FC /* ServiceManager.swift in Sources */,
+				AE2F88FB2188914F0092B2F9 /* UserIdProfile.swift in Sources */,
 				AE43593A2175FE3D008A94FC /* ViewController.swift in Sources */,
 				AE4359382175FE3D008A94FC /* AppDelegate.swift in Sources */,
 				AE4359402175FE3D008A94FC /* LoLMatch.xcdatamodeld in Sources */,
+				AEB9F7FF21760B570040AB10 /* RiotProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,7 +662,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3W69VTQXGX;
-				INFOPLIST_FILE = LoLMatch/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LoLMatch/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -645,7 +681,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3W69VTQXGX;
-				INFOPLIST_FILE = LoLMatch/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LoLMatch/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
