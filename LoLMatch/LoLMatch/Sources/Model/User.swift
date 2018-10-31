@@ -16,4 +16,5 @@ struct User {
     var lane2: Lane
     var duoLane1: Lane
     var duoLane2: Lane
+    
 }

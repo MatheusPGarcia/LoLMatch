@@ -48,6 +48,7 @@ extension LikesReceivedViewController {
         self.users.removeAll()
         
         UserServices.getAllUsers { [unowned self] users in
+            
             if let validUsers = users {
                 self.users = validUsers
                 self.loadReceivedLikes()
@@ -75,7 +76,6 @@ extension LikesReceivedViewController {
             self.tableView.reloadData()
         }
     }
-    
 }
 
 

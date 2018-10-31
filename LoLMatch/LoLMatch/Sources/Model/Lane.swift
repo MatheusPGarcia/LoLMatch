@@ -45,6 +45,23 @@ enum Lane {
         }
     }
     
+    func keyDescription() -> String {
+        switch self {
+        case .top:
+            return "Top"
+        case .jungle:
+            return "Jungle"
+        case .mid:
+            return "Mid"
+        case .adc:
+            return "Bot ADC"
+        case .sup:
+            return "Bot sup"
+        case .fill:
+            return "Preencher"
+        }
+    }
+    
     func image() -> UIImage {
         switch self {
         case .top:
