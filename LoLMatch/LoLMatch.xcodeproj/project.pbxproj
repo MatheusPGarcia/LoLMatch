@@ -41,6 +41,7 @@
 		AE4075DB218B30AB000857EB /* Elo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075DA218B30AB000857EB /* Elo.swift */; };
 		AE4075DE218B3613000857EB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075DD218B3613000857EB /* Logger.swift */; };
 		AE4075E1218B371C000857EB /* LoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075E0218B371C000857EB /* LoggerPlugin.swift */; };
+		AE4075E3218B4089000857EB /* Regions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075E2218B4089000857EB /* Regions.swift */; };
 		AE4359382175FE3D008A94FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4359372175FE3D008A94FC /* AppDelegate.swift */; };
 		AE43593D2175FE3D008A94FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE43593B2175FE3D008A94FC /* Main.storyboard */; };
 		AE4359402175FE3D008A94FC /* LoLMatch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE43593E2175FE3D008A94FC /* LoLMatch.xcdatamodeld */; };
@@ -110,6 +111,7 @@
 		AE4075DA218B30AB000857EB /* Elo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elo.swift; sourceTree = "<group>"; };
 		AE4075DD218B3613000857EB /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		AE4075E0218B371C000857EB /* LoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerPlugin.swift; sourceTree = "<group>"; };
+		AE4075E2218B4089000857EB /* Regions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regions.swift; sourceTree = "<group>"; };
 		AE4359342175FE3D008A94FC /* LoLMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoLMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4359372175FE3D008A94FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE43593C2175FE3D008A94FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				AE4075D3218B2538000857EB /* Riot Provider.swift */,
+				AE4075E2218B4089000857EB /* Regions.swift */,
 			);
 			path = Riot;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				187AB9182177D8D700D36C36 /* FirebaseResponsePaser.swift in Sources */,
 				AE4075CE218B24F2000857EB /* BaseService.swift in Sources */,
 				AE4075D0218B24F2000857EB /* UserServices.swift in Sources */,
+				AE4075E3218B4089000857EB /* Regions.swift in Sources */,
 				186E7C6B2177D2E800DB521A /* Lane.swift in Sources */,
 				18FA17052188D1C700D43A94 /* SignupViewController.swift in Sources */,
 				186E7C692177D0A200DB521A /* LikesReceivedCell.swift in Sources */,
