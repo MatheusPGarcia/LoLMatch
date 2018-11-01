@@ -27,6 +27,7 @@
 		188228E9217634BD00CAEB8A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188228E8217634BD00CAEB8A /* UIViewExtension.swift */; };
 		188228EB21764F7600CAEB8A /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188228EA21764F7600CAEB8A /* RoundedImageView.swift */; };
 		188228ED2176506000CAEB8A /* MatchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188228EC2176506000CAEB8A /* MatchCard.swift */; };
+		18B12E9E218AB983007F1979 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B12E9D218AB983007F1979 /* UserDefaultsManager.swift */; };
 		18BA80BD218743E0007443C9 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA80BC218743E0007443C9 /* UIViewControllerExtension.swift */; };
 		18FA17052188D1C700D43A94 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA17042188D1C700D43A94 /* SignupViewController.swift */; };
 		AE4359382175FE3D008A94FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4359372175FE3D008A94FC /* AppDelegate.swift */; };
@@ -78,6 +79,7 @@
 		188228E8217634BD00CAEB8A /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = LoLMatch/Sources/Util/UIViewExtension.swift; sourceTree = SOURCE_ROOT; };
 		188228EA21764F7600CAEB8A /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RoundedImageView.swift; path = LoLMatch/Sources/Model/RoundedImageView.swift; sourceTree = SOURCE_ROOT; };
 		188228EC2176506000CAEB8A /* MatchCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCard.swift; sourceTree = "<group>"; };
+		18B12E9D218AB983007F1979 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		18BA80BC218743E0007443C9 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		18FA17042188D1C700D43A94 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		1E41226AD7B2FA72A55B55B8 /* Pods-LoLMatchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoLMatchUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoLMatchUITests/Pods-LoLMatchUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 			children = (
 				AE4359372175FE3D008A94FC /* AppDelegate.swift */,
 				186E7C6C2177D51000DB521A /* FirebaseManager.swift */,
+				18B12E9D218AB983007F1979 /* UserDefaultsManager.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 			files = (
 				188228EB21764F7600CAEB8A /* RoundedImageView.swift in Sources */,
 				180A6CF8218781FC00E6AFB9 /* DateExtension.swift in Sources */,
+				18B12E9E218AB983007F1979 /* UserDefaultsManager.swift in Sources */,
 				AE4359382175FE3D008A94FC /* AppDelegate.swift in Sources */,
 				186E7C602177B21700DB521A /* DoubleImageView.swift in Sources */,
 				186E7C622177CF2700DB521A /* LikesReceivedViewController.swift in Sources */,

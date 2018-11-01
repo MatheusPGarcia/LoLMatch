@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignupViewController: UIViewController {
+class SignupViewController: UITableViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var summonerNameTextField: UITextField!
@@ -21,8 +21,8 @@ class SignupViewController: UIViewController {
     
     // MARK: - Properties
     var summonerStatus: Bool = false
-    let availablePrimaryLanes: [Lane] = [.top, .jungle, .mid, .adc, .sup, .fill]
-    let availableSecondaryLanes: [Lane] = [.top, .jungle, .mid, .adc, .sup]
+    let availablePrimaryLanes: [Lane] = [.top, .jungle, .mid, .adc, .sup]
+    let availableSecondaryLanes: [Lane] = [.top, .jungle, .mid, .adc, .sup, .fill]
     let primaryPicker = UIPickerView()
     let secondaryPicker = UIPickerView()
     
@@ -39,6 +39,8 @@ class SignupViewController: UIViewController {
         self.duolane2TextField.inputView = secondaryPicker
         self.secondaryPicker.delegate = self
         
+        self.tableView.keyboardDismissMode = .onDrag
+        
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     
@@ -46,6 +48,18 @@ class SignupViewController: UIViewController {
     // MARK: - Actions
     @IBAction func searchSummoner(_ sender: UIButton) {
         
+        if let text = self.summonerNameTextField.text {
+            if text.isEmpty {
+                self.createAlert(title: "Oops...", message: "Preencha o campo de nome de invocador")
+            } else {
+                self.summonerStatus = true
+                self.summonerStatusImage.isHidden = false
+                
+                self.summonerStatusImage.image = self.summonerStatus ? #imageLiteral(resourceName: "Ok") : #imageLiteral(resourceName: "Nok")
+            }
+        } else {
+            self.createAlert(title: "Oops...", message: "Occoreu um erro. Tente novamente.")
+        }
     }
     
     @IBAction func signup(_ sender: UIButton) {
@@ -69,7 +83,23 @@ extension SignupViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerView == primaryPicker ? availablePrimaryLanes[row].description() : availableSecondaryLanes[row].description()
+        return pickerView == primaryPicker ? availablePrimaryLanes[row].description() : availableSecondaryLanes[row ].description()
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == self.primaryPicker {
+            if lane1TextField.isFirstResponder {
+                self.lane1TextField.text = self.availablePrimaryLanes[row].description()
+            } else {
+                self.duolane1TextField.text = self.availablePrimaryLanes[row].description()
+            }
+        } else {
+            if lane2TextField.isFirstResponder {
+                self.lane2TextField.text = self.availableSecondaryLanes[row].description()
+            } else {
+                self.duolane2TextField.text = self.availableSecondaryLanes[row].description()
+            }
+        }
     }
    
 }
