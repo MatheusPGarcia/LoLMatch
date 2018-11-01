@@ -18,6 +18,9 @@ class SignupViewController: UITableViewController {
     @IBOutlet weak var duolane1TextField: UITextField!
     @IBOutlet weak var duolane2TextField: UITextField!
     
+    @IBOutlet weak var activity: UIActivityIndicatorView!
+    @IBOutlet weak var searchButton: UIButton!
+    
     
     // MARK: - Properties
     var summonerStatus: Bool = false
@@ -85,7 +88,15 @@ class SignupViewController: UITableViewController {
                 self.createAlert(title: "Oops...", message: "Preencha o campo de nome de invocador")
             } else {
 
+                self.activity.startAnimating()
+                self.searchButton.isEnabled = false
+                self.summonerStatusImage.isHidden = true
+                
                 UserServices.getSummonerId(byName: text) { (user, error) in
+                    
+                    self.activity.stopAnimating()
+                    self.searchButton.isEnabled = true
+                    
                     if let error = error {
                         print("Error: \(error)")
                         self.summonerStatus = false

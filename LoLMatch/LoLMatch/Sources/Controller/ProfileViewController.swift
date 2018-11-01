@@ -72,6 +72,8 @@ class ProfileViewController: UIViewController {
                     self.currentUser = user
                     UserServices.setCurrentUser(user: user)
                     UserServices.setLanes(user: user)
+                    
+                    self.createAlert(title: "Lanes alteradas!", message: nil)
                 } else {
                     self.createAlert(title: "Nenhuma alteração feita", message: "Nenhuma lane foi alterada. Para salvar, modifique alguma lane.")
                 }
