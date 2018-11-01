@@ -17,4 +17,11 @@ class BaseServiceProvider: BaseService {
 
         request(provider: riotProvider, target: target, type: UserIdProfile.self, completion: completion)
     }
+
+    static func getElo(byId summonerId: Int, completion: @escaping ([Elo]?, Error?) -> Void) {
+
+        let target = RiotProvider.getElo(summonerId: summonerId)
+
+        request(provider: riotProvider, target: target, type: [Elo].self, completion: completion)
+    }
 }

@@ -38,6 +38,9 @@
 		AE4075D4218B2538000857EB /* Riot Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075D3218B2538000857EB /* Riot Provider.swift */; };
 		AE4075D7218B2581000857EB /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075D6218B2581000857EB /* Credentials.swift */; };
 		AE4075D9218B25D2000857EB /* UserIdProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075D8218B25D2000857EB /* UserIdProfile.swift */; };
+		AE4075DB218B30AB000857EB /* Elo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075DA218B30AB000857EB /* Elo.swift */; };
+		AE4075DE218B3613000857EB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075DD218B3613000857EB /* Logger.swift */; };
+		AE4075E1218B371C000857EB /* LoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075E0218B371C000857EB /* LoggerPlugin.swift */; };
 		AE4359382175FE3D008A94FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4359372175FE3D008A94FC /* AppDelegate.swift */; };
 		AE43593D2175FE3D008A94FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE43593B2175FE3D008A94FC /* Main.storyboard */; };
 		AE4359402175FE3D008A94FC /* LoLMatch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE43593E2175FE3D008A94FC /* LoLMatch.xcdatamodeld */; };
@@ -104,6 +107,9 @@
 		AE4075D3218B2538000857EB /* Riot Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Riot Provider.swift"; sourceTree = "<group>"; };
 		AE4075D6218B2581000857EB /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		AE4075D8218B25D2000857EB /* UserIdProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserIdProfile.swift; sourceTree = "<group>"; };
+		AE4075DA218B30AB000857EB /* Elo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elo.swift; sourceTree = "<group>"; };
+		AE4075DD218B3613000857EB /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		AE4075E0218B371C000857EB /* LoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerPlugin.swift; sourceTree = "<group>"; };
 		AE4359342175FE3D008A94FC /* LoLMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoLMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4359372175FE3D008A94FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE43593C2175FE3D008A94FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -161,6 +167,8 @@
 		186E7C632177CFA800DB521A /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				AE4075DF218B3708000857EB /* Moya */,
+				AE4075DC218B3603000857EB /* Logger */,
 				AE4075D5218B255A000857EB /* Credentials */,
 				188228E8217634BD00CAEB8A /* UIViewExtension.swift */,
 				187AB9172177D8D700D36C36 /* FirebaseResponsePaser.swift */,
@@ -186,9 +194,10 @@
 			isa = PBXGroup;
 			children = (
 				188228EA21764F7600CAEB8A /* RoundedImageView.swift */,
-				186E7C662177CFD900DB521A /* User.swift */,
 				186E7C6A2177D2E800DB521A /* Lane.swift */,
+				186E7C662177CFD900DB521A /* User.swift */,
 				AE4075D8218B25D2000857EB /* UserIdProfile.swift */,
+				AE4075DA218B30AB000857EB /* Elo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -239,6 +248,22 @@
 				AE4075D6218B2581000857EB /* Credentials.swift */,
 			);
 			path = Credentials;
+			sourceTree = "<group>";
+		};
+		AE4075DC218B3603000857EB /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				AE4075DD218B3613000857EB /* Logger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		AE4075DF218B3708000857EB /* Moya */ = {
+			isa = PBXGroup;
+			children = (
+				AE4075E0218B371C000857EB /* LoggerPlugin.swift */,
+			);
+			path = Moya;
 			sourceTree = "<group>";
 		};
 		AE43592B2175FE3D008A94FC = {
@@ -553,7 +578,9 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -562,7 +589,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -578,12 +607,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE4075DB218B30AB000857EB /* Elo.swift in Sources */,
 				188228EB21764F7600CAEB8A /* RoundedImageView.swift in Sources */,
 				180A6CF8218781FC00E6AFB9 /* DateExtension.swift in Sources */,
 				18B12E9E218AB983007F1979 /* UserDefaultsManager.swift in Sources */,
+				AE4075DE218B3613000857EB /* Logger.swift in Sources */,
 				AE4359382175FE3D008A94FC /* AppDelegate.swift in Sources */,
 				186E7C602177B21700DB521A /* DoubleImageView.swift in Sources */,
 				186E7C622177CF2700DB521A /* LikesReceivedViewController.swift in Sources */,
+				AE4075E1218B371C000857EB /* LoggerPlugin.swift in Sources */,
 				187AB9162177D81500D36C36 /* UserServices.swift in Sources */,
 				186E7C6D2177D51000DB521A /* FirebaseManager.swift in Sources */,
 				186E7C672177CFD900DB521A /* User.swift in Sources */,

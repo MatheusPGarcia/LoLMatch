@@ -11,6 +11,9 @@ target 'LoLMatch' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
 
+  # logger
+  pod 'XCGLogger', '~> 6.1.0'
+
   target 'LoLMatchTests' do
     inherit! :search_paths
     # Pods for testing
