@@ -13,6 +13,7 @@ struct UserIdProfile: Codable {
     var profileIconId: Int
     var name: String
     var accountId: Int
+    var summonerId: Int
 }
 
 extension UserIdProfile {
@@ -21,6 +22,7 @@ extension UserIdProfile {
         case profileIconId
         case name
         case accountId
+        case id
     }
 
     init(from decoder: Decoder) throws {
@@ -30,9 +32,11 @@ extension UserIdProfile {
         let profileIconId = try container.decode(Int.self, forKey: .profileIconId)
         let name = try container.decode(String.self, forKey: .name)
         let accountId = try container.decode(Int.self, forKey: .accountId)
+        let summonerId = try container.decode(Int.self, forKey: .id)
 
         self.profileIconId = profileIconId
         self.name = name
         self.accountId = accountId
+        self.summonerId = summonerId
     }
 }
