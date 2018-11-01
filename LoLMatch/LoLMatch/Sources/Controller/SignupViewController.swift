@@ -52,9 +52,19 @@ class SignupViewController: UITableViewController {
         BaseServiceProvider.getSummonerId(byName: "scarpz") { (user, error) in
             if let error = error {
                 print("Error: \(error)")
-            } else {
-                print("User: \(String(describing: user))")
+                return
             }
+
+            guard let summonerId = user?.summonerId else { return }
+
+            BaseServiceProvider.getElo(byId: summonerId, completion: { (elo, error) in
+                if let error = error {
+                    print("Error: \(error)")
+                    return
+                }
+
+                // Elo eh um array do tipo [Elo]
+            })
         }
     }
     

@@ -22,12 +22,9 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    
     // MARK: - Actions
     @IBAction func logout(_ sender: Any) {
         UserServices.setCurrentUser(user: nil)
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
 }

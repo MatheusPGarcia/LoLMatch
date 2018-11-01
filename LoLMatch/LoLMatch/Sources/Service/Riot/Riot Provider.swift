@@ -8,10 +8,13 @@
 
 import Moya
 
-let riotProvider = MoyaProvider<RiotProvider>()
+let riotProvider = MoyaProvider<RiotProvider>(plugins: basePlugin)
+
+let basePlugin: [PluginType] = [LoggerPlugin()]
 
 enum RiotProvider {
     case getUserId(summonerName: String)
+    case getElo(summonerId: Int)
 }
 
 extension RiotProvider: TargetType {
@@ -24,6 +27,8 @@ extension RiotProvider: TargetType {
         switch self {
         case .getUserId(let summonerName):
             return "summoner/v3/summoners/by-name/\(summonerName)"
+        case .getElo(let summonerId):
+            return "league/v3/positions/by-summoner/\(summonerId)"
         }
     }
 
@@ -37,14 +42,16 @@ extension RiotProvider: TargetType {
 
     var task: Task {
         switch self {
-        case .getUserId:
+        case .getUserId,
+             .getElo:
             return .requestPlain
         }
     }
 
     var headers: [String : String]? {
         switch self {
-        case .getUserId:
+        case .getUserId,
+             .getElo:
             return ["X-Riot-Token" : "\(Credentials.riotKey)"]
         }
     }
