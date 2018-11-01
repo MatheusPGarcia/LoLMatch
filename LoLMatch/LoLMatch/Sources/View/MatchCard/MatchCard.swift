@@ -10,7 +10,10 @@ import UIKit
 
 @IBDesignable class MatchCard: UIView {
     
-    
+    @IBOutlet weak var swipeFeedbackImage: UIImageView!
+
+    var view = self
+
     // MARK: - Properties
     // Content view of the XIB
     private var contentView: UIView?

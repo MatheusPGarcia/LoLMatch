@@ -29,6 +29,7 @@
 		188228E9217634BD00CAEB8A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188228E8217634BD00CAEB8A /* UIViewExtension.swift */; };
 		188228EB21764F7600CAEB8A /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188228EA21764F7600CAEB8A /* RoundedImageView.swift */; };
 		188228ED2176506000CAEB8A /* MatchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188228EC2176506000CAEB8A /* MatchCard.swift */; };
+		AE321F0121809C7300B1C95A /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE321F0021809C7300B1C95A /* MatchViewController.swift */; };
 		18B12E9E218AB983007F1979 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B12E9D218AB983007F1979 /* UserDefaultsManager.swift */; };
 		18BA80BD218743E0007443C9 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA80BC218743E0007443C9 /* UIViewControllerExtension.swift */; };
 		18FA17052188D1C700D43A94 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA17042188D1C700D43A94 /* SignupViewController.swift */; };
@@ -101,6 +102,7 @@
 		7D56F5FB5C22EA01312E2A61 /* Pods-LoLMatchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoLMatchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoLMatchTests/Pods-LoLMatchTests.release.xcconfig"; sourceTree = "<group>"; };
 		913E005653ED98D17EDB9ECD /* Pods_LoLMatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoLMatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9CCFAEF068D5403E5E655A /* Pods_LoLMatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoLMatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE321F0021809C7300B1C95A /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		AE4075C9218B24F1000857EB /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		AE4075CA218B24F2000857EB /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		AE4075CC218B24F2000857EB /* UserServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				186E7C612177CF2700DB521A /* LikesReceivedViewController.swift */,
+				AE321F0021809C7300B1C95A /* MatchViewController.swift */,
 				18FA17042188D1C700D43A94 /* SignupViewController.swift */,
 				18807C53218AD67D00DD8761 /* ProfileViewController.swift */,
 			);
@@ -613,6 +616,7 @@
 				18B12E9E218AB983007F1979 /* UserDefaultsManager.swift in Sources */,
 				AE4075DE218B3613000857EB /* Logger.swift in Sources */,
 				AE4359382175FE3D008A94FC /* AppDelegate.swift in Sources */,
+				AE321F0121809C7300B1C95A /* MatchViewController.swift in Sources */,
 				186E7C602177B21700DB521A /* DoubleImageView.swift in Sources */,
 				186E7C622177CF2700DB521A /* LikesReceivedViewController.swift in Sources */,
 				AE4075E1218B371C000857EB /* LoggerPlugin.swift in Sources */,
