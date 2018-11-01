@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UserServices {
+class UserServices: BaseService {
     
     /// Method responsible to get the current User of the application
     ///
@@ -161,5 +161,29 @@ class UserServices {
         } else {
             completion(false)
         }
+    }
+    
+    /// Method responsible to get the summoner information
+    ///
+    /// - Parameters:
+    ///   - summonerName: Summoner name to be search
+    ///   - completion: Return the UserIdProfile from the API
+    static func getSummonerId(byName summonerName: String, completion: @escaping (UserIdProfile?, Error?) -> Void) {
+        
+        let target = RiotProvider.getUserId(summonerName: summonerName)
+        
+        request(provider: riotProvider, target: target, type: UserIdProfile.self, completion: completion)
+    }
+    
+    /// Method responsible to get the elo status from a specific Summoner
+    ///
+    /// - Parameters:
+    ///   - summonerId: Summoner Id
+    ///   - completion: Returns the array of Elos (of each queue) of this Summoner
+    static func getElo(byId summonerId: Int, completion: @escaping ([Elo]?, Error?) -> Void) {
+        
+        let target = RiotProvider.getElo(summonerId: summonerId)
+        
+        request(provider: riotProvider, target: target, type: [Elo].self, completion: completion)
     }
 }

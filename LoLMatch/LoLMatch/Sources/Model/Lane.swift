@@ -13,15 +13,15 @@ enum Lane {
     
     init(value: String) {
         switch value {
-        case "Top":
+        case "Top", "Topo":
             self = .top
-        case "Jungle":
+        case "Jungle", "Selva":
             self = .jungle
-        case "Mid":
+        case "Mid", "Meio":
             self = .mid
         case "Bot ADC", "ADC":
             self = .adc
-        case "Bot sup", "Support":
+        case "Bot sup", "Suporte":
             self = .sup
         default:
             self = .fill
@@ -31,15 +31,15 @@ enum Lane {
     func description() -> String {
         switch self {
         case .top:
-            return "Top"
+            return "Topo"
         case .jungle:
-            return "Jungle"
+            return "Selva"
         case .mid:
-            return "Mid"
+            return "Meio"
         case .adc:
             return "ADC"
         case .sup:
-            return "Support"
+            return "Suporte"
         case .fill:
             return "Preencher"
         }

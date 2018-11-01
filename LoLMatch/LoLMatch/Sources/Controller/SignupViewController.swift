@@ -85,7 +85,7 @@ class SignupViewController: UITableViewController {
                 self.createAlert(title: "Oops...", message: "Preencha o campo de nome de invocador")
             } else {
 
-                BaseServiceProvider.getSummonerId(byName: text) { (user, error) in
+                UserServices.getSummonerId(byName: text) { (user, error) in
                     if let error = error {
                         print("Error: \(error)")
                         self.summonerStatus = false

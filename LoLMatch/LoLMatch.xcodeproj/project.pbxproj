@@ -32,9 +32,7 @@
 		18BA80BD218743E0007443C9 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA80BC218743E0007443C9 /* UIViewControllerExtension.swift */; };
 		18FA17052188D1C700D43A94 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA17042188D1C700D43A94 /* SignupViewController.swift */; };
 		AE321F0121809C7300B1C95A /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE321F0021809C7300B1C95A /* MatchViewController.swift */; };
-		AE4075CD218B24F2000857EB /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075C9218B24F1000857EB /* ServiceManager.swift */; };
 		AE4075CE218B24F2000857EB /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075CA218B24F2000857EB /* BaseService.swift */; };
-		AE4075D0218B24F2000857EB /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075CC218B24F2000857EB /* UserServices.swift */; };
 		AE4075D4218B2538000857EB /* Riot Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075D3218B2538000857EB /* Riot Provider.swift */; };
 		AE4075D7218B2581000857EB /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075D6218B2581000857EB /* Credentials.swift */; };
 		AE4075D9218B25D2000857EB /* UserIdProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075D8218B25D2000857EB /* UserIdProfile.swift */; };
@@ -101,9 +99,7 @@
 		913E005653ED98D17EDB9ECD /* Pods_LoLMatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoLMatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9CCFAEF068D5403E5E655A /* Pods_LoLMatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoLMatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE321F0021809C7300B1C95A /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
-		AE4075C9218B24F1000857EB /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		AE4075CA218B24F2000857EB /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
-		AE4075CC218B24F2000857EB /* UserServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
 		AE4075D3218B2538000857EB /* Riot Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Riot Provider.swift"; sourceTree = "<group>"; };
 		AE4075D6218B2581000857EB /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		AE4075D8218B25D2000857EB /* UserIdProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserIdProfile.swift; sourceTree = "<group>"; };
@@ -182,8 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				AE4075CA218B24F2000857EB /* BaseService.swift */,
-				AE4075C9218B24F1000857EB /* ServiceManager.swift */,
-				AE4075CC218B24F2000857EB /* UserServices.swift */,
 				187AB9152177D81500D36C36 /* UserServices.swift */,
 			);
 			path = Service;
@@ -623,7 +617,6 @@
 				18807C54218AD67D00DD8761 /* ProfileViewController.swift in Sources */,
 				187AB9182177D8D700D36C36 /* FirebaseResponsePaser.swift in Sources */,
 				AE4075CE218B24F2000857EB /* BaseService.swift in Sources */,
-				AE4075D0218B24F2000857EB /* UserServices.swift in Sources */,
 				186E7C6B2177D2E800DB521A /* Lane.swift in Sources */,
 				18FA17052188D1C700D43A94 /* SignupViewController.swift in Sources */,
 				186E7C692177D0A200DB521A /* LikesReceivedCell.swift in Sources */,
@@ -634,7 +627,6 @@
 				AE4075D4218B2538000857EB /* Riot Provider.swift in Sources */,
 				18BA80BD218743E0007443C9 /* UIViewControllerExtension.swift in Sources */,
 				188228ED2176506000CAEB8A /* MatchCard.swift in Sources */,
-				AE4075CD218B24F2000857EB /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
