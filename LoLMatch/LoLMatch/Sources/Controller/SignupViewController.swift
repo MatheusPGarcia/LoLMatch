@@ -48,6 +48,14 @@ class SignupViewController: UITableViewController {
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         
         self.checkLogin()
+
+        BaseServiceProvider.getSummonerId(byName: "scarpz") { (user, error) in
+            if let error = error {
+                print("Error: \(error)")
+            } else {
+                print("User: \(String(describing: user))")
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
