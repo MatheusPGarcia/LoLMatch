@@ -55,8 +55,6 @@ class SignupViewController: UITableViewController {
                 return
             }
 
-            print("User: \(String(describing: user))")
-
             guard let summonerId = user?.summonerId else { return }
 
             BaseServiceProvider.getElo(byId: summonerId, completion: { (elo, error) in
@@ -65,7 +63,7 @@ class SignupViewController: UITableViewController {
                     return
                 }
 
-                print(elo)
+                // Elo eh um array do tipo [Elo]
             })
         }
     }

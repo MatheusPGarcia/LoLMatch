@@ -28,7 +28,7 @@ extension RiotProvider: TargetType {
         case .getUserId(let summonerName):
             return "summoner/v3/summoners/by-name/\(summonerName)"
         case .getElo(let summonerId):
-            return "/lol/league/v3/positions/by-summoner/\(summonerId)"
+            return "league/v3/positions/by-summoner/\(summonerId)"
         }
     }
 
