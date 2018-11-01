@@ -19,9 +19,9 @@ enum Lane {
             self = .jungle
         case "Mid":
             self = .mid
-        case "Bot ADC":
+        case "Bot ADC", "ADC":
             self = .adc
-        case "Bot sup":
+        case "Bot sup", "Support":
             self = .sup
         default:
             self = .fill

@@ -20,8 +20,8 @@ class UserDefaultsManager {
         }
     }
     
-    static func setCurrentUser(user: User) {
-        self.userDefaults.set(user.toDict(), forKey: "currentUser")
+    static func setCurrentUser(user: User?) {
+        self.userDefaults.set(user?.toDict(), forKey: "currentUser")
         self.userDefaults.synchronize()
     }
 }

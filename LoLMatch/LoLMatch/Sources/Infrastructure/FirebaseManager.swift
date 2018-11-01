@@ -102,4 +102,8 @@ class FirebaseManager {
         
         completion(true)
     }
+    
+    static func setLanes(user: User) {
+        self.ref.child("Users").child("\(user.summonerId)").setValue(user.toDict())
+    }
 }

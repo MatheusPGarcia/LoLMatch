@@ -339,7 +339,7 @@
                         <outlet property="lane2TextField" destination="LDI-uK-xJv" id="Sr2-E0-brv"/>
                         <outlet property="summonerNameTextField" destination="WVa-xa-jpM" id="jbp-cm-eWV"/>
                         <outlet property="summonerStatusImage" destination="QfQ-xe-Q7s" id="XaA-Hr-UxO"/>
-                        <segue destination="Lcp-76-CBl" kind="presentation" id="IDK-3i-gjm"/>
+                        <segue destination="Lcp-76-CBl" kind="presentation" identifier="SignupSegue" id="IDK-3i-gjm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="klx-Hb-3Uy" userLabel="First Responder" sceneMemberID="firstResponder"/>

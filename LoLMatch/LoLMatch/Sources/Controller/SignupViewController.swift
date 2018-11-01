@@ -26,6 +26,10 @@ class SignupViewController: UITableViewController {
     let primaryPicker = UIPickerView()
     let secondaryPicker = UIPickerView()
     
+    var riotName: String?
+    var riotSummoner: Int?
+    var riotAccount: Int?
+    
 
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -42,6 +46,34 @@ class SignupViewController: UITableViewController {
         self.tableView.keyboardDismissMode = .onDrag
         
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        
+        self.checkLogin()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.riotName = nil
+        self.riotSummoner = nil
+        self.riotAccount = nil
+        
+        self.summonerStatusImage.isHidden = true
+        
+        self.summonerNameTextField.text = nil
+        self.lane1TextField.text = nil
+        self.lane2TextField.text = nil
+        self.duolane1TextField.text = nil
+        self.duolane2TextField.text = nil
+        
+    }
+    
+    
+    
+    // MARK: - Private Methods
+    private func checkLogin() {
+        if UserServices.getCurrentUser() != nil {
+            self.performSegue(withIdentifier: "SignupSegue", sender: nil)
+        }
     }
     
     
@@ -52,10 +84,32 @@ class SignupViewController: UITableViewController {
             if text.isEmpty {
                 self.createAlert(title: "Oops...", message: "Preencha o campo de nome de invocador")
             } else {
-                self.summonerStatus = true
-                self.summonerStatusImage.isHidden = false
                 
-                self.summonerStatusImage.image = self.summonerStatus ? #imageLiteral(resourceName: "Ok") : #imageLiteral(resourceName: "Nok")
+                // TODO: JUST A TEST. REFACTOR LATER
+                RequestManager.request(userName: text) { response, error in
+                    if error == nil {
+                        
+                        if let riotResponse = response {
+                            
+                            self.summonerStatus = true
+                            
+                            self.riotSummoner = riotResponse["id"] as? Int
+                            self.riotAccount = riotResponse["accountId"] as? Int
+                            self.riotName = riotResponse["name"] as? String
+                            
+                        } else {
+                            self.createAlert(title: "Oops...", message: "Occoreu um erro. Tente novamente.")
+                        }
+                    } else {
+                        self.summonerStatus = false
+                        self.createAlert(title: "Oops...", message: "Occoreu um erro. Tente novamente.")
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.summonerStatusImage.isHidden = false
+                        self.summonerStatusImage.image = self.summonerStatus ? #imageLiteral(resourceName: "Ok") : #imageLiteral(resourceName: "Nok")
+                    }
+                }
             }
         } else {
             self.createAlert(title: "Oops...", message: "Occoreu um erro. Tente novamente.")
@@ -66,6 +120,29 @@ class SignupViewController: UITableViewController {
         
         if summonerStatus && !lane1TextField.text!.isEmpty && !lane2TextField.text!.isEmpty && !duolane1TextField.text!.isEmpty && !duolane2TextField.text!.isEmpty {
             
+            if let summonerName = self.riotName, let summonerId = self.riotSummoner, let accountId = self.riotAccount {
+                
+                if let lane1Text = lane1TextField.text, let lane2Text = lane2TextField.text,
+                    let duoLane1Text = duolane1TextField.text, let duoLane2Text = duolane2TextField.text {
+                    
+                    let lane1 = Lane(value: lane1Text)
+                    let lane2 = Lane(value: lane2Text)
+                    let duoLane1 = Lane(value: duoLane1Text)
+                    let duoLane2 = Lane(value: duoLane2Text)
+                    
+                    let user = User(summonerName: summonerName, summonerId: summonerId, accountId: accountId, lane1: lane1, lane2: lane2, duoLane1: duoLane1, duoLane2: duoLane2)
+                    
+                    UserServices.setCurrentUser(user: user)
+                    UserServices.setLanes(user: user)
+                    
+                    print("\(user.toDict())")
+                    
+                    self.performSegue(withIdentifier: "SignupSegue", sender: nil)
+                }
+                
+            } else {
+                self.createAlert(title: "Oops", message: "Alguma informação da Riot veio inválida. Tente novamente.")
+            }
         } else {
             self.createAlert(title: "Oops", message: "Por favor, preencha todos os campos")
         }

@@ -17,6 +17,20 @@ class UserServices {
         return UserDefaultsManager.getCurrentUser()
     }
     
+    /// Method responsible to set the current User of the application
+    ///
+    /// - Parameter user: User to be saved
+    static func setCurrentUser(user: User?) {
+        UserDefaultsManager.setCurrentUser(user: user)
+    }
+    
+    /// Method responsible to set the lanes of User of the application
+    ///
+    /// - Parameter user: User to be have the laes set
+    static func setLanes(user: User) {
+        FirebaseManager.setLanes(user: user)
+    }
+    
     /// Method responsible to retrieve all Users from Database
     ///
     /// - Parameter completion: Array of all Users

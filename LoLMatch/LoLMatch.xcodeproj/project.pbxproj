@@ -19,6 +19,8 @@
 		187AB9142177D7BD00D36C36 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 187AB9132177D7BD00D36C36 /* GoogleService-Info.plist */; };
 		187AB9162177D81500D36C36 /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187AB9152177D81500D36C36 /* UserServices.swift */; };
 		187AB9182177D8D700D36C36 /* FirebaseResponsePaser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187AB9172177D8D700D36C36 /* FirebaseResponsePaser.swift */; };
+		18807C52218ACFCE00DD8761 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18807C51218ACFCE00DD8761 /* RequestManager.swift */; };
+		18807C54218AD67D00DD8761 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18807C53218AD67D00DD8761 /* ProfileViewController.swift */; };
 		188228DE2176288400CAEB8A /* Match.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188228DD2176288400CAEB8A /* Match.storyboard */; };
 		188228E0217628EF00CAEB8A /* LikesReceived.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188228DF217628EF00CAEB8A /* LikesReceived.storyboard */; };
 		188228E2217628F800CAEB8A /* Communication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188228E1217628F800CAEB8A /* Communication.storyboard */; };
@@ -71,6 +73,8 @@
 		187AB9132177D7BD00D36C36 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		187AB9152177D81500D36C36 /* UserServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
 		187AB9172177D8D700D36C36 /* FirebaseResponsePaser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseResponsePaser.swift; sourceTree = "<group>"; };
+		18807C51218ACFCE00DD8761 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		18807C53218AD67D00DD8761 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		188228DD2176288400CAEB8A /* Match.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Match.storyboard; sourceTree = "<group>"; };
 		188228DF217628EF00CAEB8A /* LikesReceived.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikesReceived.storyboard; sourceTree = "<group>"; };
 		188228E1217628F800CAEB8A /* Communication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Communication.storyboard; sourceTree = "<group>"; };
@@ -258,6 +262,7 @@
 				AE4359372175FE3D008A94FC /* AppDelegate.swift */,
 				186E7C6C2177D51000DB521A /* FirebaseManager.swift */,
 				18B12E9D218AB983007F1979 /* UserDefaultsManager.swift */,
+				18807C51218ACFCE00DD8761 /* RequestManager.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 			children = (
 				186E7C612177CF2700DB521A /* LikesReceivedViewController.swift */,
 				18FA17042188D1C700D43A94 /* SignupViewController.swift */,
+				18807C53218AD67D00DD8761 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -547,12 +553,14 @@
 				187AB9162177D81500D36C36 /* UserServices.swift in Sources */,
 				186E7C6D2177D51000DB521A /* FirebaseManager.swift in Sources */,
 				186E7C672177CFD900DB521A /* User.swift in Sources */,
+				18807C54218AD67D00DD8761 /* ProfileViewController.swift in Sources */,
 				187AB9182177D8D700D36C36 /* FirebaseResponsePaser.swift in Sources */,
 				186E7C6B2177D2E800DB521A /* Lane.swift in Sources */,
 				18FA17052188D1C700D43A94 /* SignupViewController.swift in Sources */,
 				186E7C692177D0A200DB521A /* LikesReceivedCell.swift in Sources */,
 				188228E9217634BD00CAEB8A /* UIViewExtension.swift in Sources */,
 				AE4359402175FE3D008A94FC /* LoLMatch.xcdatamodeld in Sources */,
+				18807C52218ACFCE00DD8761 /* RequestManager.swift in Sources */,
 				18BA80BD218743E0007443C9 /* UIViewControllerExtension.swift in Sources */,
 				188228ED2176506000CAEB8A /* MatchCard.swift in Sources */,
 			);
