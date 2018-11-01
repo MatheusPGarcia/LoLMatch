@@ -48,24 +48,6 @@ class SignupViewController: UITableViewController {
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
         
         self.checkLogin()
-
-        BaseServiceProvider.getSummonerId(byName: "scarpz") { (user, error) in
-            if let error = error {
-                print("Error: \(error)")
-                return
-            }
-
-            guard let summonerId = user?.summonerId else { return }
-
-            BaseServiceProvider.getElo(byId: summonerId, completion: { (elo, error) in
-                if let error = error {
-                    print("Error: \(error)")
-                    return
-                }
-
-                // Elo eh um array do tipo [Elo]
-            })
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,31 +84,32 @@ class SignupViewController: UITableViewController {
             if text.isEmpty {
                 self.createAlert(title: "Oops...", message: "Preencha o campo de nome de invocador")
             } else {
-                
-                // TODO: JUST A TEST. REFACTOR LATER
-                RequestManager.request(userName: text) { response, error in
-                    if error == nil {
-                        
-                        if let riotResponse = response {
-                            
-                            self.summonerStatus = true
-                            
-                            self.riotSummoner = riotResponse["id"] as? Int
-                            self.riotAccount = riotResponse["accountId"] as? Int
-                            self.riotName = riotResponse["name"] as? String
-                            
-                        } else {
-                            self.createAlert(title: "Oops...", message: "Occoreu um erro. Tente novamente.")
-                        }
-                    } else {
+
+                BaseServiceProvider.getSummonerId(byName: text) { (user, error) in
+                    if let error = error {
+                        print("Error: \(error)")
                         self.summonerStatus = false
                         self.createAlert(title: "Oops...", message: "Occoreu um erro. Tente novamente.")
+                    } else {
+
+                        if let userProfileId = user {
+                            self.summonerStatus = true
+
+                            self.riotSummoner = userProfileId.summonerId
+                            self.riotAccount = userProfileId.accountId
+                            self.riotName = userProfileId.name
+                        } else {
+                            self.summonerStatus = false
+                            self.createAlert(title: "Oops...", message: "Occoreu um erro. Tente novamente.")
+                        }
+
                     }
-                    
+
                     DispatchQueue.main.async {
                         self.summonerStatusImage.isHidden = false
                         self.summonerStatusImage.image = self.summonerStatus ? #imageLiteral(resourceName: "Ok") : #imageLiteral(resourceName: "Nok")
                     }
+
                 }
             }
         } else {

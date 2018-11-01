@@ -19,7 +19,6 @@
 		187AB9142177D7BD00D36C36 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 187AB9132177D7BD00D36C36 /* GoogleService-Info.plist */; };
 		187AB9162177D81500D36C36 /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187AB9152177D81500D36C36 /* UserServices.swift */; };
 		187AB9182177D8D700D36C36 /* FirebaseResponsePaser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187AB9172177D8D700D36C36 /* FirebaseResponsePaser.swift */; };
-		18807C52218ACFCE00DD8761 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18807C51218ACFCE00DD8761 /* RequestManager.swift */; };
 		18807C54218AD67D00DD8761 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18807C53218AD67D00DD8761 /* ProfileViewController.swift */; };
 		188228DE2176288400CAEB8A /* Match.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188228DD2176288400CAEB8A /* Match.storyboard */; };
 		188228E0217628EF00CAEB8A /* LikesReceived.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188228DF217628EF00CAEB8A /* LikesReceived.storyboard */; };
@@ -29,10 +28,10 @@
 		188228E9217634BD00CAEB8A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188228E8217634BD00CAEB8A /* UIViewExtension.swift */; };
 		188228EB21764F7600CAEB8A /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188228EA21764F7600CAEB8A /* RoundedImageView.swift */; };
 		188228ED2176506000CAEB8A /* MatchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188228EC2176506000CAEB8A /* MatchCard.swift */; };
-		AE321F0121809C7300B1C95A /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE321F0021809C7300B1C95A /* MatchViewController.swift */; };
 		18B12E9E218AB983007F1979 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B12E9D218AB983007F1979 /* UserDefaultsManager.swift */; };
 		18BA80BD218743E0007443C9 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA80BC218743E0007443C9 /* UIViewControllerExtension.swift */; };
 		18FA17052188D1C700D43A94 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA17042188D1C700D43A94 /* SignupViewController.swift */; };
+		AE321F0121809C7300B1C95A /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE321F0021809C7300B1C95A /* MatchViewController.swift */; };
 		AE4075CD218B24F2000857EB /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075C9218B24F1000857EB /* ServiceManager.swift */; };
 		AE4075CE218B24F2000857EB /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075CA218B24F2000857EB /* BaseService.swift */; };
 		AE4075D0218B24F2000857EB /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075CC218B24F2000857EB /* UserServices.swift */; };
@@ -83,7 +82,6 @@
 		187AB9132177D7BD00D36C36 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		187AB9152177D81500D36C36 /* UserServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
 		187AB9172177D8D700D36C36 /* FirebaseResponsePaser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseResponsePaser.swift; sourceTree = "<group>"; };
-		18807C51218ACFCE00DD8761 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		18807C53218AD67D00DD8761 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		188228DD2176288400CAEB8A /* Match.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Match.storyboard; sourceTree = "<group>"; };
 		188228DF217628EF00CAEB8A /* LikesReceived.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikesReceived.storyboard; sourceTree = "<group>"; };
@@ -183,7 +181,6 @@
 		186E7C642177CFB600DB521A /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				AE4075D2218B2517000857EB /* Riot */,
 				AE4075CA218B24F2000857EB /* BaseService.swift */,
 				AE4075C9218B24F1000857EB /* ServiceManager.swift */,
 				AE4075CC218B24F2000857EB /* UserServices.swift */,
@@ -320,10 +317,10 @@
 		AE43596B217600B8008A94FC /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				AE4075D2218B2517000857EB /* Riot */,
 				AE4359372175FE3D008A94FC /* AppDelegate.swift */,
 				186E7C6C2177D51000DB521A /* FirebaseManager.swift */,
 				18B12E9D218AB983007F1979 /* UserDefaultsManager.swift */,
-				18807C51218ACFCE00DD8761 /* RequestManager.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -633,7 +630,6 @@
 				188228E9217634BD00CAEB8A /* UIViewExtension.swift in Sources */,
 				AE4359402175FE3D008A94FC /* LoLMatch.xcdatamodeld in Sources */,
 				AE4075D7218B2581000857EB /* Credentials.swift in Sources */,
-				18807C52218ACFCE00DD8761 /* RequestManager.swift in Sources */,
 				AE4075D9218B25D2000857EB /* UserIdProfile.swift in Sources */,
 				AE4075D4218B2538000857EB /* Riot Provider.swift in Sources */,
 				18BA80BD218743E0007443C9 /* UIViewControllerExtension.swift in Sources */,
