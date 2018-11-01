@@ -8,19 +8,43 @@
 
 /* Begin PBXBuildFile section */
 		0F83B009A98F85C88ECEBBCB /* Pods_LoLMatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F9CCFAEF068D5403E5E655A /* Pods_LoLMatchTests.framework */; };
-		AE2F88F421888B1E0092B2F9 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2F88F321888B1E0092B2F9 /* BaseService.swift */; };
-		AE2F88FB2188914F0092B2F9 /* UserIdProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2F88FA2188914F0092B2F9 /* UserIdProfile.swift */; };
+		180A6CF8218781FC00E6AFB9 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A6CF7218781FC00E6AFB9 /* DateExtension.swift */; };
+		186E7C5E2177B0FB00DB521A /* DoubleImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186E7C5D2177B0FB00DB521A /* DoubleImageView.xib */; };
+		186E7C602177B21700DB521A /* DoubleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E7C5F2177B21700DB521A /* DoubleImageView.swift */; };
+		186E7C622177CF2700DB521A /* LikesReceivedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E7C612177CF2700DB521A /* LikesReceivedViewController.swift */; };
+		186E7C672177CFD900DB521A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E7C662177CFD900DB521A /* User.swift */; };
+		186E7C692177D0A200DB521A /* LikesReceivedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E7C682177D0A200DB521A /* LikesReceivedCell.swift */; };
+		186E7C6B2177D2E800DB521A /* Lane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E7C6A2177D2E800DB521A /* Lane.swift */; };
+		186E7C6D2177D51000DB521A /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E7C6C2177D51000DB521A /* FirebaseManager.swift */; };
+		187AB9142177D7BD00D36C36 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 187AB9132177D7BD00D36C36 /* GoogleService-Info.plist */; };
+		187AB9162177D81500D36C36 /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187AB9152177D81500D36C36 /* UserServices.swift */; };
+		187AB9182177D8D700D36C36 /* FirebaseResponsePaser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187AB9172177D8D700D36C36 /* FirebaseResponsePaser.swift */; };
+		18807C52218ACFCE00DD8761 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18807C51218ACFCE00DD8761 /* RequestManager.swift */; };
+		18807C54218AD67D00DD8761 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18807C53218AD67D00DD8761 /* ProfileViewController.swift */; };
+		188228DE2176288400CAEB8A /* Match.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188228DD2176288400CAEB8A /* Match.storyboard */; };
+		188228E0217628EF00CAEB8A /* LikesReceived.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188228DF217628EF00CAEB8A /* LikesReceived.storyboard */; };
+		188228E2217628F800CAEB8A /* Communication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188228E1217628F800CAEB8A /* Communication.storyboard */; };
+		188228E4217628FE00CAEB8A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188228E3217628FE00CAEB8A /* Profile.storyboard */; };
+		188228E721762F6C00CAEB8A /* MatchCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188228E621762F6C00CAEB8A /* MatchCard.xib */; };
+		188228E9217634BD00CAEB8A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188228E8217634BD00CAEB8A /* UIViewExtension.swift */; };
+		188228EB21764F7600CAEB8A /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188228EA21764F7600CAEB8A /* RoundedImageView.swift */; };
+		188228ED2176506000CAEB8A /* MatchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188228EC2176506000CAEB8A /* MatchCard.swift */; };
+		18B12E9E218AB983007F1979 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B12E9D218AB983007F1979 /* UserDefaultsManager.swift */; };
+		18BA80BD218743E0007443C9 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA80BC218743E0007443C9 /* UIViewControllerExtension.swift */; };
+		18FA17052188D1C700D43A94 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA17042188D1C700D43A94 /* SignupViewController.swift */; };
+		AE4075CD218B24F2000857EB /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075C9218B24F1000857EB /* ServiceManager.swift */; };
+		AE4075CE218B24F2000857EB /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075CA218B24F2000857EB /* BaseService.swift */; };
+		AE4075D0218B24F2000857EB /* UserServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075CC218B24F2000857EB /* UserServices.swift */; };
+		AE4075D4218B2538000857EB /* Riot Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075D3218B2538000857EB /* Riot Provider.swift */; };
+		AE4075D7218B2581000857EB /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075D6218B2581000857EB /* Credentials.swift */; };
+		AE4075D9218B25D2000857EB /* UserIdProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075D8218B25D2000857EB /* UserIdProfile.swift */; };
 		AE4359382175FE3D008A94FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4359372175FE3D008A94FC /* AppDelegate.swift */; };
-		AE43593A2175FE3D008A94FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4359392175FE3D008A94FC /* ViewController.swift */; };
 		AE43593D2175FE3D008A94FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE43593B2175FE3D008A94FC /* Main.storyboard */; };
 		AE4359402175FE3D008A94FC /* LoLMatch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE43593E2175FE3D008A94FC /* LoLMatch.xcdatamodeld */; };
 		AE4359422175FE40008A94FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE4359412175FE40008A94FC /* Assets.xcassets */; };
 		AE4359452175FE40008A94FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE4359432175FE40008A94FC /* LaunchScreen.storyboard */; };
 		AE4359502175FE41008A94FC /* LoLMatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE43594F2175FE41008A94FC /* LoLMatchTests.swift */; };
 		AE43595B2175FE41008A94FC /* LoLMatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE43595A2175FE41008A94FC /* LoLMatchUITests.swift */; };
-		AE4359742176091B008A94FC /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4359732176091B008A94FC /* ServiceManager.swift */; };
-		AEB9F7FF21760B570040AB10 /* RiotProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9F7FE21760B570040AB10 /* RiotProvider.swift */; };
-		AEB9F80521760D8A0040AB10 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9F80421760D8A0040AB10 /* Credentials.swift */; };
 		AFABDC8C908B5F3781BA749A /* Pods_LoLMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22840CB7734EEE095E5BE0EB /* Pods_LoLMatch.framework */; };
 		C4ECEC49E60120DC4EC7186C /* Pods_LoLMatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 913E005653ED98D17EDB9ECD /* Pods_LoLMatchUITests.framework */; };
 /* End PBXBuildFile section */
@@ -44,17 +68,44 @@
 
 /* Begin PBXFileReference section */
 		10E8184FF929D7A69396EE73 /* Pods-LoLMatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoLMatchUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoLMatchUITests/Pods-LoLMatchUITests.release.xcconfig"; sourceTree = "<group>"; };
+		180A6CF7218781FC00E6AFB9 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		186E7C5D2177B0FB00DB521A /* DoubleImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoubleImageView.xib; sourceTree = "<group>"; };
+		186E7C5F2177B21700DB521A /* DoubleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleImageView.swift; sourceTree = "<group>"; };
+		186E7C612177CF2700DB521A /* LikesReceivedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesReceivedViewController.swift; sourceTree = "<group>"; };
+		186E7C662177CFD900DB521A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		186E7C682177D0A200DB521A /* LikesReceivedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesReceivedCell.swift; sourceTree = "<group>"; };
+		186E7C6A2177D2E800DB521A /* Lane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lane.swift; sourceTree = "<group>"; };
+		186E7C6C2177D51000DB521A /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		187AB9132177D7BD00D36C36 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		187AB9152177D81500D36C36 /* UserServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
+		187AB9172177D8D700D36C36 /* FirebaseResponsePaser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseResponsePaser.swift; sourceTree = "<group>"; };
+		18807C51218ACFCE00DD8761 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		18807C53218AD67D00DD8761 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		188228DD2176288400CAEB8A /* Match.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Match.storyboard; sourceTree = "<group>"; };
+		188228DF217628EF00CAEB8A /* LikesReceived.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikesReceived.storyboard; sourceTree = "<group>"; };
+		188228E1217628F800CAEB8A /* Communication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Communication.storyboard; sourceTree = "<group>"; };
+		188228E3217628FE00CAEB8A /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		188228E621762F6C00CAEB8A /* MatchCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchCard.xib; sourceTree = "<group>"; };
+		188228E8217634BD00CAEB8A /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = LoLMatch/Sources/Util/UIViewExtension.swift; sourceTree = SOURCE_ROOT; };
+		188228EA21764F7600CAEB8A /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RoundedImageView.swift; path = LoLMatch/Sources/Model/RoundedImageView.swift; sourceTree = SOURCE_ROOT; };
+		188228EC2176506000CAEB8A /* MatchCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCard.swift; sourceTree = "<group>"; };
+		18B12E9D218AB983007F1979 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		18BA80BC218743E0007443C9 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		18FA17042188D1C700D43A94 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		1E41226AD7B2FA72A55B55B8 /* Pods-LoLMatchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoLMatchUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoLMatchUITests/Pods-LoLMatchUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		22840CB7734EEE095E5BE0EB /* Pods_LoLMatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoLMatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F3B34AABE27266002C0F4C7 /* Pods-LoLMatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoLMatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoLMatch/Pods-LoLMatch.debug.xcconfig"; sourceTree = "<group>"; };
 		7D56F5FB5C22EA01312E2A61 /* Pods-LoLMatchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoLMatchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoLMatchTests/Pods-LoLMatchTests.release.xcconfig"; sourceTree = "<group>"; };
 		913E005653ED98D17EDB9ECD /* Pods_LoLMatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoLMatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9CCFAEF068D5403E5E655A /* Pods_LoLMatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoLMatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE2F88F321888B1E0092B2F9 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
-		AE2F88FA2188914F0092B2F9 /* UserIdProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIdProfile.swift; sourceTree = "<group>"; };
+		AE4075C9218B24F1000857EB /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		AE4075CA218B24F2000857EB /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		AE4075CC218B24F2000857EB /* UserServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserServices.swift; sourceTree = "<group>"; };
+		AE4075D3218B2538000857EB /* Riot Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Riot Provider.swift"; sourceTree = "<group>"; };
+		AE4075D6218B2581000857EB /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		AE4075D8218B25D2000857EB /* UserIdProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserIdProfile.swift; sourceTree = "<group>"; };
 		AE4359342175FE3D008A94FC /* LoLMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoLMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4359372175FE3D008A94FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AE4359392175FE3D008A94FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AE43593C2175FE3D008A94FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE43593F2175FE3D008A94FC /* LoLMatch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoLMatch.xcdatamodel; sourceTree = "<group>"; };
 		AE4359412175FE40008A94FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,9 +117,6 @@
 		AE4359562175FE41008A94FC /* LoLMatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoLMatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE43595A2175FE41008A94FC /* LoLMatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoLMatchUITests.swift; sourceTree = "<group>"; };
 		AE43595C2175FE41008A94FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE4359732176091B008A94FC /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
-		AEB9F7FE21760B570040AB10 /* RiotProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiotProvider.swift; sourceTree = "<group>"; };
-		AEB9F80421760D8A0040AB10 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		B37F7BFD86A4C16FAFD75F90 /* Pods-LoLMatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoLMatchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoLMatchTests/Pods-LoLMatchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D8F4933E0B65422D6DA20395 /* Pods-LoLMatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoLMatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoLMatch/Pods-LoLMatch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +149,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		186E7C5C2177AC1700DB521A /* DoubleImageView */ = {
+			isa = PBXGroup;
+			children = (
+				186E7C5D2177B0FB00DB521A /* DoubleImageView.xib */,
+				186E7C5F2177B21700DB521A /* DoubleImageView.swift */,
+			);
+			path = DoubleImageView;
+			sourceTree = "<group>";
+		};
+		186E7C632177CFA800DB521A /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				AE4075D5218B255A000857EB /* Credentials */,
+				188228E8217634BD00CAEB8A /* UIViewExtension.swift */,
+				187AB9172177D8D700D36C36 /* FirebaseResponsePaser.swift */,
+				18BA80BC218743E0007443C9 /* UIViewControllerExtension.swift */,
+				180A6CF7218781FC00E6AFB9 /* DateExtension.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		186E7C642177CFB600DB521A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AE4075D2218B2517000857EB /* Riot */,
+				AE4075CA218B24F2000857EB /* BaseService.swift */,
+				AE4075C9218B24F1000857EB /* ServiceManager.swift */,
+				AE4075CC218B24F2000857EB /* UserServices.swift */,
+				187AB9152177D81500D36C36 /* UserServices.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		186E7C652177CFBF00DB521A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				188228EA21764F7600CAEB8A /* RoundedImageView.swift */,
+				186E7C662177CFD900DB521A /* User.swift */,
+				186E7C6A2177D2E800DB521A /* Lane.swift */,
+				AE4075D8218B25D2000857EB /* UserIdProfile.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		188228E521762F4E00CAEB8A /* MatchCard */ = {
+			isa = PBXGroup;
+			children = (
+				188228E621762F6C00CAEB8A /* MatchCard.xib */,
+				188228EC2176506000CAEB8A /* MatchCard.swift */,
+			);
+			path = MatchCard;
+			sourceTree = "<group>";
+		};
 		38DB848BD2A1C37544F40F71 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,12 +225,20 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		AE2F88F721888FB10092B2F9 /* Model */ = {
+		AE4075D2218B2517000857EB /* Riot */ = {
 			isa = PBXGroup;
 			children = (
-				AE2F88FA2188914F0092B2F9 /* UserIdProfile.swift */,
+				AE4075D3218B2538000857EB /* Riot Provider.swift */,
 			);
-			path = Model;
+			path = Riot;
+			sourceTree = "<group>";
+		};
+		AE4075D5218B255A000857EB /* Credentials */ = {
+			isa = PBXGroup;
+			children = (
+				AE4075D6218B2581000857EB /* Credentials.swift */,
+			);
+			path = Credentials;
 			sourceTree = "<group>";
 		};
 		AE43592B2175FE3D008A94FC = {
@@ -185,32 +294,19 @@
 			isa = PBXGroup;
 			children = (
 				AE4359372175FE3D008A94FC /* AppDelegate.swift */,
+				186E7C6C2177D51000DB521A /* FirebaseManager.swift */,
+				18B12E9D218AB983007F1979 /* UserDefaultsManager.swift */,
+				18807C51218ACFCE00DD8761 /* RequestManager.swift */,
 			);
 			path = Infrastructure;
-			sourceTree = "<group>";
-		};
-		AE43596C217600CF008A94FC /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				AEB9F80321760D7A0040AB10 /* Credentials */,
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
-		AE43596D217600D9008A94FC /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				AEB9F7FD21760ABE0040AB10 /* Riot */,
-				AE2F88F321888B1E0092B2F9 /* BaseService.swift */,
-				AE4359732176091B008A94FC /* ServiceManager.swift */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		AE43596E217600E4008A94FC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AE4359392175FE3D008A94FC /* ViewController.swift */,
+				186E7C612177CF2700DB521A /* LikesReceivedViewController.swift */,
+				18FA17042188D1C700D43A94 /* SignupViewController.swift */,
+				18807C53218AD67D00DD8761 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -218,8 +314,15 @@
 		AE43596F217600EF008A94FC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				186E7C5C2177AC1700DB521A /* DoubleImageView */,
+				188228E521762F4E00CAEB8A /* MatchCard */,
 				AE43593B2175FE3D008A94FC /* Main.storyboard */,
+				188228DD2176288400CAEB8A /* Match.storyboard */,
+				188228DF217628EF00CAEB8A /* LikesReceived.storyboard */,
+				188228E1217628F800CAEB8A /* Communication.storyboard */,
+				188228E3217628FE00CAEB8A /* Profile.storyboard */,
 				AE4359432175FE40008A94FC /* LaunchScreen.storyboard */,
+				186E7C682177D0A200DB521A /* LikesReceivedCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -228,29 +331,13 @@
 			isa = PBXGroup;
 			children = (
 				AE43596B217600B8008A94FC /* Infrastructure */,
-				AE43596C217600CF008A94FC /* Util */,
-				AE43596D217600D9008A94FC /* Service */,
+				186E7C632177CFA800DB521A /* Util */,
+				186E7C642177CFB600DB521A /* Service */,
 				AE43596E217600E4008A94FC /* Controller */,
 				AE43596F217600EF008A94FC /* View */,
-				AE2F88F721888FB10092B2F9 /* Model */,
+				186E7C652177CFBF00DB521A /* Model */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		AEB9F7FD21760ABE0040AB10 /* Riot */ = {
-			isa = PBXGroup;
-			children = (
-				AEB9F7FE21760B570040AB10 /* RiotProvider.swift */,
-			);
-			path = Riot;
-			sourceTree = "<group>";
-		};
-		AEB9F80321760D7A0040AB10 /* Credentials */ = {
-			isa = PBXGroup;
-			children = (
-				AEB9F80421760D8A0040AB10 /* Credentials.swift */,
-			);
-			path = Credentials;
 			sourceTree = "<group>";
 		};
 		AEB9F80B217611610040AB10 /* Resources */ = {
@@ -259,6 +346,7 @@
 				AE4359412175FE40008A94FC /* Assets.xcassets */,
 				AE43593E2175FE3D008A94FC /* LoLMatch.xcdatamodeld */,
 				AE4359462175FE40008A94FC /* Info.plist */,
+				187AB9132177D7BD00D36C36 /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -371,9 +459,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188228DE2176288400CAEB8A /* Match.storyboard in Resources */,
+				186E7C5E2177B0FB00DB521A /* DoubleImageView.xib in Resources */,
 				AE4359452175FE40008A94FC /* LaunchScreen.storyboard in Resources */,
+				188228E0217628EF00CAEB8A /* LikesReceived.storyboard in Resources */,
 				AE4359422175FE40008A94FC /* Assets.xcassets in Resources */,
 				AE43593D2175FE3D008A94FC /* Main.storyboard in Resources */,
+				188228E721762F6C00CAEB8A /* MatchCard.xib in Resources */,
+				187AB9142177D7BD00D36C36 /* GoogleService-Info.plist in Resources */,
+				188228E4217628FE00CAEB8A /* Profile.storyboard in Resources */,
+				188228E2217628F800CAEB8A /* Communication.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,14 +551,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LoLMatch/Pods-LoLMatch-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -477,14 +578,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE2F88F421888B1E0092B2F9 /* BaseService.swift in Sources */,
-				AEB9F80521760D8A0040AB10 /* Credentials.swift in Sources */,
-				AE4359742176091B008A94FC /* ServiceManager.swift in Sources */,
-				AE2F88FB2188914F0092B2F9 /* UserIdProfile.swift in Sources */,
-				AE43593A2175FE3D008A94FC /* ViewController.swift in Sources */,
+				188228EB21764F7600CAEB8A /* RoundedImageView.swift in Sources */,
+				180A6CF8218781FC00E6AFB9 /* DateExtension.swift in Sources */,
+				18B12E9E218AB983007F1979 /* UserDefaultsManager.swift in Sources */,
 				AE4359382175FE3D008A94FC /* AppDelegate.swift in Sources */,
+				186E7C602177B21700DB521A /* DoubleImageView.swift in Sources */,
+				186E7C622177CF2700DB521A /* LikesReceivedViewController.swift in Sources */,
+				187AB9162177D81500D36C36 /* UserServices.swift in Sources */,
+				186E7C6D2177D51000DB521A /* FirebaseManager.swift in Sources */,
+				186E7C672177CFD900DB521A /* User.swift in Sources */,
+				18807C54218AD67D00DD8761 /* ProfileViewController.swift in Sources */,
+				187AB9182177D8D700D36C36 /* FirebaseResponsePaser.swift in Sources */,
+				AE4075CE218B24F2000857EB /* BaseService.swift in Sources */,
+				AE4075D0218B24F2000857EB /* UserServices.swift in Sources */,
+				186E7C6B2177D2E800DB521A /* Lane.swift in Sources */,
+				18FA17052188D1C700D43A94 /* SignupViewController.swift in Sources */,
+				186E7C692177D0A200DB521A /* LikesReceivedCell.swift in Sources */,
+				188228E9217634BD00CAEB8A /* UIViewExtension.swift in Sources */,
 				AE4359402175FE3D008A94FC /* LoLMatch.xcdatamodeld in Sources */,
-				AEB9F7FF21760B570040AB10 /* RiotProvider.swift in Sources */,
+				AE4075D7218B2581000857EB /* Credentials.swift in Sources */,
+				18807C52218ACFCE00DD8761 /* RequestManager.swift in Sources */,
+				AE4075D9218B25D2000857EB /* UserIdProfile.swift in Sources */,
+				AE4075D4218B2538000857EB /* Riot Provider.swift in Sources */,
+				18BA80BD218743E0007443C9 /* UIViewControllerExtension.swift in Sources */,
+				188228ED2176506000CAEB8A /* MatchCard.swift in Sources */,
+				AE4075CD218B24F2000857EB /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
