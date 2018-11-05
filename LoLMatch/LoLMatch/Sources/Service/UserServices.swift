@@ -38,7 +38,11 @@ class UserServices: BaseService {
         
         FirebaseManager.getAllUsers { users in
             if let validUsers = users {
-                completion(FirebaseResponsePaser.parseUsers(from: validUsers))
+                do {
+                    completion(try FirebaseResponsePaser.parseUsers(from: validUsers))
+                } catch {
+                    completion(nil)
+                }
             } else {
                 completion(nil)
             }

@@ -14,16 +14,10 @@ class FirebaseResponsePaser {
     ///
     /// - Parameter dict: JSON received from Firebase
     /// - Returns: Array of Users parsed from Firebase
-    static func parseUsers(from dict: [String : Any]) -> [User] {
+    static func parseUsers(from dict: [String : Any]) throws -> [User] {
         
-        var users = [User]()
-        
-        for key in dict.keys {
-            
-            let userDict = dict[key] as! [String : Any]
-
-            users.append(User(dict: userDict))
-        }
+        let usersJson = try JSONSerialization.data(withJSONObject: dict, options: .prettyPrinted)
+        let users = try JSONDecoder().decode([User].self, from: usersJson)
         
         return users
     }
