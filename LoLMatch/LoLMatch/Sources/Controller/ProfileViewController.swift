@@ -210,7 +210,7 @@ extension ProfileViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerView == primaryPicker ? availablePrimaryLanes[row].description() : availableSecondaryLanes[row ].description()
+        return pickerView == primaryPicker ? availablePrimaryLanes[row].description() : availableSecondaryLanes[row].description()
     }
     
 }
