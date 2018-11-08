@@ -186,4 +186,17 @@ class UserServices: BaseService {
         
         request(provider: riotProvider, target: target, type: [Elo].self, completion: completion)
     }
+
+    /// Method responsible to get the last matches from a specific Summoner
+    ///
+    /// - Parameters:
+    ///   - summonerId: Summoner Id
+    ///   - numberOfMatches: Number of matches
+    ///   - completion: Returns the array of matches [MatchesBasicInfo] of this Summoner
+    static func getMatches(byId summonerId: Int, numberOfMatches: Int, completion: @escaping ([MatchBasicInfo]?, Error?) -> Void) {
+
+        let target = RiotProvider.getMatchList(summonerId: summonerId, endIndex: numberOfMatches)
+
+        request(provider: riotProvider, target: target, type: [MatchBasicInfo].self, completion: completion)
+    }
 }

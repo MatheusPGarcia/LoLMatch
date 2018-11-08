@@ -15,11 +15,12 @@ let basePlugin: [PluginType] = [LoggerPlugin()]
 enum RiotProvider {
     case getUserId(summonerName: String)
     case getElo(summonerId: Int)
+    case getMatchList(summonerId: Int, endIndex: Int)
 }
 
 extension RiotProvider: TargetType {
     var baseURL: URL {
-        guard let url = URL(string: "https://br1.api.riotgames.com/lol/") else { fatalError("Failed to get base url") }
+        guard let url = URL(string: "https://br1.api.riotgames.com/lol") else { fatalError("Failed to get base url") }
         return url
     }
 
@@ -29,6 +30,8 @@ extension RiotProvider: TargetType {
             return "summoner/v3/summoners/by-name/\(summonerName)"
         case .getElo(let summonerId):
             return "league/v3/positions/by-summoner/\(summonerId)"
+        case .getMatchList(let summonerId, _):
+            return "match/v3/matchlists/by-account/\(summonerId)"
         }
     }
 
@@ -43,7 +46,8 @@ extension RiotProvider: TargetType {
     var task: Task {
         switch self {
         case .getUserId,
-             .getElo:
+             .getElo,
+             .getMatchList:
             return .requestPlain
         }
     }
@@ -53,6 +57,9 @@ extension RiotProvider: TargetType {
         case .getUserId,
              .getElo:
             return ["X-Riot-Token" : "\(Credentials.riotKey)"]
+        case .getMatchList(_, let endIndex):
+            return ["X-Riot-Token" : "\(Credentials.riotKey)",
+                    "endInhdex" : String(endIndex)]
         }
     }
 }

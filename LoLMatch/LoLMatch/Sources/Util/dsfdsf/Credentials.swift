@@ -10,5 +10,5 @@ import Foundation
 
 class Credentials {
 
-    static var riotKey = "RGAPI-d5ae6c5c-7afa-4d83-8215-7e030cac1525"
+    static var riotKey = "RGAPI-a85c0f5e-087e-45b0-9b7f-901f9197dea8"
 }
