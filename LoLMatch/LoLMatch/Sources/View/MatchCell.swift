@@ -17,6 +17,8 @@ class MatchCell: UITableViewCell {
     @IBOutlet weak var primaryLaneLabel: UILabel!
     @IBOutlet weak var secondaryLaneImageView: UIImageView!
     @IBOutlet weak var secondaryLaneLabel: UILabel!
+    @IBOutlet weak var eloLabel: UILabel!
+    @IBOutlet weak var divisionLabel: UILabel!
     
     
     // MARK: - Life Cycle
@@ -32,6 +34,16 @@ class MatchCell: UITableViewCell {
         self.primaryLaneLabel.text = user.lane1.description()
         self.secondaryLaneImageView.image = user.lane2.image()
         self.secondaryLaneLabel.text = user.lane2.description()
+        
+        UserServices.getElo(byId: user.summonerId) { [unowned self] elos, error in
+            
+            if let validElos = elos {
+                for elo in validElos where elo.queueType ?? "" == "RANKED_SOLO_5x5" {
+                    self.eloLabel.text = elo.tier ?? ""
+                    self.divisionLabel.text = elo.rank ?? ""
+                }
+            }
+        }
     }
 
 }

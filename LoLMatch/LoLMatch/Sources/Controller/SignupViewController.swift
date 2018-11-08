@@ -29,6 +29,7 @@ class SignupViewController: UITableViewController {
     let primaryPicker = UIPickerView()
     let secondaryPicker = UIPickerView()
     
+    var profileIconId: Int?
     var riotName: String?
     var riotSummoner: Int?
     var riotAccount: Int?
@@ -56,6 +57,7 @@ class SignupViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.profileIconId = nil
         self.riotName = nil
         self.riotSummoner = nil
         self.riotAccount = nil
@@ -106,6 +108,7 @@ class SignupViewController: UITableViewController {
                         if let userProfileId = user {
                             self.summonerStatus = true
 
+                            self.profileIconId = userProfileId.profileIconId
                             self.riotSummoner = userProfileId.summonerId
                             self.riotAccount = userProfileId.accountId
                             self.riotName = userProfileId.name
@@ -132,7 +135,7 @@ class SignupViewController: UITableViewController {
         
         if summonerStatus && !lane1TextField.text!.isEmpty && !lane2TextField.text!.isEmpty && !duolane1TextField.text!.isEmpty && !duolane2TextField.text!.isEmpty {
             
-            if let summonerName = self.riotName, let summonerId = self.riotSummoner, let accountId = self.riotAccount {
+            if let profileIconId = self.profileIconId, let summonerName = self.riotName, let summonerId = self.riotSummoner, let accountId = self.riotAccount {
                 
                 if let lane1Text = lane1TextField.text, let lane2Text = lane2TextField.text,
                     let duoLane1Text = duolane1TextField.text, let duoLane2Text = duolane2TextField.text {
@@ -142,7 +145,7 @@ class SignupViewController: UITableViewController {
                     let duoLane1 = Lane(value: duoLane1Text)
                     let duoLane2 = Lane(value: duoLane2Text)
                     
-                    let user = User(summonerName: summonerName, summonerId: summonerId, accountId: accountId, lane1: lane1, lane2: lane2, duoLane1: duoLane1, duoLane2: duoLane2)
+                    let user = User(profileIconId: profileIconId, summonerName: summonerName, summonerId: summonerId, accountId: accountId, lane1: lane1, lane2: lane2, duoLane1: duoLane1, duoLane2: duoLane2)
                     
                     UserServices.setCurrentUser(user: user)
                     UserServices.setLanes(user: user)
