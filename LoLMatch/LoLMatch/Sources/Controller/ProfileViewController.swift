@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 class ProfileViewController: UIViewController {
 
@@ -162,6 +163,12 @@ extension ProfileViewController {
     private func displaySummonerInformation() {
         
         if let user = self.currentUser {
+
+            let imageURL = URL(string: "http://ddragon.leagueoflegends.com/cdn/\(Patch.patch)/img/profileicon/\(user.profileIconId).png")!
+
+            loadImage(with: imageURL, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "profilePlaceholder"),transition: .fadeIn(duration: 0.3)), into: self.profileImageView)
+            
+            self.profileView.layer.cornerRadius = self.profileView.frame.height / 2
             
             self.summonerName.text = user.summonerName
             

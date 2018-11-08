@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 class MatchCell: UITableViewCell {
 
@@ -34,7 +35,14 @@ class MatchCell: UITableViewCell {
         self.secondaryLaneImageView.image = user.lane2.image()
         self.secondaryLaneLabel.text = user.lane2.description()
         
-        UserServices.getElo(byId: user.summonerId) { [unowned self] elos, error in
+        self.setupElo(summonerId: user.summonerId)
+        self.setupProfileIcon(profileIconId: user.profileIconId)
+    }
+    
+    
+    // MARK: - Private Methods
+    private func setupElo(summonerId: Int) {
+        UserServices.getElo(byId: summonerId) { [unowned self] elos, error in
             
             if let validElos = elos {
                 for elo in validElos where elo.queueType ?? "" == "RANKED_SOLO_5x5" {
@@ -42,6 +50,12 @@ class MatchCell: UITableViewCell {
                 }
             }
         }
+    }
+    
+    private func setupProfileIcon(profileIconId: Int) {
+        let imageURL = URL(string: "http://ddragon.leagueoflegends.com/cdn/\(Patch.patch)/img/profileicon/\(profileIconId).png")!
+        
+        loadImage(with: imageURL, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "profilePlaceholder"),transition: .fadeIn(duration: 0.3)), into: self.summonerProfileImageView)
     }
 
 }
