@@ -18,7 +18,6 @@ class MatchCell: UITableViewCell {
     @IBOutlet weak var secondaryLaneImageView: UIImageView!
     @IBOutlet weak var secondaryLaneLabel: UILabel!
     @IBOutlet weak var eloLabel: UILabel!
-    @IBOutlet weak var divisionLabel: UILabel!
     
     
     // MARK: - Life Cycle
@@ -39,8 +38,7 @@ class MatchCell: UITableViewCell {
             
             if let validElos = elos {
                 for elo in validElos where elo.queueType ?? "" == "RANKED_SOLO_5x5" {
-                    self.eloLabel.text = elo.tier ?? ""
-                    self.divisionLabel.text = elo.rank ?? ""
+                    self.eloLabel.text = "\(elo.tier ?? "") \(elo.rank ?? "")"
                 }
             }
         }

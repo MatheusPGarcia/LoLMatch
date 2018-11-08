@@ -11,6 +11,7 @@ import UIKit
 protocol LikeUserDelegate: class {
     func likeUser(summonerId: Int)
     func dislikeUser(summonerId: Int)
+    func displayAlert(title: String, message: String)
 }
 
 class LikesReceivedCell: UITableViewCell {
@@ -59,5 +60,23 @@ class LikesReceivedCell: UITableViewCell {
         self.secondaryLaneLabel.text = user.lane2.description()
         self.lanesView.primaryImageView.image = user.lane1.image()
         self.lanesView.secondaryImageView.image = user.lane2.image()
+        
+        UserServices.getElo(byId: user.summonerId) { [unowned self] elos, error in
+            
+            if let validElos = elos {
+                for elo in validElos where elo.queueType ?? "" == "RANKED_SOLO_5x5" {
+                    
+                    if let tier = elo.tier, let rank = elo.rank, let pdl = elo.pdl, let wins = elo.wins, let losses = elo.losses {
+                        self.eloImage.image = elo.image
+                        self.eloLabel.text = "\(tier) \(rank)"
+                        self.pdlLabel.text = "\(pdl) PDL | \(wins)W \(losses)L"
+                    } else {
+                        if let delegate = self.delegate {
+                            delegate.displayAlert(title: "Oops...", message: "Erro ao pegar as informaçoes de elo do jogador")
+                        }
+                    }
+                }
+            }
+        }
     }
 }

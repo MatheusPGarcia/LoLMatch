@@ -111,7 +111,7 @@ extension LikesReceivedViewController: UITableViewDelegate, UITableViewDataSourc
 
 // MARK: - Like User Delegate
 extension LikesReceivedViewController: LikeUserDelegate {
-    
+
     func likeUser(summonerId: Int) {
         UserServices.matchUser(summonerId: summonerId) { success in
             if success {
@@ -127,5 +127,9 @@ extension LikesReceivedViewController: LikeUserDelegate {
     
     func dislikeUser(summonerId: Int) {
         print("Implement")
+    }
+    
+    func displayAlert(title: String, message: String) {
+        self.createAlert(title: title, message: message)
     }
 }
