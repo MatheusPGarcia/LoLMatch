@@ -20,7 +20,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJ3-yG-d8t">
                                 <rect key="frame" x="131.5" y="74" width="112.5" height="112.5"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FM8-jy-4ZU">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="FM8-jy-4ZU">
                                         <rect key="frame" x="10" y="10" width="92.5" height="92.5"/>
                                     </imageView>
                                 </subviews>
@@ -400,4 +400,7 @@
             <point key="canvasLocation" x="213.59999999999999" y="148.87556221889056"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="profilePlaceholder" width="640" height="640"/>
+    </resources>
 </document>
