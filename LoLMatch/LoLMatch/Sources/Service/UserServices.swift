@@ -187,16 +187,89 @@ class UserServices: BaseService {
         request(provider: riotProvider, target: target, type: [Elo].self, completion: completion)
     }
 
+    static func getPlayerKda(byId summonerId: Int, numberOfMatches: Int, completion: @escaping ([FilteredMatch]?, Error?) -> Void) {
+
+        getMatches(byId: summonerId, numberOfMatches: numberOfMatches) { (matches, error) in
+
+            if let error = error {
+                completion (nil, error)
+                return
+            }
+
+            guard let matches = matches else { return }
+
+            for (index, match) in matches.enumerated() {
+
+                guard let gameId = match.gameId else { return }
+                guard let championId = match.gameId else { return }
+
+                var matches = [FilteredMatch]()
+
+                getPlayerKdaForMatch(byGameId: gameId, forChampion: championId, completion: { (match, error) in
+
+                    if let error = error {
+                        completion(nil, error)
+                        return
+                    }
+
+                    guard let match = match else { return }
+
+                    guard let kill = match.kill else { return }
+                    guard let death = match.death else { return }
+                    guard let assist = match.assist else { return }
+                    guard let championId = match.championId else { return }
+
+                    let newMatch = FilteredMatch(k: kill, d: death, a: assist, championId: championId)
+                    matches.append(newMatch)
+                })
+            }
+        }
+    }
+}
+
+// MARK: - private methods
+extension UserServices {
     /// Method responsible to get the last matches from a specific Summoner
     ///
     /// - Parameters:
     ///   - summonerId: Summoner Id
     ///   - numberOfMatches: Number of matches
     ///   - completion: Returns the array of matches [MatchesBasicInfo] of this Summoner
-    static func getMatches(byId summonerId: Int, numberOfMatches: Int, completion: @escaping ([MatchBasicInfo]?, Error?) -> Void) {
+    private static func getMatches(byId summonerId: Int, numberOfMatches: Int, completion: @escaping ([MatchBasicInfo]?, Error?) -> Void) {
 
         let target = RiotProvider.getMatchList(summonerId: summonerId, endIndex: numberOfMatches)
 
-        request(provider: riotProvider, target: target, type: [MatchBasicInfo].self, completion: completion)
+        request(provider: riotProvider, target: target, type: MainStructForMatch.self) { (matchStruct, error) in
+            completion(matchStruct?.matches, error)
+        }
+    }
+
+    /// getPlayerKda
+    ///
+    /// - Parameters:
+    ///   - gameId: match that you want info
+    ///   - championId: champion played by the user
+    ///   - completion: Return the kda structure
+    private static func getPlayerKdaForMatch(byGameId gameId: Int, forChampion championId: Int, completion: @escaping (FilteredMatch?, Error?) -> Void) {
+
+        let target = RiotProvider.getMatchDetails(matchId: gameId)
+
+        request(provider: riotProvider, target: target, type: MatchDetails.self) { (details, error) in
+
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+
+            guard let participants = details?.participants else { return }
+
+            for participant in participants where participant.championId == championId {
+                let match = FilteredMatch(k: participant.kills, d: participant.deaths, a: participant.assists, championId: championId)
+                completion(match, nil)
+                return
+            }
+
+            completion (nil, nil)
+        }
     }
 }

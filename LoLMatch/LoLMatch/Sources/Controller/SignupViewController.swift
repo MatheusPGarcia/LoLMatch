@@ -77,14 +77,14 @@ class SignupViewController: UITableViewController {
             logger.debug(profile)
         }
 
-        UserServices.getMatches(byId: 200228270, numberOfMatches: 3) { (matches, error) in
-
-            if let error = error {
-                fatalError("\(error)")
-            }
-
-            logger.debug(matches)
-        }
+//        UserServices.getMatches(byId: 200228270, numberOfMatches: 3) { (matches, error) in
+//
+//            if let error = error {
+//                fatalError("\(error)")
+//            }
+//
+//            logger.debug(matches)
+//        }
     }
     
     

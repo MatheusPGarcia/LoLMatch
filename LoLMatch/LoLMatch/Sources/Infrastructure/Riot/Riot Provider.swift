@@ -16,6 +16,7 @@ enum RiotProvider {
     case getUserId(summonerName: String)
     case getElo(summonerId: Int)
     case getMatchList(summonerId: Int, endIndex: Int)
+    case getMatchDetails(matchId: Int)
 }
 
 extension RiotProvider: TargetType {
@@ -32,6 +33,8 @@ extension RiotProvider: TargetType {
             return "league/v3/positions/by-summoner/\(summonerId)"
         case .getMatchList(let summonerId, _):
             return "match/v3/matchlists/by-account/\(summonerId)"
+        case .getMatchDetails(let matchId):
+            return "match/v3/matches/\(matchId)"
         }
     }
 
@@ -47,7 +50,8 @@ extension RiotProvider: TargetType {
         switch self {
         case .getUserId,
              .getElo,
-             .getMatchList:
+             .getMatchList,
+             .getMatchDetails:
             return .requestPlain
         }
     }
@@ -55,7 +59,8 @@ extension RiotProvider: TargetType {
     var headers: [String : String]? {
         switch self {
         case .getUserId,
-             .getElo:
+             .getElo,
+             .getMatchDetails:
             return ["X-Riot-Token" : "\(Credentials.riotKey)"]
         case .getMatchList(_, let endIndex):
             return ["X-Riot-Token" : "\(Credentials.riotKey)",
