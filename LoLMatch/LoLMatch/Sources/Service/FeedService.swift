@@ -10,6 +10,9 @@ import Foundation
 
 class FeedService {
 
+    /// Method responsible to retrieve all Users to show in feed
+    ///
+    /// - Parameter completion: users array
     public static func getFeed(completion: @escaping ([User]?) -> Void) {
 
         UserServices.getAllUsers { (users) in
