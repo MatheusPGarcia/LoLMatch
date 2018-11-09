@@ -69,7 +69,6 @@ class SignupViewController: UITableViewController {
         self.lane2TextField.text = nil
         self.duolane1TextField.text = nil
         self.duolane2TextField.text = nil
-        
     }
     
     

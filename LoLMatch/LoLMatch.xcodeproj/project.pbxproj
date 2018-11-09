@@ -35,6 +35,11 @@
 		18BA80BD218743E0007443C9 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA80BC218743E0007443C9 /* UIViewControllerExtension.swift */; };
 		18FA17052188D1C700D43A94 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA17042188D1C700D43A94 /* SignupViewController.swift */; };
 		AE321F0121809C7300B1C95A /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE321F0021809C7300B1C95A /* MatchViewController.swift */; };
+		AE3F55872194589D0019AB9F /* MatchRiotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F55862194589D0019AB9F /* MatchRiotResponse.swift */; };
+		AE3F5589219460860019AB9F /* MatchDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F5588219460860019AB9F /* MatchDetails.swift */; };
+		AE3F558B219460EA0019AB9F /* PlayerInMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F558A219460EA0019AB9F /* PlayerInMatch.swift */; };
+		AE3F558E219462880019AB9F /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F558D219462880019AB9F /* Stats.swift */; };
+		AE3F5590219466F10019AB9F /* FilteredMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F558F219466F10019AB9F /* FilteredMatch.swift */; };
 		AE4075CE218B24F2000857EB /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075CA218B24F2000857EB /* BaseService.swift */; };
 		AE4075D4218B2538000857EB /* Riot Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075D3218B2538000857EB /* Riot Provider.swift */; };
 		AE4075D7218B2581000857EB /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075D6218B2581000857EB /* Credentials.swift */; };
@@ -42,6 +47,7 @@
 		AE4075DB218B30AB000857EB /* Elo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075DA218B30AB000857EB /* Elo.swift */; };
 		AE4075DE218B3613000857EB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075DD218B3613000857EB /* Logger.swift */; };
 		AE4075E1218B371C000857EB /* LoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075E0218B371C000857EB /* LoggerPlugin.swift */; };
+		AE4075E721905986000857EB /* MatchBasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4075E621905986000857EB /* MatchBasicInfo.swift */; };
 		AE4359382175FE3D008A94FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4359372175FE3D008A94FC /* AppDelegate.swift */; };
 		AE43593D2175FE3D008A94FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE43593B2175FE3D008A94FC /* Main.storyboard */; };
 		AE4359402175FE3D008A94FC /* LoLMatch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE43593E2175FE3D008A94FC /* LoLMatch.xcdatamodeld */; };
@@ -105,6 +111,11 @@
 		913E005653ED98D17EDB9ECD /* Pods_LoLMatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoLMatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9CCFAEF068D5403E5E655A /* Pods_LoLMatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoLMatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE321F0021809C7300B1C95A /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
+		AE3F55862194589D0019AB9F /* MatchRiotResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRiotResponse.swift; sourceTree = "<group>"; };
+		AE3F5588219460860019AB9F /* MatchDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetails.swift; sourceTree = "<group>"; };
+		AE3F558A219460EA0019AB9F /* PlayerInMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInMatch.swift; sourceTree = "<group>"; };
+		AE3F558D219462880019AB9F /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		AE3F558F219466F10019AB9F /* FilteredMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredMatch.swift; sourceTree = "<group>"; };
 		AE4075CA218B24F2000857EB /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		AE4075D3218B2538000857EB /* Riot Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Riot Provider.swift"; sourceTree = "<group>"; };
 		AE4075D6218B2581000857EB /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
@@ -112,6 +123,7 @@
 		AE4075DA218B30AB000857EB /* Elo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elo.swift; sourceTree = "<group>"; };
 		AE4075DD218B3613000857EB /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		AE4075E0218B371C000857EB /* LoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerPlugin.swift; sourceTree = "<group>"; };
+		AE4075E621905986000857EB /* MatchBasicInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchBasicInfo.swift; sourceTree = "<group>"; };
 		AE4359342175FE3D008A94FC /* LoLMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoLMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4359372175FE3D008A94FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE43593C2175FE3D008A94FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -206,6 +218,8 @@
 				186E7C662177CFD900DB521A /* User.swift */,
 				AE4075D8218B25D2000857EB /* UserIdProfile.swift */,
 				AE4075DA218B30AB000857EB /* Elo.swift */,
+				AE3F5585219458810019AB9F /* MatchInfo */,
+				AE3F558C219460EE0019AB9F /* MatchDetails */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -240,6 +254,26 @@
 				10E8184FF929D7A69396EE73 /* Pods-LoLMatchUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		AE3F5585219458810019AB9F /* MatchInfo */ = {
+			isa = PBXGroup;
+			children = (
+				AE4075E621905986000857EB /* MatchBasicInfo.swift */,
+				AE3F55862194589D0019AB9F /* MatchRiotResponse.swift */,
+			);
+			path = MatchInfo;
+			sourceTree = "<group>";
+		};
+		AE3F558C219460EE0019AB9F /* MatchDetails */ = {
+			isa = PBXGroup;
+			children = (
+				AE3F5588219460860019AB9F /* MatchDetails.swift */,
+				AE3F558A219460EA0019AB9F /* PlayerInMatch.swift */,
+				AE3F558D219462880019AB9F /* Stats.swift */,
+				AE3F558F219466F10019AB9F /* FilteredMatch.swift */,
+			);
+			path = MatchDetails;
 			sourceTree = "<group>";
 		};
 		AE4075D2218B2517000857EB /* Riot */ = {
@@ -366,8 +400,8 @@
 		AE43597121760124008A94FC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				AE43596B217600B8008A94FC /* Infrastructure */,
 				186E7C632177CFA800DB521A /* Util */,
+				AE43596B217600B8008A94FC /* Infrastructure */,
 				186E7C642177CFB600DB521A /* Service */,
 				AE43596E217600E4008A94FC /* Controller */,
 				AE43596F217600EF008A94FC /* View */,
@@ -623,22 +657,28 @@
 				AE4075DB218B30AB000857EB /* Elo.swift in Sources */,
 				188228EB21764F7600CAEB8A /* RoundedImageView.swift in Sources */,
 				180A6CF8218781FC00E6AFB9 /* DateExtension.swift in Sources */,
+				AE3F55872194589D0019AB9F /* MatchRiotResponse.swift in Sources */,
 				18B12E9E218AB983007F1979 /* UserDefaultsManager.swift in Sources */,
 				AE4075DE218B3613000857EB /* Logger.swift in Sources */,
 				AE4359382175FE3D008A94FC /* AppDelegate.swift in Sources */,
 				AE321F0121809C7300B1C95A /* MatchViewController.swift in Sources */,
 				186E7C602177B21700DB521A /* DoubleImageView.swift in Sources */,
 				186E7C622177CF2700DB521A /* LikesReceivedViewController.swift in Sources */,
+				AE3F5590219466F10019AB9F /* FilteredMatch.swift in Sources */,
 				AE4075E1218B371C000857EB /* LoggerPlugin.swift in Sources */,
 				187AB9162177D81500D36C36 /* UserServices.swift in Sources */,
 				181EEACB2193BFAF00B7BCC5 /* MatchCell.swift in Sources */,
 				186E7C6D2177D51000DB521A /* FirebaseManager.swift in Sources */,
 				186E7C672177CFD900DB521A /* User.swift in Sources */,
+				AE3F5589219460860019AB9F /* MatchDetails.swift in Sources */,
 				18807C54218AD67D00DD8761 /* ProfileViewController.swift in Sources */,
+				AE3F558B219460EA0019AB9F /* PlayerInMatch.swift in Sources */,
 				18314C4D2194642C00F2A318 /* Patch.swift in Sources */,
 				187AB9182177D8D700D36C36 /* FirebaseResponsePaser.swift in Sources */,
 				AE4075CE218B24F2000857EB /* BaseService.swift in Sources */,
+				AE4075E721905986000857EB /* MatchBasicInfo.swift in Sources */,
 				186E7C6B2177D2E800DB521A /* Lane.swift in Sources */,
+				AE3F558E219462880019AB9F /* Stats.swift in Sources */,
 				181EEAC92193BE5B00B7BCC5 /* CommunicationViewController.swift in Sources */,
 				18FA17052188D1C700D43A94 /* SignupViewController.swift in Sources */,
 				186E7C692177D0A200DB521A /* LikesReceivedCell.swift in Sources */,
