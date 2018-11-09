@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0F83B009A98F85C88ECEBBCB /* Pods_LoLMatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F9CCFAEF068D5403E5E655A /* Pods_LoLMatchTests.framework */; };
 		180A6CF8218781FC00E6AFB9 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A6CF7218781FC00E6AFB9 /* DateExtension.swift */; };
+		181EEAC92193BE5B00B7BCC5 /* CommunicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181EEAC82193BE5B00B7BCC5 /* CommunicationViewController.swift */; };
+		181EEACB2193BFAF00B7BCC5 /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181EEACA2193BFAF00B7BCC5 /* MatchCell.swift */; };
+		18314C4D2194642C00F2A318 /* Patch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18314C4C2194642C00F2A318 /* Patch.swift */; };
 		186E7C5E2177B0FB00DB521A /* DoubleImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186E7C5D2177B0FB00DB521A /* DoubleImageView.xib */; };
 		186E7C602177B21700DB521A /* DoubleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E7C5F2177B21700DB521A /* DoubleImageView.swift */; };
 		186E7C622177CF2700DB521A /* LikesReceivedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E7C612177CF2700DB521A /* LikesReceivedViewController.swift */; };
@@ -76,6 +79,9 @@
 /* Begin PBXFileReference section */
 		10E8184FF929D7A69396EE73 /* Pods-LoLMatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoLMatchUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoLMatchUITests/Pods-LoLMatchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		180A6CF7218781FC00E6AFB9 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		181EEAC82193BE5B00B7BCC5 /* CommunicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationViewController.swift; sourceTree = "<group>"; };
+		181EEACA2193BFAF00B7BCC5 /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
+		18314C4C2194642C00F2A318 /* Patch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patch.swift; sourceTree = "<group>"; };
 		186E7C5D2177B0FB00DB521A /* DoubleImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoubleImageView.xib; sourceTree = "<group>"; };
 		186E7C5F2177B21700DB521A /* DoubleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleImageView.swift; sourceTree = "<group>"; };
 		186E7C612177CF2700DB521A /* LikesReceivedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesReceivedViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +169,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18314C4B2194641A00F2A318 /* Patch */ = {
+			isa = PBXGroup;
+			children = (
+				18314C4C2194642C00F2A318 /* Patch.swift */,
+			);
+			path = Patch;
+			sourceTree = "<group>";
+		};
 		186E7C5C2177AC1700DB521A /* DoubleImageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +189,7 @@
 		186E7C632177CFA800DB521A /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				18314C4B2194641A00F2A318 /* Patch */,
 				AE4075DF218B3708000857EB /* Moya */,
 				AE4075DC218B3603000857EB /* Logger */,
 				AE4075D5218B255A000857EB /* Credentials */,
@@ -360,6 +375,7 @@
 				AE321F0021809C7300B1C95A /* MatchViewController.swift */,
 				18FA17042188D1C700D43A94 /* SignupViewController.swift */,
 				18807C53218AD67D00DD8761 /* ProfileViewController.swift */,
+				181EEAC82193BE5B00B7BCC5 /* CommunicationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -376,6 +392,7 @@
 				188228E3217628FE00CAEB8A /* Profile.storyboard */,
 				AE4359432175FE40008A94FC /* LaunchScreen.storyboard */,
 				186E7C682177D0A200DB521A /* LikesReceivedCell.swift */,
+				181EEACA2193BFAF00B7BCC5 /* MatchCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -606,6 +623,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
@@ -617,6 +635,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
@@ -648,16 +667,19 @@
 				AE3F5590219466F10019AB9F /* FilteredMatch.swift in Sources */,
 				AE4075E1218B371C000857EB /* LoggerPlugin.swift in Sources */,
 				187AB9162177D81500D36C36 /* UserServices.swift in Sources */,
+				181EEACB2193BFAF00B7BCC5 /* MatchCell.swift in Sources */,
 				186E7C6D2177D51000DB521A /* FirebaseManager.swift in Sources */,
 				186E7C672177CFD900DB521A /* User.swift in Sources */,
 				AE3F5589219460860019AB9F /* MatchDetails.swift in Sources */,
 				18807C54218AD67D00DD8761 /* ProfileViewController.swift in Sources */,
 				AE3F558B219460EA0019AB9F /* PlayerInMatch.swift in Sources */,
+				18314C4D2194642C00F2A318 /* Patch.swift in Sources */,
 				187AB9182177D8D700D36C36 /* FirebaseResponsePaser.swift in Sources */,
 				AE4075CE218B24F2000857EB /* BaseService.swift in Sources */,
 				AE4075E721905986000857EB /* MatchBasicInfo.swift in Sources */,
 				186E7C6B2177D2E800DB521A /* Lane.swift in Sources */,
 				AE3F558E219462880019AB9F /* Stats.swift in Sources */,
+				181EEAC92193BE5B00B7BCC5 /* CommunicationViewController.swift in Sources */,
 				18FA17052188D1C700D43A94 /* SignupViewController.swift in Sources */,
 				186E7C692177D0A200DB521A /* LikesReceivedCell.swift in Sources */,
 				188228E9217634BD00CAEB8A /* UIViewExtension.swift in Sources */,
@@ -845,10 +867,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3W69VTQXGX;
 				INFOPLIST_FILE = "$(SRCROOT)/LoLMatch/Resources/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MatheusPGarcia.LoLMatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -864,10 +883,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3W69VTQXGX;
 				INFOPLIST_FILE = "$(SRCROOT)/LoLMatch/Resources/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MatheusPGarcia.LoLMatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -884,11 +900,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3W69VTQXGX;
 				INFOPLIST_FILE = LoLMatchTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MatheusPGarcia.LoLMatchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -906,11 +918,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3W69VTQXGX;
 				INFOPLIST_FILE = LoLMatchTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MatheusPGarcia.LoLMatchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -927,11 +935,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3W69VTQXGX;
 				INFOPLIST_FILE = LoLMatchUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MatheusPGarcia.LoLMatchUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -948,11 +952,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3W69VTQXGX;
 				INFOPLIST_FILE = LoLMatchUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.MatheusPGarcia.LoLMatchUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

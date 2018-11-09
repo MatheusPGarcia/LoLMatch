@@ -103,6 +103,9 @@ class FirebaseManager {
         completion(true)
     }
     
+    /// Method responsible to set all the lanes for a given user
+    ///
+    /// - Parameter user: User to be updated
     static func setLanes(user: User) {
         self.ref.child("Users").child("\(user.summonerId)").setValue(user.toDict())
     }
