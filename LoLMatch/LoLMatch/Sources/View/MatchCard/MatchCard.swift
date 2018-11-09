@@ -11,6 +11,21 @@ import UIKit
 @IBDesignable class MatchCard: UIView {
     
     @IBOutlet weak var swipeFeedbackImage: UIImageView!
+    @IBOutlet weak var lane1Label: UILabel!
+    @IBOutlet weak var lane2Label: UILabel!
+    @IBOutlet weak var eloImageView: RoundedImageView!
+    @IBOutlet weak var tierLabel: UILabel!
+    @IBOutlet weak var pdlLabel: UILabel!
+    @IBOutlet weak var champion1ImageView: DoubleImageView!
+    @IBOutlet weak var champion1NameLabel: UILabel!
+    @IBOutlet weak var champion1Kda: UILabel!
+    @IBOutlet weak var champion2ImageView: DoubleImageView!
+    @IBOutlet weak var champion2NameLabel: UILabel!
+    @IBOutlet weak var champion2Kda: UILabel!
+    @IBOutlet weak var champion3ImageView: DoubleImageView!
+    @IBOutlet weak var champion3NameLabel: UILabel!
+    @IBOutlet weak var champion3Kda: UILabel!
+    
 
     var view = self
 
@@ -33,6 +48,50 @@ import UIKit
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         self.setupXib()
+    }
+
+    func setupView(summoner: User) {
+        lane1Label.text = summoner.lane1.description()
+        lane2Label.text = summoner.lane2.description()
+
+
+        UserServices.getElo(byId: summoner.accountId) { (elo, error) in
+            self.tierLabel.text = "\(elo?.first?.rank) \(elo?.first?.tier)"
+            self.pdlLabel.text = "\(elo?.first?.pdl) pdl"
+        }
+
+        UserServices.getPlayerKda(byId: summoner.accountId, numberOfMatches: 3) { (matches, error) in
+            var matches = matches!
+            var currentMatch = matches.first
+            matches.removeFirst()
+
+            self.champion1NameLabel.text = String(currentMatch!.championId!)
+            self.champion1Kda.text = "\(currentMatch?.kill)/\(currentMatch?.death)/\(currentMatch?.assist)"
+
+            currentMatch = matches.first
+            matches.removeFirst()
+
+            self.champion2NameLabel.text = String(currentMatch!.championId!)
+            self.champion2Kda.text = "\(currentMatch?.kill)/\(currentMatch?.death)/\(currentMatch?.assist)"
+
+            currentMatch = matches.first
+            matches.removeFirst()
+
+            self.champion3NameLabel.text = String(currentMatch!.championId!)
+            self.champion3Kda.text = "\(currentMatch?.kill)/\(currentMatch?.death)/\(currentMatch?.assist)"
+        }
+
+
+//        @IBOutlet weak var pdlLabel: UILabel!
+//        @IBOutlet weak var champion1ImageView: DoubleImageView!
+//        @IBOutlet weak var champion1NameLabel: UILabel!
+//        @IBOutlet weak var champion1Kda: UILabel!
+//        @IBOutlet weak var champion2ImageView: DoubleImageView!
+//        @IBOutlet weak var champion2NameLabel: UILabel!
+//        @IBOutlet weak var champion2Kda: UILabel!
+//        @IBOutlet weak var champion3ImageView: DoubleImageView!
+//        @IBOutlet weak var champion3NameLabel: UILabel!
+//        @IBOutlet weak var champion3Kda: UILabel!
     }
     
 }
