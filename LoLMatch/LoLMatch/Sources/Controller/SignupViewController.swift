@@ -67,24 +67,6 @@ class SignupViewController: UITableViewController {
         self.lane2TextField.text = nil
         self.duolane1TextField.text = nil
         self.duolane2TextField.text = nil
-
-        UserServices.getSummonerId(byName: "Scarpz") { (profile, error) in
-
-            if let error = error {
-                fatalError("\(error)")
-            }
-
-            logger.debug(profile)
-        }
-
-//        UserServices.getMatches(byId: 200228270, numberOfMatches: 3) { (matches, error) in
-//
-//            if let error = error {
-//                fatalError("\(error)")
-//            }
-//
-//            logger.debug(matches)
-//        }
     }
     
     

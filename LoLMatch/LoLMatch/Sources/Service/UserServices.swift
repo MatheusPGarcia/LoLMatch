@@ -187,6 +187,12 @@ class UserServices: BaseService {
         request(provider: riotProvider, target: target, type: [Elo].self, completion: completion)
     }
 
+    /// Method responsible to get the kda status from a specific Summoner in the last three matches
+    ///
+    /// - Parameters:
+    ///   - summonerId: summonerId
+    ///   - numberOfMatches: numberOfMatches you want kda
+    ///   - completion: array with matches kda
     static func getPlayerKda(byId summonerId: Int, numberOfMatches: Int, completion: @escaping ([FilteredMatch]?, Error?) -> Void) {
 
         getMatches(byId: summonerId, numberOfMatches: numberOfMatches) { (matches, error) in
@@ -196,39 +202,64 @@ class UserServices: BaseService {
                 return
             }
 
-            guard let matches = matches else { return }
+            guard let matchesArray = matches else { return }
+            var matches = matchesArray
 
-            for (index, match) in matches.enumerated() {
+            guard let match = matches.first else { return }
+            guard let gameId = match.gameId else { return }
+            guard let championId = match.championId else { return }
+            matches.removeFirst()
 
+            let returnArray = [FilteredMatch]()
+
+            getPlayerKdaForMatch(byGameId: gameId, forChampion: championId, appendingIn: returnArray, completion: { (filteredMatch, error) in
+
+                if let error = error {
+                    completion(nil, error)
+                    return
+                }
+
+                guard let match = matches.first else { return }
                 guard let gameId = match.gameId else { return }
-                guard let championId = match.gameId else { return }
+                guard let championId = match.championId else { return }
+                matches.removeFirst()
 
-                var matches = [FilteredMatch]()
+                guard let filteredMatch = filteredMatch else { return }
 
-                getPlayerKdaForMatch(byGameId: gameId, forChampion: championId, completion: { (match, error) in
+                getPlayerKdaForMatch(byGameId: gameId, forChampion: championId, appendingIn: filteredMatch, completion: { (filteredMatch, error) in
 
                     if let error = error {
                         completion(nil, error)
                         return
                     }
 
-                    guard let match = match else { return }
-
-                    guard let kill = match.kill else { return }
-                    guard let death = match.death else { return }
-                    guard let assist = match.assist else { return }
+                    guard let match = matches.first else { return }
+                    guard let gameId = match.gameId else { return }
                     guard let championId = match.championId else { return }
+                    matches.removeFirst()
 
-                    let newMatch = FilteredMatch(k: kill, d: death, a: assist, championId: championId)
-                    matches.append(newMatch)
+                    guard let filteredMatch = filteredMatch else { return }
+
+                    getPlayerKdaForMatch(byGameId: gameId, forChampion: championId, appendingIn: filteredMatch, completion: { (filteredMatch, error) in
+
+                        if let error = error {
+                            completion(nil, error)
+                            return
+                        }
+
+                        guard let filteredMatch = filteredMatch else { return }
+
+                        completion(filteredMatch, nil)
+                    })
                 })
-            }
+            })
         }
     }
 }
 
 // MARK: - private methods
 extension UserServices {
+
     /// Method responsible to get the last matches from a specific Summoner
     ///
     /// - Parameters:
@@ -250,7 +281,7 @@ extension UserServices {
     ///   - gameId: match that you want info
     ///   - championId: champion played by the user
     ///   - completion: Return the kda structure
-    private static func getPlayerKdaForMatch(byGameId gameId: Int, forChampion championId: Int, completion: @escaping (FilteredMatch?, Error?) -> Void) {
+    private static func getPlayerKdaForMatch(byGameId gameId: Int, forChampion championId: Int, appendingIn matchesArray: [FilteredMatch], completion: @escaping ([FilteredMatch]?, Error?) -> Void) {
 
         let target = RiotProvider.getMatchDetails(matchId: gameId)
 
@@ -265,7 +296,9 @@ extension UserServices {
 
             for participant in participants where participant.championId == championId {
                 let match = FilteredMatch(k: participant.kills, d: participant.deaths, a: participant.assists, championId: championId)
-                completion(match, nil)
+                var newMatchesArray = matchesArray
+                newMatchesArray.append(match)
+                completion(newMatchesArray, nil)
                 return
             }
 

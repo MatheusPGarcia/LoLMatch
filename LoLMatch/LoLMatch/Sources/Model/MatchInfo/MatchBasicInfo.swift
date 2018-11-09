@@ -18,7 +18,7 @@ extension MatchBasicInfo {
 
     enum responseKeys: String, CodingKey {
         case gameId
-        case championId
+        case championId = "champion"
     }
 
     init(from decoder: Decoder) throws {
