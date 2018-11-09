@@ -17,6 +17,9 @@ class MatchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        FeedService.getFeed { (feedUsers) in
+
+        }
         cardCenter = cardView.center
     }
 
