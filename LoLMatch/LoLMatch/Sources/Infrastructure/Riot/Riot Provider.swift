@@ -15,7 +15,7 @@ let basePlugin: [PluginType] = [LoggerPlugin()]
 enum RiotProvider {
     case getUserId(summonerName: String)
     case getElo(summonerId: Int)
-    case getMatchList(summonerId: Int, endIndex: Int)
+    case getMatchList(accountId: Int, endIndex: Int)
     case getMatchDetails(matchId: Int)
 }
 
@@ -31,8 +31,8 @@ extension RiotProvider: TargetType {
             return "summoner/v3/summoners/by-name/\(summonerName)"
         case .getElo(let summonerId):
             return "league/v3/positions/by-summoner/\(summonerId)"
-        case .getMatchList(let summonerId, _):
-            return "match/v3/matchlists/by-account/\(summonerId)"
+        case .getMatchList(let accountId, _):
+            return "match/v3/matchlists/by-account/\(accountId)"
         case .getMatchDetails(let matchId):
             return "match/v3/matches/\(matchId)"
         }

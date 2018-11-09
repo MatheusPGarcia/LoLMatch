@@ -164,6 +164,7 @@ extension ProfileViewController {
         
         if let user = self.currentUser {
 
+            // TODO: -
             let imageURL = URL(string: "http://ddragon.leagueoflegends.com/cdn/\(Patch.patch)/img/profileicon/\(user.profileIconId).png")!
 
             loadImage(with: imageURL, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "profilePlaceholder"),transition: .fadeIn(duration: 0.3)), into: self.profileImageView)

@@ -63,6 +63,7 @@ class LikesReceivedCell: UITableViewCell {
         
         UserServices.getElo(byId: user.summonerId) { [unowned self] elos, error in
             
+            // TODO: -
             if let validElos = elos {
                 for elo in validElos where elo.queueType ?? "" == "RANKED_SOLO_5x5" {
                     
@@ -78,6 +79,22 @@ class LikesReceivedCell: UITableViewCell {
                         }
                     }
                 }
+            }
+        }
+        
+        UserServices.getPlayerKda(byId: user.accountId, numberOfMatches: 3) { (matches, error) in
+            
+            if let validMatches = matches {
+                for index in 0..<validMatches.count {
+                    let kda: (Int, Int, Int) = (validMatches[index].kill!, validMatches[index].death!, validMatches[index].assist!)
+                    self.kdaLabels[index].text = "\(kda.0) / \(kda.1) / \(kda.2)"
+                }
+            }
+        }
+        
+        ChampionService.getChampionList { (champions, error) in
+            if let validChampions = champions {
+                print("OKOK")
             }
         }
     }

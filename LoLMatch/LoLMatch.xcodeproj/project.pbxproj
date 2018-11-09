@@ -33,6 +33,9 @@
 		188228ED2176506000CAEB8A /* MatchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188228EC2176506000CAEB8A /* MatchCard.swift */; };
 		18B12E9E218AB983007F1979 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B12E9D218AB983007F1979 /* UserDefaultsManager.swift */; };
 		18BA80BD218743E0007443C9 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA80BC218743E0007443C9 /* UIViewControllerExtension.swift */; };
+		18E1FC912195C342000981A6 /* Champion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1FC902195C342000981A6 /* Champion.swift */; };
+		18E1FC932195C479000981A6 /* ChampionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1FC922195C479000981A6 /* ChampionService.swift */; };
+		18E1FC962195C732000981A6 /* DataDragonProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1FC952195C732000981A6 /* DataDragonProvider.swift */; };
 		18FA17052188D1C700D43A94 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA17042188D1C700D43A94 /* SignupViewController.swift */; };
 		AE321F0121809C7300B1C95A /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE321F0021809C7300B1C95A /* MatchViewController.swift */; };
 		AE3B3A8A219590CB006B4026 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3B3A89219590CB006B4026 /* FeedService.swift */; };
@@ -104,6 +107,9 @@
 		188228EC2176506000CAEB8A /* MatchCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCard.swift; sourceTree = "<group>"; };
 		18B12E9D218AB983007F1979 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		18BA80BC218743E0007443C9 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		18E1FC902195C342000981A6 /* Champion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Champion.swift; sourceTree = "<group>"; };
+		18E1FC922195C479000981A6 /* ChampionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionService.swift; sourceTree = "<group>"; };
+		18E1FC952195C732000981A6 /* DataDragonProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDragonProvider.swift; sourceTree = "<group>"; };
 		18FA17042188D1C700D43A94 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		1E41226AD7B2FA72A55B55B8 /* Pods-LoLMatchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoLMatchUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoLMatchUITests/Pods-LoLMatchUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		22840CB7734EEE095E5BE0EB /* Pods_LoLMatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoLMatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,6 +215,7 @@
 				AE4075CA218B24F2000857EB /* BaseService.swift */,
 				187AB9152177D81500D36C36 /* UserServices.swift */,
 				AE3B3A89219590CB006B4026 /* FeedService.swift */,
+				18E1FC922195C479000981A6 /* ChampionService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -223,6 +230,7 @@
 				AE4075DA218B30AB000857EB /* Elo.swift */,
 				AE3F5585219458810019AB9F /* MatchInfo */,
 				AE3F558C219460EE0019AB9F /* MatchDetails */,
+				18E1FC902195C342000981A6 /* Champion.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +242,14 @@
 				188228EC2176506000CAEB8A /* MatchCard.swift */,
 			);
 			path = MatchCard;
+			sourceTree = "<group>";
+		};
+		18E1FC942195C725000981A6 /* DataDragon */ = {
+			isa = PBXGroup;
+			children = (
+				18E1FC952195C732000981A6 /* DataDragonProvider.swift */,
+			);
+			path = DataDragon;
 			sourceTree = "<group>";
 		};
 		38DB848BD2A1C37544F40F71 /* Frameworks */ = {
@@ -363,6 +379,7 @@
 		AE43596B217600B8008A94FC /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				18E1FC942195C725000981A6 /* DataDragon */,
 				AE4075D2218B2517000857EB /* Riot */,
 				AE4359372175FE3D008A94FC /* AppDelegate.swift */,
 				186E7C6C2177D51000DB521A /* FirebaseManager.swift */,
@@ -657,9 +674,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E1FC932195C479000981A6 /* ChampionService.swift in Sources */,
 				AE4075DB218B30AB000857EB /* Elo.swift in Sources */,
 				188228EB21764F7600CAEB8A /* RoundedImageView.swift in Sources */,
 				180A6CF8218781FC00E6AFB9 /* DateExtension.swift in Sources */,
+				18E1FC962195C732000981A6 /* DataDragonProvider.swift in Sources */,
 				AE3F55872194589D0019AB9F /* MatchRiotResponse.swift in Sources */,
 				18B12E9E218AB983007F1979 /* UserDefaultsManager.swift in Sources */,
 				AE4075DE218B3613000857EB /* Logger.swift in Sources */,
@@ -682,6 +701,7 @@
 				AE4075CE218B24F2000857EB /* BaseService.swift in Sources */,
 				AE4075E721905986000857EB /* MatchBasicInfo.swift in Sources */,
 				186E7C6B2177D2E800DB521A /* Lane.swift in Sources */,
+				18E1FC912195C342000981A6 /* Champion.swift in Sources */,
 				AE3F558E219462880019AB9F /* Stats.swift in Sources */,
 				181EEAC92193BE5B00B7BCC5 /* CommunicationViewController.swift in Sources */,
 				18FA17052188D1C700D43A94 /* SignupViewController.swift in Sources */,

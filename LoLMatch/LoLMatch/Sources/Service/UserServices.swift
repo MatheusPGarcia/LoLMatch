@@ -197,9 +197,9 @@ class UserServices: BaseService {
     ///   - summonerId: summonerId
     ///   - numberOfMatches: numberOfMatches you want kda
     ///   - completion: array with matches kda
-    static func getPlayerKda(byId summonerId: Int, numberOfMatches: Int, completion: @escaping ([FilteredMatch]?, Error?) -> Void) {
+    static func getPlayerKda(byId accountId: Int, numberOfMatches: Int, completion: @escaping ([FilteredMatch]?, Error?) -> Void) {
 
-        getMatches(byId: summonerId, numberOfMatches: numberOfMatches) { (matches, error) in
+        getMatches(byId: accountId, numberOfMatches: numberOfMatches) { (matches, error) in
 
             if let error = error {
                 completion (nil, error)
@@ -270,9 +270,9 @@ extension UserServices {
     ///   - summonerId: Summoner Id
     ///   - numberOfMatches: Number of matches
     ///   - completion: Returns the array of matches [MatchesBasicInfo] of this Summoner
-    private static func getMatches(byId summonerId: Int, numberOfMatches: Int, completion: @escaping ([MatchBasicInfo]?, Error?) -> Void) {
+    private static func getMatches(byId accountId: Int, numberOfMatches: Int, completion: @escaping ([MatchBasicInfo]?, Error?) -> Void) {
 
-        let target = RiotProvider.getMatchList(summonerId: summonerId, endIndex: numberOfMatches)
+        let target = RiotProvider.getMatchList(accountId: accountId, endIndex: numberOfMatches)
 
         request(provider: riotProvider, target: target, type: MainStructForMatch.self) { (matchStruct, error) in
             completion(matchStruct?.matches, error)
