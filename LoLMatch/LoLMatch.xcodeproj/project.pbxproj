@@ -34,6 +34,7 @@
 		18B12E9E218AB983007F1979 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B12E9D218AB983007F1979 /* UserDefaultsManager.swift */; };
 		18BA80BD218743E0007443C9 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA80BC218743E0007443C9 /* UIViewControllerExtension.swift */; };
 		18DCCF17219A02B20044A0B9 /* libel-suit-rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18DCCF162199E70B0044A0B9 /* libel-suit-rg.ttf */; };
+		18DCCF19219A18080044A0B9 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCCF18219A18080044A0B9 /* CustomNavigationController.swift */; };
 		18E1FC912195C342000981A6 /* Champion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1FC902195C342000981A6 /* Champion.swift */; };
 		18E1FC932195C479000981A6 /* ChampionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1FC922195C479000981A6 /* ChampionService.swift */; };
 		18E1FC962195C732000981A6 /* DataDragonProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1FC952195C732000981A6 /* DataDragonProvider.swift */; };
@@ -109,6 +110,7 @@
 		18B12E9D218AB983007F1979 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		18BA80BC218743E0007443C9 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		18DCCF162199E70B0044A0B9 /* libel-suit-rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "libel-suit-rg.ttf"; sourceTree = "<group>"; };
+		18DCCF18219A18080044A0B9 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		18E1FC902195C342000981A6 /* Champion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Champion.swift; sourceTree = "<group>"; };
 		18E1FC922195C479000981A6 /* ChampionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionService.swift; sourceTree = "<group>"; };
 		18E1FC952195C732000981A6 /* DataDragonProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDragonProvider.swift; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 				AE4359432175FE40008A94FC /* LaunchScreen.storyboard */,
 				186E7C682177D0A200DB521A /* LikesReceivedCell.swift */,
 				181EEACA2193BFAF00B7BCC5 /* MatchCell.swift */,
+				18DCCF18219A18080044A0B9 /* CustomNavigationController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -714,6 +717,7 @@
 				AE4359402175FE3D008A94FC /* LoLMatch.xcdatamodeld in Sources */,
 				AE4075D7218B2581000857EB /* Credentials.swift in Sources */,
 				AE4075D9218B25D2000857EB /* UserIdProfile.swift in Sources */,
+				18DCCF19219A18080044A0B9 /* CustomNavigationController.swift in Sources */,
 				AE4075D4218B2538000857EB /* Riot Provider.swift in Sources */,
 				18BA80BD218743E0007443C9 /* UIViewControllerExtension.swift in Sources */,
 				188228ED2176506000CAEB8A /* MatchCard.swift in Sources */,

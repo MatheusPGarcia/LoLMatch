@@ -18,6 +18,10 @@ struct Champion: Codable {
 
 extension Champion {
     
+    enum MainKeys: String, CodingKey {
+        case data
+    }
+    
     enum ResponseKeys: String, CodingKey {
         case id = "key"
         case stringId = "id"
@@ -26,11 +30,12 @@ extension Champion {
     
     init(from decoder: Decoder) throws {
         
-        let container = try decoder.container(keyedBy: ResponseKeys.self)
+        let container = try decoder.container(keyedBy: MainKeys.self)
+        let nested = try container.nestedContainer(keyedBy: ResponseKeys.self, forKey: .data)
         
-        let id = try container.decode(Int.self, forKey: .id)
-        let stringId = try container.decode(String.self, forKey: .stringId)
-        let name = try container.decode(String.self, forKey: .name)
+        let id = try nested.decode(Int.self, forKey: .id)
+        let stringId = try nested.decode(String.self, forKey: .stringId)
+        let name = try nested.decode(String.self, forKey: .name)
 
         self.id = id
         self.stringId = stringId

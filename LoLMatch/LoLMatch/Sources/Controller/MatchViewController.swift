@@ -22,6 +22,12 @@ class MatchViewController: UIViewController {
             self.cardView.setupView(summoner: user)
         }
         cardCenter = cardView.center
+        
+        ChampionService.getChampionList { champions, error in
+            if let champions = champions {
+                print("x")
+            }
+        }
     }
 
     @IBAction func matchCardPressed(_ sender: UIPanGestureRecognizer) {
@@ -42,7 +48,7 @@ class MatchViewController: UIViewController {
         if sender.state == UIGestureRecognizer.State.ended {
 
             if xDistanceFromCenter > 150 {
-                FirebaseManager.likeUser(currentSummonerId: 1945669, summonerId: 2017255, completion: { _ in
+                FirebaseManager.likeUser(currentSummonerId: 2584566, summonerId: 2017255, completion: { _ in
                     print("Ok")
                 })
 //                UserServices.likeUser(summonerId: , completion: <#T##((Bool) -> Void)##((Bool) -> Void)##(Bool) -> Void#>)
