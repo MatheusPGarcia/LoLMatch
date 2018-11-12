@@ -9,8 +9,6 @@
 import UIKit
 
 protocol LikeUserDelegate: class {
-    func likeUser(summonerId: Int)
-    func dislikeUser(summonerId: Int)
     func displayAlert(title: String, message: String)
 }
 
@@ -18,12 +16,10 @@ class LikesReceivedCell: UITableViewCell {
     
     // MARK: - Outlets
     // Lane Information
-    @IBOutlet weak var lanesView: DoubleImageView!
-    @IBOutlet weak var primaryLaneLabel: UILabel!
-    @IBOutlet weak var secondaryLaneLabel: UILabel!
+     @IBOutlet weak var lanesImages: DoubleImageView!
     
     // Elo Information
-    @IBOutlet weak var eloImage: RoundedImageView!
+    @IBOutlet weak var eloImage: UIImageView!
     @IBOutlet weak var eloLabel: UILabel!
     @IBOutlet weak var pdlLabel: UILabel!
     
@@ -38,28 +34,12 @@ class LikesReceivedCell: UITableViewCell {
     weak var delegate: LikeUserDelegate?
     
     
-    // MARK: - Actions
-    @IBAction func likeUser(_ sender: UIButton) {
-        if let delegate = self.delegate {
-            delegate.likeUser(summonerId: self.summonoerId)
-        }
-    }
-    
-    @IBAction func dislikeUser(_ sender: UIButton) {
-        if let delegate = self.delegate {
-            delegate.dislikeUser(summonerId: self.summonoerId)
-        }
-    }
-    
-    
     // MARK: - Methods
     func setup(user: User, delegate: LikeUserDelegate) {
         self.summonoerId = user.summonerId
         self.delegate = delegate
-        self.primaryLaneLabel.text = user.lane1.description()
-        self.secondaryLaneLabel.text = user.lane2.description()
-        self.lanesView.primaryImageView.image = user.lane1.image()
-        self.lanesView.secondaryImageView.image = user.lane2.image()
+        self.lanesImages.primaryImage = user.lane1.image()
+        self.lanesImages.secondaryImage = user.lane2.image()
         
         UserServices.getElo(byId: user.summonerId) { [unowned self] elos, error in
             
@@ -87,6 +67,7 @@ class LikesReceivedCell: UITableViewCell {
             if let validMatches = matches {
                 for index in 0..<validMatches.count {
                     let kda: (Int, Int, Int) = (validMatches[index].kill!, validMatches[index].death!, validMatches[index].assist!)
+                    self.championLabels[index].text = "\(validMatches[index].championId ?? -1)"
                     self.kdaLabels[index].text = "\(kda.0) / \(kda.1) / \(kda.2)"
                 }
             }

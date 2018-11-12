@@ -76,6 +76,24 @@ extension LikesReceivedViewController {
             self.tableView.reloadData()
         }
     }
+    
+    private func likeUser(summonerId: Int) {
+        UserServices.matchUser(summonerId: summonerId) { success in
+            if success {
+                // TODO: Go to the Match View (?)
+                self.createAlert(title: "Match Efetuado", message: "Nicely done, Invocador")
+                
+                self.loadReceivedLikes()
+            } else {
+                self.createAlert(title: "Oops...", message: "Houve algum problema. Tente novamente.")
+            }
+        }
+    }
+    
+    private func dislikeUser(summonerId: Int) {
+        print("Implement")
+    }
+    
 }
 
 
@@ -103,7 +121,27 @@ extension LikesReceivedViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 365
+        return 194
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let likeAction = UIContextualAction(style: .normal, title: "Like") { [unowned self] (action, view, completion) in
+            self.likeUser(summonerId: self.users[indexPath.row].summonerId)
+        }
+        likeAction.image = #imageLiteral(resourceName: "Ok")
+        likeAction.backgroundColor = .green
+        return UISwipeActionsConfiguration(actions: [likeAction])
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let dislikeAction = UIContextualAction(style: .normal, title: "Dislike") { [unowned self] (action, view, completion) in
+            print("Implement")
+        }
+        dislikeAction.image = #imageLiteral(resourceName: "Nok")
+        dislikeAction.backgroundColor = .red
+        return UISwipeActionsConfiguration(actions: [dislikeAction])
     }
     
 }
@@ -112,22 +150,7 @@ extension LikesReceivedViewController: UITableViewDelegate, UITableViewDataSourc
 // MARK: - Like User Delegate
 extension LikesReceivedViewController: LikeUserDelegate {
 
-    func likeUser(summonerId: Int) {
-        UserServices.matchUser(summonerId: summonerId) { success in
-            if success {
-                // TODO: Go to the Match View (?)
-                self.createAlert(title: "Match Efetuado", message: "Nicely done, Invocador")
-                
-                self.loadReceivedLikes()
-            } else {
-                self.createAlert(title: "Oops...", message: "Houve algum problema. Tente novamente.")
-            }
-        }
-    }
     
-    func dislikeUser(summonerId: Int) {
-        print("Implement")
-    }
     
     func displayAlert(title: String, message: String) {
         self.createAlert(title: title, message: message)

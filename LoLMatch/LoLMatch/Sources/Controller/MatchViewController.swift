@@ -42,6 +42,9 @@ class MatchViewController: UIViewController {
         if sender.state == UIGestureRecognizer.State.ended {
 
             if xDistanceFromCenter > 150 {
+                FirebaseManager.likeUser(currentSummonerId: 1945669, summonerId: 2017255, completion: { _ in
+                    print("Ok")
+                })
 //                UserServices.likeUser(summonerId: , completion: <#T##((Bool) -> Void)##((Bool) -> Void)##(Bool) -> Void#>)
                 sendViewAway(cardReference, like: true)
             } else if xDistanceFromCenter < -150 {

@@ -33,6 +33,7 @@
 		188228ED2176506000CAEB8A /* MatchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188228EC2176506000CAEB8A /* MatchCard.swift */; };
 		18B12E9E218AB983007F1979 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B12E9D218AB983007F1979 /* UserDefaultsManager.swift */; };
 		18BA80BD218743E0007443C9 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA80BC218743E0007443C9 /* UIViewControllerExtension.swift */; };
+		18DCCF17219A02B20044A0B9 /* libel-suit-rg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18DCCF162199E70B0044A0B9 /* libel-suit-rg.ttf */; };
 		18E1FC912195C342000981A6 /* Champion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1FC902195C342000981A6 /* Champion.swift */; };
 		18E1FC932195C479000981A6 /* ChampionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1FC922195C479000981A6 /* ChampionService.swift */; };
 		18E1FC962195C732000981A6 /* DataDragonProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1FC952195C732000981A6 /* DataDragonProvider.swift */; };
@@ -107,6 +108,7 @@
 		188228EC2176506000CAEB8A /* MatchCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCard.swift; sourceTree = "<group>"; };
 		18B12E9D218AB983007F1979 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		18BA80BC218743E0007443C9 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		18DCCF162199E70B0044A0B9 /* libel-suit-rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "libel-suit-rg.ttf"; sourceTree = "<group>"; };
 		18E1FC902195C342000981A6 /* Champion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Champion.swift; sourceTree = "<group>"; };
 		18E1FC922195C479000981A6 /* ChampionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionService.swift; sourceTree = "<group>"; };
 		18E1FC952195C732000981A6 /* DataDragonProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDragonProvider.swift; sourceTree = "<group>"; };
@@ -437,6 +439,7 @@
 				AE43593E2175FE3D008A94FC /* LoLMatch.xcdatamodeld */,
 				AE4359462175FE40008A94FC /* Info.plist */,
 				187AB9132177D7BD00D36C36 /* GoogleService-Info.plist */,
+				18DCCF162199E70B0044A0B9 /* libel-suit-rg.ttf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				188228E0217628EF00CAEB8A /* LikesReceived.storyboard in Resources */,
 				AE4359422175FE40008A94FC /* Assets.xcassets in Resources */,
 				AE43593D2175FE3D008A94FC /* Main.storyboard in Resources */,
+				18DCCF17219A02B20044A0B9 /* libel-suit-rg.ttf in Resources */,
 				188228E721762F6C00CAEB8A /* MatchCard.xib in Resources */,
 				187AB9142177D7BD00D36C36 /* GoogleService-Info.plist in Resources */,
 				188228E4217628FE00CAEB8A /* Profile.storyboard in Resources */,
