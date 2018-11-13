@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 @IBDesignable class MatchCard: UIView {
     
@@ -83,20 +84,31 @@ import UIKit
             var currentMatch = matches.first
             matches.removeFirst()
 
-
-            self.champion1NameLabel.text = String(currentMatch!.championId!)
+            var currentChampion = ChampionService.getChampion(by: currentMatch!.championId ?? -1)!
+            
+            var url = URL(string: currentChampion.thumbUrl)!
+            loadImage(with: url, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "profilePlaceholder"), transition: .fadeIn(duration: 0.3)), into: self.champion1ImageView.primaryImageView)
+            self.champion1NameLabel.text = currentChampion.name
             self.champion1Kda.text = "\(currentMatch!.kill!)/\(currentMatch!.death!)/\(currentMatch!.assist!)"
 
             currentMatch = matches.first
             matches.removeFirst()
 
-            self.champion2NameLabel.text = String(currentMatch!.championId!)
+            currentChampion = ChampionService.getChampion(by: currentMatch!.championId ?? -1)!
+            url = URL(string: currentChampion.thumbUrl)!
+            loadImage(with: url, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "profilePlaceholder"), transition: .fadeIn(duration: 0.3)), into: self.champion2ImageView.primaryImageView)
+            currentChampion = ChampionService.getChampion(by: currentMatch!.championId ?? -1)!
+            self.champion2NameLabel.text = currentChampion.name
             self.champion2Kda.text = "\(currentMatch!.kill!)/\(currentMatch!.death!)/\(currentMatch!.assist!)"
 
             currentMatch = matches.first
             matches.removeFirst()
 
-            self.champion3NameLabel.text = String(currentMatch!.championId!)
+            currentChampion = ChampionService.getChampion(by: currentMatch!.championId ?? -1)!
+            url = URL(string: currentChampion.thumbUrl)!
+            loadImage(with: url, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "profilePlaceholder"), transition: .fadeIn(duration: 0.3)), into: self.champion3ImageView.primaryImageView)
+            currentChampion = ChampionService.getChampion(by: currentMatch!.championId ?? -1)!
+            self.champion3NameLabel.text = currentChampion.name
             self.champion3Kda.text = "\(currentMatch!.kill!)/\(currentMatch!.death!)/\(currentMatch!.assist!)"
         }
 

@@ -19,6 +19,10 @@ class MatchViewController: UIViewController {
         
         self.setupMatchView()
         self.getFeed()
+        
+        ChampionService.getChampionList { champions, error in
+            print(champions)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

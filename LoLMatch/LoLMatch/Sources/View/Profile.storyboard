@@ -72,7 +72,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fhk-zj-7N3">
                                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="avc-BR-hut">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="avc-BR-hut">
                                                                 <rect key="frame" x="10" y="10" width="55" height="55"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="avc-BR-hut" secondAttribute="height" multiplier="1:1" id="HRY-VS-djn"/>
@@ -134,7 +134,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kXl-QE-JnS">
                                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ORp-it-XNh">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ORp-it-XNh">
                                                                 <rect key="frame" x="10" y="10" width="55" height="55"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="ORp-it-XNh" secondAttribute="height" multiplier="1:1" id="5ea-eK-TVr"/>
@@ -217,7 +217,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Myh-WB-UmR">
                                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TEf-Mc-xxr">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TEf-Mc-xxr">
                                                                 <rect key="frame" x="10" y="10" width="55" height="55"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="TEf-Mc-xxr" secondAttribute="height" multiplier="1:1" id="ffl-E1-sKS"/>
@@ -279,7 +279,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AO9-pR-UGk">
                                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B1f-1Z-qH3">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B1f-1Z-qH3">
                                                                 <rect key="frame" x="10" y="10" width="55" height="55"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="B1f-1Z-qH3" secondAttribute="height" multiplier="1:1" id="hW7-K7-Zqs"/>

@@ -40,6 +40,7 @@
 		18E1FC962195C732000981A6 /* DataDragonProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1FC952195C732000981A6 /* DataDragonProvider.swift */; };
 		18FA17052188D1C700D43A94 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA17042188D1C700D43A94 /* SignupViewController.swift */; };
 		18FE30DF219B0EE80087BE68 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE30DE219B0EE70087BE68 /* UIColorExtension.swift */; };
+		18FE30E1219B31FF0087BE68 /* ScarpzRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE30E0219B31FF0087BE68 /* ScarpzRequest.swift */; };
 		AE321F0121809C7300B1C95A /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE321F0021809C7300B1C95A /* MatchViewController.swift */; };
 		AE3B3A8A219590CB006B4026 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3B3A89219590CB006B4026 /* FeedService.swift */; };
 		AE3F55872194589D0019AB9F /* MatchRiotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F55862194589D0019AB9F /* MatchRiotResponse.swift */; };
@@ -117,6 +118,7 @@
 		18E1FC952195C732000981A6 /* DataDragonProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDragonProvider.swift; sourceTree = "<group>"; };
 		18FA17042188D1C700D43A94 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		18FE30DE219B0EE70087BE68 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		18FE30E0219B31FF0087BE68 /* ScarpzRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScarpzRequest.swift; sourceTree = "<group>"; };
 		1E41226AD7B2FA72A55B55B8 /* Pods-LoLMatchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoLMatchUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoLMatchUITests/Pods-LoLMatchUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		22840CB7734EEE095E5BE0EB /* Pods_LoLMatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoLMatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F3B34AABE27266002C0F4C7 /* Pods-LoLMatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoLMatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoLMatch/Pods-LoLMatch.debug.xcconfig"; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 				AE4359372175FE3D008A94FC /* AppDelegate.swift */,
 				186E7C6C2177D51000DB521A /* FirebaseManager.swift */,
 				18B12E9D218AB983007F1979 /* UserDefaultsManager.swift */,
+				18FE30E0219B31FF0087BE68 /* ScarpzRequest.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -698,6 +701,7 @@
 				180A6CF8218781FC00E6AFB9 /* DateExtension.swift in Sources */,
 				18E1FC962195C732000981A6 /* DataDragonProvider.swift in Sources */,
 				AE3F55872194589D0019AB9F /* MatchRiotResponse.swift in Sources */,
+				18FE30E1219B31FF0087BE68 /* ScarpzRequest.swift in Sources */,
 				18B12E9E218AB983007F1979 /* UserDefaultsManager.swift in Sources */,
 				AE4075DE218B3613000857EB /* Logger.swift in Sources */,
 				AE4359382175FE3D008A94FC /* AppDelegate.swift in Sources */,

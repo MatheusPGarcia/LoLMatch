@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 protocol LikeUserDelegate: class {
     func displayAlert(title: String, message: String)
@@ -74,15 +75,16 @@ class LikesReceivedCell: UITableViewCell {
             if let validMatches = matches {
                 for index in 0..<validMatches.count {
                     let kda: (Int, Int, Int) = (validMatches[index].kill!, validMatches[index].death!, validMatches[index].assist!)
-                    self.championLabels[index].text = "\(validMatches[index].championId ?? -1)"
+                    
+                    let championId = validMatches[index].championId!
+                    let champion = ChampionService.getChampion(by: championId)!
+                    
+                    let championURL = URL(string: champion.thumbUrl)!
+                    
+                    loadImage(with: championURL, into: self.championViews[index].primaryImageView)
+                    self.championLabels[index].text = champion.name
                     self.kdaLabels[index].text = "\(kda.0) / \(kda.1) / \(kda.2)"
                 }
-            }
-        }
-        
-        ChampionService.getChampionList { (champions, error) in
-            if let validChampions = champions {
-                print("OKOK")
             }
         }
     }
