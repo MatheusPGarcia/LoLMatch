@@ -12,8 +12,11 @@ import UIKit
     
     // MARK: - Outlets
     @IBOutlet weak var primaryView: UIView!
+    @IBOutlet var primarySpacing: [NSLayoutConstraint]!
     @IBOutlet weak var primaryImageView: UIImageView!
+    
     @IBOutlet weak var secondaryView: UIView!
+    @IBOutlet var secondarySpacing: [NSLayoutConstraint]!
     @IBOutlet weak var secondaryImageView: UIImageView!
 
  
@@ -37,6 +40,22 @@ import UIKit
         super.prepareForInterfaceBuilder()
         self.setupXib()
     }
+}
+
+
+// MARK: - Methods
+extension DoubleImageView {
+    
+    func setInnerSpacing(forPrimaryView primaryConstant: CGFloat, forSecondaryView secondaryConstant: CGFloat) {
+        self.primarySpacing.forEach({ $0.constant = primaryConstant })
+        self.secondarySpacing.forEach({ $0.constant = secondaryConstant })
+    }
+    
+    func setBackgroundColor(forPrimaryView primaryColor: UIColor, forSecondaryView secondaryColor: UIColor) {
+        self.primaryView.backgroundColor = primaryColor
+        self.secondaryView.backgroundColor = secondaryColor
+    }
+    
 }
 
 

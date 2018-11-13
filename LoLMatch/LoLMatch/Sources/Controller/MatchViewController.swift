@@ -16,18 +16,19 @@ class MatchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        FeedService.getFeed { (feedUsers) in
-            guard let user = feedUsers?.first else { return }
-            self.cardView.setupView(summoner: user)
-        }
-        cardCenter = cardView.center
         
-        ChampionService.getChampionList { champions, error in
-            if let champions = champions {
-                print("x")
-            }
-        }
+        self.setupMatchView()
+        self.getFeed()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
     }
 
     @IBAction func matchCardPressed(_ sender: UIPanGestureRecognizer) {
@@ -64,6 +65,23 @@ class MatchViewController: UIViewController {
 
 // MARK: - private methods
 extension MatchViewController {
+    
+    private func setupMatchView() {
+        self.cardCenter = self.cardView.center
+        self.cardView.laneImageView.setInnerSpacing(forPrimaryView: 10, forSecondaryView: 10)
+        self.cardView.champion1ImageView.setInnerSpacing(forPrimaryView: 0, forSecondaryView: 5)
+        self.cardView.champion2ImageView.setInnerSpacing(forPrimaryView: 0, forSecondaryView: 5)
+        self.cardView.champion3ImageView.setInnerSpacing(forPrimaryView: 0, forSecondaryView: 5)
+    }
+    
+    private func getFeed() {
+        
+        FeedService.getFeed { (feedUsers) in
+            guard let user = feedUsers?.first else { return }
+            self.cardView.setupView(summoner: user)
+        }
+        
+    }
 
     private func updateFeedbackImageForCard(_ card: MatchCard, distance: CGFloat) {
 

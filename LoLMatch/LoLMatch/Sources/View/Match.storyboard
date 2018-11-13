@@ -18,19 +18,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dMV-36-3Wz" customClass="MatchCard" customModule="LoLMatch" customModuleProvider="target">
-                                <rect key="frame" x="20" y="30" width="335" height="573"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="30" width="375" height="573"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="xTl-jo-M4B" appends="YES" id="pI8-ZM-Ory"/>
                                 </connections>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.039215686270000001" green="0.078431372550000003" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="I1K-gx-5Ph" firstAttribute="trailing" secondItem="dMV-36-3Wz" secondAttribute="trailing" constant="20" id="69c-z3-4UW"/>
+                            <constraint firstItem="I1K-gx-5Ph" firstAttribute="trailing" secondItem="dMV-36-3Wz" secondAttribute="trailing" id="69c-z3-4UW"/>
                             <constraint firstItem="I1K-gx-5Ph" firstAttribute="bottom" secondItem="dMV-36-3Wz" secondAttribute="bottom" constant="15" id="Ghi-NB-k5D"/>
-                            <constraint firstItem="dMV-36-3Wz" firstAttribute="leading" secondItem="I1K-gx-5Ph" secondAttribute="leading" constant="20" id="Hj2-S9-3y0"/>
+                            <constraint firstItem="dMV-36-3Wz" firstAttribute="leading" secondItem="I1K-gx-5Ph" secondAttribute="leading" id="Hj2-S9-3y0"/>
                             <constraint firstItem="dMV-36-3Wz" firstAttribute="top" secondItem="I1K-gx-5Ph" secondAttribute="top" constant="10" id="f1P-SR-aIt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I1K-gx-5Ph"/>

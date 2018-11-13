@@ -8,6 +8,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="libel-suit-rg.ttf">
+            <string>LibelSuitRg-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MatchCard" customModule="LoLMatch" customModuleProvider="target">
             <connections>
@@ -23,6 +28,7 @@
                 <outlet property="eloImageView" destination="NPg-jk-6LP" id="Zgw-nB-gif"/>
                 <outlet property="lane1Label" destination="nzh-K0-tDN" id="XeY-4U-fAa"/>
                 <outlet property="lane2Label" destination="gdm-xq-ZIP" id="8tJ-6s-3Vy"/>
+                <outlet property="laneImageView" destination="Zrp-mH-bx7" id="oab-at-RO5"/>
                 <outlet property="pdlLabel" destination="RxK-tt-zOZ" id="duF-WR-A5l"/>
                 <outlet property="swipeFeedbackImage" destination="0jk-fc-nfm" id="rdV-Qi-pAH"/>
                 <outlet property="tierLabel" destination="o5F-MN-P3p" id="d3K-aY-vBb"/>
@@ -34,43 +40,46 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5rF-iY-Rgc">
-                    <rect key="frame" x="0.0" y="87.5" width="369" height="496.5"/>
+                    <rect key="frame" x="0.0" y="58.5" width="369" height="525.5"/>
                     <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verticalCard" translatesAutoresizingMaskIntoConstraints="NO" id="uMd-Ub-rch">
+                            <rect key="frame" x="0.0" y="0.0" width="369" height="525.5"/>
+                        </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Mid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzh-K0-tDN">
-                            <rect key="frame" x="30" y="124" width="309" height="42"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                            <nil key="textColor"/>
+                            <rect key="frame" x="30" y="154" width="309" height="48"/>
+                            <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="40"/>
+                            <color key="textColor" red="0.78431372549019607" green="0.60784313725490191" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Suporte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdm-xq-ZIP">
-                            <rect key="frame" x="30" y="168" width="309" height="24"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <nil key="textColor"/>
+                            <rect key="frame" x="30" y="204" width="309" height="22"/>
+                            <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="18"/>
+                            <color key="textColor" red="0.78431372549019607" green="0.60784313725490191" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldIII" translatesAutoresizingMaskIntoConstraints="NO" id="NPg-jk-6LP" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
-                            <rect key="frame" x="129" y="202" width="111" height="110.5"/>
+                            <rect key="frame" x="129" y="231" width="111" height="110.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="NPg-jk-6LP" secondAttribute="height" multiplier="1:1" id="wdN-vI-DEc"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ouro III" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5F-MN-P3p">
-                            <rect key="frame" x="30" y="317.5" width="309" height="24"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <nil key="textColor"/>
+                            <rect key="frame" x="30" y="346.5" width="309" height="30"/>
+                            <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="25"/>
+                            <color key="textColor" red="0.7843137255" green="0.60784313729999995" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="20 PDL | 49W 40L" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxK-tt-zOZ">
-                            <rect key="frame" x="30" y="346.5" width="309" height="18"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <nil key="textColor"/>
+                            <rect key="frame" x="30" y="376.5" width="309" height="16"/>
+                            <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="13"/>
+                            <color key="textColor" red="0.7843137255" green="0.60784313729999995" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jF9-kn-DzK">
-                            <rect key="frame" x="54" y="374.5" width="261" height="107"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jF9-kn-DzK">
+                            <rect key="frame" x="54" y="402.5" width="261" height="108"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Y59-Az-3fH">
-                                    <rect key="frame" x="0.0" y="0.0" width="73.5" height="107"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Y59-Az-3fH">
+                                    <rect key="frame" x="0.0" y="0.0" width="73.5" height="108"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1DX-2B-xWN" customClass="DoubleImageView" customModule="LoLMatch" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="73.5" height="74"/>
@@ -98,21 +107,21 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Foc-VY-NRy">
-                                            <rect key="frame" x="0.0" y="76" width="73.5" height="14.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
+                                            <rect key="frame" x="0.0" y="74" width="73.5" height="17"/>
+                                            <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="14"/>
+                                            <color key="textColor" red="0.7843137255" green="0.60784313729999995" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="K / D / A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LL9-Gs-MQs">
-                                            <rect key="frame" x="0.0" y="92.5" width="73.5" height="14.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
+                                            <rect key="frame" x="0.0" y="91" width="73.5" height="17"/>
+                                            <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="14"/>
+                                            <color key="textColor" red="0.7843137255" green="0.60784313729999995" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="WSu-pU-TVq">
-                                    <rect key="frame" x="93.5" y="0.0" width="74" height="107"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WSu-pU-TVq">
+                                    <rect key="frame" x="93.5" y="0.0" width="74" height="108"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaJ-0p-Ac4" customClass="DoubleImageView" customModule="LoLMatch" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
@@ -135,26 +144,26 @@
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="primaryImage" value="Orianna"/>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="midLane"/>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="NO"/>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="YES"/>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondaryViewRounded" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzB-ZG-VeK">
-                                            <rect key="frame" x="0.0" y="76" width="74" height="14.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
+                                            <rect key="frame" x="0.0" y="74" width="74" height="17"/>
+                                            <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="14"/>
+                                            <color key="textColor" red="0.7843137255" green="0.60784313729999995" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="K / D / A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8G-xD-Jil">
-                                            <rect key="frame" x="0.0" y="92.5" width="74" height="14.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
+                                            <rect key="frame" x="0.0" y="91" width="74" height="17"/>
+                                            <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="14"/>
+                                            <color key="textColor" red="0.7843137255" green="0.60784313729999995" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="hzz-3N-iDo">
-                                    <rect key="frame" x="187.5" y="0.0" width="73.5" height="107"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hzz-3N-iDo">
+                                    <rect key="frame" x="187.5" y="0.0" width="73.5" height="108"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tc0-fJ-MEc" customClass="DoubleImageView" customModule="LoLMatch" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="73.5" height="74"/>
@@ -175,22 +184,22 @@
                                                 <userDefinedRuntimeAttribute type="image" keyPath="primaryImage" value="Orianna"/>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="goldIII"/>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondaryViewRounded" value="YES"/>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="NO"/>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="YES"/>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="secondaryBorderWidth">
                                                     <real key="value" value="2"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tm-mu-tWL">
-                                            <rect key="frame" x="0.0" y="76" width="73.5" height="14.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
+                                            <rect key="frame" x="0.0" y="74" width="73.5" height="17"/>
+                                            <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="14"/>
+                                            <color key="textColor" red="0.7843137255" green="0.60784313729999995" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="K / D / A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mS6-iX-TFz">
-                                            <rect key="frame" x="0.0" y="92.5" width="73.5" height="14.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
+                                            <rect key="frame" x="0.0" y="91" width="73.5" height="17"/>
+                                            <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="14"/>
+                                            <color key="textColor" red="0.7843137255" green="0.60784313729999995" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -198,7 +207,7 @@
                             </subviews>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zrp-mH-bx7" customClass="DoubleImageView" customModule="LoLMatch" customModuleProvider="target">
-                            <rect key="frame" x="92.5" y="-70.5" width="184.5" height="184.5"/>
+                            <rect key="frame" x="92.5" y="-40.5" width="184.5" height="184.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="primaryBorderWidth">
@@ -219,16 +228,17 @@
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondaryViewRounded" value="YES"/>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0jk-fc-nfm">
-                            <rect key="frame" x="0.0" y="-77" width="369" height="573.5"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0jk-fc-nfm">
+                            <rect key="frame" x="0.0" y="-77" width="369" height="602.5"/>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="0jk-fc-nfm" secondAttribute="trailing" id="0er-KV-swt"/>
                         <constraint firstItem="o5F-MN-P3p" firstAttribute="top" secondItem="NPg-jk-6LP" secondAttribute="bottom" constant="5" id="D6d-k6-G7u"/>
                         <constraint firstItem="tc0-fJ-MEc" firstAttribute="width" secondItem="5rF-iY-Rgc" secondAttribute="width" multiplier="0.2" id="DAE-Nj-6zq"/>
-                        <constraint firstItem="NPg-jk-6LP" firstAttribute="top" secondItem="gdm-xq-ZIP" secondAttribute="bottom" constant="10" id="Fvh-zn-OAI"/>
+                        <constraint firstItem="uMd-Ub-rch" firstAttribute="top" secondItem="5rF-iY-Rgc" secondAttribute="top" id="Fmg-ac-aMI"/>
+                        <constraint firstItem="NPg-jk-6LP" firstAttribute="top" secondItem="gdm-xq-ZIP" secondAttribute="bottom" constant="5" id="Fvh-zn-OAI"/>
                         <constraint firstAttribute="trailing" secondItem="gdm-xq-ZIP" secondAttribute="trailing" constant="30" id="G5q-bF-lNZ"/>
                         <constraint firstItem="jF9-kn-DzK" firstAttribute="centerX" secondItem="5rF-iY-Rgc" secondAttribute="centerX" id="IVf-Yr-qDt"/>
                         <constraint firstItem="nzh-K0-tDN" firstAttribute="leading" secondItem="5rF-iY-Rgc" secondAttribute="leading" constant="30" id="JbJ-1U-Z97"/>
@@ -240,6 +250,7 @@
                         <constraint firstAttribute="trailing" secondItem="RxK-tt-zOZ" secondAttribute="trailing" constant="30" id="UNe-ZL-kQR"/>
                         <constraint firstAttribute="trailing" secondItem="nzh-K0-tDN" secondAttribute="trailing" constant="30" id="V8g-Pc-qik"/>
                         <constraint firstItem="RxK-tt-zOZ" firstAttribute="leading" secondItem="5rF-iY-Rgc" secondAttribute="leading" constant="30" id="ZYP-A7-dgg"/>
+                        <constraint firstItem="uMd-Ub-rch" firstAttribute="leading" secondItem="5rF-iY-Rgc" secondAttribute="leading" id="btR-BY-MfW"/>
                         <constraint firstAttribute="bottom" secondItem="0jk-fc-nfm" secondAttribute="bottom" id="bwA-Oz-K6p"/>
                         <constraint firstAttribute="trailing" secondItem="o5F-MN-P3p" secondAttribute="trailing" constant="30" id="d0w-dN-UuP"/>
                         <constraint firstItem="gdm-xq-ZIP" firstAttribute="leading" secondItem="5rF-iY-Rgc" secondAttribute="leading" constant="30" id="d4N-sP-tz8"/>
@@ -247,16 +258,18 @@
                         <constraint firstItem="Zrp-mH-bx7" firstAttribute="width" secondItem="Zrp-mH-bx7" secondAttribute="height" multiplier="1:1" id="ene-TC-anL"/>
                         <constraint firstItem="0jk-fc-nfm" firstAttribute="top" secondItem="5rF-iY-Rgc" secondAttribute="top" constant="-77" id="fFo-AT-Qlf"/>
                         <constraint firstItem="NPg-jk-6LP" firstAttribute="centerX" secondItem="5rF-iY-Rgc" secondAttribute="centerX" id="fwn-mP-mqp"/>
-                        <constraint firstItem="RxK-tt-zOZ" firstAttribute="top" secondItem="o5F-MN-P3p" secondAttribute="bottom" constant="5" id="jsf-gF-tSV"/>
+                        <constraint firstAttribute="bottom" secondItem="uMd-Ub-rch" secondAttribute="bottom" id="jgf-Bk-mlc"/>
+                        <constraint firstItem="RxK-tt-zOZ" firstAttribute="top" secondItem="o5F-MN-P3p" secondAttribute="bottom" id="jsf-gF-tSV"/>
                         <constraint firstItem="o5F-MN-P3p" firstAttribute="leading" secondItem="5rF-iY-Rgc" secondAttribute="leading" constant="30" id="kow-Tg-kGm"/>
                         <constraint firstItem="0jk-fc-nfm" firstAttribute="leading" secondItem="5rF-iY-Rgc" secondAttribute="leading" id="kpH-qU-6yC"/>
+                        <constraint firstAttribute="trailing" secondItem="uMd-Ub-rch" secondAttribute="trailing" id="nrf-tK-2SD"/>
                         <constraint firstItem="1DX-2B-xWN" firstAttribute="width" secondItem="5rF-iY-Rgc" secondAttribute="width" multiplier="0.2" id="o5X-XB-ycl"/>
                         <constraint firstItem="Zrp-mH-bx7" firstAttribute="centerX" secondItem="5rF-iY-Rgc" secondAttribute="centerX" id="t9s-hN-hh2"/>
                         <constraint firstItem="gdm-xq-ZIP" firstAttribute="top" secondItem="nzh-K0-tDN" secondAttribute="bottom" constant="2" id="vks-3z-6JZ"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="10"/>
+                            <real key="value" value="0.0"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
@@ -264,7 +277,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="5rF-iY-Rgc" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="DgW-re-pws"/>
-                <constraint firstItem="5rF-iY-Rgc" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.85" id="LEH-5O-gvg"/>
+                <constraint firstItem="5rF-iY-Rgc" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.9" id="LEH-5O-gvg"/>
                 <constraint firstItem="5rF-iY-Rgc" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="fZP-9T-FEW"/>
                 <constraint firstItem="5rF-iY-Rgc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="zAc-us-Df0"/>
             </constraints>
@@ -278,5 +291,6 @@
         <image name="goldIII" width="200" height="200"/>
         <image name="midLane" width="136" height="136"/>
         <image name="supLane" width="120" height="120"/>
+        <image name="verticalCard" width="342" height="493"/>
     </resources>
 </document>

@@ -11,6 +11,7 @@ import UIKit
 @IBDesignable class MatchCard: UIView {
     
     @IBOutlet weak var swipeFeedbackImage: UIImageView!
+    @IBOutlet weak var laneImageView: DoubleImageView!
     @IBOutlet weak var lane1Label: UILabel!
     @IBOutlet weak var lane2Label: UILabel!
     @IBOutlet weak var eloImageView: RoundedImageView!
@@ -51,9 +52,12 @@ import UIKit
     }
 
     func setupView(summoner: User) {
-        lane1Label.text = summoner.lane1.description()
-        lane2Label.text = summoner.lane2.description()
-
+        
+        self.laneImageView.primaryImageView.image = summoner.lane1.image()
+        self.laneImageView.secondaryImageView.image = summoner.lane2.image()
+        
+        self.lane1Label.text = summoner.lane1.description().uppercased()
+        self.lane2Label.text = summoner.lane2.description().uppercased()
 
         UserServices.getElo(byId: summoner.summonerId) { [unowned self] elos, error in
             

@@ -36,6 +36,13 @@ class LikesReceivedCell: UITableViewCell {
     
     // MARK: - Methods
     func setup(user: User, delegate: LikeUserDelegate) {
+        
+        self.lanesImages.setInnerSpacing(forPrimaryView: 10, forSecondaryView: 5)
+        self.lanesImages.setBackgroundColor(forPrimaryView: .clear, forSecondaryView: .customBlack)
+        
+        self.championViews.forEach({ $0.setInnerSpacing(forPrimaryView: 0, forSecondaryView: 3) })
+        self.championViews.forEach({ $0.setBackgroundColor(forPrimaryView: .customBlack, forSecondaryView: .customBlack) })
+        
         self.summonoerId = user.summonerId
         self.delegate = delegate
         self.lanesImages.primaryImage = user.lane1.image()
