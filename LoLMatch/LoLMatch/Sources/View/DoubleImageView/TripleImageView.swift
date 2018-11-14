@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class DoubleImageView: UIView {
+@IBDesignable class TripleImageView: UIView {
     
     // MARK: - Outlets
     @IBOutlet weak var primaryView: UIView!
@@ -18,6 +18,10 @@ import UIKit
     @IBOutlet weak var secondaryView: UIView!
     @IBOutlet var secondarySpacing: [NSLayoutConstraint]!
     @IBOutlet weak var secondaryImageView: UIImageView!
+    
+    @IBOutlet weak var terciaryView: UIView!
+    @IBOutlet var terciarySpacing: [NSLayoutConstraint]!
+    @IBOutlet weak var terciaryImageView: UIImageView!
 
  
     // MARK: - Properties
@@ -44,23 +48,25 @@ import UIKit
 
 
 // MARK: - Methods
-extension DoubleImageView {
+extension TripleImageView {
     
-    func setInnerSpacing(forPrimaryView primaryConstant: CGFloat, forSecondaryView secondaryConstant: CGFloat) {
+    func setInnerSpacing(forPrimaryView primaryConstant: CGFloat, forSecondaryView secondaryConstant: CGFloat, forTerciaryView terciaryConstant: CGFloat = 0) {
         self.primarySpacing.forEach({ $0.constant = primaryConstant })
         self.secondarySpacing.forEach({ $0.constant = secondaryConstant })
+        self.terciarySpacing.forEach({ $0.constant = terciaryConstant })
     }
     
-    func setBackgroundColor(forPrimaryView primaryColor: UIColor, forSecondaryView secondaryColor: UIColor) {
+    func setBackgroundColor(forPrimaryView primaryColor: UIColor, forSecondaryView secondaryColor: UIColor, forTerciaryView terciaryColor: UIColor = .clear) {
         self.primaryView.backgroundColor = primaryColor
         self.secondaryView.backgroundColor = secondaryColor
+        self.terciaryView.backgroundColor = terciaryColor
     }
     
 }
 
 
 // MARK: - XIB functions
-extension DoubleImageView {
+extension TripleImageView {
 
     /// Instantiate the view defined in a xib file using the same name of the class
     ///
@@ -103,7 +109,18 @@ extension DoubleImageView {
 
 
 // MARK: - Visual setup on Storyboard
-extension DoubleImageView {
+extension TripleImageView {
+    
+    /// Inspectable property to set the visibility of Terciary View in the Storyboard
+    @IBInspectable var isTerciaryVisible: Bool {
+        get {
+            return false
+        }
+        set {
+            self.terciaryView.isHidden = !newValue
+        }
+    }
+    
     
     /// Inspectable property to set the corner radius state of Primary View in the Storyboard
     @IBInspectable var isPrimaryViewRounded: Bool {
@@ -131,6 +148,19 @@ extension DoubleImageView {
         }
     }
     
+    /// Inspectable property to set the corner radius state of Terciary View in the Storyboard
+    @IBInspectable var isTerciaryViewRounded: Bool {
+        get {
+            return false
+        }
+        set {
+            self.layoutIfNeeded()
+            self.layoutSubviews()
+            self.terciaryView.layer.cornerRadius = newValue ? self.terciaryView.frame.width / 2 : 0
+            self.terciaryView.layer.masksToBounds = true
+        }
+    }
+    
     /// Inspectable property to set the border width of the Primary View in the Storyboard
     @IBInspectable var primaryBorderWidth: CGFloat {
         get {
@@ -148,6 +178,16 @@ extension DoubleImageView {
         }
         set {
             self.secondaryView.layer.borderWidth = newValue
+        }
+    }
+    
+    /// Inspectable property to set the border width of the Terciary View in the Storyboard
+    @IBInspectable var terciaryBorderWidth: CGFloat {
+        get {
+            return self.terciaryView.layer.borderWidth
+        }
+        set {
+            self.terciaryView.layer.borderWidth = newValue
         }
     }
     
@@ -171,6 +211,16 @@ extension DoubleImageView {
         }
     }
     
+    /// Inspectable property to set the border color in the Storyboard
+    @IBInspectable var terciaryBorderColor: UIColor? {
+        get {
+            return UIColor(cgColor: self.terciaryView.layer.borderColor!)
+        }
+        set {
+            self.terciaryView.layer.borderColor = newValue?.cgColor
+        }
+    }
+    
     /// Inspectable property to set the Primary Image in the Storyboard
     @IBInspectable var primaryImage: UIImage? {
         get {
@@ -188,6 +238,16 @@ extension DoubleImageView {
         }
         set {
             self.secondaryImageView.image = newValue
+        }
+    }
+    
+    /// Inspectable property to set the Terciary Image in the Storyboard
+    @IBInspectable var terciaryImage: UIImage? {
+        get {
+            return self.terciaryImageView.image
+        }
+        set {
+            self.terciaryImageView.image = newValue
         }
     }
 }

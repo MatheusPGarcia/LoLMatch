@@ -81,7 +81,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Y59-Az-3fH">
                                     <rect key="frame" x="0.0" y="0.0" width="73.5" height="108"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1DX-2B-xWN" customClass="DoubleImageView" customModule="LoLMatch" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1DX-2B-xWN" customClass="TripleImageView" customModule="LoLMatch" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="73.5" height="74"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -104,6 +104,7 @@
                                                 <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="midLane"/>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondaryViewRounded" value="YES"/>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isTerciaryVisible" value="NO"/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Foc-VY-NRy">
@@ -123,7 +124,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WSu-pU-TVq">
                                     <rect key="frame" x="93.5" y="0.0" width="74" height="108"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaJ-0p-Ac4" customClass="DoubleImageView" customModule="LoLMatch" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaJ-0p-Ac4" customClass="TripleImageView" customModule="LoLMatch" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -146,6 +147,7 @@
                                                 <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="midLane"/>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="YES"/>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondaryViewRounded" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isTerciaryVisible" value="NO"/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzB-ZG-VeK">
@@ -165,7 +167,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hzz-3N-iDo">
                                     <rect key="frame" x="187.5" y="0.0" width="73.5" height="108"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tc0-fJ-MEc" customClass="DoubleImageView" customModule="LoLMatch" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tc0-fJ-MEc" customClass="TripleImageView" customModule="LoLMatch" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="73.5" height="74"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -188,6 +190,7 @@
                                                 <userDefinedRuntimeAttribute type="number" keyPath="secondaryBorderWidth">
                                                     <real key="value" value="2"/>
                                                 </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isTerciaryVisible" value="NO"/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tm-mu-tWL">
@@ -206,7 +209,7 @@
                                 </stackView>
                             </subviews>
                         </stackView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zrp-mH-bx7" customClass="DoubleImageView" customModule="LoLMatch" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zrp-mH-bx7" customClass="TripleImageView" customModule="LoLMatch" customModuleProvider="target">
                             <rect key="frame" x="92.5" y="-40.5" width="184.5" height="184.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
@@ -226,6 +229,7 @@
                                 <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="supLane"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="YES"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondaryViewRounded" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isTerciaryVisible" value="NO"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0jk-fc-nfm">
@@ -272,11 +276,6 @@
                             <real key="value" value="0.0"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
-                    <variation key="default">
-                        <mask key="subviews">
-                            <exclude reference="0jk-fc-nfm"/>
-                        </mask>
-                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

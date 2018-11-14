@@ -12,8 +12,8 @@
 		181EEAC92193BE5B00B7BCC5 /* CommunicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181EEAC82193BE5B00B7BCC5 /* CommunicationViewController.swift */; };
 		181EEACB2193BFAF00B7BCC5 /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181EEACA2193BFAF00B7BCC5 /* MatchCell.swift */; };
 		18314C4D2194642C00F2A318 /* Patch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18314C4C2194642C00F2A318 /* Patch.swift */; };
-		186E7C5E2177B0FB00DB521A /* DoubleImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186E7C5D2177B0FB00DB521A /* DoubleImageView.xib */; };
-		186E7C602177B21700DB521A /* DoubleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E7C5F2177B21700DB521A /* DoubleImageView.swift */; };
+		186E7C5E2177B0FB00DB521A /* TripleImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186E7C5D2177B0FB00DB521A /* TripleImageView.xib */; };
+		186E7C602177B21700DB521A /* TripleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E7C5F2177B21700DB521A /* TripleImageView.swift */; };
 		186E7C622177CF2700DB521A /* LikesReceivedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E7C612177CF2700DB521A /* LikesReceivedViewController.swift */; };
 		186E7C672177CFD900DB521A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E7C662177CFD900DB521A /* User.swift */; };
 		186E7C692177D0A200DB521A /* LikesReceivedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E7C682177D0A200DB521A /* LikesReceivedCell.swift */; };
@@ -90,8 +90,8 @@
 		181EEAC82193BE5B00B7BCC5 /* CommunicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationViewController.swift; sourceTree = "<group>"; };
 		181EEACA2193BFAF00B7BCC5 /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
 		18314C4C2194642C00F2A318 /* Patch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patch.swift; sourceTree = "<group>"; };
-		186E7C5D2177B0FB00DB521A /* DoubleImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoubleImageView.xib; sourceTree = "<group>"; };
-		186E7C5F2177B21700DB521A /* DoubleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleImageView.swift; sourceTree = "<group>"; };
+		186E7C5D2177B0FB00DB521A /* TripleImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripleImageView.xib; sourceTree = "<group>"; };
+		186E7C5F2177B21700DB521A /* TripleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleImageView.swift; sourceTree = "<group>"; };
 		186E7C612177CF2700DB521A /* LikesReceivedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesReceivedViewController.swift; sourceTree = "<group>"; };
 		186E7C662177CFD900DB521A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		186E7C682177D0A200DB521A /* LikesReceivedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesReceivedCell.swift; sourceTree = "<group>"; };
@@ -196,8 +196,8 @@
 		186E7C5C2177AC1700DB521A /* DoubleImageView */ = {
 			isa = PBXGroup;
 			children = (
-				186E7C5D2177B0FB00DB521A /* DoubleImageView.xib */,
-				186E7C5F2177B21700DB521A /* DoubleImageView.swift */,
+				186E7C5D2177B0FB00DB521A /* TripleImageView.xib */,
+				186E7C5F2177B21700DB521A /* TripleImageView.swift */,
 			);
 			path = DoubleImageView;
 			sourceTree = "<group>";
@@ -570,7 +570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				188228DE2176288400CAEB8A /* Match.storyboard in Resources */,
-				186E7C5E2177B0FB00DB521A /* DoubleImageView.xib in Resources */,
+				186E7C5E2177B0FB00DB521A /* TripleImageView.xib in Resources */,
 				AE4359452175FE40008A94FC /* LaunchScreen.storyboard in Resources */,
 				188228E0217628EF00CAEB8A /* LikesReceived.storyboard in Resources */,
 				AE4359422175FE40008A94FC /* Assets.xcassets in Resources */,
@@ -706,7 +706,7 @@
 				AE4075DE218B3613000857EB /* Logger.swift in Sources */,
 				AE4359382175FE3D008A94FC /* AppDelegate.swift in Sources */,
 				AE321F0121809C7300B1C95A /* MatchViewController.swift in Sources */,
-				186E7C602177B21700DB521A /* DoubleImageView.swift in Sources */,
+				186E7C602177B21700DB521A /* TripleImageView.swift in Sources */,
 				186E7C622177CF2700DB521A /* LikesReceivedViewController.swift in Sources */,
 				AE3F5590219466F10019AB9F /* FilteredMatch.swift in Sources */,
 				AE4075E1218B371C000857EB /* LoggerPlugin.swift in Sources */,

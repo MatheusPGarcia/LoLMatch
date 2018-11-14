@@ -12,19 +12,19 @@ import Nuke
 @IBDesignable class MatchCard: UIView {
     
     @IBOutlet weak var swipeFeedbackImage: UIImageView!
-    @IBOutlet weak var laneImageView: DoubleImageView!
+    @IBOutlet weak var laneImageView: TripleImageView!
     @IBOutlet weak var lane1Label: UILabel!
     @IBOutlet weak var lane2Label: UILabel!
     @IBOutlet weak var eloImageView: RoundedImageView!
     @IBOutlet weak var tierLabel: UILabel!
     @IBOutlet weak var pdlLabel: UILabel!
-    @IBOutlet weak var champion1ImageView: DoubleImageView!
+    @IBOutlet weak var champion1ImageView: TripleImageView!
     @IBOutlet weak var champion1NameLabel: UILabel!
     @IBOutlet weak var champion1Kda: UILabel!
-    @IBOutlet weak var champion2ImageView: DoubleImageView!
+    @IBOutlet weak var champion2ImageView: TripleImageView!
     @IBOutlet weak var champion2NameLabel: UILabel!
     @IBOutlet weak var champion2Kda: UILabel!
-    @IBOutlet weak var champion3ImageView: DoubleImageView!
+    @IBOutlet weak var champion3ImageView: TripleImageView!
     @IBOutlet weak var champion3NameLabel: UILabel!
     @IBOutlet weak var champion3Kda: UILabel!
     

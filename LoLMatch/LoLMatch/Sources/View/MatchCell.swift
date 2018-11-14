@@ -12,7 +12,7 @@ import Nuke
 class MatchCell: UITableViewCell {
 
     // MARK: - Outlets
-    @IBOutlet weak var summonerProfileImageView: UIImageView!
+    @IBOutlet weak var summonerImages: TripleImageView!
     @IBOutlet weak var summonerNameLabel: UILabel!
     @IBOutlet weak var primaryLaneImageView: UIImageView!
     @IBOutlet weak var primaryLaneLabel: UILabel!
@@ -29,11 +29,17 @@ class MatchCell: UITableViewCell {
     
     // MARK: - Methods
     func setup(user: User) {
+        
+        self.summonerImages.setInnerSpacing(forPrimaryView: 0, forSecondaryView: 4, forTerciaryView:  3)
+        self.summonerImages.setBackgroundColor(forPrimaryView: .black, forSecondaryView: .black, forTerciaryView: .black)
+        
         self.summonerNameLabel.text = user.summonerName
-        self.primaryLaneImageView.image = user.lane1.image()
+        
+        
         self.primaryLaneLabel.text = user.lane1.description()
-        self.secondaryLaneImageView.image = user.lane2.image()
+        self.summonerImages.secondaryImageView.image = user.lane1.coloredImage()
         self.secondaryLaneLabel.text = user.lane2.description()
+        self.summonerImages.terciaryImageView.image = user.lane2.coloredImage()
         
         self.setupElo(summonerId: user.summonerId)
         self.setupProfileIcon(profileIconId: user.profileIconId)
@@ -57,7 +63,7 @@ class MatchCell: UITableViewCell {
         // TODO: -
         let imageURL = URL(string: "http://ddragon.leagueoflegends.com/cdn/\(Patch.patch)/img/profileicon/\(profileIconId).png")!
         
-        loadImage(with: imageURL, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "profilePlaceholder"),transition: .fadeIn(duration: 0.3)), into: self.summonerProfileImageView)
+        loadImage(with: imageURL, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "profilePlaceholder"),transition: .fadeIn(duration: 0.3)), into: self.summonerImages.primaryImageView)
     }
 
 }

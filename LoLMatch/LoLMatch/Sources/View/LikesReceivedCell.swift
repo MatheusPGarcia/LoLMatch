@@ -17,7 +17,7 @@ class LikesReceivedCell: UITableViewCell {
     
     // MARK: - Outlets
     // Lane Information
-     @IBOutlet weak var lanesImages: DoubleImageView!
+     @IBOutlet weak var lanesImages: TripleImageView!
     
     // Elo Information
     @IBOutlet weak var eloImage: UIImageView!
@@ -25,7 +25,7 @@ class LikesReceivedCell: UITableViewCell {
     @IBOutlet weak var pdlLabel: UILabel!
     
     // Last Champions Information
-    @IBOutlet var championViews: [DoubleImageView]!
+    @IBOutlet var championViews: [TripleImageView]!
     @IBOutlet var championLabels: [UILabel]!
     @IBOutlet var kdaLabels: [UILabel]!
     
@@ -42,7 +42,7 @@ class LikesReceivedCell: UITableViewCell {
         self.lanesImages.setBackgroundColor(forPrimaryView: .black, forSecondaryView: .black)
         
         self.championViews.forEach({ $0.setInnerSpacing(forPrimaryView: 0, forSecondaryView: 3) })
-        self.championViews.forEach({ $0.setBackgroundColor(forPrimaryView: .customBlack, forSecondaryView: .customBlack) })
+        self.championViews.forEach({ $0.setBackgroundColor(forPrimaryView: .navyBlue, forSecondaryView: .navyBlue) })
         
         self.summonoerId = user.summonerId
         self.delegate = delegate
