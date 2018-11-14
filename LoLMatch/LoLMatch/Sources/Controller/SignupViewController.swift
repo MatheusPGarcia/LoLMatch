@@ -39,6 +39,8 @@ class SignupViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         self.lane1TextField.inputView = primaryPicker
         self.duolane1TextField.inputView = primaryPicker
         self.primaryPicker.delegate = self
