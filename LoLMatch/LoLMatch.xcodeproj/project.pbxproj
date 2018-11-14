@@ -222,10 +222,10 @@
 		186E7C642177CFB600DB521A /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				AE4075CA218B24F2000857EB /* BaseService.swift */,
-				187AB9152177D81500D36C36 /* UserServices.swift */,
 				AE3B3A89219590CB006B4026 /* FeedService.swift */,
+				187AB9152177D81500D36C36 /* UserServices.swift */,
 				18E1FC922195C479000981A6 /* ChampionService.swift */,
+				AE4075CA218B24F2000857EB /* BaseService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -234,8 +234,8 @@
 			isa = PBXGroup;
 			children = (
 				188228EA21764F7600CAEB8A /* RoundedImageView.swift */,
-				186E7C6A2177D2E800DB521A /* Lane.swift */,
 				186E7C662177CFD900DB521A /* User.swift */,
+				186E7C6A2177D2E800DB521A /* Lane.swift */,
 				AE4075D8218B25D2000857EB /* UserIdProfile.swift */,
 				AE4075DA218B30AB000857EB /* Elo.swift */,
 				AE3F5585219458810019AB9F /* MatchInfo */,
@@ -396,12 +396,12 @@
 		AE43596B217600B8008A94FC /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				18E1FC942195C725000981A6 /* DataDragon */,
-				AE4075D2218B2517000857EB /* Riot */,
-				AE4359372175FE3D008A94FC /* AppDelegate.swift */,
 				186E7C6C2177D51000DB521A /* FirebaseManager.swift */,
 				18B12E9D218AB983007F1979 /* UserDefaultsManager.swift */,
 				18FE30E0219B31FF0087BE68 /* ScarpzRequest.swift */,
+				18E1FC942195C725000981A6 /* DataDragon */,
+				AE4075D2218B2517000857EB /* Riot */,
+				AE4359372175FE3D008A94FC /* AppDelegate.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";

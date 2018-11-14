@@ -41,6 +41,11 @@ extension LikesReceivedViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
     }
     
     private func loadUsers() {

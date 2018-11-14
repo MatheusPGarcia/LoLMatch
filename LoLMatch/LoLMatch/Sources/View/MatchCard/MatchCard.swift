@@ -54,8 +54,11 @@ import Nuke
 
     func setupView(summoner: User) {
         
-        self.laneImageView.primaryImageView.image = summoner.lane1.image()
-        self.laneImageView.secondaryImageView.image = summoner.lane2.image()
+        self.laneImageView.setInnerSpacing(forPrimaryView: 5, forSecondaryView: 5)
+        self.laneImageView.setBackgroundColor(forPrimaryView: .black, forSecondaryView: .black)
+        
+        self.laneImageView.primaryImageView.image = summoner.lane1.coloredImage()
+        self.laneImageView.secondaryImageView.image = summoner.lane2.coloredImage()
         
         self.lane1Label.text = summoner.lane1.description().uppercased()
         self.lane2Label.text = summoner.lane2.description().uppercased()

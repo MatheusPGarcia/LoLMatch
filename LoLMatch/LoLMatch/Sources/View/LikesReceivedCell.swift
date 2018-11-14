@@ -39,15 +39,15 @@ class LikesReceivedCell: UITableViewCell {
     func setup(user: User, delegate: LikeUserDelegate) {
         
         self.lanesImages.setInnerSpacing(forPrimaryView: 10, forSecondaryView: 5)
-        self.lanesImages.setBackgroundColor(forPrimaryView: .clear, forSecondaryView: .customBlack)
+        self.lanesImages.setBackgroundColor(forPrimaryView: .black, forSecondaryView: .black)
         
         self.championViews.forEach({ $0.setInnerSpacing(forPrimaryView: 0, forSecondaryView: 3) })
         self.championViews.forEach({ $0.setBackgroundColor(forPrimaryView: .customBlack, forSecondaryView: .customBlack) })
         
         self.summonoerId = user.summonerId
         self.delegate = delegate
-        self.lanesImages.primaryImage = user.lane1.image()
-        self.lanesImages.secondaryImage = user.lane2.image()
+        self.lanesImages.primaryImage = user.lane1.coloredImage()
+        self.lanesImages.secondaryImage = user.lane2.coloredImage()
         
         UserServices.getElo(byId: user.summonerId) { [unowned self] elos, error in
             

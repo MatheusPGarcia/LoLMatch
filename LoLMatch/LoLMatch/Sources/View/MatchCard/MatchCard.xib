@@ -48,13 +48,13 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Mid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzh-K0-tDN">
                             <rect key="frame" x="30" y="154" width="309" height="48"/>
                             <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="40"/>
-                            <color key="textColor" red="0.78431372549019607" green="0.60784313725490191" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Suporte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdm-xq-ZIP">
                             <rect key="frame" x="30" y="204" width="309" height="22"/>
                             <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="18"/>
-                            <color key="textColor" red="0.78431372549019607" green="0.60784313725490191" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldIII" translatesAutoresizingMaskIntoConstraints="NO" id="NPg-jk-6LP" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
@@ -66,13 +66,13 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ouro III" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5F-MN-P3p">
                             <rect key="frame" x="30" y="346.5" width="309" height="30"/>
                             <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="25"/>
-                            <color key="textColor" red="0.7843137255" green="0.60784313729999995" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="20 PDL | 49W 40L" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxK-tt-zOZ">
                             <rect key="frame" x="30" y="376.5" width="309" height="16"/>
                             <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="13"/>
-                            <color key="textColor" red="0.7843137255" green="0.60784313729999995" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jF9-kn-DzK">
@@ -95,7 +95,7 @@
                                                     <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="secondaryBorderColor">
-                                                    <color key="value" red="0.75686274509999996" green="0.58431372550000005" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="value" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="primaryBorderWidth">
                                                     <real key="value" value="2"/>
@@ -109,13 +109,13 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Foc-VY-NRy">
                                             <rect key="frame" x="0.0" y="74" width="73.5" height="17"/>
                                             <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="14"/>
-                                            <color key="textColor" red="0.7843137255" green="0.60784313729999995" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="K / D / A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LL9-Gs-MQs">
                                             <rect key="frame" x="0.0" y="91" width="73.5" height="17"/>
                                             <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="14"/>
-                                            <color key="textColor" red="0.7843137255" green="0.60784313729999995" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -137,7 +137,7 @@
                                                     <color key="value" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="secondaryBorderColor">
-                                                    <color key="value" red="0.75686274509999996" green="0.58431372550000005" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="value" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="secondaryBorderWidth">
                                                     <real key="value" value="2"/>
@@ -151,13 +151,13 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzB-ZG-VeK">
                                             <rect key="frame" x="0.0" y="74" width="74" height="17"/>
                                             <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="14"/>
-                                            <color key="textColor" red="0.7843137255" green="0.60784313729999995" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="K / D / A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8G-xD-Jil">
                                             <rect key="frame" x="0.0" y="91" width="74" height="17"/>
                                             <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="14"/>
-                                            <color key="textColor" red="0.7843137255" green="0.60784313729999995" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -179,7 +179,7 @@
                                                     <color key="value" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="secondaryBorderColor">
-                                                    <color key="value" red="0.75686274509999996" green="0.58431372550000005" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="value" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="primaryImage" value="Orianna"/>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="goldIII"/>
@@ -193,13 +193,13 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tm-mu-tWL">
                                             <rect key="frame" x="0.0" y="74" width="73.5" height="17"/>
                                             <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="14"/>
-                                            <color key="textColor" red="0.7843137255" green="0.60784313729999995" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="K / D / A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mS6-iX-TFz">
                                             <rect key="frame" x="0.0" y="91" width="73.5" height="17"/>
                                             <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="14"/>
-                                            <color key="textColor" red="0.7843137255" green="0.60784313729999995" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -214,10 +214,10 @@
                                     <real key="value" value="2"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="primaryBorderColor">
-                                    <color key="value" red="0.75686274509999996" green="0.58431372550000005" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="value" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="secondaryBorderColor">
-                                    <color key="value" red="0.75686274509999996" green="0.58431372550000005" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="value" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="number" keyPath="secondaryBorderWidth">
                                     <real key="value" value="2"/>
@@ -272,6 +272,11 @@
                             <real key="value" value="0.0"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="0jk-fc-nfm"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
