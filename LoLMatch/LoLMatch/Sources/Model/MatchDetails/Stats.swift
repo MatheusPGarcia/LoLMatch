@@ -15,6 +15,7 @@ struct Stats: Codable {
     var kills: Int?
     var deaths: Int?
     var assists: Int?
+    var win: Bool?
 }
 
 extension Stats {
@@ -29,6 +30,7 @@ extension Stats {
         case kills
         case deaths
         case assists
+        case win
     }
 
     init(from decoder: Decoder) throws {
@@ -41,11 +43,13 @@ extension Stats {
         let kills = try nested.decodeIfPresent(Int.self, forKey: .kills)
         let deaths = try nested.decodeIfPresent(Int.self, forKey: .deaths)
         let assists = try nested.decodeIfPresent(Int.self, forKey: .assists)
+        let win = try nested.decodeIfPresent(Bool.self, forKey: .win)
 
         self.participantId = participantId
         self.championId = championId
         self.kills = kills
         self.deaths = deaths
         self.assists = assists
+        self.win = win
     }
 }

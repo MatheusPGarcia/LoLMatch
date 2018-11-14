@@ -72,7 +72,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8z-Ek-H90" userLabel="Terciary View">
-                            <rect key="frame" x="68.5" y="137" width="63" height="63"/>
+                            <rect key="frame" x="68.5" y="142" width="63" height="63"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fe6-AM-geM">
                                     <rect key="frame" x="5" y="5" width="53" height="53"/>
@@ -91,7 +91,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="d8z-Ek-H90" firstAttribute="centerX" secondItem="grG-E1-viy" secondAttribute="centerX" id="B1G-Mb-pYt"/>
-                        <constraint firstAttribute="bottom" secondItem="d8z-Ek-H90" secondAttribute="bottom" id="BKI-ka-z91"/>
+                        <constraint firstAttribute="bottom" secondItem="d8z-Ek-H90" secondAttribute="bottom" constant="-5" id="BKI-ka-z91"/>
                         <constraint firstAttribute="trailing" secondItem="Mcr-lh-ZOv" secondAttribute="trailing" id="DcF-8b-52F"/>
                         <constraint firstItem="6JS-GL-gPa" firstAttribute="top" secondItem="grG-E1-viy" secondAttribute="top" id="EkA-6p-eZI"/>
                         <constraint firstAttribute="bottom" secondItem="Mcr-lh-ZOv" secondAttribute="bottom" id="Jp1-Qd-ane"/>

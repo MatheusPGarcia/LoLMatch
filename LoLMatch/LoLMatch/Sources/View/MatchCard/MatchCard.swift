@@ -57,6 +57,10 @@ import Nuke
         self.laneImageView.setInnerSpacing(forPrimaryView: 5, forSecondaryView: 5)
         self.laneImageView.setBackgroundColor(forPrimaryView: .black, forSecondaryView: .black)
         
+        self.champion1ImageView.setBackgroundColor(forPrimaryView: .black, forSecondaryView: .black, forTerciaryView: .black)
+        self.champion2ImageView.setBackgroundColor(forPrimaryView: .black, forSecondaryView: .black, forTerciaryView: .black)
+        self.champion3ImageView.setBackgroundColor(forPrimaryView: .black, forSecondaryView: .black, forTerciaryView: .black)
+        
         self.laneImageView.primaryImageView.image = summoner.lane1.coloredImage()
         self.laneImageView.secondaryImageView.image = summoner.lane2.coloredImage()
         
@@ -91,6 +95,7 @@ import Nuke
             
             var url = URL(string: currentChampion.thumbUrl)!
             loadImage(with: url, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "profilePlaceholder"), transition: .fadeIn(duration: 0.3)), into: self.champion1ImageView.primaryImageView)
+            self.champion1ImageView.primaryBorderColor = currentMatch!.win! ? .green : .red
             self.champion1NameLabel.text = currentChampion.name
             self.champion1Kda.text = "\(currentMatch!.kill!)/\(currentMatch!.death!)/\(currentMatch!.assist!)"
 
@@ -99,6 +104,7 @@ import Nuke
 
             currentChampion = ChampionService.getChampion(by: currentMatch!.championId ?? -1)!
             url = URL(string: currentChampion.thumbUrl)!
+            self.champion2ImageView.primaryBorderColor = currentMatch!.win! ? .green : .red
             loadImage(with: url, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "profilePlaceholder"), transition: .fadeIn(duration: 0.3)), into: self.champion2ImageView.primaryImageView)
             currentChampion = ChampionService.getChampion(by: currentMatch!.championId ?? -1)!
             self.champion2NameLabel.text = currentChampion.name
@@ -109,6 +115,7 @@ import Nuke
 
             currentChampion = ChampionService.getChampion(by: currentMatch!.championId ?? -1)!
             url = URL(string: currentChampion.thumbUrl)!
+            self.champion1ImageView.primaryBorderColor = currentMatch!.win! ? .green : .red
             loadImage(with: url, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "profilePlaceholder"), transition: .fadeIn(duration: 0.3)), into: self.champion3ImageView.primaryImageView)
             currentChampion = ChampionService.getChampion(by: currentMatch!.championId ?? -1)!
             self.champion3NameLabel.text = currentChampion.name

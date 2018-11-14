@@ -73,8 +73,11 @@ class LikesReceivedCell: UITableViewCell {
         UserServices.getPlayerKda(byId: user.accountId, numberOfMatches: 3) { (matches, error) in
             
             if let validMatches = matches {
+                
                 for index in 0..<validMatches.count {
                     let kda: (Int, Int, Int) = (validMatches[index].kill!, validMatches[index].death!, validMatches[index].assist!)
+                    
+                    self.championViews[index].primaryBorderColor = validMatches[index].win! ? .green : .red
                     
                     let championId = validMatches[index].championId!
                     let champion = ChampionService.getChampion(by: championId)!

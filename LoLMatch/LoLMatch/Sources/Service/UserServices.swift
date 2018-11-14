@@ -299,7 +299,7 @@ extension UserServices {
             guard let participants = details?.participants else { return }
 
             for participant in participants where participant.championId == championId {
-                let match = FilteredMatch(k: participant.kills, d: participant.deaths, a: participant.assists, championId: championId)
+                let match = FilteredMatch(k: participant.kills, d: participant.deaths, a: participant.assists, championId: championId, win: participant.win)
                 var newMatchesArray = matchesArray
                 newMatchesArray.append(match)
                 completion(newMatchesArray, nil)

@@ -13,11 +13,13 @@ struct FilteredMatch {
     var death: Int?
     var assist: Int?
     var championId: Int?
+    var win: Bool?
 
-    init(k: Int?, d: Int?, a: Int?, championId: Int?) {
-        kill = k
-        death = d
-        assist = a
+    init(k: Int?, d: Int?, a: Int?, championId: Int?, win: Bool?) {
+        self.kill = k
+        self.death = d
+        self.assist = a
         self.championId = championId
+        self.win = win
     }
 }
