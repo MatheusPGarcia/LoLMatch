@@ -152,11 +152,9 @@ extension LikesReceivedViewController: UITableViewDelegate, UITableViewDataSourc
 }
 
 
-// MARK: - Like User Delegate
-extension LikesReceivedViewController: LikeUserDelegate {
+// MARK: - Cell Delegate
+extension LikesReceivedViewController: CellDelegate {
 
-    
-    
     func displayAlert(title: String, message: String) {
         self.createAlert(title: title, message: message)
     }

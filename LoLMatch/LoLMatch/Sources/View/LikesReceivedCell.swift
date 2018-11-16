@@ -9,7 +9,7 @@
 import UIKit
 import Nuke
 
-protocol LikeUserDelegate: class {
+protocol CellDelegate: class {
     func displayAlert(title: String, message: String)
 }
 
@@ -32,11 +32,11 @@ class LikesReceivedCell: UITableViewCell {
     
     // MARK: - Properties
     private var summonoerId: Int = -1
-    weak var delegate: LikeUserDelegate?
+    weak var delegate: CellDelegate?
     
     
     // MARK: - Methods
-    func setup(user: User, delegate: LikeUserDelegate) {
+    func setup(user: User, delegate: CellDelegate) {
         
         self.lanesImages.setInnerSpacing(forPrimaryView: 10, forSecondaryView: 5)
         self.lanesImages.setBackgroundColor(forPrimaryView: .black, forSecondaryView: .black)
