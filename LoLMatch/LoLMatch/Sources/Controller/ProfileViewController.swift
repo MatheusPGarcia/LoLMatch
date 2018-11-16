@@ -98,7 +98,11 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
             
         } else if indexPath.row == 2 {
-            return UITableViewCell()
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileLastMatchesCell") as! ProfileLastMatchesCell
+            cell.setup(user: self.currentUser)
+            return cell
+            
         } else {
             return UITableViewCell()
         }

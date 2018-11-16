@@ -14,6 +14,7 @@
 		18314C4D2194642C00F2A318 /* Patch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18314C4C2194642C00F2A318 /* Patch.swift */; };
 		183777D1219EF6320095A8EE /* ProfileInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183777D0219EF6320095A8EE /* ProfileInfoCell.swift */; };
 		183777D3219F000F0095A8EE /* ProfileLanesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183777D2219F000F0095A8EE /* ProfileLanesCell.swift */; };
+		183777D5219F05F50095A8EE /* ProfileLastMatchesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183777D4219F05F50095A8EE /* ProfileLastMatchesCell.swift */; };
 		186E7C5E2177B0FB00DB521A /* TripleImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186E7C5D2177B0FB00DB521A /* TripleImageView.xib */; };
 		186E7C602177B21700DB521A /* TripleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E7C5F2177B21700DB521A /* TripleImageView.swift */; };
 		186E7C622177CF2700DB521A /* LikesReceivedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186E7C612177CF2700DB521A /* LikesReceivedViewController.swift */; };
@@ -94,6 +95,7 @@
 		18314C4C2194642C00F2A318 /* Patch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patch.swift; sourceTree = "<group>"; };
 		183777D0219EF6320095A8EE /* ProfileInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoCell.swift; sourceTree = "<group>"; };
 		183777D2219F000F0095A8EE /* ProfileLanesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLanesCell.swift; sourceTree = "<group>"; };
+		183777D4219F05F50095A8EE /* ProfileLastMatchesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLastMatchesCell.swift; sourceTree = "<group>"; };
 		186E7C5D2177B0FB00DB521A /* TripleImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripleImageView.xib; sourceTree = "<group>"; };
 		186E7C5F2177B21700DB521A /* TripleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleImageView.swift; sourceTree = "<group>"; };
 		186E7C612177CF2700DB521A /* LikesReceivedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesReceivedViewController.swift; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 				18DCCF18219A18080044A0B9 /* CustomNavigationController.swift */,
 				183777D0219EF6320095A8EE /* ProfileInfoCell.swift */,
 				183777D2219F000F0095A8EE /* ProfileLanesCell.swift */,
+				183777D4219F05F50095A8EE /* ProfileLastMatchesCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 				18E1FC912195C342000981A6 /* Champion.swift in Sources */,
 				AE3F558E219462880019AB9F /* Stats.swift in Sources */,
 				181EEAC92193BE5B00B7BCC5 /* CommunicationViewController.swift in Sources */,
+				183777D5219F05F50095A8EE /* ProfileLastMatchesCell.swift in Sources */,
 				18FA17052188D1C700D43A94 /* SignupViewController.swift in Sources */,
 				183777D3219F000F0095A8EE /* ProfileLanesCell.swift in Sources */,
 				183777D1219EF6320095A8EE /* ProfileInfoCell.swift in Sources */,

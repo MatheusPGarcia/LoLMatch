@@ -42,7 +42,7 @@ class LikesReceivedCell: UITableViewCell {
         self.lanesImages.setBackgroundColor(forPrimaryView: .black, forSecondaryView: .black)
         
         self.championViews.forEach({ $0.setInnerSpacing(forPrimaryView: 0, forSecondaryView: 3) })
-        self.championViews.forEach({ $0.setBackgroundColor(forPrimaryView: .navyBlue, forSecondaryView: .navyBlue) })
+        self.championViews.forEach({ $0.setBackgroundColor(forPrimaryView: .black, forSecondaryView: .black) })
         
         self.summonoerId = user.summonerId
         self.delegate = delegate
