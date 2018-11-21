@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HSO-6j-ZUt">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="21" width="375" height="597"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -280,17 +280,27 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zzp-gy-04J">
+                                <rect key="frame" x="0.0" y="20" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Lhi-FE-Ar7"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hvP-9I-GX7" firstAttribute="trailing" secondItem="b91-xK-VxT" secondAttribute="trailing" id="HBP-lN-xqi"/>
                             <constraint firstItem="hvP-9I-GX7" firstAttribute="bottom" secondItem="HSO-6j-ZUt" secondAttribute="bottom" id="U2v-VO-9aY"/>
-                            <constraint firstItem="HSO-6j-ZUt" firstAttribute="top" secondItem="hvP-9I-GX7" secondAttribute="top" id="VKY-59-j1c"/>
                             <constraint firstItem="HSO-6j-ZUt" firstAttribute="leading" secondItem="hvP-9I-GX7" secondAttribute="leading" id="ekz-Io-BuK"/>
+                            <constraint firstItem="Zzp-gy-04J" firstAttribute="leading" secondItem="hvP-9I-GX7" secondAttribute="leading" id="hUZ-Rz-6wE"/>
                             <constraint firstItem="hvP-9I-GX7" firstAttribute="bottom" secondItem="b91-xK-VxT" secondAttribute="bottom" id="jAa-H8-jtR"/>
                             <constraint firstItem="HSO-6j-ZUt" firstAttribute="trailing" secondItem="hvP-9I-GX7" secondAttribute="trailing" id="nXe-Qi-bX8"/>
                             <constraint firstItem="b91-xK-VxT" firstAttribute="leading" secondItem="hvP-9I-GX7" secondAttribute="leading" id="nlV-vY-EGi"/>
+                            <constraint firstItem="Zzp-gy-04J" firstAttribute="top" secondItem="hvP-9I-GX7" secondAttribute="top" id="o7r-oF-9WX"/>
+                            <constraint firstItem="HSO-6j-ZUt" firstAttribute="top" secondItem="Zzp-gy-04J" secondAttribute="bottom" id="r9z-Jo-zfM"/>
                             <constraint firstItem="b91-xK-VxT" firstAttribute="top" secondItem="aFL-1J-KoL" secondAttribute="top" id="skg-a0-Eo7"/>
+                            <constraint firstItem="hvP-9I-GX7" firstAttribute="trailing" secondItem="Zzp-gy-04J" secondAttribute="trailing" id="tKX-y4-a8Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hvP-9I-GX7"/>
                     </view>

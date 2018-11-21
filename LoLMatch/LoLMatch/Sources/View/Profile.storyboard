@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="801"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ioe-Ga-JQM">
-                                <rect key="frame" x="0.0" y="64" width="375" height="737"/>
+                                <rect key="frame" x="0.0" y="65" width="375" height="736"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProfileInfoCell" rowHeight="265" id="dAF-Tg-jJh" customClass="ProfileInfoCell" customModule="LoLMatch" customModuleProvider="target">
@@ -127,7 +127,7 @@
                                                     <rect key="frame" x="40" y="55" width="295" height="140"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPn-RU-C1r" customClass="TripleImageView" customModule="LoLMatch" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="116" height="116"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="74" height="116"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="YES"/>
@@ -150,7 +150,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Que eu jogo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aw3-ap-f98">
-                                                            <rect key="frame" x="0.0" y="116" width="116" height="24"/>
+                                                            <rect key="frame" x="0.0" y="116" width="74" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="pZN-Nf-Z7o"/>
                                                             </constraints>
@@ -159,7 +159,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvZ-k7-ZM7" customClass="TripleImageView" customModule="LoLMatch" customModuleProvider="target">
-                                                            <rect key="frame" x="179" y="0.0" width="116" height="116"/>
+                                                            <rect key="frame" x="189.5" y="0.0" width="105.5" height="116"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="YES"/>
@@ -182,7 +182,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quero jogar com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qgj-0r-WyW">
-                                                            <rect key="frame" x="179" y="116" width="116" height="24"/>
+                                                            <rect key="frame" x="189.5" y="116" width="105.5" height="24"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="24" id="ctw-RS-O0p"/>
                                                             </constraints>
@@ -440,16 +440,26 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wad-AM-Nfw">
+                                <rect key="frame" x="0.0" y="64" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="ESd-Ox-BQN"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="cj9-ju-QQ6" firstAttribute="trailing" secondItem="Wad-AM-Nfw" secondAttribute="trailing" id="2G4-LA-76A"/>
                             <constraint firstItem="cj9-ju-QQ6" firstAttribute="bottom" secondItem="auJ-Xc-YpB" secondAttribute="bottom" id="4zM-aZ-tvt"/>
+                            <constraint firstItem="Ioe-Ga-JQM" firstAttribute="top" secondItem="Wad-AM-Nfw" secondAttribute="bottom" id="CWw-6N-Xbj"/>
                             <constraint firstItem="auJ-Xc-YpB" firstAttribute="top" secondItem="B2g-x5-hkx" secondAttribute="top" id="G3S-dl-HC9"/>
-                            <constraint firstItem="Ioe-Ga-JQM" firstAttribute="top" secondItem="cj9-ju-QQ6" secondAttribute="top" id="awj-NJ-uiu"/>
                             <constraint firstItem="auJ-Xc-YpB" firstAttribute="leading" secondItem="cj9-ju-QQ6" secondAttribute="leading" id="dRi-Kn-qoL"/>
+                            <constraint firstItem="Wad-AM-Nfw" firstAttribute="top" secondItem="cj9-ju-QQ6" secondAttribute="top" id="nPS-G0-eWR"/>
                             <constraint firstItem="Ioe-Ga-JQM" firstAttribute="leading" secondItem="cj9-ju-QQ6" secondAttribute="leading" id="o5q-H1-NEC"/>
                             <constraint firstItem="cj9-ju-QQ6" firstAttribute="trailing" secondItem="auJ-Xc-YpB" secondAttribute="trailing" id="rT0-lS-ayj"/>
                             <constraint firstItem="cj9-ju-QQ6" firstAttribute="trailing" secondItem="Ioe-Ga-JQM" secondAttribute="trailing" id="tg9-oB-f4O"/>
+                            <constraint firstItem="Wad-AM-Nfw" firstAttribute="leading" secondItem="cj9-ju-QQ6" secondAttribute="leading" id="vh1-Fc-soZ"/>
                             <constraint firstItem="cj9-ju-QQ6" firstAttribute="bottom" secondItem="Ioe-Ga-JQM" secondAttribute="bottom" id="xad-bs-bfM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cj9-ju-QQ6"/>
