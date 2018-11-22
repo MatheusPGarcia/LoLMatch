@@ -48,6 +48,7 @@ class ProfileInfoCell: UITableViewCell {
                     
                     if let tier = elo.tier, let rank = elo.rank {
                         
+                        
                         self.profileImages.secondaryImageView.image = elo.image
                         // TODO: - PUT THE ELO RANK IMAGE BELOW (I, II, III, IV, V)
                         self.profileImages.terciaryImageView.image = elo.image
