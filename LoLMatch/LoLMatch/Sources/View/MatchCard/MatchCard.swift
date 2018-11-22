@@ -51,64 +51,28 @@ import UIKit
     }
 
     func setupView(summoner: User) {
-        lane1Label.text = summoner.lane1.description()
-        lane2Label.text = summoner.lane2.description()
 
+        CardService.getCardDetail(forUser: summoner) { (cardViewModel) in
 
-        UserServices.getElo(byId: summoner.summonerId) { [unowned self] elos, error in
-            
-            // TODO: -
-            if let validElos = elos {
-                for elo in validElos where elo.queueType ?? "" == "RANKED_SOLO_5x5" {
-                    
-                    if let tier = elo.tier, let rank = elo.rank, let pdl = elo.pdl, let wins = elo.wins, let losses = elo.losses {
-                        DispatchQueue.main.async {
-                            self.eloImageView.image = elo.image
-                            self.tierLabel.text = "\(tier) \(rank)"
-                            self.pdlLabel.text = "\(pdl) PDL | \(wins)W \(losses)L"
-                        }
-                    } else {
-                        print("Error on getting elo")
-                    }
-                }
-            }
+            self.lane1Label.text = cardViewModel.lane1.description()
+            self.lane2Label.text = cardViewModel.lane2.description()
+
+            self.tierLabel.text = cardViewModel.tier
+            self.pdlLabel.text = cardViewModel.pdl
+
+            var match = cardViewModel.lastMatches[0]
+            var kdaDescription = String(format: String.kdaText, match.kill!, match.death!, match.assist!)
+            self.champion1Kda.text = kdaDescription
+
+            match = cardViewModel.lastMatches[1]
+            kdaDescription = String(format: String.kdaText, match.kill!, match.death!, match.assist!)
+            self.champion2Kda.text = kdaDescription
+
+            match = cardViewModel.lastMatches[2]
+            kdaDescription = String(format: String.kdaText, match.kill!, match.death!, match.assist!)
+            self.champion3Kda.text = kdaDescription
         }
-
-        UserServices.getPlayerKda(byId: summoner.accountId, numberOfMatches: 3) { (matches, error) in
-            var matches = matches!
-            var currentMatch = matches.first
-            matches.removeFirst()
-
-
-            self.champion1NameLabel.text = String(currentMatch!.championId!)
-            self.champion1Kda.text = "\(currentMatch!.kill!)/\(currentMatch!.death!)/\(currentMatch!.assist!)"
-
-            currentMatch = matches.first
-            matches.removeFirst()
-
-            self.champion2NameLabel.text = String(currentMatch!.championId!)
-            self.champion2Kda.text = "\(currentMatch!.kill!)/\(currentMatch!.death!)/\(currentMatch!.assist!)"
-
-            currentMatch = matches.first
-            matches.removeFirst()
-
-            self.champion3NameLabel.text = String(currentMatch!.championId!)
-            self.champion3Kda.text = "\(currentMatch!.kill!)/\(currentMatch!.death!)/\(currentMatch!.assist!)"
-        }
-
-
-//        @IBOutlet weak var pdlLabel: UILabel!
-//        @IBOutlet weak var champion1ImageView: DoubleImageView!
-//        @IBOutlet weak var champion1NameLabel: UILabel!
-//        @IBOutlet weak var champion1Kda: UILabel!
-//        @IBOutlet weak var champion2ImageView: DoubleImageView!
-//        @IBOutlet weak var champion2NameLabel: UILabel!
-//        @IBOutlet weak var champion2Kda: UILabel!
-//        @IBOutlet weak var champion3ImageView: DoubleImageView!
-//        @IBOutlet weak var champion3NameLabel: UILabel!
-//        @IBOutlet weak var champion3Kda: UILabel!
     }
-    
 }
 
 extension MatchCard {

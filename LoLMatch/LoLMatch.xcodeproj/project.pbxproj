@@ -38,6 +38,9 @@
 		18E1FC932195C479000981A6 /* ChampionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1FC922195C479000981A6 /* ChampionService.swift */; };
 		18E1FC962195C732000981A6 /* DataDragonProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1FC952195C732000981A6 /* DataDragonProvider.swift */; };
 		18FA17052188D1C700D43A94 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA17042188D1C700D43A94 /* SignupViewController.swift */; };
+		AE085E9C21A6C77200808C27 /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE085E9B21A6C77200808C27 /* CardService.swift */; };
+		AE085E9E21A6C8C800808C27 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE085E9D21A6C8C800808C27 /* Strings.swift */; };
+		AE085EA221A6CA7100808C27 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE085EA121A6CA7100808C27 /* CardViewModel.swift */; };
 		AE321F0121809C7300B1C95A /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE321F0021809C7300B1C95A /* MatchViewController.swift */; };
 		AE3B3A8A219590CB006B4026 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3B3A89219590CB006B4026 /* FeedService.swift */; };
 		AE3F55872194589D0019AB9F /* MatchRiotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F55862194589D0019AB9F /* MatchRiotResponse.swift */; };
@@ -119,6 +122,9 @@
 		7D56F5FB5C22EA01312E2A61 /* Pods-LoLMatchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoLMatchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoLMatchTests/Pods-LoLMatchTests.release.xcconfig"; sourceTree = "<group>"; };
 		913E005653ED98D17EDB9ECD /* Pods_LoLMatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoLMatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F9CCFAEF068D5403E5E655A /* Pods_LoLMatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoLMatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE085E9B21A6C77200808C27 /* CardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
+		AE085E9D21A6C8C800808C27 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		AE085EA121A6CA7100808C27 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		AE321F0021809C7300B1C95A /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		AE3B3A89219590CB006B4026 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
 		AE3F55862194589D0019AB9F /* MatchRiotResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRiotResponse.swift; sourceTree = "<group>"; };
@@ -218,6 +224,7 @@
 				187AB9152177D81500D36C36 /* UserServices.swift */,
 				AE3B3A89219590CB006B4026 /* FeedService.swift */,
 				18E1FC922195C479000981A6 /* ChampionService.swift */,
+				AE085E9B21A6C77200808C27 /* CardService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -275,6 +282,22 @@
 				10E8184FF929D7A69396EE73 /* Pods-LoLMatchUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		AE085E9F21A6C8F900808C27 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AE085E9D21A6C8C800808C27 /* Strings.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AE085EA021A6CA5400808C27 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AE085EA121A6CA7100808C27 /* CardViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		AE3F5585219458810019AB9F /* MatchInfo */ = {
@@ -428,6 +451,7 @@
 				AE43596E217600E4008A94FC /* Controller */,
 				AE43596F217600EF008A94FC /* View */,
 				186E7C652177CFBF00DB521A /* Model */,
+				AE085EA021A6CA5400808C27 /* ViewModel */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -435,6 +459,7 @@
 		AEB9F80B217611610040AB10 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AE085E9F21A6C8F900808C27 /* Extensions */,
 				AE4359412175FE40008A94FC /* Assets.xcassets */,
 				AE43593E2175FE3D008A94FC /* LoLMatch.xcdatamodeld */,
 				AE4359462175FE40008A94FC /* Info.plist */,
@@ -698,6 +723,7 @@
 				186E7C672177CFD900DB521A /* User.swift in Sources */,
 				AE3F5589219460860019AB9F /* MatchDetails.swift in Sources */,
 				AE3B3A8A219590CB006B4026 /* FeedService.swift in Sources */,
+				AE085EA221A6CA7100808C27 /* CardViewModel.swift in Sources */,
 				18807C54218AD67D00DD8761 /* ProfileViewController.swift in Sources */,
 				AE3F558B219460EA0019AB9F /* PlayerInMatch.swift in Sources */,
 				18314C4D2194642C00F2A318 /* Patch.swift in Sources */,
@@ -709,6 +735,8 @@
 				AE3F558E219462880019AB9F /* Stats.swift in Sources */,
 				181EEAC92193BE5B00B7BCC5 /* CommunicationViewController.swift in Sources */,
 				18FA17052188D1C700D43A94 /* SignupViewController.swift in Sources */,
+				AE085E9C21A6C77200808C27 /* CardService.swift in Sources */,
+				AE085E9E21A6C8C800808C27 /* Strings.swift in Sources */,
 				186E7C692177D0A200DB521A /* LikesReceivedCell.swift in Sources */,
 				188228E9217634BD00CAEB8A /* UIViewExtension.swift in Sources */,
 				AE4359402175FE3D008A94FC /* LoLMatch.xcdatamodeld in Sources */,
