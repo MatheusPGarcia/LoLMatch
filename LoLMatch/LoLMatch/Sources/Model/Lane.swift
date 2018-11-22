@@ -75,7 +75,7 @@ enum Lane {
         case .sup:
             return #imageLiteral(resourceName: "supLane")
         case .fill:
-            return #imageLiteral(resourceName: "goldIII")
+            return #imageLiteral(resourceName: "fillLane")
         }
     }
 }

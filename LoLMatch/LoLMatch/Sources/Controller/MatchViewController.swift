@@ -17,6 +17,10 @@ class MatchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        FeedService.getFeed { (feedUsers) in
+            guard let user = feedUsers?.first else { return }
+            self.cardView.setupView(summoner: user)
+        }
         cardCenter = cardView.center
     }
 
@@ -36,7 +40,18 @@ class MatchViewController: UIViewController {
         updateFeedbackImageForCard(cardReference, distance: xDistanceFromCenter)
 
         if sender.state == UIGestureRecognizer.State.ended {
-            resetCardPositionFor(cardReference)
+
+            if xDistanceFromCenter > 150 {
+                FirebaseManager.likeUser(currentSummonerId: 1945669, summonerId: 2017255, completion: { _ in
+                    print("Ok")
+                })
+//                UserServices.likeUser(summonerId: , completion: <#T##((Bool) -> Void)##((Bool) -> Void)##(Bool) -> Void#>)
+                sendViewAway(cardReference, like: true)
+            } else if xDistanceFromCenter < -150 {
+                sendViewAway(cardReference, like: false)
+            } else {
+                resetCardPositionFor(cardReference)
+            }
         }
     }
 }
@@ -55,6 +70,18 @@ extension MatchViewController {
         }
 
         image.alpha = abs(distance) / view.center.x
+    }
+
+    private func sendViewAway(_ card: MatchCard, like: Bool) {
+
+        var sendTo: CGFloat = 500
+        if !like {
+            sendTo = -500
+        }
+
+        UIView.animate(withDuration: 0.4) {
+            card.center = CGPoint(x: sendTo, y: card.center.y)
+        }
     }
 
     private func resetCardPositionFor(_ card: MatchCard) {

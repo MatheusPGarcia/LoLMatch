@@ -53,6 +53,8 @@ class MatchCell: UITableViewCell {
     }
     
     private func setupProfileIcon(profileIconId: Int) {
+        
+        // TODO: -
         let imageURL = URL(string: "http://ddragon.leagueoflegends.com/cdn/\(Patch.patch)/img/profileicon/\(profileIconId).png")!
         
         loadImage(with: imageURL, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "profilePlaceholder"),transition: .fadeIn(duration: 0.3)), into: self.summonerProfileImageView)

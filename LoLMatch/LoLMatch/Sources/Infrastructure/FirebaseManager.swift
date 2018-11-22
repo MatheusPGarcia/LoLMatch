@@ -107,6 +107,9 @@ class FirebaseManager {
     ///
     /// - Parameter user: User to be updated
     static func setLanes(user: User) {
-        self.ref.child("Users").child("\(user.summonerId)").setValue(user.toDict())
+        self.ref.child("Users").child("\(user.summonerId)").updateChildValues(user.toDict()) { (error, reference) in
+            // TODO
+            print(error?.localizedDescription ?? "OKOK")
+        }
     }
 }

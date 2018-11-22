@@ -18,7 +18,7 @@ struct UserIdProfile: Codable {
 
 extension UserIdProfile {
 
-    enum responseKeys: String, CodingKey {
+    enum ResponseKeys: String, CodingKey {
         case profileIconId
         case name
         case accountId
@@ -27,7 +27,7 @@ extension UserIdProfile {
 
     init(from decoder: Decoder) throws {
 
-        let container = try decoder.container(keyedBy: responseKeys.self)
+        let container = try decoder.container(keyedBy: ResponseKeys.self)
 
         let profileIconId = try container.decode(Int.self, forKey: .profileIconId)
         let name = try container.decode(String.self, forKey: .name)

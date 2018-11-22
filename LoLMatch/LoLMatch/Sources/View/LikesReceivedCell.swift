@@ -9,8 +9,6 @@
 import UIKit
 
 protocol LikeUserDelegate: class {
-    func likeUser(summonerId: Int)
-    func dislikeUser(summonerId: Int)
     func displayAlert(title: String, message: String)
 }
 
@@ -18,12 +16,10 @@ class LikesReceivedCell: UITableViewCell {
     
     // MARK: - Outlets
     // Lane Information
-    @IBOutlet weak var lanesView: DoubleImageView!
-    @IBOutlet weak var primaryLaneLabel: UILabel!
-    @IBOutlet weak var secondaryLaneLabel: UILabel!
+     @IBOutlet weak var lanesImages: DoubleImageView!
     
     // Elo Information
-    @IBOutlet weak var eloImage: RoundedImageView!
+    @IBOutlet weak var eloImage: UIImageView!
     @IBOutlet weak var eloLabel: UILabel!
     @IBOutlet weak var pdlLabel: UILabel!
     
@@ -38,44 +34,48 @@ class LikesReceivedCell: UITableViewCell {
     weak var delegate: LikeUserDelegate?
     
     
-    // MARK: - Actions
-    @IBAction func likeUser(_ sender: UIButton) {
-        if let delegate = self.delegate {
-            delegate.likeUser(summonerId: self.summonoerId)
-        }
-    }
-    
-    @IBAction func dislikeUser(_ sender: UIButton) {
-        if let delegate = self.delegate {
-            delegate.dislikeUser(summonerId: self.summonoerId)
-        }
-    }
-    
-    
     // MARK: - Methods
     func setup(user: User, delegate: LikeUserDelegate) {
         self.summonoerId = user.summonerId
         self.delegate = delegate
-        self.primaryLaneLabel.text = user.lane1.description()
-        self.secondaryLaneLabel.text = user.lane2.description()
-        self.lanesView.primaryImageView.image = user.lane1.image()
-        self.lanesView.secondaryImageView.image = user.lane2.image()
+        self.lanesImages.primaryImage = user.lane1.image()
+        self.lanesImages.secondaryImage = user.lane2.image()
         
         UserServices.getElo(byId: user.summonerId) { [unowned self] elos, error in
             
+            // TODO: -
             if let validElos = elos {
                 for elo in validElos where elo.queueType ?? "" == "RANKED_SOLO_5x5" {
                     
                     if let tier = elo.tier, let rank = elo.rank, let pdl = elo.pdl, let wins = elo.wins, let losses = elo.losses {
-                        self.eloImage.image = elo.image
-                        self.eloLabel.text = "\(tier) \(rank)"
-                        self.pdlLabel.text = "\(pdl) PDL | \(wins)W \(losses)L"
+                        DispatchQueue.main.async {
+                            self.eloImage.image = elo.image
+                            self.eloLabel.text = "\(tier) \(rank)"
+                            self.pdlLabel.text = "\(pdl) PDL | \(wins)W \(losses)L"
+                        }
                     } else {
                         if let delegate = self.delegate {
                             delegate.displayAlert(title: "Oops...", message: "Erro ao pegar as informaçoes de elo do jogador")
                         }
                     }
                 }
+            }
+        }
+        
+        UserServices.getPlayerKda(byId: user.accountId, numberOfMatches: 3) { (matches, error) in
+            
+            if let validMatches = matches {
+                for index in 0..<validMatches.count {
+                    let kda: (Int, Int, Int) = (validMatches[index].kill!, validMatches[index].death!, validMatches[index].assist!)
+                    self.championLabels[index].text = "\(validMatches[index].championId ?? -1)"
+                    self.kdaLabels[index].text = "\(kda.0) / \(kda.1) / \(kda.2)"
+                }
+            }
+        }
+        
+        ChampionService.getChampionList { (champions, error) in
+            if let validChampions = champions {
+                print("OKOK")
             }
         }
     }
