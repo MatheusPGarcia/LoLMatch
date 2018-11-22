@@ -164,6 +164,9 @@
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
+                                                            <connections>
+                                                                <action selector="activeTextField:" destination="sua-Ml-emf" eventType="editingDidBegin" id="mMR-0u-w9G"/>
+                                                            </connections>
                                                         </textField>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvZ-k7-ZM7" customClass="TripleImageView" customModule="LoLMatch" customModuleProvider="target">
                                                             <rect key="frame" x="179" y="0.0" width="116" height="116"/>
@@ -203,6 +206,9 @@
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
+                                                            <connections>
+                                                                <action selector="activeTextField:" destination="sua-Ml-emf" eventType="editingDidBegin" id="tOy-4W-dr4"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

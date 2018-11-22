@@ -10,6 +10,7 @@ import UIKit
 
 protocol UpdateLaneDelegate: class {
     func set(lane: Lane, for laneType: LaneType)
+    func scrollTableView()
 }
 
 class ProfileLanesCell: UITableViewCell {
@@ -36,6 +37,13 @@ class ProfileLanesCell: UITableViewCell {
     }
     
     
+    // MARK: - Actions
+    @IBAction func activeTextField(_ sender: UITextField) {
+        self.delegate?.scrollTableView()
+    }
+    
+    
+    
     // MARK: - Methods
     func setup(user: User, delegate: UpdateLaneDelegate) {
         
@@ -58,7 +66,11 @@ class ProfileLanesCell: UITableViewCell {
         self.duoLanesPicker.delegate = self
         self.duoLanesPicker.dataSource = self
     }
-
+    
+    func dismissAllKeyboards() {
+        self.myLanesTextField.resignFirstResponder()
+        self.duoLanesTextField.resignFirstResponder()
+    }
 }
 
 

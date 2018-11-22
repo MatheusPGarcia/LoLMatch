@@ -35,13 +35,17 @@ class ProfileViewController: UIViewController {
     var duoSecondaryLane: Lane!
     
     
-    
-    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupProfileView()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.dismissAllKeyboards()
     }
 
     
@@ -65,6 +69,8 @@ class ProfileViewController: UIViewController {
                 self.currentUser = user
                 UserServices.setCurrentUser(user: user)
                 UserServices.setLanes(user: user)
+                
+                self.dismissAllKeyboards()
                 
                 self.createAlert(title: "Lanes alteradas!", message: nil)
             } else {
@@ -107,7 +113,11 @@ extension ProfileViewController {
                 self.dismiss(animated: true, completion: nil)
             }
         }
-        
+    }
+    
+    private func dismissAllKeyboards() {
+        let cell = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as! ProfileLanesCell
+        cell.dismissAllKeyboards()
     }
     
 }
@@ -152,7 +162,6 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-    
 }
 
 
@@ -165,7 +174,7 @@ extension ProfileViewController: CellDelegate {
 }
 
 
-// MARK: - Update Lane Delegate {
+// MARK: - Update Lane Delegate
 extension ProfileViewController: UpdateLaneDelegate {
     
     func set(lane: Lane, for laneType: LaneType) {
@@ -181,4 +190,7 @@ extension ProfileViewController: UpdateLaneDelegate {
         }
     }
     
+    func scrollTableView() {
+        self.tableView.scrollToRow(at: IndexPath(row: 1, section: 0), at: .middle, animated: true)
+    }
 }
