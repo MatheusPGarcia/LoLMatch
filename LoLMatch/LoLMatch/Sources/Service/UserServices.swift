@@ -9,6 +9,8 @@
 import Foundation
 
 class UserServices: BaseService {
+
+    static private let dispatchGroup = DispatchGroup()
     
     /// Method responsible to get the current User of the application
     ///
@@ -206,57 +208,10 @@ class UserServices: BaseService {
                 return
             }
 
-            guard let matchesArray = matches else { return }
-            var matches = matchesArray
+            guard let matchesSlice = matches?.prefix(3) else { return }
+            let threeMatches = Array(matchesSlice)
 
-            guard let match = matches.first else { return }
-            guard let gameId = match.gameId else { return }
-            guard let championId = match.championId else { return }
-            matches.removeFirst()
-
-            let returnArray = [FilteredMatch]()
-
-            getPlayerKdaForMatch(byGameId: gameId, forChampion: championId, appendingIn: returnArray, completion: { (filteredMatch, error) in
-
-                if let error = error {
-                    completion(nil, error)
-                    return
-                }
-
-                guard let match = matches.first else { return }
-                guard let gameId = match.gameId else { return }
-                guard let championId = match.championId else { return }
-                matches.removeFirst()
-
-                guard let filteredMatch = filteredMatch else { return }
-
-                getPlayerKdaForMatch(byGameId: gameId, forChampion: championId, appendingIn: filteredMatch, completion: { (filteredMatch, error) in
-
-                    if let error = error {
-                        completion(nil, error)
-                        return
-                    }
-
-                    guard let match = matches.first else { return }
-                    guard let gameId = match.gameId else { return }
-                    guard let championId = match.championId else { return }
-                    matches.removeFirst()
-
-                    guard let filteredMatch = filteredMatch else { return }
-
-                    getPlayerKdaForMatch(byGameId: gameId, forChampion: championId, appendingIn: filteredMatch, completion: { (filteredMatch, error) in
-
-                        if let error = error {
-                            completion(nil, error)
-                            return
-                        }
-
-                        guard let filteredMatch = filteredMatch else { return }
-
-                        completion(filteredMatch, nil)
-                    })
-                })
-            })
+            getPlayerKdaForThreeMatches(matches: threeMatches, completion: completion)
         }
     }
 }
@@ -285,7 +240,7 @@ extension UserServices {
     ///   - gameId: match that you want info
     ///   - championId: champion played by the user
     ///   - completion: Return the kda structure
-    private static func getPlayerKdaForMatch(byGameId gameId: Int, forChampion championId: Int, appendingIn matchesArray: [FilteredMatch], completion: @escaping ([FilteredMatch]?, Error?) -> Void) {
+    private static func getPlayerKdaForMatch(byGameId gameId: Int, forChampion championId: Int, completion: @escaping (FilteredMatch?, Error?) -> Void) {
 
         let target = RiotProvider.getMatchDetails(matchId: gameId)
 
@@ -300,13 +255,47 @@ extension UserServices {
 
             for participant in participants where participant.championId == championId {
                 let match = FilteredMatch(k: participant.kills, d: participant.deaths, a: participant.assists, championId: championId)
-                var newMatchesArray = matchesArray
-                newMatchesArray.append(match)
-                completion(newMatchesArray, nil)
+                completion(match, nil)
                 return
             }
 
             completion (nil, nil)
+        }
+    }
+
+    /// Method responsible to get the last three matches kda from a specific Summoner
+    ///
+    /// - Parameters:
+    ///   - matches: matches to get kda
+    ///   - completion: matches details
+    private static func getPlayerKdaForThreeMatches(matches: [MatchBasicInfo], completion: @escaping ([FilteredMatch]?, Error?) -> Void) {
+
+        var filteredMatches = [FilteredMatch]()
+
+        for match in matches {
+
+            guard let gameId = match.gameId, let championId = match.championId else { return }
+
+            dispatchGroup.enter()
+            getPlayerKdaForMatch(byGameId: gameId, forChampion: championId) { (filteredMatch, error) in
+
+                if let error = error {
+                    completion(nil, error)
+                    return
+                }
+
+                guard let filteredMatch = filteredMatch else {
+                    completion(nil, nil)
+                    return
+                }
+
+                filteredMatches.append(filteredMatch)
+                dispatchGroup.leave()
+            }
+        }
+
+        dispatchGroup.notify(queue: .main) {
+            completion(filteredMatches, nil)
         }
     }
 }
