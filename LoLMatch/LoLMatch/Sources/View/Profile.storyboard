@@ -276,7 +276,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Spe-yh-RWG" userLabel="Champions View">
                                                     <rect key="frame" x="30" y="55" width="315" height="91.5"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="championPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="p7p-rG-tdy" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="championPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="p7p-rG-tdy" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="91.5" height="91.5"/>
                                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -291,7 +291,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="championPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="7Py-y7-52A" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="championPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="7Py-y7-52A" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
                                                             <rect key="frame" x="223.5" y="0.0" width="91.5" height="91.5"/>
                                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -306,7 +306,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="championPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="4iA-kf-kjy" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="championPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="4iA-kf-kjy" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
                                                             <rect key="frame" x="112" y="0.0" width="91.5" height="91.5"/>
                                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -487,7 +487,7 @@
     </scenes>
     <resources>
         <image name="background" width="375" height="667"/>
-        <image name="championPlaceholder" width="100" height="100"/>
+        <image name="championPlaceholder" width="75" height="75"/>
         <image name="coloredMidLane" width="139" height="139"/>
         <image name="coloredSupLane" width="139" height="139"/>
     </resources>

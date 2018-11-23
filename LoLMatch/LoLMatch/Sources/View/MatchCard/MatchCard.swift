@@ -94,7 +94,7 @@ import Nuke
             var currentChampion = ChampionService.getChampion(by: currentMatch!.championId ?? -1)!
             
             var url = URL(string: currentChampion.thumbUrl)!
-            loadImage(with: url, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "profileTabIcon"), transition: .fadeIn(duration: 0.3)), into: self.champion1ImageView)
+            loadImage(with: url, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "championPlaceholder"), transition: .fadeIn(duration: 0.3)), into: self.champion1ImageView)
             self.champion1ImageView.layer.borderColor = currentMatch!.win! ? UIColor.customGreen.cgColor : UIColor.customRed.cgColor
             self.champion1NameLabel.text = currentChampion.name
             self.champion1Kda.text = "\(currentMatch!.kill!)/\(currentMatch!.death!)/\(currentMatch!.assist!)"
@@ -105,7 +105,7 @@ import Nuke
             currentChampion = ChampionService.getChampion(by: currentMatch!.championId ?? -1)!
             url = URL(string: currentChampion.thumbUrl)!
             self.champion2ImageView.layer.borderColor = currentMatch!.win! ? UIColor.customGreen.cgColor : UIColor.customRed.cgColor
-            loadImage(with: url, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "profileTabIcon"), transition: .fadeIn(duration: 0.3)), into: self.champion2ImageView)
+            loadImage(with: url, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "championPlaceholder"), transition: .fadeIn(duration: 0.3)), into: self.champion2ImageView)
             currentChampion = ChampionService.getChampion(by: currentMatch!.championId ?? -1)!
             self.champion2NameLabel.text = currentChampion.name
             self.champion2Kda.text = "\(currentMatch!.kill!)/\(currentMatch!.death!)/\(currentMatch!.assist!)"
@@ -116,7 +116,7 @@ import Nuke
             currentChampion = ChampionService.getChampion(by: currentMatch!.championId ?? -1)!
             url = URL(string: currentChampion.thumbUrl)!
             self.champion3ImageView.layer.borderColor = currentMatch!.win! ? UIColor.customGreen.cgColor : UIColor.customRed.cgColor
-            loadImage(with: url, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "profileTabIcon"), transition: .fadeIn(duration: 0.3)), into: self.champion3ImageView)
+            loadImage(with: url, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "championPlaceholder"), transition: .fadeIn(duration: 0.3)), into: self.champion3ImageView)
             currentChampion = ChampionService.getChampion(by: currentMatch!.championId ?? -1)!
             self.champion3NameLabel.text = currentChampion.name
             self.champion3Kda.text = "\(currentMatch!.kill!)/\(currentMatch!.death!)/\(currentMatch!.assist!)"

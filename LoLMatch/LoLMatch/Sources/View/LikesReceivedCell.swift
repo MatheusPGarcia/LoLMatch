@@ -83,7 +83,7 @@ class LikesReceivedCell: UITableViewCell {
                     
                     let championURL = URL(string: champion.thumbUrl)!
                     
-                    loadImage(with: championURL, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "profileTabIcon"), transition: .fadeIn(duration: 0.3)), into: self.championViews[index])
+                    loadImage(with: championURL, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "championPlaceholder"), transition: .fadeIn(duration: 0.3)), into: self.championViews[index])
                     self.championLabels[index].text = champion.name
                     self.kdaLabels[index].text = "\(kda.0) / \(kda.1) / \(kda.2)"
                 }
