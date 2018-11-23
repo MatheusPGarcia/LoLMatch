@@ -73,9 +73,6 @@ extension MatchViewController {
     private func setupMatchView() {
         self.cardCenter = self.cardView.center
         self.cardView.laneImageView.setInnerSpacing(forPrimaryView: 10, forSecondaryView: 10)
-        self.cardView.champion1ImageView.setInnerSpacing(forPrimaryView: 0, forSecondaryView: 5)
-        self.cardView.champion2ImageView.setInnerSpacing(forPrimaryView: 0, forSecondaryView: 5)
-        self.cardView.champion3ImageView.setInnerSpacing(forPrimaryView: 0, forSecondaryView: 5)
     }
     
     private func getFeed() {

@@ -16,13 +16,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MatchCard" customModule="LoLMatch" customModuleProvider="target">
             <connections>
-                <outlet property="champion1ImageView" destination="1DX-2B-xWN" id="Zfc-pv-IGe"/>
+                <outlet property="champion1ImageView" destination="Odk-pR-SO9" id="SRa-XG-XFN"/>
                 <outlet property="champion1Kda" destination="LL9-Gs-MQs" id="zds-Xl-JEn"/>
                 <outlet property="champion1NameLabel" destination="Foc-VY-NRy" id="rr2-mO-UyL"/>
-                <outlet property="champion2ImageView" destination="eaJ-0p-Ac4" id="pb6-ea-1Sk"/>
+                <outlet property="champion2ImageView" destination="0ZR-gt-e63" id="8FW-Zs-wvR"/>
                 <outlet property="champion2Kda" destination="d8G-xD-Jil" id="hZH-D7-ltg"/>
                 <outlet property="champion2NameLabel" destination="xzB-ZG-VeK" id="oxK-tc-Ycl"/>
-                <outlet property="champion3ImageView" destination="tc0-fJ-MEc" id="46U-dT-Dtm"/>
+                <outlet property="champion3ImageView" destination="hLG-tJ-8u1" id="WX3-bd-4Yq"/>
                 <outlet property="champion3Kda" destination="mS6-iX-TFz" id="mKp-6V-nxe"/>
                 <outlet property="champion3NameLabel" destination="0tm-mu-tWL" id="Y8f-3Y-haK"/>
                 <outlet property="eloImageView" destination="NPg-jk-6LP" id="Zgw-nB-gif"/>
@@ -57,7 +57,7 @@
                             <color key="textColor" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldIII" translatesAutoresizingMaskIntoConstraints="NO" id="NPg-jk-6LP" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gold_iii" translatesAutoresizingMaskIntoConstraints="NO" id="NPg-jk-6LP" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
                             <rect key="frame" x="129" y="231" width="111" height="110.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="NPg-jk-6LP" secondAttribute="height" multiplier="1:1" id="wdN-vI-DEc"/>
@@ -81,32 +81,21 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Y59-Az-3fH">
                                     <rect key="frame" x="0.0" y="0.0" width="73.5" height="108"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1DX-2B-xWN" customClass="TripleImageView" customModule="LoLMatch" customModuleProvider="target">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="championPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Odk-pR-SO9" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="73.5" height="74"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="1DX-2B-xWN" secondAttribute="height" multiplier="1:1" id="YjB-Gf-bsZ"/>
+                                                <constraint firstAttribute="width" secondItem="Odk-pR-SO9" secondAttribute="height" multiplier="1:1" id="PF5-yR-iWL"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="secondaryBorderWidth">
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                     <real key="value" value="2"/>
                                                 </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="primaryBorderColor">
-                                                    <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" red="0.75686274509999996" green="0.60392156860000001" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="secondaryBorderColor">
-                                                    <color key="value" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="primaryBorderWidth">
-                                                    <real key="value" value="2"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="image" keyPath="primaryImage" value="championPlaceholder"/>
-                                                <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="coloredFillLane"/>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondaryViewRounded" value="YES"/>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="YES"/>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isTerciaryVisible" value="NO"/>
                                             </userDefinedRuntimeAttributes>
-                                        </view>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Foc-VY-NRy">
                                             <rect key="frame" x="0.0" y="74" width="73.5" height="17"/>
                                             <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="14"/>
@@ -124,32 +113,18 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WSu-pU-TVq">
                                     <rect key="frame" x="93.5" y="0.0" width="74" height="108"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eaJ-0p-Ac4" customClass="TripleImageView" customModule="LoLMatch" customModuleProvider="target">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="championPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="0ZR-gt-e63" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="eaJ-0p-Ac4" secondAttribute="height" multiplier="1:1" id="oen-Rd-bLn"/>
-                                            </constraints>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="primaryBorderWidth">
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                     <real key="value" value="2"/>
                                                 </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="primaryBorderColor">
-                                                    <color key="value" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" red="0.75686274509999996" green="0.60392156860000001" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="secondaryBorderColor">
-                                                    <color key="value" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="secondaryBorderWidth">
-                                                    <real key="value" value="2"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="image" keyPath="primaryImage" value="championPlaceholder"/>
-                                                <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="coloredFillLane"/>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="YES"/>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondaryViewRounded" value="YES"/>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isTerciaryVisible" value="NO"/>
                                             </userDefinedRuntimeAttributes>
-                                        </view>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzB-ZG-VeK">
                                             <rect key="frame" x="0.0" y="74" width="74" height="17"/>
                                             <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="14"/>
@@ -163,36 +138,28 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="0ZR-gt-e63" firstAttribute="width" secondItem="0ZR-gt-e63" secondAttribute="height" multiplier="1:1" id="n6K-iS-c4h"/>
+                                    </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hzz-3N-iDo">
                                     <rect key="frame" x="187.5" y="0.0" width="73.5" height="108"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tc0-fJ-MEc" customClass="TripleImageView" customModule="LoLMatch" customModuleProvider="target">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="championPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="hLG-tJ-8u1" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="73.5" height="74"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" secondItem="tc0-fJ-MEc" secondAttribute="height" multiplier="1:1" id="Ytp-oS-4lA"/>
+                                                <constraint firstAttribute="width" secondItem="hLG-tJ-8u1" secondAttribute="height" multiplier="1:1" id="u6A-CX-clx"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="primaryBorderWidth">
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                     <real key="value" value="2"/>
                                                 </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="primaryBorderColor">
-                                                    <color key="value" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" red="0.75686274509999996" green="0.60392156860000001" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="secondaryBorderColor">
-                                                    <color key="value" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="image" keyPath="primaryImage" value="championPlaceholder"/>
-                                                <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="coloredFillLane"/>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondaryViewRounded" value="YES"/>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="YES"/>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="secondaryBorderWidth">
-                                                    <real key="value" value="2"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isTerciaryVisible" value="NO"/>
                                             </userDefinedRuntimeAttributes>
-                                        </view>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tm-mu-tWL">
                                             <rect key="frame" x="0.0" y="74" width="73.5" height="17"/>
                                             <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="14"/>
@@ -239,14 +206,13 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="0jk-fc-nfm" secondAttribute="trailing" id="0er-KV-swt"/>
+                        <constraint firstItem="Odk-pR-SO9" firstAttribute="width" secondItem="5rF-iY-Rgc" secondAttribute="width" multiplier="0.2" id="74g-90-BrW"/>
                         <constraint firstItem="o5F-MN-P3p" firstAttribute="top" secondItem="NPg-jk-6LP" secondAttribute="bottom" constant="5" id="D6d-k6-G7u"/>
-                        <constraint firstItem="tc0-fJ-MEc" firstAttribute="width" secondItem="5rF-iY-Rgc" secondAttribute="width" multiplier="0.2" id="DAE-Nj-6zq"/>
                         <constraint firstItem="uMd-Ub-rch" firstAttribute="top" secondItem="5rF-iY-Rgc" secondAttribute="top" id="Fmg-ac-aMI"/>
                         <constraint firstItem="NPg-jk-6LP" firstAttribute="top" secondItem="gdm-xq-ZIP" secondAttribute="bottom" constant="5" id="Fvh-zn-OAI"/>
                         <constraint firstAttribute="trailing" secondItem="gdm-xq-ZIP" secondAttribute="trailing" constant="30" id="G5q-bF-lNZ"/>
                         <constraint firstItem="jF9-kn-DzK" firstAttribute="centerX" secondItem="5rF-iY-Rgc" secondAttribute="centerX" id="IVf-Yr-qDt"/>
                         <constraint firstItem="nzh-K0-tDN" firstAttribute="leading" secondItem="5rF-iY-Rgc" secondAttribute="leading" constant="30" id="JbJ-1U-Z97"/>
-                        <constraint firstItem="eaJ-0p-Ac4" firstAttribute="width" secondItem="5rF-iY-Rgc" secondAttribute="width" multiplier="0.2" id="MUd-Ms-f0w"/>
                         <constraint firstItem="jF9-kn-DzK" firstAttribute="top" secondItem="RxK-tt-zOZ" secondAttribute="bottom" constant="10" id="NWl-xX-cyw"/>
                         <constraint firstItem="Zrp-mH-bx7" firstAttribute="width" secondItem="5rF-iY-Rgc" secondAttribute="width" multiplier="0.5" id="Ohk-OP-4mF"/>
                         <constraint firstItem="nzh-K0-tDN" firstAttribute="top" secondItem="Zrp-mH-bx7" secondAttribute="bottom" constant="10" id="RIq-ty-pEU"/>
@@ -267,7 +233,6 @@
                         <constraint firstItem="o5F-MN-P3p" firstAttribute="leading" secondItem="5rF-iY-Rgc" secondAttribute="leading" constant="30" id="kow-Tg-kGm"/>
                         <constraint firstItem="0jk-fc-nfm" firstAttribute="leading" secondItem="5rF-iY-Rgc" secondAttribute="leading" id="kpH-qU-6yC"/>
                         <constraint firstAttribute="trailing" secondItem="uMd-Ub-rch" secondAttribute="trailing" id="nrf-tK-2SD"/>
-                        <constraint firstItem="1DX-2B-xWN" firstAttribute="width" secondItem="5rF-iY-Rgc" secondAttribute="width" multiplier="0.2" id="o5X-XB-ycl"/>
                         <constraint firstItem="Zrp-mH-bx7" firstAttribute="centerX" secondItem="5rF-iY-Rgc" secondAttribute="centerX" id="t9s-hN-hh2"/>
                         <constraint firstItem="gdm-xq-ZIP" firstAttribute="top" secondItem="nzh-K0-tDN" secondAttribute="bottom" constant="2" id="vks-3z-6JZ"/>
                     </constraints>
@@ -293,7 +258,7 @@
     <resources>
         <image name="championPlaceholder" width="100" height="100"/>
         <image name="coloredFillLane" width="139" height="139"/>
-        <image name="goldIII" width="200" height="200"/>
+        <image name="gold_iii" width="200" height="200"/>
         <image name="verticalCard" width="342" height="493"/>
     </resources>
 </document>

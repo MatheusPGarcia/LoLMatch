@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "poroLikeDeselected-2.png",
+      "filename" : "happyPoro-2.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "poroLikeDeselected-1.png",
+      "filename" : "happyPoro-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "poroLikeDeselected.png",
+      "filename" : "happyPoro.png",
       "scale" : "3x"
     }
   ],

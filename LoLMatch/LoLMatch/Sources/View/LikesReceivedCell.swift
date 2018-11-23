@@ -25,7 +25,7 @@ class LikesReceivedCell: UITableViewCell {
     @IBOutlet weak var pdlLabel: UILabel!
     
     // Last Champions Information
-    @IBOutlet var championViews: [TripleImageView]!
+    @IBOutlet var championViews: [UIImageView]!
     @IBOutlet var championLabels: [UILabel]!
     @IBOutlet var kdaLabels: [UILabel]!
     
@@ -41,9 +41,8 @@ class LikesReceivedCell: UITableViewCell {
         self.lanesImages.setInnerSpacing(forPrimaryView: 10, forSecondaryView: 5)
         self.lanesImages.setBackgroundColor(forPrimaryView: .black, forSecondaryView: .black)
         
-        self.championViews.forEach({ $0.setInnerSpacing(forPrimaryView: 0, forSecondaryView: 3) })
-        self.championViews.forEach({ $0.setBackgroundColor(forPrimaryView: .black, forSecondaryView: .black) })
-        
+        self.championViews.forEach({ $0.clipsToBounds = true })
+
         self.summonoerId = user.summonerId
         self.delegate = delegate
         self.lanesImages.primaryImage = user.lane1.coloredImage()
@@ -77,14 +76,14 @@ class LikesReceivedCell: UITableViewCell {
                 for index in 0..<validMatches.count {
                     let kda: (Int, Int, Int) = (validMatches[index].kill!, validMatches[index].death!, validMatches[index].assist!)
                     
-                    self.championViews[index].primaryBorderColor = validMatches[index].win! ? .green : .red
+                    self.championViews[index].layer.borderColor = validMatches[index].win! ? UIColor.customGreen.cgColor : UIColor.customRed.cgColor
                     
                     let championId = validMatches[index].championId!
                     let champion = ChampionService.getChampion(by: championId)!
                     
                     let championURL = URL(string: champion.thumbUrl)!
                     
-                    loadImage(with: championURL, into: self.championViews[index].primaryImageView)
+                    loadImage(with: championURL, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "profileTabIcon"), transition: .fadeIn(duration: 0.3)), into: self.championViews[index])
                     self.championLabels[index].text = champion.name
                     self.kdaLabels[index].text = "\(kda.0) / \(kda.1) / \(kda.2)"
                 }

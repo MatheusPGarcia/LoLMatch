@@ -25,7 +25,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="b91-xK-VxT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HSO-6j-ZUt">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="1" estimatedSectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="HSO-6j-ZUt">
                                 <rect key="frame" x="0.0" y="21" width="375" height="597"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -102,118 +102,84 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KhE-sR-raY" userLabel="Champions View">
                                                     <rect key="frame" x="150" y="91" width="190" height="40"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Cc-Wt-ZPh" customClass="TripleImageView" customModule="LoLMatch" customModuleProvider="target">
-                                                            <rect key="frame" x="10" y="0.0" width="40" height="40"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="YES"/>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondaryViewRounded" value="YES"/>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="primaryBorderWidth">
-                                                                    <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="secondaryBorderWidth">
-                                                                    <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="primaryBorderColor">
-                                                                    <color key="value" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="secondaryBorderColor">
-                                                                    <color key="value" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="image" keyPath="primaryImage" value="championPlaceholder"/>
-                                                                <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="coloredFillLane"/>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isTerciaryVisible" value="NO"/>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZP-At-73u" customClass="TripleImageView" customModule="LoLMatch" customModuleProvider="target">
-                                                            <rect key="frame" x="75" y="0.0" width="40" height="40"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="championPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="V8O-Fh-aYv" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
+                                                            <rect key="frame" x="5" y="0.0" width="40" height="40"/>
+                                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" secondItem="xZP-At-73u" secondAttribute="height" multiplier="1:1" id="fjx-17-MLB"/>
+                                                                <constraint firstAttribute="width" secondItem="V8O-Fh-aYv" secondAttribute="height" multiplier="1:1" id="Z6V-1B-Rg3"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="YES"/>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondaryViewRounded" value="YES"/>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="primaryBorderWidth">
-                                                                    <real key="value" value="1"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="2"/>
                                                                 </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="secondaryBorderWidth">
-                                                                    <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="primaryBorderColor">
-                                                                    <color key="value" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="secondaryBorderColor">
-                                                                    <color key="value" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="image" keyPath="primaryImage" value="championPlaceholder"/>
-                                                                <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="coloredFillLane"/>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isTerciaryVisible" value="NO"/>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uee-F7-kaP" customClass="TripleImageView" customModule="LoLMatch" customModuleProvider="target">
-                                                            <rect key="frame" x="140" y="0.0" width="40" height="40"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="YES"/>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondaryViewRounded" value="YES"/>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="primaryBorderWidth">
-                                                                    <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="secondaryBorderWidth">
-                                                                    <real key="value" value="1"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="primaryBorderColor">
-                                                                    <color key="value" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="secondaryBorderColor">
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                     <color key="value" red="0.75686274509999996" green="0.60392156860000001" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="image" keyPath="primaryImage" value="championPlaceholder"/>
-                                                                <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="coloredFillLane"/>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isTerciaryVisible" value="NO"/>
                                                             </userDefinedRuntimeAttributes>
-                                                        </view>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="championPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="zF4-7h-yc8" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
+                                                            <rect key="frame" x="75" y="0.0" width="40" height="40"/>
+                                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                    <color key="value" red="0.75686274509999996" green="0.60392156860000001" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="championPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="lRe-dP-NPV" customClass="RoundedImageView" customModule="LoLMatch" customModuleProvider="target">
+                                                            <rect key="frame" x="145" y="0.0" width="40" height="40"/>
+                                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                    <color key="value" red="0.75686274509999996" green="0.60392156860000001" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="xZP-At-73u" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4Cc-Wt-ZPh" secondAttribute="trailing" constant="10" id="35i-6u-g39"/>
-                                                        <constraint firstItem="4Cc-Wt-ZPh" firstAttribute="top" secondItem="KhE-sR-raY" secondAttribute="top" id="ACR-Hb-Rg2"/>
-                                                        <constraint firstItem="Uee-F7-kaP" firstAttribute="top" secondItem="KhE-sR-raY" secondAttribute="top" id="Aif-bH-8SE"/>
-                                                        <constraint firstItem="4Cc-Wt-ZPh" firstAttribute="width" secondItem="4Cc-Wt-ZPh" secondAttribute="height" multiplier="1:1" id="BfH-SM-UgI"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Uee-F7-kaP" secondAttribute="bottom" id="MPM-vR-GpS"/>
-                                                        <constraint firstItem="Uee-F7-kaP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xZP-At-73u" secondAttribute="trailing" constant="10" id="NX9-g9-REi"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Uee-F7-kaP" secondAttribute="trailing" constant="10" id="REE-PK-hZg"/>
-                                                        <constraint firstItem="xZP-At-73u" firstAttribute="top" secondItem="KhE-sR-raY" secondAttribute="top" id="SKE-fK-SCm"/>
-                                                        <constraint firstItem="xZP-At-73u" firstAttribute="height" secondItem="KhE-sR-raY" secondAttribute="height" id="Zzr-ZW-Xfv"/>
+                                                        <constraint firstItem="V8O-Fh-aYv" firstAttribute="top" secondItem="KhE-sR-raY" secondAttribute="top" id="5Eu-CN-bC2"/>
+                                                        <constraint firstItem="zF4-7h-yc8" firstAttribute="centerX" secondItem="KhE-sR-raY" secondAttribute="centerX" id="G56-ZG-Zs2"/>
+                                                        <constraint firstItem="lRe-dP-NPV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zF4-7h-yc8" secondAttribute="trailing" constant="10" id="MZZ-Od-sf6"/>
+                                                        <constraint firstItem="zF4-7h-yc8" firstAttribute="width" secondItem="zF4-7h-yc8" secondAttribute="height" multiplier="1:1" id="N72-4a-vbf"/>
+                                                        <constraint firstItem="V8O-Fh-aYv" firstAttribute="leading" secondItem="KhE-sR-raY" secondAttribute="leading" constant="5" id="OO4-qH-YXP"/>
+                                                        <constraint firstAttribute="trailing" secondItem="lRe-dP-NPV" secondAttribute="trailing" constant="5" id="Qpu-N0-6CG"/>
+                                                        <constraint firstItem="lRe-dP-NPV" firstAttribute="width" secondItem="lRe-dP-NPV" secondAttribute="height" multiplier="1:1" id="Vjq-Yz-Kjw"/>
+                                                        <constraint firstItem="zF4-7h-yc8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="V8O-Fh-aYv" secondAttribute="trailing" constant="10" id="Ydc-TV-DdR"/>
                                                         <constraint firstAttribute="height" constant="40" id="a4r-S9-dNb"/>
-                                                        <constraint firstAttribute="bottom" secondItem="4Cc-Wt-ZPh" secondAttribute="bottom" id="d5b-Fp-0KZ"/>
-                                                        <constraint firstItem="Uee-F7-kaP" firstAttribute="width" secondItem="Uee-F7-kaP" secondAttribute="height" multiplier="1:1" id="ipY-Ik-lEQ"/>
-                                                        <constraint firstItem="xZP-At-73u" firstAttribute="centerX" secondItem="KhE-sR-raY" secondAttribute="centerX" id="jH3-kW-qOe"/>
-                                                        <constraint firstAttribute="bottom" secondItem="xZP-At-73u" secondAttribute="bottom" id="jnJ-ZS-26j"/>
-                                                        <constraint firstItem="4Cc-Wt-ZPh" firstAttribute="leading" secondItem="KhE-sR-raY" secondAttribute="leading" constant="10" id="zac-gL-LXE"/>
+                                                        <constraint firstAttribute="bottom" secondItem="lRe-dP-NPV" secondAttribute="bottom" id="aac-qa-0Jl"/>
+                                                        <constraint firstAttribute="bottom" secondItem="zF4-7h-yc8" secondAttribute="bottom" id="cdc-Ql-vPe"/>
+                                                        <constraint firstItem="zF4-7h-yc8" firstAttribute="top" secondItem="KhE-sR-raY" secondAttribute="top" id="e0J-xx-qrl"/>
+                                                        <constraint firstAttribute="bottom" secondItem="V8O-Fh-aYv" secondAttribute="bottom" id="uJ0-cd-CSh"/>
+                                                        <constraint firstItem="lRe-dP-NPV" firstAttribute="top" secondItem="KhE-sR-raY" secondAttribute="top" id="yPi-lE-e17"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Vx-iu-qhi">
-                                                    <rect key="frame" x="155" y="131" width="50" height="16"/>
+                                                    <rect key="frame" x="150" y="131" width="50" height="16"/>
                                                     <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="13"/>
                                                     <color key="textColor" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="K / D / A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWC-ue-BrA">
-                                                    <rect key="frame" x="155" y="147" width="50" height="16"/>
+                                                    <rect key="frame" x="150" y="147" width="50" height="16"/>
                                                     <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="13"/>
                                                     <color key="textColor" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMI-Qn-Ytv">
-                                                    <rect key="frame" x="285" y="131" width="50" height="16"/>
+                                                    <rect key="frame" x="290" y="131" width="50" height="16"/>
                                                     <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="13"/>
                                                     <color key="textColor" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="K / D / A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXe-VD-dTc">
-                                                    <rect key="frame" x="285" y="147" width="50" height="16"/>
+                                                    <rect key="frame" x="290" y="147" width="50" height="16"/>
                                                     <fontDescription key="fontDescription" name="LibelSuitRg-Regular" family="Libel Suit" pointSize="13"/>
                                                     <color key="textColor" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -221,19 +187,17 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="8Vx-iu-qhi" firstAttribute="trailing" secondItem="4Cc-Wt-ZPh" secondAttribute="trailing" constant="5" id="1kB-N6-XY4"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="PWC-ue-BrA" secondAttribute="bottom" constant="20" id="3IZ-Op-Xp0"/>
                                                 <constraint firstItem="FXe-VD-dTc" firstAttribute="top" secondItem="aMI-Qn-Ytv" secondAttribute="bottom" id="3zu-PK-Geb"/>
                                                 <constraint firstItem="PWC-ue-BrA" firstAttribute="trailing" secondItem="8Vx-iu-qhi" secondAttribute="trailing" id="4nd-fM-wis"/>
-                                                <constraint firstItem="E1j-Yy-6Eg" firstAttribute="trailing" secondItem="xZP-At-73u" secondAttribute="trailing" constant="5" id="6N9-6j-hkk"/>
                                                 <constraint firstItem="Vvx-1E-U6E" firstAttribute="leading" secondItem="JjS-Ky-iB5" secondAttribute="trailing" constant="8" id="8vX-7m-PE2"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="qze-PH-3GD" secondAttribute="trailing" constant="20" id="ASI-Ko-n3b"/>
                                                 <constraint firstItem="qze-PH-3GD" firstAttribute="top" secondItem="Vvx-1E-U6E" secondAttribute="bottom" id="AjM-kK-PAg"/>
+                                                <constraint firstItem="8Vx-iu-qhi" firstAttribute="leading" secondItem="V8O-Fh-aYv" secondAttribute="leading" constant="-5" id="CMM-HG-o18"/>
                                                 <constraint firstItem="aMI-Qn-Ytv" firstAttribute="top" secondItem="KhE-sR-raY" secondAttribute="bottom" id="CSI-sB-gMn"/>
                                                 <constraint firstItem="IgT-2N-x1l" firstAttribute="centerY" secondItem="DeQ-jt-7zf" secondAttribute="centerY" id="Cps-ea-3UC"/>
                                                 <constraint firstItem="eQc-vP-Cjw" firstAttribute="leading" secondItem="DeQ-jt-7zf" secondAttribute="leading" constant="8" id="IFS-wv-gdt"/>
                                                 <constraint firstAttribute="bottom" secondItem="eQc-vP-Cjw" secondAttribute="bottom" constant="8" id="IPI-D8-QQQ"/>
-                                                <constraint firstItem="8Vx-iu-qhi" firstAttribute="leading" secondItem="4Cc-Wt-ZPh" secondAttribute="leading" constant="-5" id="J4L-b9-6VY"/>
                                                 <constraint firstAttribute="trailing" secondItem="eQc-vP-Cjw" secondAttribute="trailing" constant="8" id="JgC-Q9-txF"/>
                                                 <constraint firstItem="qze-PH-3GD" firstAttribute="leading" secondItem="JjS-Ky-iB5" secondAttribute="trailing" constant="8" id="Jma-3u-GEY"/>
                                                 <constraint firstItem="PWC-ue-BrA" firstAttribute="top" secondItem="8Vx-iu-qhi" secondAttribute="bottom" id="KwL-hO-gMf"/>
@@ -243,17 +207,19 @@
                                                 <constraint firstItem="E1j-Yy-6Eg" firstAttribute="top" secondItem="KhE-sR-raY" secondAttribute="bottom" id="NM9-Nj-buW"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="KhE-sR-raY" secondAttribute="trailing" constant="20" id="OHB-w7-Jh4"/>
                                                 <constraint firstItem="8Vx-iu-qhi" firstAttribute="top" secondItem="KhE-sR-raY" secondAttribute="bottom" id="S5s-SB-Oly"/>
+                                                <constraint firstItem="E1j-Yy-6Eg" firstAttribute="trailing" secondItem="zF4-7h-yc8" secondAttribute="trailing" constant="5" id="Sgd-sd-3S4"/>
                                                 <constraint firstItem="KhE-sR-raY" firstAttribute="top" secondItem="JjS-Ky-iB5" secondAttribute="bottom" constant="10" id="TQ7-rg-w2T"/>
                                                 <constraint firstItem="IgT-2N-x1l" firstAttribute="leading" secondItem="DeQ-jt-7zf" secondAttribute="leadingMargin" constant="20" id="VCK-sS-7pO"/>
                                                 <constraint firstItem="FXe-VD-dTc" firstAttribute="leading" secondItem="aMI-Qn-Ytv" secondAttribute="leading" id="Vc7-ts-EZa"/>
+                                                <constraint firstItem="8Vx-iu-qhi" firstAttribute="trailing" secondItem="V8O-Fh-aYv" secondAttribute="trailing" constant="5" id="WRL-ea-nGn"/>
                                                 <constraint firstItem="Vvx-1E-U6E" firstAttribute="top" secondItem="JjS-Ky-iB5" secondAttribute="top" id="YEa-t9-iif"/>
+                                                <constraint firstItem="aMI-Qn-Ytv" firstAttribute="trailing" secondItem="lRe-dP-NPV" secondAttribute="trailing" constant="5" id="YuS-Ya-YhZ"/>
                                                 <constraint firstItem="JjS-Ky-iB5" firstAttribute="top" secondItem="DeQ-jt-7zf" secondAttribute="topMargin" constant="20" id="Yyf-eO-Kwf"/>
-                                                <constraint firstItem="aMI-Qn-Ytv" firstAttribute="leading" secondItem="Uee-F7-kaP" secondAttribute="leading" constant="-5" id="aZ8-RQ-6aU"/>
                                                 <constraint firstItem="bl8-Bf-PHg" firstAttribute="trailing" secondItem="E1j-Yy-6Eg" secondAttribute="trailing" id="acy-Ql-gmF"/>
+                                                <constraint firstItem="E1j-Yy-6Eg" firstAttribute="leading" secondItem="zF4-7h-yc8" secondAttribute="leading" constant="-5" id="cIE-cg-koy"/>
                                                 <constraint firstItem="eQc-vP-Cjw" firstAttribute="top" secondItem="DeQ-jt-7zf" secondAttribute="top" constant="8" id="cT1-Ve-DcE"/>
-                                                <constraint firstItem="E1j-Yy-6Eg" firstAttribute="leading" secondItem="xZP-At-73u" secondAttribute="leading" constant="-5" id="f7D-jJ-iF0"/>
                                                 <constraint firstItem="PWC-ue-BrA" firstAttribute="leading" secondItem="8Vx-iu-qhi" secondAttribute="leading" id="hcC-zE-4Gg"/>
-                                                <constraint firstItem="aMI-Qn-Ytv" firstAttribute="trailing" secondItem="Uee-F7-kaP" secondAttribute="trailing" constant="5" id="i1N-LF-9iM"/>
+                                                <constraint firstItem="aMI-Qn-Ytv" firstAttribute="leading" secondItem="lRe-dP-NPV" secondAttribute="leading" constant="-5" id="kZ5-rx-fvs"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Vvx-1E-U6E" secondAttribute="trailing" constant="20" id="lvm-b7-38r"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="bl8-Bf-PHg" secondAttribute="bottom" constant="20" id="ngg-Ha-eFo"/>
                                                 <constraint firstItem="bl8-Bf-PHg" firstAttribute="leading" secondItem="E1j-Yy-6Eg" secondAttribute="leading" id="s7w-Or-2Em"/>
@@ -267,15 +233,15 @@
                                             <outlet property="eloLabel" destination="Vvx-1E-U6E" id="DgD-vJ-5t6"/>
                                             <outlet property="lanesImages" destination="IgT-2N-x1l" id="aN4-i1-3nR"/>
                                             <outlet property="pdlLabel" destination="qze-PH-3GD" id="Nyg-y3-zNz"/>
-                                            <outletCollection property="championViews" destination="4Cc-Wt-ZPh" collectionClass="NSMutableArray" id="nKX-z9-MaT"/>
-                                            <outletCollection property="championViews" destination="xZP-At-73u" collectionClass="NSMutableArray" id="zwj-1j-y05"/>
-                                            <outletCollection property="championViews" destination="Uee-F7-kaP" collectionClass="NSMutableArray" id="rcg-hU-Xhl"/>
                                             <outletCollection property="championLabels" destination="8Vx-iu-qhi" collectionClass="NSMutableArray" id="SYk-sT-UnK"/>
                                             <outletCollection property="championLabels" destination="E1j-Yy-6Eg" collectionClass="NSMutableArray" id="3EV-pr-RFl"/>
                                             <outletCollection property="championLabels" destination="aMI-Qn-Ytv" collectionClass="NSMutableArray" id="EeS-8K-Wzg"/>
                                             <outletCollection property="kdaLabels" destination="PWC-ue-BrA" collectionClass="NSMutableArray" id="Qjg-Yr-KgU"/>
                                             <outletCollection property="kdaLabels" destination="bl8-Bf-PHg" collectionClass="NSMutableArray" id="0eO-MN-yHM"/>
                                             <outletCollection property="kdaLabels" destination="FXe-VD-dTc" collectionClass="NSMutableArray" id="3NA-A2-Xxb"/>
+                                            <outletCollection property="championViews" destination="V8O-Fh-aYv" collectionClass="NSMutableArray" id="isA-4Z-vQz"/>
+                                            <outletCollection property="championViews" destination="zF4-7h-yc8" collectionClass="NSMutableArray" id="yoJ-ro-mYM"/>
+                                            <outletCollection property="championViews" destination="lRe-dP-NPV" collectionClass="NSMutableArray" id="wPh-vx-hVk"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -66,49 +66,49 @@ extension Elo {
         case "BRONZE I":
             return #imageLiteral(resourceName: "bronze_i")
         case "SILVER V":
-                    return #imageLiteral(resourceName: "silver_v")
+            return #imageLiteral(resourceName: "silver_v")
         case "SILVER IV":
-                    return #imageLiteral(resourceName: "silver_iv")
+            return #imageLiteral(resourceName: "silver_iv")
         case "SILVER III":
-                    return #imageLiteral(resourceName: "silver_iii")
+            return #imageLiteral(resourceName: "silver_iii")
         case "SILVER II":
-                    return #imageLiteral(resourceName: "silver_ii")
+            return #imageLiteral(resourceName: "silver_ii")
         case "SILVER I":
-                    return #imageLiteral(resourceName: "silver_i")
+            return #imageLiteral(resourceName: "silver_i")
         case "GOLD V":
-                    return #imageLiteral(resourceName: "gold_v")
+            return #imageLiteral(resourceName: "gold_v")
         case "GOLD IV":
-                    return #imageLiteral(resourceName: "gold_iv")
+            return #imageLiteral(resourceName: "gold_iv")
         case "GOLD III":
-                    return #imageLiteral(resourceName: "gold_iii")
+            return #imageLiteral(resourceName: "gold_iii")
         case "GOLD II":
-                    return #imageLiteral(resourceName: "gold_ii")
+            return #imageLiteral(resourceName: "gold_ii")
         case "GOLD I":
-                    return #imageLiteral(resourceName: "gold_i")
+            return #imageLiteral(resourceName: "gold_i")
         case "PLATINUM V":
-                    return #imageLiteral(resourceName: "platinum_v")
+            return #imageLiteral(resourceName: "platinum_v")
         case "PLATINUM IV":
-                    return #imageLiteral(resourceName: "platinum_iv")
+            return #imageLiteral(resourceName: "platinum_iv")
         case "PLATINUM III":
-                    return #imageLiteral(resourceName: "platinum_iii")
+            return #imageLiteral(resourceName: "platinum_iii")
         case "PLATINUM II":
-                    return #imageLiteral(resourceName: "platinum_ii")
+            return #imageLiteral(resourceName: "platinum_ii")
         case "PLATINUM I":
-                    return #imageLiteral(resourceName: "platinum_i")
+            return #imageLiteral(resourceName: "platinum_i")
         case "DIAMOND V":
-                    return #imageLiteral(resourceName: "diamond_v")
+            return #imageLiteral(resourceName: "diamond_v")
         case "DIAMOND IV":
-                    return #imageLiteral(resourceName: "diamond_iv")
+            return #imageLiteral(resourceName: "diamond_iv")
         case "DIAMOND III":
-                    return #imageLiteral(resourceName: "diamond_iii")
+            return #imageLiteral(resourceName: "diamond_iii")
         case "DIAMOND II":
-                    return #imageLiteral(resourceName: "diamond_ii")
+            return #imageLiteral(resourceName: "diamond_ii")
         case "DIAMOND I":
-                    return #imageLiteral(resourceName: "diamond_i")
+            return #imageLiteral(resourceName: "diamond_i")
         case "MASTER I":
-                    return #imageLiteral(resourceName: "master")
+            return #imageLiteral(resourceName: "master")
         case "CHALLENGER I":
-                    return #imageLiteral(resourceName: "challenger")
+            return #imageLiteral(resourceName: "challenger")
         default:
             return #imageLiteral(resourceName: "unranked")
         }

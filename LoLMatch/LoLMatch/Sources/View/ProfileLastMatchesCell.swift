@@ -13,7 +13,7 @@ class ProfileLastMatchesCell: UITableViewCell {
 
     
     // MARK: - Outlets
-    @IBOutlet var championViews: [TripleImageView]!
+    @IBOutlet var championViews: [UIImageView]!
     @IBOutlet var championLabels: [UILabel]!
     @IBOutlet var kdaLabels: [UILabel]!
     
@@ -28,9 +28,6 @@ class ProfileLastMatchesCell: UITableViewCell {
     // MARK - Methods
     func setup(user: User) {
         
-        self.championViews.forEach({ $0.setInnerSpacing(forPrimaryView: 0, forSecondaryView: 5) })
-        self.championViews.forEach({ $0.setBackgroundColor(forPrimaryView: .black, forSecondaryView: .black) })
-        
         UserServices.getPlayerKda(byId: user.accountId, numberOfMatches: 3) { (matches, error) in
             
             if let validMatches = matches {
@@ -38,14 +35,15 @@ class ProfileLastMatchesCell: UITableViewCell {
                 for index in 0..<validMatches.count {
                     let kda: (Int, Int, Int) = (validMatches[index].kill!, validMatches[index].death!, validMatches[index].assist!)
                     
-                    self.championViews[index].primaryBorderColor = validMatches[index].win! ? .green : .red
+                    self.championViews[index].clipsToBounds = true
+                    self.championViews[index].layer.borderColor = validMatches[index].win! ? UIColor.customGreen.cgColor : UIColor.customRed.cgColor
                     
                     let championId = validMatches[index].championId!
                     let champion = ChampionService.getChampion(by: championId)!
                     
                     let championURL = URL(string: champion.thumbUrl)!
                     
-                    loadImage(with: championURL, into: self.championViews[index].primaryImageView)
+                    loadImage(with: championURL, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "profileTabIcon"), transition: .fadeIn(duration: 0.3)), into: self.championViews[index])
                     self.championLabels[index].text = champion.name
                     self.kdaLabels[index].text = "\(kda.0) / \(kda.1) / \(kda.2)"
                 }

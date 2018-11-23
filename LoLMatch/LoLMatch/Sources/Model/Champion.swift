@@ -38,7 +38,7 @@ extension Champion {
         let id = try nested.decode(Int.self, forKey: .id)
         let stringId = try nested.decode(String.self, forKey: .stringId)
         let name = try nested.decode(String.self, forKey: .name)
-
+//
         self.id = id
         self.stringId = stringId
         self.name = name
