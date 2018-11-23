@@ -113,4 +113,21 @@ extension Elo {
             return #imageLiteral(resourceName: "unranked")
         }
     }
+    
+    var rankImage: UIImage? {
+        switch self.rank ?? "" {
+        case "I":
+            return #imageLiteral(resourceName: "I")
+        case "II":
+            return #imageLiteral(resourceName: "II")
+        case "III":
+            return #imageLiteral(resourceName: "III")
+        case "IV":
+            return #imageLiteral(resourceName: "IV")
+        case "V":
+            return #imageLiteral(resourceName: "V")
+        default:
+            return nil
+        }
+    }
 }

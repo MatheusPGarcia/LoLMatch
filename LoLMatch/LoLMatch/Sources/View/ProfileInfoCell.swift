@@ -31,6 +31,7 @@ class ProfileInfoCell: UITableViewCell {
     func setup(user: User, delegate: CellDelegate) {
         
         self.profileImages.setInnerSpacing(forPrimaryView: 0, forSecondaryView: 5, forTerciaryView: 5)
+        self.profileImages.setBackgroundColor(forPrimaryView: .black, forSecondaryView: .black, forTerciaryView: .black)
         
         self.delegate = delegate
         
@@ -48,10 +49,8 @@ class ProfileInfoCell: UITableViewCell {
                     
                     if let tier = elo.tier, let rank = elo.rank {
                         
-                        
                         self.profileImages.secondaryImageView.image = elo.image
-                        // TODO: - PUT THE ELO RANK IMAGE BELOW (I, II, III, IV, V)
-                        self.profileImages.terciaryImageView.image = elo.image
+                        self.profileImages.terciaryImageView.image = elo.rankImage
                         
                     } else {
                         self.delegate?.displayAlert(title: "Oops...", message: "Erro ao pegar informações do Elo.")

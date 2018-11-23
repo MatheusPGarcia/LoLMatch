@@ -100,8 +100,8 @@
                                                 <userDefinedRuntimeAttribute type="number" keyPath="primaryBorderWidth">
                                                     <real key="value" value="2"/>
                                                 </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="image" keyPath="primaryImage" value="goldIII"/>
-                                                <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="midLane"/>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="primaryImage" value="championPlaceholder"/>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="coloredFillLane"/>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondaryViewRounded" value="YES"/>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="YES"/>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isTerciaryVisible" value="NO"/>
@@ -143,8 +143,8 @@
                                                 <userDefinedRuntimeAttribute type="number" keyPath="secondaryBorderWidth">
                                                     <real key="value" value="2"/>
                                                 </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="image" keyPath="primaryImage" value="Orianna"/>
-                                                <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="midLane"/>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="primaryImage" value="championPlaceholder"/>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="coloredFillLane"/>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="YES"/>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondaryViewRounded" value="YES"/>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isTerciaryVisible" value="NO"/>
@@ -183,8 +183,8 @@
                                                 <userDefinedRuntimeAttribute type="color" keyPath="secondaryBorderColor">
                                                     <color key="value" red="0.75686274509803919" green="0.60392156862745094" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                                 </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="image" keyPath="primaryImage" value="Orianna"/>
-                                                <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="goldIII"/>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="primaryImage" value="championPlaceholder"/>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="coloredFillLane"/>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondaryViewRounded" value="YES"/>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="YES"/>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="secondaryBorderWidth">
@@ -225,8 +225,8 @@
                                 <userDefinedRuntimeAttribute type="number" keyPath="secondaryBorderWidth">
                                     <real key="value" value="2"/>
                                 </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="image" keyPath="primaryImage" value="midLane"/>
-                                <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="supLane"/>
+                                <userDefinedRuntimeAttribute type="image" keyPath="primaryImage" value="coloredFillLane"/>
+                                <userDefinedRuntimeAttribute type="image" keyPath="secondaryImage" value="coloredFillLane"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isPrimaryViewRounded" value="YES"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSecondaryViewRounded" value="YES"/>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isTerciaryVisible" value="NO"/>
@@ -291,10 +291,9 @@
         </view>
     </objects>
     <resources>
-        <image name="Orianna" width="120" height="120"/>
+        <image name="championPlaceholder" width="100" height="100"/>
+        <image name="coloredFillLane" width="139" height="139"/>
         <image name="goldIII" width="200" height="200"/>
-        <image name="midLane" width="136" height="136"/>
-        <image name="supLane" width="120" height="120"/>
         <image name="verticalCard" width="342" height="493"/>
     </resources>
 </document>
