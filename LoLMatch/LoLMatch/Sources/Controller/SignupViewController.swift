@@ -122,7 +122,7 @@ class SignupViewController: UITableViewController {
 
                     DispatchQueue.main.async {
                         self.summonerStatusImage.isHidden = false
-                        self.summonerStatusImage.image = self.summonerStatus ? #imageLiteral(resourceName: "Ok") : #imageLiteral(resourceName: "Nok")
+                        self.summonerStatusImage.image = self.summonerStatus ? #imageLiteral(resourceName: "okIcon") : #imageLiteral(resourceName: "nokIcon")
                     }
 
                 }

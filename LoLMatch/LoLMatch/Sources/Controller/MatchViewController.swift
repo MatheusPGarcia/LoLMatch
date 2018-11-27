@@ -94,7 +94,7 @@ extension MatchViewController {
             image.image = UIImage(named: "dislikeStamp")
         }
 
-        image.alpha = abs(distance) / view.center.x
+        image.alpha = 0.5 + (abs(distance) / view.center.x)
     }
 
     private func sendViewAway(_ card: MatchCard, like: Bool) {

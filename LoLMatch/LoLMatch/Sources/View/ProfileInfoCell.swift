@@ -40,20 +40,19 @@ class ProfileInfoCell: UITableViewCell {
         // TODO: -
         let imageURL = URL(string: "http://ddragon.leagueoflegends.com/cdn/\(Patch.patch)/img/profileicon/\(user.profileIconId).png")!
         
-        loadImage(with: imageURL, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "profilePlaceholder"),transition: .fadeIn(duration: 0.3)), into: self.profileImages.primaryImageView)
+        loadImage(with: imageURL, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "profileTabIcon"),transition: .fadeIn(duration: 0.3)), into: self.profileImages.primaryImageView)
         
         UserServices.getElo(byId: user.summonerId) { [unowned self] elos, error in
             if let validElos = elos {
                 
-                for elo in validElos where elo.queueType ?? "" == "RANKED_SOLO_5x5" {
-                    
-                    if let tier = elo.tier, let rank = elo.rank {
-                        
+                if validElos.isEmpty {
+                    self.profileImages.secondaryImageView.image = #imageLiteral(resourceName: "unranked")
+                    self.profileImages.isTerciaryVisible = false
+                } else {
+                    for elo in validElos where elo.queueType ?? "" == "RANKED_SOLO_5x5" {
                         self.profileImages.secondaryImageView.image = elo.image
+                        self.profileImages.isTerciaryVisible = false
                         self.profileImages.terciaryImageView.image = elo.rankImage
-                        
-                    } else {
-                        self.delegate?.displayAlert(title: "Oops...", message: "Erro ao pegar informações do Elo.")
                     }
                 }
             } else {
@@ -61,5 +60,4 @@ class ProfileInfoCell: UITableViewCell {
             }
         }
     }
-
 }
