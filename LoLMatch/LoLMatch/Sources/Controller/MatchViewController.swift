@@ -89,9 +89,9 @@ extension MatchViewController {
         guard let image = card.swipeFeedbackImage else { return }
 
         if distance > 0 {
-            image.image = UIImage(named: "like")
+            image.image = UIImage(named: "likeStamp")
         } else {
-            image.image = UIImage(named: "dislike")
+            image.image = UIImage(named: "dislikeStamp")
         }
 
         image.alpha = abs(distance) / view.center.x

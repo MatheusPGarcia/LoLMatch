@@ -199,14 +199,15 @@
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isTerciaryVisible" value="NO"/>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0jk-fc-nfm">
-                            <rect key="frame" x="0.0" y="-77" width="369" height="602.5"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0jk-fc-nfm">
+                            <rect key="frame" x="14" y="0.0" width="341" height="525.5"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="0jk-fc-nfm" secondAttribute="trailing" id="0er-KV-swt"/>
+                        <constraint firstAttribute="trailing" secondItem="0jk-fc-nfm" secondAttribute="trailing" constant="14" id="0er-KV-swt"/>
                         <constraint firstItem="Odk-pR-SO9" firstAttribute="width" secondItem="5rF-iY-Rgc" secondAttribute="width" multiplier="0.2" id="74g-90-BrW"/>
+                        <constraint firstItem="0jk-fc-nfm" firstAttribute="top" secondItem="uMd-Ub-rch" secondAttribute="top" id="7AW-l7-sVN"/>
                         <constraint firstItem="o5F-MN-P3p" firstAttribute="top" secondItem="NPg-jk-6LP" secondAttribute="bottom" constant="5" id="D6d-k6-G7u"/>
                         <constraint firstItem="uMd-Ub-rch" firstAttribute="top" secondItem="5rF-iY-Rgc" secondAttribute="top" id="Fmg-ac-aMI"/>
                         <constraint firstItem="NPg-jk-6LP" firstAttribute="top" secondItem="gdm-xq-ZIP" secondAttribute="bottom" constant="5" id="Fvh-zn-OAI"/>
@@ -226,12 +227,11 @@
                         <constraint firstItem="gdm-xq-ZIP" firstAttribute="leading" secondItem="5rF-iY-Rgc" secondAttribute="leading" constant="30" id="d4N-sP-tz8"/>
                         <constraint firstAttribute="bottom" secondItem="jF9-kn-DzK" secondAttribute="bottom" constant="15" id="eBP-j5-BbJ"/>
                         <constraint firstItem="Zrp-mH-bx7" firstAttribute="width" secondItem="Zrp-mH-bx7" secondAttribute="height" multiplier="1:1" id="ene-TC-anL"/>
-                        <constraint firstItem="0jk-fc-nfm" firstAttribute="top" secondItem="5rF-iY-Rgc" secondAttribute="top" constant="-77" id="fFo-AT-Qlf"/>
                         <constraint firstItem="NPg-jk-6LP" firstAttribute="centerX" secondItem="5rF-iY-Rgc" secondAttribute="centerX" id="fwn-mP-mqp"/>
                         <constraint firstAttribute="bottom" secondItem="uMd-Ub-rch" secondAttribute="bottom" id="jgf-Bk-mlc"/>
                         <constraint firstItem="RxK-tt-zOZ" firstAttribute="top" secondItem="o5F-MN-P3p" secondAttribute="bottom" id="jsf-gF-tSV"/>
                         <constraint firstItem="o5F-MN-P3p" firstAttribute="leading" secondItem="5rF-iY-Rgc" secondAttribute="leading" constant="30" id="kow-Tg-kGm"/>
-                        <constraint firstItem="0jk-fc-nfm" firstAttribute="leading" secondItem="5rF-iY-Rgc" secondAttribute="leading" id="kpH-qU-6yC"/>
+                        <constraint firstItem="0jk-fc-nfm" firstAttribute="leading" secondItem="5rF-iY-Rgc" secondAttribute="leading" constant="14" id="kpH-qU-6yC"/>
                         <constraint firstAttribute="trailing" secondItem="uMd-Ub-rch" secondAttribute="trailing" id="nrf-tK-2SD"/>
                         <constraint firstItem="Zrp-mH-bx7" firstAttribute="centerX" secondItem="5rF-iY-Rgc" secondAttribute="centerX" id="t9s-hN-hh2"/>
                         <constraint firstItem="gdm-xq-ZIP" firstAttribute="top" secondItem="nzh-K0-tDN" secondAttribute="bottom" constant="2" id="vks-3z-6JZ"/>
@@ -256,7 +256,7 @@
         </view>
     </objects>
     <resources>
-        <image name="championPlaceholder" width="75" height="75"/>
+        <image name="championPlaceholder" width="100" height="100"/>
         <image name="coloredFillLane" width="139" height="139"/>
         <image name="gold_iii" width="200" height="200"/>
         <image name="verticalCard" width="342" height="493"/>
