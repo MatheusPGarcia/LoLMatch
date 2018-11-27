@@ -191,6 +191,6 @@ extension ProfileViewController: UpdateLaneDelegate {
     }
     
     func scrollTableView() {
-        self.tableView.scrollToRow(at: IndexPath(row: 1, section: 0), at: .middle, animated: true)
+        self.tableView.scrollToRow(at: IndexPath(row: 1, section: 0), at: .top, animated: true)
     }
 }
