@@ -78,4 +78,21 @@ enum Lane {
             return #imageLiteral(resourceName: "fillLane")
         }
     }
+    
+    func coloredImage() -> UIImage {
+        switch self {
+        case .top:
+            return #imageLiteral(resourceName: "coloredTopLane")
+        case .jungle:
+            return #imageLiteral(resourceName: "coloredJungleLane")
+        case .mid:
+            return #imageLiteral(resourceName: "coloredMidLane")
+        case .adc:
+            return #imageLiteral(resourceName: "coloredAdcLane")
+        case .sup:
+            return #imageLiteral(resourceName: "coloredSupLane")
+        case .fill:
+            return #imageLiteral(resourceName: "coloredFillLane")
+        }
+    }
 }

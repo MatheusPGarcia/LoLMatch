@@ -12,13 +12,11 @@ import Nuke
 class MatchCell: UITableViewCell {
 
     // MARK: - Outlets
-    @IBOutlet weak var summonerProfileImageView: UIImageView!
+    @IBOutlet weak var summonerImages: TripleImageView!
     @IBOutlet weak var summonerNameLabel: UILabel!
-    @IBOutlet weak var primaryLaneImageView: UIImageView!
-    @IBOutlet weak var primaryLaneLabel: UILabel!
-    @IBOutlet weak var secondaryLaneImageView: UIImageView!
-    @IBOutlet weak var secondaryLaneLabel: UILabel!
+    @IBOutlet weak var eloImageView: UIImageView!
     @IBOutlet weak var eloLabel: UILabel!
+    @IBOutlet weak var pdlLabel: UILabel!
     
     
     // MARK: - Life Cycle
@@ -29,12 +27,14 @@ class MatchCell: UITableViewCell {
     
     // MARK: - Methods
     func setup(user: User) {
-        self.summonerNameLabel.text = user.summonerName
-        self.primaryLaneImageView.image = user.lane1.image()
-        self.primaryLaneLabel.text = user.lane1.description()
-        self.secondaryLaneImageView.image = user.lane2.image()
-        self.secondaryLaneLabel.text = user.lane2.description()
         
+        self.summonerImages.setInnerSpacing(forPrimaryView: 0, forSecondaryView: 4, forTerciaryView:  3)
+        self.summonerImages.setBackgroundColor(forPrimaryView: .black, forSecondaryView: .black, forTerciaryView: .black)
+        self.summonerImages.secondaryImageView.image = user.lane1.coloredImage()
+        self.summonerImages.terciaryImageView.image = user.lane2.coloredImage()
+        
+        self.summonerNameLabel.text = user.summonerName.uppercased()
+
         self.setupElo(summonerId: user.summonerId)
         self.setupProfileIcon(profileIconId: user.profileIconId)
     }
@@ -46,7 +46,15 @@ class MatchCell: UITableViewCell {
             
             if let validElos = elos {
                 for elo in validElos where elo.queueType ?? "" == "RANKED_SOLO_5x5" {
-                    self.eloLabel.text = "\(elo.tier ?? "") \(elo.rank ?? "")"
+                    if let tier = elo.tier, let rank = elo.rank, let pdl = elo.pdl, let wins = elo.wins, let losses = elo.losses {
+                        DispatchQueue.main.async {
+                            self.eloImageView.image = elo.image
+                            self.eloLabel.text = "\(tier) \(rank)"
+                            self.pdlLabel.text = "\(pdl) PDL | \(wins)W \(losses)L"
+                        }
+                    } else {
+                        print("Error on getting elo")
+                    }
                 }
             }
         }
@@ -57,7 +65,7 @@ class MatchCell: UITableViewCell {
         // TODO: -
         let imageURL = URL(string: "http://ddragon.leagueoflegends.com/cdn/\(Patch.patch)/img/profileicon/\(profileIconId).png")!
         
-        loadImage(with: imageURL, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "profilePlaceholder"),transition: .fadeIn(duration: 0.3)), into: self.summonerProfileImageView)
+        loadImage(with: imageURL, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "profilePlaceholder"),transition: .fadeIn(duration: 0.3)), into: self.summonerImages.primaryImageView)
     }
 
 }

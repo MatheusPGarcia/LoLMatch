@@ -64,7 +64,7 @@ extension RiotProvider: TargetType {
             return ["X-Riot-Token" : "\(Credentials.riotKey)"]
         case .getMatchList(_, let endIndex):
             return ["X-Riot-Token" : "\(Credentials.riotKey)",
-                    "endInhdex" : String(endIndex)]
+                    "endIndex" : String(endIndex)]
         }
     }
 }

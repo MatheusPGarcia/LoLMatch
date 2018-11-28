@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Nuke
 
-protocol LikeUserDelegate: class {
+protocol CellDelegate: class {
     func displayAlert(title: String, message: String)
 }
 
@@ -16,7 +17,7 @@ class LikesReceivedCell: UITableViewCell {
     
     // MARK: - Outlets
     // Lane Information
-     @IBOutlet weak var lanesImages: DoubleImageView!
+     @IBOutlet weak var lanesImages: TripleImageView!
     
     // Elo Information
     @IBOutlet weak var eloImage: UIImageView!
@@ -24,22 +25,28 @@ class LikesReceivedCell: UITableViewCell {
     @IBOutlet weak var pdlLabel: UILabel!
     
     // Last Champions Information
-    @IBOutlet var championViews: [DoubleImageView]!
+    @IBOutlet var championViews: [UIImageView]!
     @IBOutlet var championLabels: [UILabel]!
     @IBOutlet var kdaLabels: [UILabel]!
     
     
     // MARK: - Properties
     private var summonoerId: Int = -1
-    weak var delegate: LikeUserDelegate?
+    weak var delegate: CellDelegate?
     
     
     // MARK: - Methods
-    func setup(user: User, delegate: LikeUserDelegate) {
+    func setup(user: User, delegate: CellDelegate) {
+        
+        self.lanesImages.setInnerSpacing(forPrimaryView: 10, forSecondaryView: 5)
+        self.lanesImages.setBackgroundColor(forPrimaryView: .black, forSecondaryView: .black)
+        
+        self.championViews.forEach({ $0.clipsToBounds = true })
+
         self.summonoerId = user.summonerId
         self.delegate = delegate
-        self.lanesImages.primaryImage = user.lane1.image()
-        self.lanesImages.secondaryImage = user.lane2.image()
+        self.lanesImages.primaryImage = user.lane1.coloredImage()
+        self.lanesImages.secondaryImage = user.lane2.coloredImage()
         
         UserServices.getElo(byId: user.summonerId) { [unowned self] elos, error in
             
@@ -65,17 +72,21 @@ class LikesReceivedCell: UITableViewCell {
         UserServices.getPlayerKda(byId: user.accountId, numberOfMatches: 3) { (matches, error) in
             
             if let validMatches = matches {
+                
                 for index in 0..<validMatches.count {
                     let kda: (Int, Int, Int) = (validMatches[index].kill!, validMatches[index].death!, validMatches[index].assist!)
-                    self.championLabels[index].text = "\(validMatches[index].championId ?? -1)"
+                    
+                    self.championViews[index].layer.borderColor = validMatches[index].win! ? UIColor.customGreen.cgColor : UIColor.customRed.cgColor
+                    
+                    let championId = validMatches[index].championId!
+                    let champion = ChampionService.getChampion(by: championId)!
+                    
+                    let championURL = URL(string: champion.thumbUrl)!
+                    
+                    loadImage(with: championURL, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "championPlaceholder"), transition: .fadeIn(duration: 0.3)), into: self.championViews[index])
+                    self.championLabels[index].text = champion.name
                     self.kdaLabels[index].text = "\(kda.0) / \(kda.1) / \(kda.2)"
                 }
-            }
-        }
-        
-        ChampionService.getChampionList { (champions, error) in
-            if let validChampions = champions {
-                print("OKOK")
             }
         }
     }

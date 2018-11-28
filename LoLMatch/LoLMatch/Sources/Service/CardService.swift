@@ -6,7 +6,7 @@
 //  Copyright © 2018 Matheus Garcia. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class CardService {
 
@@ -17,6 +17,7 @@ class CardService {
         let summonerIconId = user.profileIconId
         let lane1 = user.lane1
         let lane2 = user.lane2
+        var tierImage: UIImage?
         var tier = ""
         var pdl = ""
         var matches = [FilteredMatch]()
@@ -29,6 +30,7 @@ class CardService {
                   let winString = response.first?.wins,
                   let losesString = response.first?.losses else { return }
 
+            tierImage = response.first?.image
             tier = String(format: String.tierText, tierString)
             pdl = String(format: String.pdlText, pdlString, winString, losesString)
 
@@ -47,7 +49,7 @@ class CardService {
             let newCardViewModel = CardViewModel(summonerIconId: summonerIconId,
                                                  lane1: lane1,
                                                  lane2: lane2,
-                                                 tierImageUrl: nil,
+                                                 tierImage: tierImage,
                                                  tier: tier,
                                                  pdl: pdl,
                                                  lastMatches: matches)

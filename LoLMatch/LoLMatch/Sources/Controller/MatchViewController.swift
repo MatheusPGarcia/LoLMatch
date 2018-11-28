@@ -16,12 +16,23 @@ class MatchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        FeedService.getFeed { (feedUsers) in
-            guard let user = feedUsers?.first else { return }
-            self.cardView.setupView(summoner: user)
+        
+        self.setupMatchView()
+        self.getFeed()
+        
+        ChampionService.getChampionList { champions, error in
+            print(champions)
         }
-        cardCenter = cardView.center
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
     }
 
     @IBAction func matchCardPressed(_ sender: UIPanGestureRecognizer) {
@@ -42,7 +53,7 @@ class MatchViewController: UIViewController {
         if sender.state == UIGestureRecognizer.State.ended {
 
             if xDistanceFromCenter > 150 {
-                FirebaseManager.likeUser(currentSummonerId: 1945669, summonerId: 2017255, completion: { _ in
+                FirebaseManager.likeUser(currentSummonerId: 2584566, summonerId: 2017255, completion: { _ in
                     print("Ok")
                 })
 //                UserServices.likeUser(summonerId: , completion: <#T##((Bool) -> Void)##((Bool) -> Void)##(Bool) -> Void#>)
@@ -58,18 +69,32 @@ class MatchViewController: UIViewController {
 
 // MARK: - private methods
 extension MatchViewController {
+    
+    private func setupMatchView() {
+        self.cardCenter = self.cardView.center
+        self.cardView.laneImageView.setInnerSpacing(forPrimaryView: 10, forSecondaryView: 10)
+    }
+    
+    private func getFeed() {
+        
+        FeedService.getFeed { (feedUsers) in
+            guard let user = feedUsers?.first else { return }
+            self.cardView.setupView(summoner: user)
+        }
+        
+    }
 
     private func updateFeedbackImageForCard(_ card: MatchCard, distance: CGFloat) {
 
         guard let image = card.swipeFeedbackImage else { return }
 
         if distance > 0 {
-            image.image = UIImage(named: "like")
+            image.image = UIImage(named: "likeStamp")
         } else {
-            image.image = UIImage(named: "dislike")
+            image.image = UIImage(named: "dislikeStamp")
         }
 
-        image.alpha = abs(distance) / view.center.x
+        image.alpha = 0.5 + (abs(distance) / view.center.x)
     }
 
     private func sendViewAway(_ card: MatchCard, like: Bool) {
