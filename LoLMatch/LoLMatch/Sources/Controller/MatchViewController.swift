@@ -92,8 +92,8 @@ extension MatchViewController {
     }
 
     private func updateCardUser() {
-        guard let user = cards.first else { return }
-        cardView.setupView(summoner: user)
+        guard let user = cards.first, let currentUserElo = currentUserElo else { return }
+        cardView.setupView(summoner: user, currentUserTier: currentUserElo, delegate: self)
         cards.removeFirst()
     }
 
@@ -107,18 +107,13 @@ extension MatchViewController {
     private func updateFeedbackImageForCard(_ card: MatchCard, distance: CGFloat) {
 
         if distance > 0 {
-            card.swipeFeedbackImage = UIImage(named: "likeStamp")
+            card.swipeFeedbackImage.image = UIImage(named: "likeStamp")
         } else {
-            card.swipeFeedbackImage = UIImage(named: "dislikeStamp")
+            card.swipeFeedbackImage.image = UIImage(named: "dislikeStamp")
         }
 
         // update also the blur
         card.swipeFeedbackImage.alpha = 0.5 + (abs(distance) / view.center.x)
-
-        if (card.swipeFeedbackImage.isHidden) {
-            feedbackImageView.isHidden = false
-
-        }
     }
 
     private func sendViewAway(_ card: MatchCard, like: Bool) {
@@ -126,6 +121,8 @@ extension MatchViewController {
         UIView.animate(withDuration: 0.4) {
             guard let cardCenter = self.cardCenter else { return }
             card.center = cardCenter
+
+            // like action
         }
 
         updateCardUser()
@@ -138,5 +135,13 @@ extension MatchViewController {
             card.center = cardCenter
             card.swipeFeedbackImage.alpha = 0
         }
+    }
+}
+
+// MARK: - matchCardDelegate
+extension MatchViewController: matchCardDelegate {
+
+    func updateCard() {
+        self.updateCardUser()
     }
 }

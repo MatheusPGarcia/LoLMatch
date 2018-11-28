@@ -9,6 +9,11 @@
 import UIKit
 import Nuke
 
+protocol matchCardDelegate: class {
+
+    func updateCard()
+}
+
 @IBDesignable class MatchCard: UIView {
     
     @IBOutlet weak var swipeFeedbackImage: UIImageView!
@@ -27,7 +32,8 @@ import Nuke
     @IBOutlet weak var champion3ImageView: UIImageView!
     @IBOutlet weak var champion3NameLabel: UILabel!
     @IBOutlet weak var champion3Kda: UILabel!
-    
+
+    private var delegate: matchCardDelegate?
 
     var view = self
 
@@ -52,9 +58,57 @@ import Nuke
         self.setupXib()
     }
 
-    func setupView(summoner: User) {
+    func setupView(summoner: User, currentUserTier: String, delegate: matchCardDelegate) {
+
+        self.delegate = delegate
 
         CardService.getCardDetail(forUser: summoner) { (cardViewModel) in
+
+            switch currentUserTier {
+            case "BRONZE":
+                if cardViewModel.tier != "BRONZE" && cardViewModel.tier != "SILVER" {
+                    self.delegate?.updateCard()
+                    return
+                }
+                break
+            case "SILVER":
+                if cardViewModel.tier != "BRONZE" && cardViewModel.tier != "SILVER" && cardViewModel.tier != "GOLD" {
+                    self.delegate?.updateCard()
+                    return
+                }
+                break
+            case "GOLD":
+                if cardViewModel.tier != "SILVER" && cardViewModel.tier != "GOLD" && cardViewModel.tier != "PLATINUM" {
+                    self.delegate?.updateCard()
+                    return
+                }
+                break
+            case "PLATINUM":
+                if cardViewModel.tier != "GOLD" && cardViewModel.tier != "PLATINUM" && cardViewModel.tier != "DIAMOND" {
+                    self.delegate?.updateCard()
+                    return
+                }
+                break
+            case "DIAMOND":
+                if cardViewModel.tier != "PLATINUM" && cardViewModel.tier != "DIAMOND" && cardViewModel.tier != "MASTER" {
+                    self.delegate?.updateCard()
+                    return
+                }
+                break
+            case "MASTER":
+                if cardViewModel.tier != "DIAMOND" && cardViewModel.tier != "MASTER" && cardViewModel.tier != "CHALLENGER" {
+                    self.delegate?.updateCard()
+                    return
+                }
+                break
+            case "CHALLENGER":
+                if cardViewModel.tier != "MASTER" && cardViewModel.tier != "CHALLENGER" {
+                    self.delegate?.updateCard()
+                    return
+                }
+                break
+            default: break
+            }
 
             // Summoners setup
             self.laneImageView.setInnerSpacing(forPrimaryView: 5, forSecondaryView: 5)
@@ -106,6 +160,11 @@ import Nuke
                 let url = URL(string: thumbUrl)!
                 loadImage(with: url, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "championPlaceholder"), transition: .fadeIn(duration: 0.3)), into: self.champion3ImageView)
             }
+
+            // remove blur
+            UIView.animate(withDuration: 0.4, animations: {
+                self.swipeFeedbackImage.alpha = 0
+            })
         }
     }
 }
