@@ -33,8 +33,9 @@ class CommunicationViewController: UIViewController {
     
     
     // MARK: - Actions
-    
-    
+    @IBAction func showInformation(_ sender: Any) {
+        self.createAlert(title: "Adicione seu match ingame para jogar com ele", message: nil)
+    }
 }
 
 
@@ -45,6 +46,11 @@ extension CommunicationViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
     }
     
     private func loadUsers() {

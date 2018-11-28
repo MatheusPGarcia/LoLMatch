@@ -41,6 +41,11 @@ extension LikesReceivedViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
     }
     
     private func loadUsers() {
@@ -129,8 +134,8 @@ extension LikesReceivedViewController: UITableViewDelegate, UITableViewDataSourc
         let likeAction = UIContextualAction(style: .normal, title: "Like") { [unowned self] (action, view, completion) in
             self.likeUser(summonerId: self.users[indexPath.row].summonerId)
         }
-        likeAction.image = #imageLiteral(resourceName: "Ok")
-        likeAction.backgroundColor = .green
+        likeAction.image = #imageLiteral(resourceName: "likeIcon")
+        likeAction.backgroundColor = .customGreen
         return UISwipeActionsConfiguration(actions: [likeAction])
     }
     
@@ -139,19 +144,17 @@ extension LikesReceivedViewController: UITableViewDelegate, UITableViewDataSourc
         let dislikeAction = UIContextualAction(style: .normal, title: "Dislike") { [unowned self] (action, view, completion) in
             print("Implement")
         }
-        dislikeAction.image = #imageLiteral(resourceName: "Nok")
-        dislikeAction.backgroundColor = .red
+        dislikeAction.image = #imageLiteral(resourceName: "dislikeIcon")
+        dislikeAction.backgroundColor = .customRed
         return UISwipeActionsConfiguration(actions: [dislikeAction])
     }
     
 }
 
 
-// MARK: - Like User Delegate
-extension LikesReceivedViewController: LikeUserDelegate {
+// MARK: - Cell Delegate
+extension LikesReceivedViewController: CellDelegate {
 
-    
-    
     func displayAlert(title: String, message: String) {
         self.createAlert(title: title, message: message)
     }
