@@ -12,6 +12,8 @@ target 'LoLMatch' do
   pod 'Firebase/Database'
   pod 'Nuke', '~> 7.4.2'
 
+  pod 'Koloda'
+
   # logger
   pod 'XCGLogger', '~> 6.1.0'
 
