@@ -11,17 +11,25 @@ import UIKit
 class MatchViewController: UIViewController {
 
     @IBOutlet private weak var cardView: MatchCard!
-
+    @IBOutlet private weak var blurView: UIVisualEffectView!
+    
     private var cardCenter: CGPoint?
+    private var currentUserElo: String?
+
+    private var cards =  [User]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupMatchView()
         self.getFeed()
-        
-        ChampionService.getChampionList { champions, error in
-            print(champions)
+
+        guard let currentUserId = UserServices.getCurrentUser()?.summonerId else { return }
+        UserServices.getElo(byId: currentUserId) { [weak self] (eloArray, error) in
+            guard let self = self else { return }
+
+            guard let elo = eloArray?.first(where: { $0.queueType == "RANKED_SOLO_5x5" }) else { return }
+            self.currentUserElo = elo.tier
         }
     }
     
@@ -56,7 +64,6 @@ class MatchViewController: UIViewController {
                 FirebaseManager.likeUser(currentSummonerId: 2584566, summonerId: 2017255, completion: { _ in
                     print("Ok")
                 })
-//                UserServices.likeUser(summonerId: , completion: <#T##((Bool) -> Void)##((Bool) -> Void)##(Bool) -> Void#>)
                 sendViewAway(cardReference, like: true)
             } else if xDistanceFromCenter < -150 {
                 sendViewAway(cardReference, like: false)
@@ -78,35 +85,50 @@ extension MatchViewController {
     private func getFeed() {
         
         FeedService.getFeed { (feedUsers) in
-            guard let user = feedUsers?.first else { return }
-            self.cardView.setupView(summoner: user)
+            guard let feedUsers = feedUsers else { return }
+            self.filterFeed(feedUsers)
+            self.updateCardUser()
         }
-        
+    }
+
+    private func updateCardUser() {
+        guard let user = cards.first else { return }
+        cardView.setupView(summoner: user)
+        cards.removeFirst()
+    }
+
+    private func filterFeed(_ currentUsers: [User]) {
+
+        let selfUser = UserServices.getCurrentUser()
+        let filteredUsers = currentUsers.filter { $0.summonerId != selfUser?.summonerId }
+        self.cards = filteredUsers
     }
 
     private func updateFeedbackImageForCard(_ card: MatchCard, distance: CGFloat) {
 
-        guard let image = card.swipeFeedbackImage else { return }
-
         if distance > 0 {
-            image.image = UIImage(named: "likeStamp")
+            card.swipeFeedbackImage = UIImage(named: "likeStamp")
         } else {
-            image.image = UIImage(named: "dislikeStamp")
+            card.swipeFeedbackImage = UIImage(named: "dislikeStamp")
         }
 
-        image.alpha = 0.5 + (abs(distance) / view.center.x)
+        // update also the blur
+        card.swipeFeedbackImage.alpha = 0.5 + (abs(distance) / view.center.x)
+
+        if (card.swipeFeedbackImage.isHidden) {
+            feedbackImageView.isHidden = false
+
+        }
     }
 
     private func sendViewAway(_ card: MatchCard, like: Bool) {
 
-        var sendTo: CGFloat = 500
-        if !like {
-            sendTo = -500
+        UIView.animate(withDuration: 0.4) {
+            guard let cardCenter = self.cardCenter else { return }
+            card.center = cardCenter
         }
 
-        UIView.animate(withDuration: 0.4) {
-            card.center = CGPoint(x: sendTo, y: card.center.y)
-        }
+        updateCardUser()
     }
 
     private func resetCardPositionFor(_ card: MatchCard) {

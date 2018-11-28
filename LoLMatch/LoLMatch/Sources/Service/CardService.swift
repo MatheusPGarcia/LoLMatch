@@ -25,10 +25,11 @@ class CardService {
         dispatchGroup.enter()
         UserServices.getElo(byId: user.summonerId) { (response, error) in
             guard error == nil, let response = response else { return }
-            guard let tierString = response.first?.tier,
-                  let pdlString = response.first?.pdl,
-                  let winString = response.first?.wins,
-                  let losesString = response.first?.losses else { return }
+            guard let elo = response.first(where: { $0.queueType == "RANKED_SOLO_5x5" }) else { return }
+            guard let tierString = elo.tier,
+                  let pdlString = elo.pdl,
+                  let winString = elo.wins,
+                  let losesString = elo.losses else { return }
 
             tierImage = response.first?.image
             tier = String(format: String.tierText, tierString)
