@@ -11,9 +11,11 @@ import UIKit
 class MatchViewController: UIViewController {
 
     @IBOutlet private weak var cardView: MatchCard!
-    
-    private var cardCenter: CGPoint?
+    @IBOutlet weak var centerYConstraint: NSLayoutConstraint!
+    @IBOutlet weak var centerXConstraint: NSLayoutConstraint!
+
     private var currentUserElo: String?
+    private var actionDistance: CGFloat?
 
     private var cards =  [User]()
 
@@ -36,6 +38,7 @@ class MatchViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
 
+        actionDistance = view.frame.width / 2
         self.setupMatchView()
     }
     
@@ -48,31 +51,29 @@ class MatchViewController: UIViewController {
 
         guard let cardReference = sender.view as? MatchCard else { return }
 
-        let card = sender.view!
         let point = sender.translation(in: view)
 
-        let xDistanceFromCenter = card.center.x - view.center.x
+        let xPoint = point.x
+        let yPoint = point.y
 
-        let xPoint = view.center.x + point.x
-        let yPoint = view.center.y + point.y
-        card.center = CGPoint(x: xPoint, y: yPoint)
+        centerXConstraint.constant = xPoint
+        centerYConstraint.constant = yPoint
+        self.view.layoutIfNeeded()
 
-        updateFeedbackImageForCard(cardReference, distance: xDistanceFromCenter)
+        updateFeedbackImage(distance: xPoint)
 
         if sender.state == UIGestureRecognizer.State.ended {
 
-            if xDistanceFromCenter > 150 {
+            guard let actionDistance = self.actionDistance else { return }
+
+            if xPoint > actionDistance {
                 changeViewAfterInteraction(cardReference, like: true)
-            } else if xDistanceFromCenter < -150 {
+            } else if xPoint < (-1 * actionDistance) {
                 changeViewAfterInteraction(cardReference, like: false)
             } else {
-                resetCardPositionFor(cardReference)
+                resetCardPosition()
             }
         }
-    }
-
-    @IBAction func updateCardTest(_ sender: Any) {
-        self.updateCardUser()
     }
 }
 
@@ -80,7 +81,6 @@ class MatchViewController: UIViewController {
 extension MatchViewController {
     
     private func setupMatchView() {
-        self.cardCenter = self.cardView.center
         self.cardView.laneImageView.setInnerSpacing(forPrimaryView: 10, forSecondaryView: 10)
     }
     
@@ -108,24 +108,21 @@ extension MatchViewController {
         self.cards = filteredUsers
     }
 
-    private func updateFeedbackImageForCard(_ card: MatchCard, distance: CGFloat) {
+    private func updateFeedbackImage(distance: CGFloat) {
 
         if distance > 0 {
-            card.swipeFeedbackImage.image = UIImage(named: "likeStamp")
+            cardView.swipeFeedbackImage.image = UIImage(named: "likeStamp")
         } else {
-            card.swipeFeedbackImage.image = UIImage(named: "dislikeStamp")
+            cardView.swipeFeedbackImage.image = UIImage(named: "dislikeStamp")
         }
 
         // update also the blur
-        card.swipeFeedbackImage.alpha = 0.5 + (abs(distance) / view.center.x)
+        cardView.swipeFeedbackImage.alpha = 0.5 + (abs(distance) / view.center.x)
     }
 
     private func changeViewAfterInteraction(_ card: MatchCard, like: Bool) {
 
-        UIView.animate(withDuration: 0.4) {
-            guard let cardCenter = self.cardCenter else { return }
-            card.center = cardCenter
-        }
+        resetCardPosition()
 
         if like {
             FirebaseManager.likeUser(currentSummonerId: 2584566, summonerId: 2017255, completion: { _ in
@@ -138,12 +135,14 @@ extension MatchViewController {
         updateCardUser()
     }
 
-    private func resetCardPositionFor(_ card: MatchCard) {
+    private func resetCardPosition() {
+
+        centerXConstraint.constant = 0
+        centerYConstraint.constant = 0
 
         UIView.animate(withDuration: 0.4) {
-            guard let cardCenter = self.cardCenter else { return }
-            card.center = cardCenter
-            card.swipeFeedbackImage.alpha = 0
+            self.view.layoutIfNeeded()
+            self.cardView.swipeFeedbackImage.alpha = 0
         }
     }
 }
