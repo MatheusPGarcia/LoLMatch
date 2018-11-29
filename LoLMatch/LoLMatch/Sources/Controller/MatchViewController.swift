@@ -58,6 +58,7 @@ class MatchViewController: UIViewController {
 
         centerXConstraint.constant = xPoint
         centerYConstraint.constant = yPoint
+        
         self.view.layoutIfNeeded()
 
         updateFeedbackImage(distance: xPoint)
@@ -117,7 +118,7 @@ extension MatchViewController {
         }
 
         // update also the blur
-        cardView.swipeFeedbackImage.alpha = 0.5 + (abs(distance) / view.center.x)
+        cardView.swipeFeedbackImage.alpha = 0.5 + (abs(distance) / view.center.x) / 2
     }
 
     private func changeViewAfterInteraction(_ card: MatchCard, like: Bool) {
