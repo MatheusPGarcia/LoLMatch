@@ -462,14 +462,9 @@
                         <viewLayoutGuide key="safeArea" id="cj9-ju-QQ6"/>
                     </view>
                     <navigationItem key="navigationItem" title="Perfil" id="ttF-JW-Br3">
-                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="L4s-Qc-M5f">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="sgi-E2-RgJ">
                             <connections>
-                                <action selector="logout:" destination="FG8-TV-Poh" id="9mH-GP-M2w"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="sgi-E2-RgJ">
-                            <connections>
-                                <action selector="saveLanes:" destination="FG8-TV-Poh" id="fmE-Dc-UBt"/>
+                                <action selector="logout:" destination="FG8-TV-Poh" id="cEB-Vl-Wqg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -72,8 +72,7 @@ class SignupViewController: UITableViewController {
         self.duolane1TextField.text = nil
         self.duolane2TextField.text = nil
     }
-    
-    
+      
     
     // MARK: - Private Methods
     private func checkLogin() {

@@ -24,13 +24,18 @@ class MatchViewController: UIViewController {
         super.viewDidLoad()
 
         self.getFeed()
-
-        guard let currentUserId = UserServices.getCurrentUser()?.summonerId else { return }
-        UserServices.getElo(byId: currentUserId) { [weak self] (eloArray, error) in
-            guard let self = self else { return }
-
-            guard let elo = eloArray?.first(where: { $0.queueType == "RANKED_SOLO_5x5" }) else { return }
-            self.currentUserElo = elo.tier
+        
+        ChampionService.getChampionList { champions, error in
+            if let _ = champions {
+                
+                guard let currentUserId = UserServices.getCurrentUser()?.summonerId else { return }
+                UserServices.getElo(byId: currentUserId) { [weak self] (eloArray, error) in
+                    guard let self = self else { return }
+                    
+                    guard let elo = eloArray?.first(where: { $0.queueType == "RANKED_SOLO_5x5" }) else { return }
+                    self.currentUserElo = elo.tier
+                }
+            }
         }
     }
     

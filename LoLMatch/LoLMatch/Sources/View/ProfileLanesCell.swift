@@ -11,6 +11,7 @@ import UIKit
 protocol UpdateLaneDelegate: class {
     func set(lane: Lane, for laneType: LaneType)
     func scrollTableView()
+    func saveLane()
 }
 
 class ProfileLanesCell: UITableViewCell {
@@ -65,6 +66,13 @@ class ProfileLanesCell: UITableViewCell {
         
         self.duoLanesPicker.delegate = self
         self.duoLanesPicker.dataSource = self
+        
+        let accessoryView = SaveButtonAccessory()
+        accessoryView.accessoryDelegate = self
+        
+        self.myLanesTextField.inputAccessoryView = accessoryView
+        self.duoLanesTextField.inputAccessoryView = accessoryView
+        
     }
     
     func dismissAllKeyboards() {
@@ -109,4 +117,11 @@ extension ProfileLanesCell: UIPickerViewDelegate, UIPickerViewDataSource {
         }
     }
     
+}
+
+
+extension ProfileLanesCell: SaveButtonAccessoryDelegate {
+    func accessoryButtonPressed() {
+        delegate?.saveLane()
+    }
 }

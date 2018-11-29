@@ -40,6 +40,7 @@
 		18E1FC912195C342000981A6 /* Champion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1FC902195C342000981A6 /* Champion.swift */; };
 		18E1FC932195C479000981A6 /* ChampionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1FC922195C479000981A6 /* ChampionService.swift */; };
 		18E1FC962195C732000981A6 /* DataDragonProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1FC952195C732000981A6 /* DataDragonProvider.swift */; };
+		18E5437221B0813000E6805D /* SaveButtonAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E5437121B0813000E6805D /* SaveButtonAccessory.swift */; };
 		18FA17052188D1C700D43A94 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA17042188D1C700D43A94 /* SignupViewController.swift */; };
 		18FE30DF219B0EE80087BE68 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE30DE219B0EE70087BE68 /* UIColorExtension.swift */; };
 		18FE30E1219B31FF0087BE68 /* ScarpzRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE30E0219B31FF0087BE68 /* ScarpzRequest.swift */; };
@@ -123,6 +124,7 @@
 		18E1FC902195C342000981A6 /* Champion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Champion.swift; sourceTree = "<group>"; };
 		18E1FC922195C479000981A6 /* ChampionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionService.swift; sourceTree = "<group>"; };
 		18E1FC952195C732000981A6 /* DataDragonProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDragonProvider.swift; sourceTree = "<group>"; };
+		18E5437121B0813000E6805D /* SaveButtonAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButtonAccessory.swift; sourceTree = "<group>"; };
 		18FA17042188D1C700D43A94 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		18FE30DE219B0EE70087BE68 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		18FE30E0219B31FF0087BE68 /* ScarpzRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScarpzRequest.swift; sourceTree = "<group>"; };
@@ -254,6 +256,14 @@
 				18E1FC902195C342000981A6 /* Champion.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		18771BF821B04CDA00B20D80 /* SaveButton */ = {
+			isa = PBXGroup;
+			children = (
+				18E5437121B0813000E6805D /* SaveButtonAccessory.swift */,
+			);
+			path = SaveButton;
 			sourceTree = "<group>";
 		};
 		188228E521762F4E00CAEB8A /* MatchCard */ = {
@@ -448,6 +458,7 @@
 		AE43596F217600EF008A94FC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				18771BF821B04CDA00B20D80 /* SaveButton */,
 				186E7C5C2177AC1700DB521A /* DoubleImageView */,
 				188228E521762F4E00CAEB8A /* MatchCard */,
 				AE43593B2175FE3D008A94FC /* Main.storyboard */,
@@ -768,6 +779,7 @@
 				AE085E9C21A6C77200808C27 /* CardService.swift in Sources */,
 				AE085E9E21A6C8C800808C27 /* Strings.swift in Sources */,
 				183777D3219F000F0095A8EE /* ProfileLanesCell.swift in Sources */,
+				18E5437221B0813000E6805D /* SaveButtonAccessory.swift in Sources */,
 				183777D1219EF6320095A8EE /* ProfileInfoCell.swift in Sources */,
 				186E7C692177D0A200DB521A /* LikesReceivedCell.swift in Sources */,
 				188228E9217634BD00CAEB8A /* UIViewExtension.swift in Sources */,

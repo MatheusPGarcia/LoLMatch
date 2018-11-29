@@ -54,36 +54,6 @@ class ProfileViewController: UIViewController {
         UserServices.setCurrentUser(user: nil)
         self.dismiss(animated: true, completion: nil)
     }
-    
-    @IBAction func saveLanes(_ sender: Any) {
-        
-        if var user = self.currentUser {
-            
-            if user.lane1 != myPrimaryLane || user.lane2 != mySecondaryLane ||
-                user.duoLane1 != duoPrimaryLane || user.duoLane2 != duoSecondaryLane {
-                user.lane1 = myPrimaryLane
-                user.lane2 = mySecondaryLane
-                user.duoLane1 = duoPrimaryLane
-                user.duoLane2 = duoSecondaryLane
-                
-                self.currentUser = user
-                UserServices.setCurrentUser(user: user)
-                UserServices.setLanes(user: user)
-                
-                self.dismissAllKeyboards()
-                
-                self.createAlert(title: "Lanes alteradas!", message: nil)
-            } else {
-                self.createAlert(title: "Nenhuma alteração feita", message: "Nenhuma lane foi alterada. Para salvar, modifique alguma lane.")
-            }
-        } else {
-            self.createAlert(title: "Oops...", message: "Erro ao pegar o usuário. Logue novamente.") { [unowned self] _ in
-                UserServices.setCurrentUser(user: nil)
-                self.dismiss(animated: true, completion: nil)
-            }
-        }
-    }
-
 }
 
 
@@ -103,7 +73,6 @@ extension ProfileViewController {
             
             self.tableView.delegate = self
             self.tableView.dataSource = self
-            self.tableView.keyboardDismissMode = .onDrag
             self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
             self.navigationController?.navigationBar.shadowImage = UIImage()
             self.navigationController?.navigationBar.isTranslucent = true
@@ -120,6 +89,37 @@ extension ProfileViewController {
         cell.dismissAllKeyboards()
     }
     
+    private func saveLanes() {
+        
+        self.dismissAllKeyboards()
+        
+        if var user = self.currentUser {
+            
+            if user.lane1 != myPrimaryLane || user.lane2 != mySecondaryLane ||
+                user.duoLane1 != duoPrimaryLane || user.duoLane2 != duoSecondaryLane {
+                user.lane1 = myPrimaryLane
+                user.lane2 = mySecondaryLane
+                user.duoLane1 = duoPrimaryLane
+                user.duoLane2 = duoSecondaryLane
+                
+                self.currentUser = user
+                UserServices.setCurrentUser(user: user)
+                UserServices.setLanes(user: user)
+                
+                self.createAlert(title: "Lanes alteradas!", message: nil)
+            } else {
+                self.createAlert(title: "Nenhuma alteração feita", message: "Nenhuma lane foi alterada. Para salvar, modifique alguma lane.")
+
+            }
+        } else {
+            self.createAlert(title: "Oops...", message: "Erro ao pegar o usuário. Logue novamente.") { [unowned self] _ in
+                
+                UserServices.setCurrentUser(user: nil)
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        
+    }
 }
 
 
@@ -192,5 +192,9 @@ extension ProfileViewController: UpdateLaneDelegate {
     
     func scrollTableView() {
         self.tableView.scrollToRow(at: IndexPath(row: 1, section: 0), at: .top, animated: true)
+    }
+    
+    func saveLane() {
+        self.saveLanes()
     }
 }
