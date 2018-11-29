@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lKb-jD-dYo">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,28 +14,37 @@
             <objects>
                 <viewController title="Match" id="lKb-jD-dYo" customClass="MatchViewController" customModule="LoLMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hfI-op-I2Q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="fE3-ez-Qnu">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dMV-36-3Wz" customClass="MatchCard" customModule="LoLMatch" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="30" width="375" height="573"/>
+                                <rect key="frame" x="0.0" y="30" width="320" height="474"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="xTl-jo-M4B" appends="YES" id="pI8-ZM-Ory"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQe-0I-gfE">
+                                <rect key="frame" x="137" y="269" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="updateCardTest:" destination="lKb-jD-dYo" eventType="touchUpInside" id="ZUf-Fw-9XQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="I1K-gx-5Ph" firstAttribute="trailing" secondItem="dMV-36-3Wz" secondAttribute="trailing" id="69c-z3-4UW"/>
+                            <constraint firstItem="BQe-0I-gfE" firstAttribute="centerX" secondItem="hfI-op-I2Q" secondAttribute="centerX" id="7hI-cH-nKe"/>
                             <constraint firstItem="I1K-gx-5Ph" firstAttribute="trailing" secondItem="fE3-ez-Qnu" secondAttribute="trailing" id="8QZ-1P-V4g"/>
                             <constraint firstItem="I1K-gx-5Ph" firstAttribute="bottom" secondItem="dMV-36-3Wz" secondAttribute="bottom" constant="15" id="Ghi-NB-k5D"/>
                             <constraint firstItem="dMV-36-3Wz" firstAttribute="leading" secondItem="I1K-gx-5Ph" secondAttribute="leading" id="Hj2-S9-3y0"/>
                             <constraint firstItem="I1K-gx-5Ph" firstAttribute="bottom" secondItem="fE3-ez-Qnu" secondAttribute="bottom" id="WuB-C5-wmu"/>
                             <constraint firstItem="fE3-ez-Qnu" firstAttribute="leading" secondItem="hfI-op-I2Q" secondAttribute="leading" id="bEw-bb-vZM"/>
+                            <constraint firstItem="BQe-0I-gfE" firstAttribute="centerY" secondItem="hfI-op-I2Q" secondAttribute="centerY" id="bk7-sc-mhF"/>
                             <constraint firstItem="dMV-36-3Wz" firstAttribute="top" secondItem="I1K-gx-5Ph" secondAttribute="top" constant="10" id="f1P-SR-aIt"/>
                             <constraint firstItem="fE3-ez-Qnu" firstAttribute="top" secondItem="hfI-op-I2Q" secondAttribute="top" id="t8f-X8-Pk5"/>
                         </constraints>

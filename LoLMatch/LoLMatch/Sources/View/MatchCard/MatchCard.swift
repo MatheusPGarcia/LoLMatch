@@ -64,50 +64,9 @@ protocol matchCardDelegate: class {
 
         CardService.getCardDetail(forUser: summoner) { (cardViewModel) in
 
-            switch currentUserTier {
-            case "BRONZE":
-                if cardViewModel.tier != "BRONZE" && cardViewModel.tier != "SILVER" {
-                    self.delegate?.updateCard()
-                    return
-                }
-                break
-            case "SILVER":
-                if cardViewModel.tier != "BRONZE" && cardViewModel.tier != "SILVER" && cardViewModel.tier != "GOLD" {
-                    self.delegate?.updateCard()
-                    return
-                }
-                break
-            case "GOLD":
-                if cardViewModel.tier != "SILVER" && cardViewModel.tier != "GOLD" && cardViewModel.tier != "PLATINUM" {
-                    self.delegate?.updateCard()
-                    return
-                }
-                break
-            case "PLATINUM":
-                if cardViewModel.tier != "GOLD" && cardViewModel.tier != "PLATINUM" && cardViewModel.tier != "DIAMOND" {
-                    self.delegate?.updateCard()
-                    return
-                }
-                break
-            case "DIAMOND":
-                if cardViewModel.tier != "PLATINUM" && cardViewModel.tier != "DIAMOND" && cardViewModel.tier != "MASTER" {
-                    self.delegate?.updateCard()
-                    return
-                }
-                break
-            case "MASTER":
-                if cardViewModel.tier != "DIAMOND" && cardViewModel.tier != "MASTER" && cardViewModel.tier != "CHALLENGER" {
-                    self.delegate?.updateCard()
-                    return
-                }
-                break
-            case "CHALLENGER":
-                if cardViewModel.tier != "MASTER" && cardViewModel.tier != "CHALLENGER" {
-                    self.delegate?.updateCard()
-                    return
-                }
-                break
-            default: break
+            guard self.checkElo(cardViewModel, currentUserTier: currentUserTier) else {
+                delegate.updateCard()
+                return
             }
 
             // Summoners setup
@@ -209,5 +168,60 @@ extension MatchCard {
             
             self.contentView = contentView
         }
+    }
+}
+
+// MARK: - Private methods
+extension MatchCard {
+
+    private func checkElo(_ cardViewModel: (CardViewModel), currentUserTier: String) -> Bool {
+
+        switch currentUserTier {
+        case "BRONZE":
+            if cardViewModel.tier != "BRONZE" && cardViewModel.tier != "SILVER" {
+                self.delegate?.updateCard()
+                return false
+            }
+            break
+        case "SILVER":
+            if cardViewModel.tier != "BRONZE" && cardViewModel.tier != "SILVER" && cardViewModel.tier != "GOLD" {
+                self.delegate?.updateCard()
+                return false
+            }
+            break
+        case "GOLD":
+            if cardViewModel.tier != "SILVER" && cardViewModel.tier != "GOLD" && cardViewModel.tier != "PLATINUM" {
+                self.delegate?.updateCard()
+                return false
+            }
+            break
+        case "PLATINUM":
+            if cardViewModel.tier != "GOLD" && cardViewModel.tier != "PLATINUM" && cardViewModel.tier != "DIAMOND" {
+                self.delegate?.updateCard()
+                return false
+            }
+            break
+        case "DIAMOND":
+            if cardViewModel.tier != "PLATINUM" && cardViewModel.tier != "DIAMOND" && cardViewModel.tier != "MASTER" {
+                self.delegate?.updateCard()
+                return false
+            }
+            break
+        case "MASTER":
+            if cardViewModel.tier != "DIAMOND" && cardViewModel.tier != "MASTER" && cardViewModel.tier != "CHALLENGER" {
+                self.delegate?.updateCard()
+                return false
+            }
+            break
+        case "CHALLENGER":
+            if cardViewModel.tier != "MASTER" && cardViewModel.tier != "CHALLENGER" {
+                self.delegate?.updateCard()
+                return false
+            }
+        default:
+            return true
+        }
+
+        return true
     }
 }

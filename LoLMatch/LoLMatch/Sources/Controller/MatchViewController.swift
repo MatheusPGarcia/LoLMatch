@@ -11,7 +11,6 @@ import UIKit
 class MatchViewController: UIViewController {
 
     @IBOutlet private weak var cardView: MatchCard!
-    @IBOutlet private weak var blurView: UIVisualEffectView!
     
     private var cardCenter: CGPoint?
     private var currentUserElo: String?
@@ -61,16 +60,17 @@ class MatchViewController: UIViewController {
         if sender.state == UIGestureRecognizer.State.ended {
 
             if xDistanceFromCenter > 150 {
-                FirebaseManager.likeUser(currentSummonerId: 2584566, summonerId: 2017255, completion: { _ in
-                    print("Ok")
-                })
-                sendViewAway(cardReference, like: true)
+                changeViewAfterInteraction(cardReference, like: true)
             } else if xDistanceFromCenter < -150 {
-                sendViewAway(cardReference, like: false)
+                changeViewAfterInteraction(cardReference, like: false)
             } else {
                 resetCardPositionFor(cardReference)
             }
         }
+    }
+
+    @IBAction func updateCardTest(_ sender: Any) {
+        self.updateCardUser()
     }
 }
 
@@ -95,6 +95,9 @@ extension MatchViewController {
         guard let user = cards.first, let currentUserElo = currentUserElo else { return }
         cardView.setupView(summoner: user, currentUserTier: currentUserElo, delegate: self)
         cards.removeFirst()
+
+        guard let cardCenter = cardCenter else { return }
+        cardView.center = cardCenter
     }
 
     private func filterFeed(_ currentUsers: [User]) {
@@ -116,13 +119,19 @@ extension MatchViewController {
         card.swipeFeedbackImage.alpha = 0.5 + (abs(distance) / view.center.x)
     }
 
-    private func sendViewAway(_ card: MatchCard, like: Bool) {
+    private func changeViewAfterInteraction(_ card: MatchCard, like: Bool) {
 
         UIView.animate(withDuration: 0.4) {
             guard let cardCenter = self.cardCenter else { return }
             card.center = cardCenter
+        }
 
-            // like action
+        if like {
+            FirebaseManager.likeUser(currentSummonerId: 2584566, summonerId: 2017255, completion: { _ in
+                print("Ok")
+            })
+        } else {
+            // dislike method (?)
         }
 
         updateCardUser()
