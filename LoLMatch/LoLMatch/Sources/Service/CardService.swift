@@ -29,7 +29,10 @@ class CardService {
             guard let tierString = elo.tier,
                   let pdlString = elo.pdl,
                   let winString = elo.wins,
-                  let losesString = elo.losses else { return }
+                  let losesString = elo.losses else {
+                    dispatchGroup.leave()
+                    return
+                }
 
             tierImage = response.first?.image
             tier = String(format: String.tierText, tierString)
@@ -40,7 +43,10 @@ class CardService {
 
         dispatchGroup.enter()
         UserServices.getPlayerKda(byId: user.accountId, numberOfMatches: 3) { (response, error) in
-            guard error == nil, let response = response else { return }
+            guard error == nil, let response = response else {
+                dispatchGroup.leave()
+                return
+            }
 
             matches = response
             dispatchGroup.leave()

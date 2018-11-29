@@ -65,7 +65,6 @@ protocol matchCardDelegate: class {
         CardService.getCardDetail(forUser: summoner) { (cardViewModel) in
 
             guard self.checkElo(cardViewModel, currentUserTier: currentUserTier) else {
-                delegate.updateCard()
                 return
             }
 

@@ -17,10 +17,10 @@ class MatchViewController: UIViewController {
 
     private var cards =  [User]()
 
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.setupMatchView()
+
         self.getFeed()
 
         guard let currentUserId = UserServices.getCurrentUser()?.summonerId else { return }
@@ -35,6 +35,8 @@ class MatchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+
+        self.setupMatchView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -92,12 +94,11 @@ extension MatchViewController {
     }
 
     private func updateCardUser() {
-        guard let user = cards.first, let currentUserElo = currentUserElo else { return }
+
+        print("Getting new user")
+        guard let user = cards.first, let currentUserElo = currentUserElo else {  return }
         cardView.setupView(summoner: user, currentUserTier: currentUserElo, delegate: self)
         cards.removeFirst()
-
-        guard let cardCenter = cardCenter else { return }
-        cardView.center = cardCenter
     }
 
     private func filterFeed(_ currentUsers: [User]) {
