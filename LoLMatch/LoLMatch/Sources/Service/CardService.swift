@@ -34,7 +34,7 @@ class CardService {
                     return
                 }
 
-            tierImage = response.first?.image
+            tierImage = elo.image
             tier = String(format: String.tierText, tierString)
             pdl = String(format: String.pdlText, pdlString, winString, losesString)
 
