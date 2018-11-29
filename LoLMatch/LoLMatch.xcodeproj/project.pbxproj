@@ -41,11 +41,11 @@
 		18E1FC932195C479000981A6 /* ChampionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1FC922195C479000981A6 /* ChampionService.swift */; };
 		18E1FC962195C732000981A6 /* DataDragonProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1FC952195C732000981A6 /* DataDragonProvider.swift */; };
 		18FA17052188D1C700D43A94 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FA17042188D1C700D43A94 /* SignupViewController.swift */; };
+		18FE30DF219B0EE80087BE68 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE30DE219B0EE70087BE68 /* UIColorExtension.swift */; };
+		18FE30E1219B31FF0087BE68 /* ScarpzRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE30E0219B31FF0087BE68 /* ScarpzRequest.swift */; };
 		AE085E9C21A6C77200808C27 /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE085E9B21A6C77200808C27 /* CardService.swift */; };
 		AE085E9E21A6C8C800808C27 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE085E9D21A6C8C800808C27 /* Strings.swift */; };
 		AE085EA221A6CA7100808C27 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE085EA121A6CA7100808C27 /* CardViewModel.swift */; };
-		18FE30DF219B0EE80087BE68 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE30DE219B0EE70087BE68 /* UIColorExtension.swift */; };
-		18FE30E1219B31FF0087BE68 /* ScarpzRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FE30E0219B31FF0087BE68 /* ScarpzRequest.swift */; };
 		AE321F0121809C7300B1C95A /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE321F0021809C7300B1C95A /* MatchViewController.swift */; };
 		AE3B3A8A219590CB006B4026 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3B3A89219590CB006B4026 /* FeedService.swift */; };
 		AE3F55872194589D0019AB9F /* MatchRiotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F55862194589D0019AB9F /* MatchRiotResponse.swift */; };
@@ -450,7 +450,6 @@
 			children = (
 				186E7C5C2177AC1700DB521A /* DoubleImageView */,
 				188228E521762F4E00CAEB8A /* MatchCard */,
-				AE6C1F4221AE1D5E00B9C6F7 /* Feed */,
 				AE43593B2175FE3D008A94FC /* Main.storyboard */,
 				188228DD2176288400CAEB8A /* Match.storyboard */,
 				188228DF217628EF00CAEB8A /* LikesReceived.storyboard */,
@@ -478,13 +477,6 @@
 				AE085EA021A6CA5400808C27 /* ViewModel */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		AE6C1F4221AE1D5E00B9C6F7 /* Feed */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Feed;
 			sourceTree = "<group>";
 		};
 		AEB9F80B217611610040AB10 /* Resources */ = {
@@ -961,9 +953,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7T8R3N4U6X;
+				DEVELOPMENT_TEAM = 3W69VTQXGX;
 				INFOPLIST_FILE = "$(SRCROOT)/LoLMatch/Resources/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MatheusPGarcia.LoLMatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -977,9 +972,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7T8R3N4U6X;
+				DEVELOPMENT_TEAM = 3W69VTQXGX;
 				INFOPLIST_FILE = "$(SRCROOT)/LoLMatch/Resources/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MatheusPGarcia.LoLMatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -996,7 +994,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3W69VTQXGX;
 				INFOPLIST_FILE = LoLMatchTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MatheusPGarcia.LoLMatchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1014,7 +1016,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3W69VTQXGX;
 				INFOPLIST_FILE = LoLMatchTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MatheusPGarcia.LoLMatchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1031,7 +1037,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3W69VTQXGX;
 				INFOPLIST_FILE = LoLMatchUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MatheusPGarcia.LoLMatchUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1048,7 +1058,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3W69VTQXGX;
 				INFOPLIST_FILE = LoLMatchUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MatheusPGarcia.LoLMatchUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

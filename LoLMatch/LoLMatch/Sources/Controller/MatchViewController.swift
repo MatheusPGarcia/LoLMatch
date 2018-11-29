@@ -11,23 +11,35 @@ import UIKit
 class MatchViewController: UIViewController {
 
     @IBOutlet private weak var cardView: MatchCard!
+    @IBOutlet weak var centerYConstraint: NSLayoutConstraint!
+    @IBOutlet weak var centerXConstraint: NSLayoutConstraint!
 
-    private var cardCenter: CGPoint?
+    private var currentUserElo: String?
+    private var actionDistance: CGFloat?
 
+    private var cards =  [User]()
+
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.setupMatchView()
+
         self.getFeed()
-        
-        ChampionService.getChampionList { champions, error in
-            print(champions)
+
+        guard let currentUserId = UserServices.getCurrentUser()?.summonerId else { return }
+        UserServices.getElo(byId: currentUserId) { [weak self] (eloArray, error) in
+            guard let self = self else { return }
+
+            guard let elo = eloArray?.first(where: { $0.queueType == "RANKED_SOLO_5x5" }) else { return }
+            self.currentUserElo = elo.tier
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+
+        actionDistance = view.frame.width / 2
+        self.setupMatchView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -39,29 +51,28 @@ class MatchViewController: UIViewController {
 
         guard let cardReference = sender.view as? MatchCard else { return }
 
-        let card = sender.view!
         let point = sender.translation(in: view)
 
-        let xDistanceFromCenter = card.center.x - view.center.x
+        let xPoint = point.x
+        let yPoint = point.y
 
-        let xPoint = view.center.x + point.x
-        let yPoint = view.center.y + point.y
-        card.center = CGPoint(x: xPoint, y: yPoint)
+        centerXConstraint.constant = xPoint
+        centerYConstraint.constant = yPoint
+        
+        self.view.layoutIfNeeded()
 
-        updateFeedbackImageForCard(cardReference, distance: xDistanceFromCenter)
+        updateFeedbackImage(distance: xPoint)
 
         if sender.state == UIGestureRecognizer.State.ended {
 
-            if xDistanceFromCenter > 150 {
-                FirebaseManager.likeUser(currentSummonerId: 2584566, summonerId: 2017255, completion: { _ in
-                    print("Ok")
-                })
-//                UserServices.likeUser(summonerId: , completion: <#T##((Bool) -> Void)##((Bool) -> Void)##(Bool) -> Void#>)
-                sendViewAway(cardReference, like: true)
-            } else if xDistanceFromCenter < -150 {
-                sendViewAway(cardReference, like: false)
+            guard let actionDistance = self.actionDistance else { return }
+
+            if xPoint > actionDistance {
+                changeViewAfterInteraction(cardReference, like: true)
+            } else if xPoint < (-1 * actionDistance) {
+                changeViewAfterInteraction(cardReference, like: false)
             } else {
-                resetCardPositionFor(cardReference)
+                resetCardPosition()
             }
         }
     }
@@ -71,50 +82,76 @@ class MatchViewController: UIViewController {
 extension MatchViewController {
     
     private func setupMatchView() {
-        self.cardCenter = self.cardView.center
         self.cardView.laneImageView.setInnerSpacing(forPrimaryView: 10, forSecondaryView: 10)
     }
     
     private func getFeed() {
         
         FeedService.getFeed { (feedUsers) in
-            guard let user = feedUsers?.first else { return }
-            self.cardView.setupView(summoner: user)
+            guard let feedUsers = feedUsers else { return }
+            self.filterFeed(feedUsers)
+            self.updateCardUser()
         }
-        
     }
 
-    private func updateFeedbackImageForCard(_ card: MatchCard, distance: CGFloat) {
+    private func updateCardUser() {
 
-        guard let image = card.swipeFeedbackImage else { return }
+        print("Getting new user")
+        guard let user = cards.first, let currentUserElo = currentUserElo else {  return }
+        cardView.setupView(summoner: user, currentUserTier: currentUserElo, delegate: self)
+        cards.removeFirst()
+    }
+
+    private func filterFeed(_ currentUsers: [User]) {
+
+        let selfUser = UserServices.getCurrentUser()
+        let filteredUsers = currentUsers.filter { $0.summonerId != selfUser?.summonerId }
+        self.cards = filteredUsers
+    }
+
+    private func updateFeedbackImage(distance: CGFloat) {
 
         if distance > 0 {
-            image.image = UIImage(named: "likeStamp")
+            cardView.swipeFeedbackImage.image = UIImage(named: "likeStamp")
         } else {
-            image.image = UIImage(named: "dislikeStamp")
+            cardView.swipeFeedbackImage.image = UIImage(named: "dislikeStamp")
         }
 
-        image.alpha = 0.5 + (abs(distance) / view.center.x)
+        // update also the blur
+        cardView.swipeFeedbackImage.alpha = 0.5 + (abs(distance) / view.center.x) / 2
     }
 
-    private func sendViewAway(_ card: MatchCard, like: Bool) {
+    private func changeViewAfterInteraction(_ card: MatchCard, like: Bool) {
 
-        var sendTo: CGFloat = 500
-        if !like {
-            sendTo = -500
+        resetCardPosition()
+
+        if like {
+            FirebaseManager.likeUser(currentSummonerId: 2584566, summonerId: 2017255, completion: { _ in
+                print("Ok")
+            })
+        } else {
+            // dislike method (?)
         }
 
-        UIView.animate(withDuration: 0.4) {
-            card.center = CGPoint(x: sendTo, y: card.center.y)
-        }
+        updateCardUser()
     }
 
-    private func resetCardPositionFor(_ card: MatchCard) {
+    private func resetCardPosition() {
+
+        centerXConstraint.constant = 0
+        centerYConstraint.constant = 0
 
         UIView.animate(withDuration: 0.4) {
-            guard let cardCenter = self.cardCenter else { return }
-            card.center = cardCenter
-            card.swipeFeedbackImage.alpha = 0
+            self.view.layoutIfNeeded()
+            self.cardView.swipeFeedbackImage.alpha = 0
         }
+    }
+}
+
+// MARK: - matchCardDelegate
+extension MatchViewController: matchCardDelegate {
+
+    func updateCard() {
+        self.updateCardUser()
     }
 }

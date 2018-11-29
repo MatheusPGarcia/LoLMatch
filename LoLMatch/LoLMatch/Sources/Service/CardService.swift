@@ -25,12 +25,16 @@ class CardService {
         dispatchGroup.enter()
         UserServices.getElo(byId: user.summonerId) { (response, error) in
             guard error == nil, let response = response else { return }
-            guard let tierString = response.first?.tier,
-                  let pdlString = response.first?.pdl,
-                  let winString = response.first?.wins,
-                  let losesString = response.first?.losses else { return }
+            guard let elo = response.first(where: { $0.queueType == "RANKED_SOLO_5x5" }) else { return }
+            guard let tierString = elo.tier,
+                  let pdlString = elo.pdl,
+                  let winString = elo.wins,
+                  let losesString = elo.losses else {
+                    dispatchGroup.leave()
+                    return
+                }
 
-            tierImage = response.first?.image
+            tierImage = elo.image
             tier = String(format: String.tierText, tierString)
             pdl = String(format: String.pdlText, pdlString, winString, losesString)
 
@@ -39,7 +43,10 @@ class CardService {
 
         dispatchGroup.enter()
         UserServices.getPlayerKda(byId: user.accountId, numberOfMatches: 3) { (response, error) in
-            guard error == nil, let response = response else { return }
+            guard error == nil, let response = response else {
+                dispatchGroup.leave()
+                return
+            }
 
             matches = response
             dispatchGroup.leave()
