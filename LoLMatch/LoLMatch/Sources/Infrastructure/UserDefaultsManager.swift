@@ -32,7 +32,8 @@ class UserDefaultsManager {
             self.userDefaults.set(try JSONEncoder().encode(user), forKey: "currentUser")
             self.userDefaults.synchronize()
         } catch {
-            print("Error on setting Current User")
+            self.userDefaults.set(nil, forKey: "currentUser")
+            self.userDefaults.synchronize()
         }
     }
     

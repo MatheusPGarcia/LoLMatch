@@ -13,10 +13,11 @@ class SignupViewController: UITableViewController {
     // MARK: - Outlets
     @IBOutlet weak var summonerNameTextField: UITextField!
     @IBOutlet weak var summonerStatusImage: UIImageView!
-    @IBOutlet weak var lane1TextField: UITextField!
-    @IBOutlet weak var lane2TextField: UITextField!
-    @IBOutlet weak var duolane1TextField: UITextField!
-    @IBOutlet weak var duolane2TextField: UITextField!
+    
+    @IBOutlet weak var myLanes: TripleImageView!
+    @IBOutlet weak var duoLanes: TripleImageView!
+    @IBOutlet weak var myLanesTextField: UITextField!
+    @IBOutlet weak var duoLanesTextField: UITextField!
     
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var searchButton: UIButton!
@@ -24,8 +25,8 @@ class SignupViewController: UITableViewController {
     
     // MARK: - Properties
     var summonerStatus: Bool = false
-    let availablePrimaryLanes: [Lane] = [.top, .jungle, .mid, .adc, .sup]
-    let availableSecondaryLanes: [Lane] = [.top, .jungle, .mid, .adc, .sup, .fill]
+    let firstOptionLanes: [Lane] = [.top, .jungle, .mid, .adc, .sup]
+    let secondOptionLanes: [Lane] = [.top, .jungle, .mid, .adc, .sup, .fill]
     let primaryPicker = UIPickerView()
     let secondaryPicker = UIPickerView()
     
@@ -34,24 +35,39 @@ class SignupViewController: UITableViewController {
     var riotSummoner: Int?
     var riotAccount: Int?
     
+    var myLane1: Lane?
+    var myLane2: Lane?
+    var duoLane1: Lane?
+    var duoLane2: Lane?
+    
 
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
         
-        
-        self.lane1TextField.inputView = primaryPicker
-        self.duolane1TextField.inputView = primaryPicker
+        self.myLanesTextField.inputView = primaryPicker
         self.primaryPicker.delegate = self
         
-        self.lane2TextField.inputView = secondaryPicker
-        self.duolane2TextField.inputView = secondaryPicker
+        self.duoLanesTextField.inputView = secondaryPicker
         self.secondaryPicker.delegate = self
         
         self.tableView.keyboardDismissMode = .onDrag
         
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        
+        self.myLanes.setBackgroundColor(forPrimaryView: .black, forSecondaryView: .black)
+        self.duoLanes.setBackgroundColor(forPrimaryView: .black, forSecondaryView: .black)
+        
+        let accessoryView = SaveButtonAccessory()
+        accessoryView.accessoryDelegate = self
+        
+        self.myLanesTextField.inputAccessoryView = accessoryView
+        self.duoLanesTextField.inputAccessoryView = accessoryView
         
         self.checkLogin()
     }
@@ -67,10 +83,6 @@ class SignupViewController: UITableViewController {
         self.summonerStatusImage.isHidden = true
         
         self.summonerNameTextField.text = nil
-        self.lane1TextField.text = nil
-        self.lane2TextField.text = nil
-        self.duolane1TextField.text = nil
-        self.duolane2TextField.text = nil
     }
       
     
@@ -131,29 +143,21 @@ class SignupViewController: UITableViewController {
         }
     }
     
-    @IBAction func signup(_ sender: UIButton) {
+    @IBAction func signup(_ sender: UIBarButtonItem) {
         
-        if summonerStatus && !lane1TextField.text!.isEmpty && !lane2TextField.text!.isEmpty && !duolane1TextField.text!.isEmpty && !duolane2TextField.text!.isEmpty {
+        if summonerStatus, let validLane1 = self.myLane1, let validLane2 = self.myLane2,
+            let validDuoLane1 = self.duoLane1, let validDuoLane2 = self.duoLane2 {
             
             if let profileIconId = self.profileIconId, let summonerName = self.riotName, let summonerId = self.riotSummoner, let accountId = self.riotAccount {
+
+                let user = User(profileIconId: profileIconId, summonerName: summonerName, summonerId: summonerId, accountId: accountId, lane1: validLane1, lane2: validLane2, duoLane1: validDuoLane1, duoLane2: validDuoLane2)
                 
-                if let lane1Text = lane1TextField.text, let lane2Text = lane2TextField.text,
-                    let duoLane1Text = duolane1TextField.text, let duoLane2Text = duolane2TextField.text {
-                    
-                    let lane1 = Lane(value: lane1Text)
-                    let lane2 = Lane(value: lane2Text)
-                    let duoLane1 = Lane(value: duoLane1Text)
-                    let duoLane2 = Lane(value: duoLane2Text)
-                    
-                    let user = User(profileIconId: profileIconId, summonerName: summonerName, summonerId: summonerId, accountId: accountId, lane1: lane1, lane2: lane2, duoLane1: duoLane1, duoLane2: duoLane2)
-                    
-                    UserServices.setCurrentUser(user: user)
-                    UserServices.setLanes(user: user)
-                    
-                    print("\(user.toDict())")
-                    
-                    self.performSegue(withIdentifier: "SignupSegue", sender: nil)
-                }
+                UserServices.setCurrentUser(user: user)
+                UserServices.setLanes(user: user)
+                
+                print("\(user.toDict())")
+                
+                self.performSegue(withIdentifier: "SignupSegue", sender: nil)
                 
             } else {
                 self.createAlert(title: "Oops", message: "Alguma informação da Riot veio inválida. Tente novamente.")
@@ -167,31 +171,40 @@ class SignupViewController: UITableViewController {
 extension SignupViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return 2
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerView == primaryPicker ? availablePrimaryLanes.count : availableSecondaryLanes.count
+        return pickerView == primaryPicker ? firstOptionLanes.count : secondOptionLanes.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerView == primaryPicker ? availablePrimaryLanes[row].description() : availableSecondaryLanes[row ].description()
+        return pickerView == primaryPicker ? firstOptionLanes[row].description() : secondOptionLanes[row ].description()
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == self.primaryPicker {
-            if lane1TextField.isFirstResponder {
-                self.lane1TextField.text = self.availablePrimaryLanes[row].description()
+            if component == 0 {
+                self.myLanes.primaryImageView.image = self.firstOptionLanes[row].coloredImage()
             } else {
-                self.duolane1TextField.text = self.availablePrimaryLanes[row].description()
+                self.myLanes.secondaryImageView.image = self.secondOptionLanes[row].coloredImage()
             }
         } else {
-            if lane2TextField.isFirstResponder {
-                self.lane2TextField.text = self.availableSecondaryLanes[row].description()
+            if component == 0 {
+                self.duoLanes.primaryImageView.image = self.firstOptionLanes[row].coloredImage()
             } else {
-                self.duolane2TextField.text = self.availableSecondaryLanes[row].description()
+                self.duoLanes.secondaryImageView.image = self.secondOptionLanes[row].coloredImage()
             }
         }
     }
    
+}
+
+
+extension SignupViewController: SaveButtonAccessoryDelegate {
+    
+    func accessoryButtonPressed() {
+        self.myLanesTextField.resignFirstResponder()
+        self.duoLanesTextField.resignFirstResponder()
+    }
 }
