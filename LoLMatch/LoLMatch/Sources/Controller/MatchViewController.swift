@@ -18,6 +18,8 @@ class MatchViewController: UIViewController {
     private var actionDistance: CGFloat?
 
     private var cards =  [User]()
+    
+    private var currentUser: User?
 
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -104,6 +106,7 @@ extension MatchViewController {
         print("Getting new user")
         guard let user = cards.first, let currentUserElo = currentUserElo else {  return }
         cardView.setupView(summoner: user, currentUserTier: currentUserElo, delegate: self)
+        self.currentUser = user
         cards.removeFirst()
     }
 
@@ -131,9 +134,9 @@ extension MatchViewController {
         resetCardPosition()
 
         if like {
-            FirebaseManager.likeUser(currentSummonerId: 2584566, summonerId: 2017255, completion: { _ in
-                print("Ok")
-            })
+            
+            guard self.currentUser != nil else { return }
+            UserServices.likeUser(summonerId: self.currentUser!.summonerId) { _ in }
         } else {
             // dislike method (?)
         }

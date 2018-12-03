@@ -105,6 +105,7 @@ class SignupViewController: UITableViewController {
                 self.activity.startAnimating()
                 self.searchButton.isEnabled = false
                 self.summonerStatusImage.isHidden = true
+                self.summonerNameTextField.resignFirstResponder()
                 
                 UserServices.getSummonerId(byName: text) { (user, error) in
                     
@@ -134,7 +135,7 @@ class SignupViewController: UITableViewController {
                     DispatchQueue.main.async {
                         self.summonerStatusImage.isHidden = false
                         self.summonerStatusImage.image = self.summonerStatus ? #imageLiteral(resourceName: "okIcon") : #imageLiteral(resourceName: "nokIcon")
-                    }
+                    }w
 
                 }
             }
@@ -175,25 +176,29 @@ extension SignupViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerView == primaryPicker ? firstOptionLanes.count : secondOptionLanes.count
+        return component == 0 ? firstOptionLanes.count : secondOptionLanes.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerView == primaryPicker ? firstOptionLanes[row].description() : secondOptionLanes[row ].description()
+        return component == 0 ? firstOptionLanes[row].description() : secondOptionLanes[row ].description()
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == self.primaryPicker {
             if component == 0 {
                 self.myLanes.primaryImageView.image = self.firstOptionLanes[row].coloredImage()
+                self.myLane1 = self.firstOptionLanes[row]
             } else {
                 self.myLanes.secondaryImageView.image = self.secondOptionLanes[row].coloredImage()
+                self.myLane2 = self.secondOptionLanes[row]
             }
         } else {
             if component == 0 {
                 self.duoLanes.primaryImageView.image = self.firstOptionLanes[row].coloredImage()
+                self.duoLane1 = self.firstOptionLanes[row]
             } else {
                 self.duoLanes.secondaryImageView.image = self.secondOptionLanes[row].coloredImage()
+                self.duoLane2 = self.secondOptionLanes[row]
             }
         }
     }
