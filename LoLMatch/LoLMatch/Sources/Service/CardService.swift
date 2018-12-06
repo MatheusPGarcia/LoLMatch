@@ -24,8 +24,14 @@ class CardService {
 
         dispatchGroup.enter()
         UserServices.getElo(byId: user.summonerId) { (response, error) in
-            guard error == nil, let response = response else { return }
-            guard let elo = response.first(where: { $0.queueType == "RANKED_SOLO_5x5" }) else { return }
+            guard error == nil, let response = response else {
+                completion(nil, true)
+                return
+            }
+            guard let elo = response.first(where: { $0.queueType == "RANKED_SOLO_5x5" }) else {
+                completion(nil, true)
+                return
+            }
             guard let tierString = elo.tier,
                   let pdlString = elo.pdl,
                   let winString = elo.wins,
