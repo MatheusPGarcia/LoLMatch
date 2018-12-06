@@ -31,14 +31,19 @@
                                     <outletCollection property="gestureRecognizers" destination="xTl-jo-M4B" appends="YES" id="pI8-ZM-Ory"/>
                                 </connections>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="tRK-aB-xph">
+                                <rect key="frame" x="141.5" y="265.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="I1K-gx-5Ph" firstAttribute="trailing" secondItem="fE3-ez-Qnu" secondAttribute="trailing" id="8QZ-1P-V4g"/>
                             <constraint firstItem="dMV-36-3Wz" firstAttribute="centerX" secondItem="hfI-op-I2Q" secondAttribute="centerX" id="EXa-pf-iKz"/>
                             <constraint firstItem="I1K-gx-5Ph" firstAttribute="bottom" secondItem="fE3-ez-Qnu" secondAttribute="bottom" id="WuB-C5-wmu"/>
+                            <constraint firstItem="tRK-aB-xph" firstAttribute="centerX" secondItem="hfI-op-I2Q" secondAttribute="centerX" id="XRR-Tk-cRV"/>
                             <constraint firstItem="fE3-ez-Qnu" firstAttribute="leading" secondItem="hfI-op-I2Q" secondAttribute="leading" id="bEw-bb-vZM"/>
                             <constraint firstItem="dMV-36-3Wz" firstAttribute="width" secondItem="I1K-gx-5Ph" secondAttribute="width" id="hsb-rT-4za"/>
                             <constraint firstItem="dMV-36-3Wz" firstAttribute="centerY" secondItem="hfI-op-I2Q" secondAttribute="centerY" id="lhr-cL-0zf"/>
+                            <constraint firstItem="tRK-aB-xph" firstAttribute="centerY" secondItem="hfI-op-I2Q" secondAttribute="centerY" id="sv0-wP-AHW"/>
                             <constraint firstItem="fE3-ez-Qnu" firstAttribute="top" secondItem="hfI-op-I2Q" secondAttribute="top" id="t8f-X8-Pk5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I1K-gx-5Ph"/>
@@ -47,6 +52,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="tRK-aB-xph" id="hNK-vd-cgM"/>
                         <outlet property="cardView" destination="dMV-36-3Wz" id="mmh-mW-fyw"/>
                         <outlet property="centerXConstraint" destination="EXa-pf-iKz" id="5Co-td-lYg"/>
                         <outlet property="centerYConstraint" destination="lhr-cL-0zf" id="jb8-RA-k50"/>

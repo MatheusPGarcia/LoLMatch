@@ -11,8 +11,9 @@ import UIKit
 class MatchViewController: UIViewController {
 
     @IBOutlet private weak var cardView: MatchCard!
-    @IBOutlet weak var centerYConstraint: NSLayoutConstraint!
-    @IBOutlet weak var centerXConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var centerYConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var centerXConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
 
     private var currentUserElo: String?
     private var actionDistance: CGFloat?
@@ -24,6 +25,9 @@ class MatchViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        activityIndicator.startAnimating()
+        cardView.alpha = 0
 
         self.getFeed()
         
@@ -103,6 +107,9 @@ extension MatchViewController {
 
     private func updateCardUser() {
 
+        if cards.isEmpty {
+            noMoreUsersAlert()
+        }
         print("Getting new user")
         guard let user = cards.first, let currentUserElo = currentUserElo else {  return }
         cardView.setupView(summoner: user, currentUserTier: currentUserElo, delegate: self)
@@ -134,11 +141,21 @@ extension MatchViewController {
         resetCardPosition()
 
         if like {
-            
+            self.cardView.isUserInteractionEnabled = false
+            print("in")
+            activityIndicator.startAnimating()
+            UIView.animate(withDuration: 0.2) {
+                self.cardView.alpha = 0
+            }
             guard self.currentUser != nil else { return }
             UserServices.likeUser(summonerId: self.currentUser!.summonerId) { _ in }
         } else {
-            // dislike method (?)
+            self.cardView.isUserInteractionEnabled = false
+            print("in")
+            activityIndicator.startAnimating()
+            UIView.animate(withDuration: 0.2) {
+                self.cardView.alpha = 0
+            }
         }
 
         updateCardUser()
@@ -154,6 +171,20 @@ extension MatchViewController {
             self.cardView.swipeFeedbackImage.alpha = 0
         }
     }
+
+    private func noMoreUsersAlert() {
+
+        // create the alert
+        let alert = UIAlertController(title: "Sem usuarios =/", message: "Você já avaliou todos os utuários disponiveis", preferredStyle: UIAlertController.Style.alert)
+
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+
+        activityIndicator.stopAnimating()
+    }
 }
 
 // MARK: - matchCardDelegate
@@ -161,5 +192,31 @@ extension MatchViewController: matchCardDelegate {
 
     func updateCard() {
         self.updateCardUser()
+    }
+
+    func resetCardAlpha() {
+
+        print("out")
+
+        self.cardView.isUserInteractionEnabled = true
+        activityIndicator.stopAnimating()
+
+        UIView.animate(withDuration: 0.2) {
+            self.cardView.alpha = 1
+        }
+    }
+
+    func somethingWentWrong() {
+        let alert = UIAlertController(title: "Alguma coisa deu errada", message: "Desculpe, ocorreu algum problema na conexão a internet", preferredStyle: UIAlertController.Style.alert)
+
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "Tentar novamente", style: UIAlertAction.Style.default, handler: { (action) in
+            self.updateCardUser()
+        }))
+
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+
+        activityIndicator.stopAnimating()
     }
 }

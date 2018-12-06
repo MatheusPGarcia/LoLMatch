@@ -12,6 +12,10 @@ import Nuke
 protocol matchCardDelegate: class {
 
     func updateCard()
+
+    func resetCardAlpha()
+
+    func somethingWentWrong()
 }
 
 @IBDesignable class MatchCard: UIView {
@@ -62,7 +66,12 @@ protocol matchCardDelegate: class {
 
         self.delegate = delegate
 
-        CardService.getCardDetail(forUser: summoner) { (cardViewModel) in
+        CardService.getCardDetail(forUser: summoner) { (cardViewModel, error) in
+
+            guard let cardViewModel = cardViewModel, error == nil else {
+                delegate.somethingWentWrong()
+                return
+            }
 
             guard self.checkElo(cardViewModel, currentUserTier: currentUserTier) else {
                 return
@@ -119,10 +128,7 @@ protocol matchCardDelegate: class {
                 loadImage(with: url, options: ImageLoadingOptions(placeholder: #imageLiteral(resourceName: "championPlaceholder"), transition: .fadeIn(duration: 0.3)), into: self.champion3ImageView)
             }
 
-            // remove blur
-            UIView.animate(withDuration: 0.4, animations: {
-                self.swipeFeedbackImage.alpha = 0
-            })
+            delegate.resetCardAlpha()
         }
     }
 }

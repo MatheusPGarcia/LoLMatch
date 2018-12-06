@@ -12,7 +12,7 @@ class CardService {
 
     static private let dispatchGroup = DispatchGroup()
 
-    static func getCardDetail(forUser user: User, completion: @escaping (CardViewModel) -> Void) {
+    static func getCardDetail(forUser user: User, completion: @escaping (CardViewModel?, Bool?) -> Void) {
 
         let summonerIconId = user.profileIconId
         let lane1 = user.lane1
@@ -31,6 +31,7 @@ class CardService {
                   let winString = elo.wins,
                   let losesString = elo.losses else {
                     dispatchGroup.leave()
+                    completion(nil, true)
                     return
                 }
 
@@ -45,6 +46,7 @@ class CardService {
         UserServices.getPlayerKda(byId: user.accountId, numberOfMatches: 3) { (response, error) in
             guard error == nil, let response = response else {
                 dispatchGroup.leave()
+                completion(nil, true)
                 return
             }
 
@@ -61,7 +63,7 @@ class CardService {
                                                  pdl: pdl,
                                                  lastMatches: matches)
 
-            completion(newCardViewModel)
+            completion(newCardViewModel, false)
         }
     }
 }
