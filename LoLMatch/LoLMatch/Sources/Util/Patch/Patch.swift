@@ -9,5 +9,5 @@
 import Foundation
 
 class Patch {
-    static var patch = "8.22.1"
+    static var patch = "8.24.1"
 }
