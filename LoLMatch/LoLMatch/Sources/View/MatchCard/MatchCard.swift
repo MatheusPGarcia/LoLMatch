@@ -68,7 +68,7 @@ protocol matchCardDelegate: class {
 
         CardService.getCardDetail(forUser: summoner) { (cardViewModel, error) in
 
-            guard let cardViewModel = cardViewModel, error == nil else {
+            guard let cardViewModel = cardViewModel, error == false else {
                 delegate.somethingWentWrong()
                 return
             }
